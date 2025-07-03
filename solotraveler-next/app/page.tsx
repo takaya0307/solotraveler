@@ -1,25 +1,28 @@
-import React, { useState, useMemo, useEffect } from 'react';
-import './App.css';
-import { Country } from './types';
+"use client";
+import React, { useState, useMemo, useEffect } from "react";
+import { Country } from "../types/types";
+import Image from "next/image";
 
-type SortOption = 'none' | 'beginner' | 'intermediate' | 'advanced' | 'expert';
+// 難易度の型
+type SortOption = "none" | "beginner" | "intermediate" | "advanced" | "expert";
 
-function App() {
+export default function Home() {
   const [countries, setCountries] = useState<Country[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
-  const [searchTerm, setSearchTerm] = useState('');
-  const [sortBy, setSortBy] = useState<SortOption>('none');
+  const [searchTerm, setSearchTerm] = useState("");
+  const [sortBy, setSortBy] = useState<SortOption>("none");
   const [selectedCountry, setSelectedCountry] = useState<Country | null>(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   useEffect(() => {
-    fetch('http://localhost:3001/countries')
-      .then(response => response.json())
-      .then(data => {
+    // API Routeに後で修正予定
+    fetch("/api/countries")
+      .then((response) => response.json())
+      .then((data) => {
         setCountries(data);
         setLoading(false);
       })
-      .catch(error => {
+      .catch((error) => {
         console.error("Error fetching country data:", error);
         setLoading(false);
       });
@@ -27,21 +30,17 @@ function App() {
 
   // 総合評価を計算する関数
   const calculateOverallScore = (scores: any, capital: string) => {
-    // 治安の星数に基づいて難易度を決定
     const safetyScore = scores.safety;
     if (safetyScore === 1) return '超上級';
     if (safetyScore === 2) return '上級';
     if (safetyScore === 3) return '中級';
     if (safetyScore === 4 || safetyScore === 5) return '初級';
-    
-    // フォールバック（万が一の場合）
     return '中級';
   };
 
   // 難易度レベルを取得する関数
   const getDifficultyLevel = (score: number | string) => {
     if (typeof score === 'string') {
-      // 直接難易度名が返ってきた場合
       switch (score) {
         case '初級': return { level: '初級', color: '#10b981' };
         case '中級': return { level: '中級', color: '#f59e0b' };
@@ -146,7 +145,6 @@ function App() {
           {filteredAndSortedCountries.map((country) => {
             const overallScore = calculateOverallScore(country.scores, country.capital);
             const difficulty = getDifficultyLevel(overallScore);
-            // 難易度バッジ用クラス
             let badgeClass = 'card-difficulty-badge';
             switch (difficulty.level) {
               case '初級': badgeClass += ' level-beginner'; break;
@@ -197,7 +195,6 @@ function App() {
                 {(() => {
                   const overallScore = calculateOverallScore(selectedCountry.scores, selectedCountry.capital);
                   const difficulty = getDifficultyLevel(overallScore);
-                  // 難易度バッジ用クラス
                   let badgeClass = 'modal-difficulty-badge';
                   switch (difficulty.level) {
                     case '初級': badgeClass += ' level-beginner'; break;
@@ -307,5 +304,3 @@ function App() {
     </div>
   );
 }
-
-export default App;

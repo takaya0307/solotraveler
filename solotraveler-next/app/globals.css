@@ -382,14 +382,16 @@ main {
 }
 
 .modal-content {
-  background: white;
-  border-radius: 20px;
-  max-width: 600px;
-  width: 100%;
+  max-width: 800px;
   max-height: 90vh;
+  width: 100%;
+  height: auto;
   overflow-y: auto;
-  position: relative;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+  box-sizing: border-box;
+  margin: 0 auto;
+  background: #fff !important;
+  overflow: hidden;
+  border-radius: 16px 16px 16px 16px;
 }
 
 .modal-close {
@@ -415,17 +417,34 @@ main {
 }
 
 .modal-header {
+  margin: 0 !important;
+  padding: 0 !important;
+  border-radius: 0 !important;
+  overflow: visible !important;
   position: relative;
-  height: 200px;
-  border-radius: 20px 20px 0 0;
-  overflow: hidden;
 }
 
-.modal-image {
+img.modal-image {
   width: 100%;
-  height: 100%;
-  background-size: cover;
-  background-position: center;
+  height: 200px;
+  object-fit: cover;
+  display: block;
+  margin: 0;
+  padding: 0;
+  border-radius: 0 !important;
+  box-sizing: border-box;
+  background: #eee;
+}
+
+@media (max-width: 768px) {
+  img.modal-image {
+    height: 150px;
+  }
+}
+@media (max-width: 480px) {
+  img.modal-image {
+    height: 120px;
+  }
 }
 
 .modal-title-section {
@@ -436,6 +455,22 @@ main {
   background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
   color: white;
   padding: 2rem 1.5rem 1.5rem;
+  margin: 0;
+  width: 100%;
+  box-sizing: border-box;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.25);
+}
+
+@media (max-width: 768px) {
+  .modal-title-section {
+    padding: 1.5rem 1rem 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .modal-title-section {
+    padding: 0.5rem 0.5rem 0.3rem;
+  }
 }
 
 .modal-title-section h2 {
@@ -475,6 +510,7 @@ main {
 .modal-difficulty-badge.level-expert { background: #7c3aed; border-color: #7c3aed; }
 
 .modal-body {
+  background: #fff !important;
   padding: 1.5rem;
 }
 
@@ -505,8 +541,10 @@ main {
   justify-content: space-between;
   align-items: center;
   padding: 0.8rem;
-  background: #f7fafc;
-  border-radius: 8px;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  border: none;
 }
 
 .modal-score-item .score-label {
@@ -574,10 +612,19 @@ main {
   
   .modal-image {
     height: 200px;
+    margin: 0;
+    padding: 0;
+    border-radius: 8px 8px 0 0;
   }
   
   .modal-header {
-    padding: 1.5rem;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .modal-header {
+    padding: 0;
+    margin: 0;
   }
   
   .modal-body {
@@ -600,46 +647,71 @@ main {
 }
 
 @media (max-width: 480px) {
+  .modal-overlay {
+    align-items: flex-start;
+    overflow-y: auto;
+    height: 100vh;
+  }
   .modal-content {
     margin: 0.5rem;
-    max-height: 98vh;
+    max-height: 100vh;
     width: calc(100% - 1rem);
+    overflow-y: auto;
+    position: relative;
+    touch-action: auto;
+    display: flex;
+    flex-direction: column;
   }
   
   .modal-header {
-    padding: 1rem;
+    padding: 0;
+    margin: 0;
   }
   
   .modal-body {
-    padding: 1rem;
+    padding: 0.2rem;
   }
   
   .modal-title-section h2 {
-    font-size: 1.3rem;
+    font-size: 1rem;
+    margin-bottom: 0.2rem;
   }
   
   .modal-country {
-    font-size: 0.9rem;
+    font-size: 0.8rem;
+    margin-bottom: 0.2rem;
   }
   
   .modal-image {
-    height: 150px;
+    height: 80px;
+    margin: 0;
+    padding: 0;
+    border-radius: 8px 8px 0 0;
+  }
+  
+  .modal-header {
+    margin: 0;
+    padding: 0;
   }
   
   .modal-description h3,
   .modal-scores h3,
   .modal-tips h3 {
-    font-size: 1rem;
-    margin-bottom: 0.8rem;
+    font-size: 0.9rem;
+    margin-bottom: 0.3rem;
   }
   
-  .modal-description p {
-    font-size: 0.9rem;
-    line-height: 1.5;
+  .modal-description p,
+  .modal-tips li,
+  .modal-info-item,
+  .modal-score-item .score-label,
+  .modal-score-item .score-stars {
+    font-size: 0.8rem;
+    margin-bottom: 0.2rem;
   }
   
   .modal-score-item {
-    padding: 0.5rem;
+    padding: 0.3rem;
   }
   
   .modal-score-item .score-label {
@@ -853,6 +925,26 @@ main {
   .card-title { font-size: 1.1rem; }
   .card-title-overlay { padding: 0.8rem 1rem 0.8rem 1rem; }
   .card-difficulty-badge { font-size: 0.8rem; padding: 0.2em 0.7em; }
+  .modal-score-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    justify-items: center;
+  }
+  .modal-score-item {
+    width: 90%;
+    max-width: 350px;
+    margin: 0 auto;
+  }
+  .modal-content {
+    max-width: 100vw;
+    max-height: 100vh;
+    border-radius: 0;
+    margin: 0;
+    padding: 0 !important;
+  }
+  .modal-header {
+    border-radius: 0;
+  }
 }
 
 @media (max-width: 480px) {
@@ -1131,5 +1223,31 @@ main {
   
   .info-icon::after {
     font-size: 8px;
+  }
+}
+
+@media (max-width: 768px) {
+  .modal-tabs {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.8rem;
+    border-bottom: 2px solid #e5e7eb;
+  }
+  .modal-tabs button {
+    flex: 1;
+    padding: 0.6rem 0;
+    background: none;
+    border: none;
+    border-bottom: 2px solid transparent;
+    font-size: 1rem;
+    color: #888;
+    font-weight: 600;
+    cursor: pointer;
+    transition: color 0.2s, border-bottom 0.2s;
+  }
+  .modal-tabs button.active {
+    color: #333;
+    border-bottom: 2px solid #667eea;
+    background: #f3f4f6;
   }
 }

@@ -13,6 +13,8 @@ export default function Home() {
   const [sortBy, setSortBy] = useState<SortOption>("none");
   const [selectedCountry, setSelectedCountry] = useState<Country | null>(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [selectedTab, setSelectedTab] = useState<'info' | 'scores' | 'tips'>('info');
+  const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
     // API Routeに後で修正予定
@@ -26,6 +28,13 @@ export default function Home() {
         console.error("Error fetching country data:", error);
         setLoading(false);
       });
+  }, []);
+
+  useEffect(() => {
+    const checkMobile = () => setIsMobile(window.innerWidth <= 768);
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
   }, []);
 
   // 総合評価を計算する関数
@@ -189,7 +198,6 @@ export default function Home() {
           <div className="modal-content" onClick={(e) => e.stopPropagation()}>
             <button className="modal-close" onClick={closeModal}>×</button>
             <div className="modal-header">
-              <div className="modal-image" style={{backgroundImage: `url('${selectedCountry.imageUrl}')`}} />
               <div className="modal-title-section">
                 <h2>{selectedCountry.capital}</h2>
                 {(() => {
@@ -212,47 +220,111 @@ export default function Home() {
                   );
                 })()}
               </div>
+              <img
+                src={selectedCountry.imageUrl}
+                alt={selectedCountry.capital}
+                className="modal-image"
+              />
             </div>
             <div className="modal-body">
-              <div className="modal-description">
-                <h3>都市の魅力</h3>
-                <p>{selectedCountry.description}</p>
-              </div>
-              <div className="modal-scores">
-                <h3>詳細評価</h3>
-                <div className="modal-score-grid">
-                  <div className="modal-score-item">
-                    <span className="score-label">治安の良さ</span>
-                    <span className="score-stars">{'⭐'.repeat(selectedCountry.scores.safety)}</span>
+              {isMobile ? (
+                <>
+                  <div className="modal-tabs">
+                    <button className={selectedTab === 'info' ? 'active' : ''} onClick={() => setSelectedTab('info')}>基本情報</button>
+                    <button className={selectedTab === 'scores' ? 'active' : ''} onClick={() => setSelectedTab('scores')}>詳細評価</button>
+                    <button className={selectedTab === 'tips' ? 'active' : ''} onClick={() => setSelectedTab('tips')}>おすすめポイント</button>
                   </div>
-                  <div className="modal-score-item">
-                    <span className="score-label">コスト</span>
-                    <span className="score-stars">{'⭐'.repeat(selectedCountry.scores.cost)}</span>
+                  {selectedTab === 'info' && (
+                    <>
+                      <div className="modal-description">
+                        <h3>都市の魅力</h3>
+                        <p>{selectedCountry.description}</p>
+                      </div>
+                      <div className="modal-info">
+                        <div className="modal-info-item">
+                          <span className="info-label">ベストシーズン:</span>
+                          <span className="info-value">{selectedCountry.bestTimeToVisit}</span>
+                        </div>
+                        <div className="modal-info-item">
+                          <span className="info-label">おすすめ滞在日数:</span>
+                          <span className="info-value">{selectedCountry.requiredDays}日</span>
+                        </div>
+                        <div className="modal-info-item">
+                          <span className="info-label">航空券:</span>
+                          <span className="info-value">{selectedCountry.flightCost}</span>
+                        </div>
+                      </div>
+                    </>
+                  )}
+                  {selectedTab === 'scores' && (
+                    <div className="modal-scores">
+                      <h3>詳細評価</h3>
+                      <div className="modal-score-grid">
+                        <div className="modal-score-item">
+                          <span className="score-label">治安の良さ</span>
+                          <span className="score-stars">{'⭐'.repeat(selectedCountry.scores.safety)}</span>
+                        </div>
+                        <div className="modal-score-item">
+                          <span className="score-label">コスト</span>
+                          <span className="score-stars">{'⭐'.repeat(selectedCountry.scores.cost)}</span>
+                        </div>
+                      </div>
+                    </div>
+                  )}
+                  {selectedTab === 'tips' && (
+                    <div className="modal-tips">
+                      <h3>おすすめポイント</h3>
+                      <ul>
+                        {selectedCountry.tips.map((tip: string, index: number) => (
+                          <li key={index}>{tip}</li>
+                        ))}
+                      </ul>
+                    </div>
+                  )}
+                </>
+              ) : (
+                <>
+                  <div className="modal-description">
+                    <h3>都市の魅力</h3>
+                    <p>{selectedCountry.description}</p>
                   </div>
-                </div>
-              </div>
-              <div className="modal-tips">
-                <h3>おすすめポイント</h3>
-                <ul>
-                  {selectedCountry.tips.map((tip: string, index: number) => (
-                    <li key={index}>{tip}</li>
-                  ))}
-                </ul>
-                </div>
-              <div className="modal-info">
-                <div className="modal-info-item">
-                  <span className="info-label">ベストシーズン:</span>
-                  <span className="info-value">{selectedCountry.bestTimeToVisit}</span>
-                </div>
-                <div className="modal-info-item">
-                  <span className="info-label">おすすめ滞在日数:</span>
-                  <span className="info-value">{selectedCountry.requiredDays}日</span>
-                </div>
-                <div className="modal-info-item">
-                  <span className="info-label">航空券:</span>
-                  <span className="info-value">{selectedCountry.flightCost}</span>
-                </div>
-              </div>
+                  <div className="modal-scores">
+                    <h3>詳細評価</h3>
+                    <div className="modal-score-grid">
+                      <div className="modal-score-item">
+                        <span className="score-label">治安の良さ</span>
+                        <span className="score-stars">{'⭐'.repeat(selectedCountry.scores.safety)}</span>
+                      </div>
+                      <div className="modal-score-item">
+                        <span className="score-label">コスト</span>
+                        <span className="score-stars">{'⭐'.repeat(selectedCountry.scores.cost)}</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="modal-tips">
+                    <h3>おすすめポイント</h3>
+                    <ul>
+                      {selectedCountry.tips.map((tip: string, index: number) => (
+                        <li key={index}>{tip}</li>
+                      ))}
+                    </ul>
+                  </div>
+                  <div className="modal-info">
+                    <div className="modal-info-item">
+                      <span className="info-label">ベストシーズン:</span>
+                      <span className="info-value">{selectedCountry.bestTimeToVisit}</span>
+                    </div>
+                    <div className="modal-info-item">
+                      <span className="info-label">おすすめ滞在日数:</span>
+                      <span className="info-value">{selectedCountry.requiredDays}日</span>
+                    </div>
+                    <div className="modal-info-item">
+                      <span className="info-label">航空券:</span>
+                      <span className="info-value">{selectedCountry.flightCost}</span>
+                    </div>
+                  </div>
+                </>
+              )}
             </div>
           </div>
         </div>

@@ -19,7 +19,8 @@
   }
 }
 
-body {
+html, body {
+  height: 100%;
   background: var(--background);
   color: var(--foreground);
   margin: 0;
@@ -596,20 +597,24 @@ img.modal-image {
 
 @media (max-width: 768px) {
   .modal-overlay {
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-    padding: 0;
+    display: block;
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+    background: rgba(0,0,0,0.7);
   }
   .modal-content {
-    border-radius: 20px;
-    overflow: hidden;
-    box-shadow: 0 8px 32px rgba(0,0,0,0.18);
-    background: #fff;
-    padding: 0;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-height: 90vh;
     width: 98vw;
     max-width: 420px;
-    margin: 0 auto;
+    overflow-y: auto;
+    border-radius: 20px;
+    background: #fff;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.18);
   }
   .modal-image-header {
     position: relative;

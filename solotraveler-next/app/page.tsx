@@ -196,94 +196,126 @@ export default function Home() {
       {isModalOpen && selectedCountry && (
         <div className="modal-overlay" onClick={closeModal}>
           <div className="modal-content" onClick={(e) => e.stopPropagation()}>
-            <button className="modal-close" onClick={closeModal}>×</button>
-            <div className="modal-header">
-              <div className="modal-title-section">
-                <h2>{selectedCountry.capital}</h2>
-                {(() => {
-                  const overallScore = calculateOverallScore(selectedCountry.scores, selectedCountry.capital);
-                  const difficulty = getDifficultyLevel(overallScore);
-                  let badgeClass = 'modal-difficulty-badge';
-                  switch (difficulty.level) {
-                    case '初級': badgeClass += ' level-beginner'; break;
-                    case '中級': badgeClass += ' level-intermediate'; break;
-                    case '上級': badgeClass += ' level-advanced'; break;
-                    case '超上級': badgeClass += ' level-expert'; break;
-                    default: break;
-                  }
-                  return (
-                    <div className="modal-difficulty">
-                      <span className={badgeClass} style={{background: difficulty.color, borderColor: difficulty.color}}>
-                        {difficulty.level}
-                      </span>
-                    </div>
-                  );
-                })()}
-              </div>
-              <img
-                src={selectedCountry.imageUrl}
-                alt={selectedCountry.capital}
-                className="modal-image"
-              />
-            </div>
             <div className="modal-body">
               {isMobile ? (
                 <>
+                  <div className="modal-image-header">
+                    <img
+                      src={selectedCountry.imageUrl}
+                      alt={selectedCountry.capital}
+                      className="modal-image"
+                    />
+                    <div className="modal-title-overlay">
+                      <h2>{selectedCountry.capital}</h2>
+                      {(() => {
+                        const overallScore = calculateOverallScore(selectedCountry.scores, selectedCountry.capital);
+                        const difficulty = getDifficultyLevel(overallScore);
+                        let badgeClass = 'modal-difficulty-badge';
+                        switch (difficulty.level) {
+                          case '初級': badgeClass += ' level-beginner'; break;
+                          case '中級': badgeClass += ' level-intermediate'; break;
+                          case '上級': badgeClass += ' level-advanced'; break;
+                          case '超上級': badgeClass += ' level-expert'; break;
+                          default: break;
+                        }
+                        return (
+                          <div className="modal-difficulty">
+                            <span className={badgeClass} style={{background: difficulty.color, borderColor: difficulty.color}}>
+                              {difficulty.level}
+                            </span>
+                          </div>
+                        );
+                      })()}
+                    </div>
+                    <button className="modal-close" onClick={closeModal}>×</button>
+                  </div>
                   <div className="modal-tabs">
                     <button className={selectedTab === 'info' ? 'active' : ''} onClick={() => setSelectedTab('info')}>基本情報</button>
                     <button className={selectedTab === 'scores' ? 'active' : ''} onClick={() => setSelectedTab('scores')}>詳細評価</button>
                     <button className={selectedTab === 'tips' ? 'active' : ''} onClick={() => setSelectedTab('tips')}>おすすめポイント</button>
                   </div>
-                  {selectedTab === 'info' && (
-                    <>
-                      <div className="modal-description">
-                        <h3>都市の魅力</h3>
-                        <p>{selectedCountry.description}</p>
+                  <div className="modal-body-inner">
+                    {selectedTab === 'info' && (
+                      <>
+                        <div className="modal-description">
+                          <h3>都市の魅力</h3>
+                          <p>{selectedCountry.description}</p>
+                        </div>
+                        <div className="modal-info">
+                          <div className="modal-info-item">
+                            <span className="info-label">ベストシーズン:</span>
+                            <span className="info-value">{selectedCountry.bestTimeToVisit}</span>
+                          </div>
+                          <div className="modal-info-item">
+                            <span className="info-label">おすすめ滞在日数:</span>
+                            <span className="info-value">{selectedCountry.requiredDays}日</span>
+                          </div>
+                          <div className="modal-info-item">
+                            <span className="info-label">航空券:</span>
+                            <span className="info-value">{selectedCountry.flightCost}</span>
+                          </div>
+                        </div>
+                      </>
+                    )}
+                    {selectedTab === 'scores' && (
+                      <div className="modal-scores">
+                        <h3>詳細評価</h3>
+                        <div className="modal-score-grid">
+                          <div className="modal-score-item">
+                            <span className="score-label">治安の良さ</span>
+                            <span className="score-stars">{'⭐'.repeat(selectedCountry.scores.safety)}</span>
+                          </div>
+                          <div className="modal-score-item">
+                            <span className="score-label">コスト</span>
+                            <span className="score-stars">{'⭐'.repeat(selectedCountry.scores.cost)}</span>
+                          </div>
+                        </div>
                       </div>
-                      <div className="modal-info">
-                        <div className="modal-info-item">
-                          <span className="info-label">ベストシーズン:</span>
-                          <span className="info-value">{selectedCountry.bestTimeToVisit}</span>
-                        </div>
-                        <div className="modal-info-item">
-                          <span className="info-label">おすすめ滞在日数:</span>
-                          <span className="info-value">{selectedCountry.requiredDays}日</span>
-                        </div>
-                        <div className="modal-info-item">
-                          <span className="info-label">航空券:</span>
-                          <span className="info-value">{selectedCountry.flightCost}</span>
-                        </div>
+                    )}
+                    {selectedTab === 'tips' && (
+                      <div className="modal-tips">
+                        <h3>おすすめポイント</h3>
+                        <ul>
+                          {selectedCountry.tips.map((tip: string, index: number) => (
+                            <li key={index}>{tip}</li>
+                          ))}
+                        </ul>
                       </div>
-                    </>
-                  )}
-                  {selectedTab === 'scores' && (
-                    <div className="modal-scores">
-                      <h3>詳細評価</h3>
-                      <div className="modal-score-grid">
-                        <div className="modal-score-item">
-                          <span className="score-label">治安の良さ</span>
-                          <span className="score-stars">{'⭐'.repeat(selectedCountry.scores.safety)}</span>
-                        </div>
-                        <div className="modal-score-item">
-                          <span className="score-label">コスト</span>
-                          <span className="score-stars">{'⭐'.repeat(selectedCountry.scores.cost)}</span>
-                        </div>
-                      </div>
-                    </div>
-                  )}
-                  {selectedTab === 'tips' && (
-                    <div className="modal-tips">
-                      <h3>おすすめポイント</h3>
-                      <ul>
-                        {selectedCountry.tips.map((tip: string, index: number) => (
-                          <li key={index}>{tip}</li>
-                        ))}
-                      </ul>
-                    </div>
-                  )}
+                    )}
+                  </div>
                 </>
               ) : (
                 <>
+                  <div className="modal-header">
+                    <div className="modal-title-section">
+                      <h2>{selectedCountry.capital}</h2>
+                      {(() => {
+                        const overallScore = calculateOverallScore(selectedCountry.scores, selectedCountry.capital);
+                        const difficulty = getDifficultyLevel(overallScore);
+                        let badgeClass = 'modal-difficulty-badge';
+                        switch (difficulty.level) {
+                          case '初級': badgeClass += ' level-beginner'; break;
+                          case '中級': badgeClass += ' level-intermediate'; break;
+                          case '上級': badgeClass += ' level-advanced'; break;
+                          case '超上級': badgeClass += ' level-expert'; break;
+                          default: break;
+                        }
+                        return (
+                          <div className="modal-difficulty">
+                            <span className={badgeClass} style={{background: difficulty.color, borderColor: difficulty.color}}>
+                              {difficulty.level}
+                            </span>
+                          </div>
+                        );
+                      })()}
+                    </div>
+                    <img
+                      src={selectedCountry.imageUrl}
+                      alt={selectedCountry.capital}
+                      className="modal-image"
+                    />
+                  </div>
+                  <div style={{ height: "1rem" }} />
                   <div className="modal-description">
                     <h3>都市の魅力</h3>
                     <p>{selectedCountry.description}</p>

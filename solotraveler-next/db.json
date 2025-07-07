@@ -9,11 +9,11 @@
       "scores": { "safety": 5, "cost": 4 },
       "description": "親日国で治安が良く、日本語が通じる場所も多い。美味しい台湾料理と温かい人々が迎えてくれ、初めての一人旅でも安心して楽しめます。",
       "tips": ["台北MRTは分かりやすく使いやすい", "夜市は必ず訪れたい", "Wi-Fiが充実している"],
-      "bestTimeToVisit": "10月〜4月",
+      "bestTimeToVisit": "3月~5月、10月~12月",
       "visaRequired": false,
       "imageUrl": "https://images.unsplash.com/photo-1598935898639-81586f7d2129?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8dGFpcGVpfGVufDB8fDB8fHww",
-      "requiredDays": 3,
-      "flightCost": "3万円〜8万円"
+      "requiredDays": "3~4",
+      "flightCost": "3~6万円"
     },
     {
       "id": "thailand",
@@ -24,11 +24,11 @@
       "scores": { "safety": 3, "cost": 4 },
       "description": "物価が安く、屋台や観光地も多い東南アジアの人気都市。",
       "tips": ["BTSやMRTで移動が便利", "屋台グルメを楽しもう", "観光地はスリに注意"],
-      "bestTimeToVisit": "11月〜2月",
+      "bestTimeToVisit": "11月~2月",
       "visaRequired": false,
       "imageUrl": "https://images.unsplash.com/photo-1601224335112-b74158e231ec?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTV8fGJhbmdrb2t8ZW58MHx8MHx8fDA%3D",
-      "requiredDays": 3,
-      "flightCost": "4万円〜9万円"
+      "requiredDays": "4~5",
+      "flightCost": "4~8万円"
     },
     {
       "id": "portugal",
@@ -39,11 +39,11 @@
       "scores": { "safety": 4, "cost": 3 },
       "description": "ヨーロッパの中でも温暖で治安が良く、物価も比較的安い。",
       "tips": ["トラムで市内観光", "海鮮料理が美味しい"],
-      "bestTimeToVisit": "3月〜10月",
+      "bestTimeToVisit": "3月~5月、9月~10月",
       "visaRequired": false,
       "imageUrl": "https://images.unsplash.com/photo-1585208798174-6cedd86e019a?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8bGlzYm9ufGVufDB8fDB8fHww",
-      "requiredDays": 3,
-      "flightCost": "12万円〜20万円"
+      "requiredDays": "3~4",
+      "flightCost": "9~15万円"
     },
     {
       "id": "spain",
@@ -54,11 +54,11 @@
       "scores": { "safety": 3, "cost": 3 },
       "description": "芸術と建築の街。観光・グルメ・ビーチも楽しめる。",
       "tips": ["スリに注意", "バル巡りがおすすめ", "サグラダ・ファミリアは必見"],
-      "bestTimeToVisit": "3月〜5月、9月〜11月",
+      "bestTimeToVisit": "5月~6月、9月~10月",
       "visaRequired": false,
       "imageUrl": "https://images.unsplash.com/photo-1630219694734-fe47ab76b15e?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fEJhcmNlbG9uYXxlbnwwfHwwfHx8MA%3D%3D",
-      "requiredDays": 3,
-      "flightCost": "12万円〜20万円"
+      "requiredDays": "3~4",
+      "flightCost": "11~18万円"
     },
     {
       "id": "malaysia",
@@ -69,11 +69,11 @@
       "scores": { "safety": 2, "cost": 5 },
       "description": "多民族国家で英語も通じやすく、物価も安い。",
       "tips": ["屋台グルメが豊富", "LRTやモノレールで移動", "ショッピングも楽しめる"],
-      "bestTimeToVisit": "3月〜10月",
+      "bestTimeToVisit": "6月~8月、12月~2月",
       "visaRequired": false,
       "imageUrl": "https://images.unsplash.com/photo-1596422846543-75c6fc197f07?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8a3VhbGElMjBsdW1wdXJ8ZW58MHx8MHx8fDA%3D",
-      "requiredDays": 3,
-      "flightCost": "4万円〜9万円"
+      "requiredDays": "3~4",
+      "flightCost": "4~8万円"
     },
     {
       "id": "singapore",
@@ -84,11 +84,11 @@
       "scores": { "safety": 4, "cost": 1 },
       "description": "安全で清潔、英語が通じやすく、交通機関も発達している。多文化が融合した魅力的な街で、一人旅初心者でも安心して過ごせる環境が整っています。",
       "tips": ["MRTが便利で安全", "多国籍料理を楽しめる", "ガーデンズ・バイ・ザ・ベイは必見"],
-      "bestTimeToVisit": "2月〜4月、7月〜9月",
+      "bestTimeToVisit": "2月~4月",
       "visaRequired": false,
       "imageUrl": "https://images.unsplash.com/photo-1496939376851-89342e90adcd?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8U2luZ2Fwb3JlfGVufDB8fDB8fHww",
-      "requiredDays": 3,
-      "flightCost": "5万円〜10万円"
+      "requiredDays": "3~4",
+      "flightCost": "5~9万円"
     },
     {
       "id": "czech",
@@ -99,11 +99,11 @@
       "scores": { "safety": 4, "cost": 3 },
       "description": "美しい建築と歴史を持つ中欧の古都。物価も比較的安く、中世の街並みが織りなす魔法のような雰囲気で、一人旅でも心躍る体験が待っています。",
       "tips": ["旧市街を歩いて観光", "チェコビールを楽しもう", "カレル橋は朝早くがおすすめ"],
-      "bestTimeToVisit": "3月〜5月、9月〜11月",
+      "bestTimeToVisit": "4月~6月、9月~10月",
       "visaRequired": false,
       "imageUrl": "https://images.unsplash.com/photo-1519677100203-a0e668c92439?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8cHJhZ3VlfGVufDB8fDB8fHww",
-      "requiredDays": 3,
-      "flightCost": "12万円〜20万円"
+      "requiredDays": "3~4",
+      "flightCost": "9~15万円"
     },
     {
       "id": "canada",
@@ -114,11 +114,11 @@
       "scores": { "safety": 3, "cost": 1 },
       "description": "自然豊かで安全、英語が通じやすく、一人旅に最適。美しい山々と海に囲まれ、フレンドリーな人々が迎えてくれる、心癒される都市です。",
       "tips": ["スカイトレインで移動", "スタンレーパークを散策", "多国籍料理が楽しめる"],
-      "bestTimeToVisit": "6月〜9月",
+      "bestTimeToVisit": "5月~6月、9月~10月",
       "visaRequired": false,
       "imageUrl": "https://images.unsplash.com/photo-1559511260-66a654ae982a?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8dmFuY291dmVyfGVufDB8fDB8fHww",
-      "requiredDays": 3,
-      "flightCost": "15万円〜25万円"
+      "requiredDays": "3~4",
+      "flightCost": "8~18万円"
     },
     {
       "id": "australia",
@@ -129,11 +129,11 @@
       "scores": { "safety": 3, "cost": 1 },
       "description": "多文化都市で安全、英語が通じやすく、カフェ文化が豊富。アートと音楽が息づく街で、一人旅でも孤独を感じることなく、豊かな文化体験ができます。",
       "tips": ["トラムが便利", "カフェ巡りがおすすめ", "ロイヤル植物園を散策"],
-      "bestTimeToVisit": "3月〜5月、9月〜11月",
+      "bestTimeToVisit": "3月~5月、9月~11月",
       "visaRequired": false,
       "imageUrl": "https://images.unsplash.com/photo-1514395462725-fb4566210144?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8bWVsYm91cm5lfGVufDB8fDB8fHww",
-      "requiredDays": 3,
-      "flightCost": "10万円〜18万円"
+      "requiredDays": "4~5",
+      "flightCost": "8~14万円"
     },
     {
       "id": "newzealand",
@@ -144,11 +144,11 @@
       "scores": { "safety": 2, "cost": 2 },
       "description": "自然豊かで安全、英語が通じやすく、冒険好きに最適。",
       "tips": ["フェリーで島巡り", "ワイナリー巡り", "スカイタワーから夜景を"],
-      "bestTimeToVisit": "12月〜2月",
+      "bestTimeToVisit": "12月~2月",
       "visaRequired": false,
       "imageUrl": "https://images.unsplash.com/photo-1595125990323-885cec5217ff?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8YXVja2xhbmR8ZW58MHx8MHx8fDA%3D",
-      "requiredDays": 3,
-      "flightCost": "10万円〜18万円"
+      "requiredDays": "3~4",
+      "flightCost": "9~15万円"
     },
     {
       "id": "ireland",
@@ -159,11 +159,11 @@
       "scores": { "safety": 3, "cost": 1 },
       "description": "歴史と文化が豊富、パブ文化が楽しい親しみやすい国。",
       "tips": ["パブ巡りがおすすめ", "ギネス醸造所見学", "テンプルバー地区を散策"],
-      "bestTimeToVisit": "5月〜9月",
+      "bestTimeToVisit": "4月~6月、9月~10月",
       "visaRequired": false,
       "imageUrl": "https://images.unsplash.com/photo-1605969353711-234dea348ce1?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8ZHVibGlufGVufDB8fDB8fHww",
-      "requiredDays": 3,
-      "flightCost": "12万円〜20万円"
+      "requiredDays": "3~4",
+      "flightCost": "10~16万円"
     },
     {
       "id": "netherlands",
@@ -174,11 +174,11 @@
       "scores": { "safety": 4, "cost": 1 },
       "description": "自転車文化と芸術の街。英語が通じやすく、観光しやすい。",
       "tips": ["自転車で市内観光", "美術館巡り", "運河クルーズ"],
-      "bestTimeToVisit": "5月〜10月",
+      "bestTimeToVisit": "4月~6月、9月~10月",
       "visaRequired": false,
       "imageUrl": "https://plus.unsplash.com/premium_photo-1661878122586-2d75a86f3400?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8QW1zdGVyZGFtfGVufDB8fDB8fHww",
-      "requiredDays": 3,
-      "flightCost": "12万円〜20万円"
+      "requiredDays": "3~4",
+      "flightCost": "10~16万円"
     },
     {
       "id": "denmark",
@@ -189,11 +189,11 @@
       "scores": { "safety": 3, "cost": 1 },
       "description": "北欧の美しい街。安全で英語が通じやすく、デザインが素晴らしい。世界一幸福な国の首都として、一人旅でも心温まる体験と美しい街並みが楽しめます。",
       "tips": ["自転車で移動", "ニューハウン地区散策", "チボリ公園を楽しむ"],
-      "bestTimeToVisit": "5月〜9月",
+      "bestTimeToVisit": "5月~9月",
       "visaRequired": false,
       "imageUrl": "https://images.unsplash.com/photo-1513622470522-26c3c8a854bc?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8Y29wZW5oYWdlbnxlbnwwfHwwfHx8MA%3D%3D",
-      "requiredDays": 3,
-      "flightCost": "13万円〜22万円"
+      "requiredDays": "3~4",
+      "flightCost": "11~18万円"
     },
     {
       "id": "sweden",
@@ -204,11 +204,11 @@
       "scores": { "safety": 3, "cost": 1 },
       "description": "美しい島々と歴史的建造物。安全で英語が通じやすい。",
       "tips": ["ガムラスタン地区散策", "フェリーで島巡り", "ABBA博物館"],
-      "bestTimeToVisit": "6月〜8月",
+      "bestTimeToVisit": "6月~8月",
       "visaRequired": false,
       "imageUrl": "https://images.unsplash.com/photo-1588653818221-2651ec1a6423?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8c3RvY2tob2xtfGVufDB8fDB8fHww",
-      "requiredDays": 3,
-      "flightCost": "13万円〜22万円"
+      "requiredDays": "3~4",
+      "flightCost": "11~18万円"
     },
     {
       "id": "norway",
@@ -219,11 +219,11 @@
       "scores": { "safety": 4, "cost": 1 },
       "description": "自然と文化が融合した美しい街。安全だが物価が高い。",
       "tips": ["オペラハウス見学", "ビグドイ地区散策", "フィヨルド観光"],
-      "bestTimeToVisit": "6月〜8月",
+      "bestTimeToVisit": "6月~8月",
       "visaRequired": false,
       "imageUrl": "https://images.unsplash.com/photo-1712009509758-dff926710413?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTR8fE9zbG98ZW58MHx8MHx8fDA%3D",
-      "requiredDays": 3,
-      "flightCost": "13万円〜22万円"
+      "requiredDays": "2~3",
+      "flightCost": "11~18万円"
     },
     {
       "id": "finland",
@@ -234,11 +234,11 @@
       "scores": { "safety": 4, "cost": 1 },
       "description": "デザインと自然が美しい街。安全で英語が通じやすい。",
       "tips": ["デザイン地区散策", "サウナ体験", "スオメンリンナ要塞"],
-      "bestTimeToVisit": "6月〜8月",
+      "bestTimeToVisit": "6月~8月",
       "visaRequired": false,
       "imageUrl": "https://images.unsplash.com/photo-1557261651-a6beab93541f?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8aGVsc2lua2l8ZW58MHx8MHx8fDA%3D",
-      "requiredDays": 3,
-      "flightCost": "13万円〜22万円"
+      "requiredDays": "2~3",
+      "flightCost": "12~18万円"
     },
     {
       "id": "switzerland",
@@ -249,11 +249,11 @@
       "scores": { "safety": 5, "cost": 1 },
       "description": "美しい湖と山々。安全だが物価が高い。公共交通が発達。",
       "tips": ["チューリッヒ湖散策", "オールドタウン散策", "チョコレートショップ巡り"],
-      "bestTimeToVisit": "6月〜9月",
+      "bestTimeToVisit": "6月~8月",
       "visaRequired": false,
       "imageUrl": "https://images.unsplash.com/photo-1620563092215-0fbc6b55cfc5?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8WnVyaWNofGVufDB8fDB8fHww",
-      "requiredDays": 3,
-      "flightCost": "14万円〜23万円"
+      "requiredDays": "2~3",
+      "flightCost": "12~20万円"
     },
     {
       "id": "austria",
@@ -264,11 +264,11 @@
       "scores": { "safety": 4, "cost": 2 },
       "description": "音楽と芸術の都。歴史的建造物が美しく、安全。",
       "tips": ["シェーンブルン宮殿", "オペラ鑑賞", "カフェ文化を楽しむ"],
-      "bestTimeToVisit": "5月〜10月",
+      "bestTimeToVisit": "4月~6月、9月~10月",
       "visaRequired": false,
       "imageUrl": "https://images.unsplash.com/photo-1609856878074-cf31e21ccb6b?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8d2llbnxlbnwwfHwwfHx8MA%3D%3D",
-      "requiredDays": 3,
-      "flightCost": "12万円〜20万円"
+      "requiredDays": "3~4",
+      "flightCost": "9~15万円"
     },
     {
       "id": "germany",
@@ -279,11 +279,11 @@
       "scores": { "safety": 3, "cost": 3 },
       "description": "歴史と現代が融合した街。アートと文化が豊富。",
       "tips": ["ブランデンブルク門", "博物館島", "クラブ文化体験"],
-      "bestTimeToVisit": "5月〜9月",
+      "bestTimeToVisit": "5月~9月",
       "visaRequired": false,
       "imageUrl": "https://images.unsplash.com/photo-1587330979470-3595ac045ab0?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fEJlcmxpbnxlbnwwfHwwfHx8MA%3D%3D",
-      "requiredDays": 3,
-      "flightCost": "12万円〜20万円"
+      "requiredDays": "4~5",
+      "flightCost": "9~15万円"
     },
     {
       "id": "france",
@@ -294,11 +294,11 @@
       "scores": { "safety": 3, "cost": 1 },
       "description": "芸術とファッションの都。観光地が多く、グルメも楽しめる。",
       "tips": ["エッフェル塔", "ルーブル美術館", "モンマルトル散策"],
-      "bestTimeToVisit": "3月〜5月、9月〜11月",
+      "bestTimeToVisit": "4月~6月、9月~10月",
       "visaRequired": false,
       "imageUrl": "https://images.unsplash.com/photo-1431274172761-fca41d930114?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fHBhcmlzfGVufDB8fDB8fHww",
-      "requiredDays": 3,
-      "flightCost": "12万円〜20万円"
+      "requiredDays": "4~5",
+      "flightCost": "10~16万円"
     },
     {
       "id": "italy",
@@ -309,11 +309,11 @@
       "scores": { "safety": 3, "cost": 3 },
       "description": "歴史と芸術の宝庫。古代遺跡と美食が楽しめる。",
       "tips": ["コロッセオ見学", "バチカン美術館", "ジェラートを楽しむ"],
-      "bestTimeToVisit": "3月〜5月、9月〜11月",
+      "bestTimeToVisit": "4月~6月、9月~10月",
       "visaRequired": false,
       "imageUrl": "https://images.unsplash.com/photo-1552832230-c0197dd311b5?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8cm9tZXxlbnwwfHwwfHx8MA%3D%3D",
-      "requiredDays": 3,
-      "flightCost": "12万円〜20万円"
+      "requiredDays": "4~5",
+      "flightCost": "9~15万円"
     },
     {
       "id": "greece",
@@ -324,11 +324,11 @@
       "scores": { "safety": 2, "cost": 3 },
       "description": "古代文明の発祥地。歴史的遺跡と地中海の美しさ。",
       "tips": ["アクロポリス見学", "プラカ地区散策", "地中海料理を楽しむ"],
-      "bestTimeToVisit": "3月〜5月、9月〜11月",
+      "bestTimeToVisit": "4月~6月、9月~10月",
       "visaRequired": false,
       "imageUrl": "https://images.unsplash.com/photo-1603565816030-6b389eeb23cb?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8YXRoZW5zfGVufDB8fDB8fHww",
-      "requiredDays": 3,
-      "flightCost": "13万円〜21万円"
+      "requiredDays": "3~4",
+      "flightCost": "10~16万円"
     },
     {
       "id": "turkey",
@@ -339,11 +339,11 @@
       "scores": { "safety": 3, "cost": 4 },
       "description": "東西文化が融合した魅力的な街。歴史と文化が豊富。",
       "tips": ["アヤソフィア見学", "グランドバザール", "ボスポラス海峡クルーズ"],
-      "bestTimeToVisit": "3月〜5月、9月〜11月",
+      "bestTimeToVisit": "4月~6月、9月~10月",
       "visaRequired": false,
       "imageUrl": "https://images.unsplash.com/photo-1524231757912-21f4fe3a7200?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8aXN0YW5idWx8ZW58MHx8MHx8fDA%3D",
-      "requiredDays": 3,
-      "flightCost": "11万円〜19万円"
+      "requiredDays": "4~5",
+      "flightCost": "7~12万円"
     },
     {
       "id": "southkorea",
@@ -354,11 +354,11 @@
       "scores": { "safety": 4, "cost": 3 },
       "description": "伝統と現代が融合した街。K-POP文化とグルメが楽しめる。",
       "tips": ["明洞でショッピング", "韓国料理を楽しむ", "Nソウルタワー"],
-      "bestTimeToVisit": "3月〜5月、9月〜11月",
+      "bestTimeToVisit": "3月~5月、9月~11月",
       "visaRequired": false,
       "imageUrl": "https://images.unsplash.com/photo-1595185515922-9b79af1ef52d?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mzl8fFNlb3VsfGVufDB8fDB8fHww",
-      "requiredDays": 3,
-      "flightCost": "3万円〜7万円"
+      "requiredDays": "4~5",
+      "flightCost": "3~6万円"
     },
     {
       "id": "vietnam",
@@ -369,11 +369,11 @@
       "scores": { "safety": 4, "cost": 5 },
       "description": "歴史と文化が豊富。物価が安く、フードカルチャーが楽しい。",
       "tips": ["オールドクォーター散策", "ベトナム料理を楽しむ", "ホアンキエム湖"],
-      "bestTimeToVisit": "2月〜4月、10月〜12月",
+      "bestTimeToVisit": "10月~12月、3月~4月",
       "visaRequired": false,
       "imageUrl": "https://images.unsplash.com/photo-1555921015-5532091f6026?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8aGFub2l8ZW58MHx8MHx8fDA%3D",
-      "requiredDays": 3,
-      "flightCost": "4万円〜9万円"
+      "requiredDays": "3~4",
+      "flightCost": "4~7万円"
     },
     {
       "id": "cambodia",
@@ -384,11 +384,11 @@
       "scores": { "safety": 2, "cost": 5 },
       "description": "アンコールワットで有名。歴史的遺跡と物価の安さが魅力。",
       "tips": ["王宮見学", "トゥールスレン博物館", "メコン川クルーズ"],
-      "bestTimeToVisit": "11月〜3月",
+      "bestTimeToVisit": "11月~2月",
       "visaRequired": false,
       "imageUrl": "https://images.unsplash.com/photo-1663075039775-c4c05356b8fe?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fHBobm9tJTIwcGVuaHxlbnwwfHwwfHx8MA%3D%3D",
-      "requiredDays": 3,
-      "flightCost": "5万円〜10万円"
+      "requiredDays": "2~3",
+      "flightCost": "4~8万円"
     },
     {
       "id": "indonesia",
@@ -399,11 +399,11 @@
       "scores": { "safety": 2, "cost": 4 },
       "description": "美しいビーチとリゾート。スピリチュアルな文化が魅力。",
       "tips": ["ウブド散策", "ビーチでリラックス", "バリ料理を楽しむ"],
-      "bestTimeToVisit": "5月〜10月",
+      "bestTimeToVisit": "4月~6月、9月~11月",
       "visaRequired": false,
       "imageUrl": "https://images.unsplash.com/photo-1555400038-63f5ba517a47?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8YmFsaXxlbnwwfHwwfHx8MA%3D%3D",
-      "requiredDays": 3,
-      "flightCost": "6万円〜12万円"
+      "requiredDays": "5~6",
+      "flightCost": "6~11万円"
     },
     {
       "id": "philippines",
@@ -414,11 +414,11 @@
       "scores": { "safety": 1, "cost": 5 },
       "description": "美しい島々とビーチ。英語が通じやすく、物価が安い。",
       "tips": ["イントラムロス散策", "マニラ湾の夕日", "フィリピン料理を楽しむ"],
-      "bestTimeToVisit": "11月〜4月",
+      "bestTimeToVisit": "12月~2月",
       "visaRequired": false,
       "imageUrl": "https://images.unsplash.com/photo-1555557356-51c5d7a8f4c2?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8TWFuaWxhfGVufDB8fDB8fHww",
-      "requiredDays": 3,
-      "flightCost": "4万円〜9万円"
+      "requiredDays": "3~4",
+      "flightCost": "4~7万円"
     },
     {
       "id": "southkorea-busan",
@@ -429,11 +429,11 @@
       "scores": { "safety": 4, "cost": 4 },
       "description": "韓国第二の都市。海鮮料理と温泉が有名で、ソウルより落ち着いた雰囲気。",
       "tips": ["海鮮市場で新鮮な海産物を楽しむ", "温泉でリラックス", "釜山タワーから夜景を"],
-      "bestTimeToVisit": "3月〜5月、9月〜11月",
+      "bestTimeToVisit": "4月~6月、9月~10月",
       "visaRequired": false,
       "imageUrl": "https://images.unsplash.com/photo-1591520284162-8e64eceebacf?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fCVFOSU4NyU5QyVFNSVCMSVCMXxlbnwwfHwwfHx8MA%3D%3D",
-      "requiredDays": 3,
-      "flightCost": "3万円〜7万円"
+      "requiredDays": "3~4",
+      "flightCost": "3~6万円"
     },
     {
       "id": "taiwan-taichung",
@@ -444,11 +444,11 @@
       "scores": { "safety": 5, "cost": 5 },
       "description": "台湾中部の中心都市。グルメとアートが豊富で、台北より物価が安い。",
       "tips": ["逢甲夜市でグルメ巡り", "アートギャラリー巡り", "高美湿地で夕日を"],
-      "bestTimeToVisit": "10月〜4月",
+      "bestTimeToVisit": "3月~5月、10月~12月",
       "visaRequired": false,
       "imageUrl": "https://images.unsplash.com/photo-1583654979589-aa7a6053a0d6?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8JUU1JThGJUIwJUU0JUI4JUFEfGVufDB8fDB8fHww",
-      "requiredDays": 3,
-      "flightCost": "3万円〜8万円"
+      "requiredDays": "2~3",
+      "flightCost": "3~6万円"
     },
     {
       "id": "thailand-chiangmai",
@@ -459,11 +459,11 @@
       "scores": { "safety": 4, "cost": 5 },
       "description": "タイ北部の古都。寺院と自然が美しく、バンコクより落ち着いた雰囲気。",
       "tips": ["寺院巡り", "ナイトバザール", "エレファントキャンプ"],
-      "bestTimeToVisit": "11月〜2月",
+      "bestTimeToVisit": "11月~2月",
       "visaRequired": false,
       "imageUrl": "https://images.unsplash.com/photo-1714240230125-531572031bbf?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fCVFMyU4MyU4MSVFMyU4MiVBNyVFMyU4MyVCMyVFMyU4MyU5RSVFMyU4MiVBNHxlbnwwfHwwfHx8MA%3D%3D",
-      "requiredDays": 3,
-      "flightCost": "4万円〜9万円"
+      "requiredDays": "4~5",
+      "flightCost": "4~8万円"
     },
     {
       "id": "vietnam-hochiminh",
@@ -474,11 +474,11 @@
       "scores": { "safety": 2, "cost": 5 },
       "description": "ベトナム最大の都市。近代的なビルと歴史的建造物が共存する魅力的な街。",
       "tips": ["ベンタイン市場", "サイゴン川クルーズ", "ベトナムコーヒーを楽しむ"],
-      "bestTimeToVisit": "12月〜4月",
+      "bestTimeToVisit": "12月~3月",
       "visaRequired": false,
       "imageUrl": "https://images.unsplash.com/photo-1580835267732-2d232d3d2655?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTh8fCVFMyU4MyU5QiVFMyU4MyVCQyVFMyU4MyU4MSVFMyU4MyU5RiVFMyU4MyVCM3xlbnwwfHwwfHx8MA%3D%3D",
-      "requiredDays": 3,
-      "flightCost": "4万円〜9万円"
+      "requiredDays": "3~4",
+      "flightCost": "4~7万円"
     },
     {
       "id": "laos-luangprabang",
@@ -489,11 +489,11 @@
       "scores": { "safety": 3, "cost": 5 },
       "description": "世界遺産の古都。仏教寺院とフランス植民地時代の建築が美しい。",
       "tips": ["朝の托鉢を見学", "クアンシーの滝", "メコン川クルーズ"],
-      "bestTimeToVisit": "11月〜3月",
+      "bestTimeToVisit": "11月~2月",
       "visaRequired": false,
       "imageUrl": "https://images.unsplash.com/photo-1684918172034-399cc1ad6564?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8JUUzJTgzJUFCJUUzJTgyJUEyJUUzJTgzJUIzJUUzJTgzJTkxJUUzJTgzJTkwJUUzJTgzJUJDJUUzJTgzJUIzfGVufDB8fDB8fHww",
-      "requiredDays": 3,
-      "flightCost": "6万円〜11万円"
+      "requiredDays": "3~4",
+      "flightCost": "5~9万円"
     },
     {
       "id": "indonesia-yogyakarta",
@@ -504,11 +504,11 @@
       "scores": { "safety": 2, "cost": 5 },
       "description": "ジャワ文化の中心地。ボロブドゥール寺院とプランバナン寺院が有名。",
       "tips": ["ボロブドゥール寺院見学", "バティック工芸体験", "ガムラン音楽鑑賞"],
-      "bestTimeToVisit": "5月〜10月",
+      "bestTimeToVisit": "5月~9月",
       "visaRequired": false,
       "imageUrl": "https://images.unsplash.com/photo-1578469550956-0e16b69c6a3d?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8JUUzJTgyJUI4JUUzJTgzJUE3JUUzJTgyJUIwJUUzJTgyJUI4JUUzJTgzJUEzJUUzJTgyJUFCJUUzJTgzJUFCJUUzJTgyJUJGfGVufDB8fDB8fHww",
-      "requiredDays": 3,
-      "flightCost": "6万円〜12万円"
+      "requiredDays": "3~4",
+      "flightCost": "5~9万円"
     },
     {
       "id": "vietnam-danang",
@@ -519,11 +519,11 @@
       "scores": { "safety": 3, "cost": 5 },
       "description": "美しいビーチと山々。ミーソン遺跡とホイアンへのアクセスも便利。",
       "tips": ["ミーソン遺跡見学", "ホイアン旧市街", "ダナンビーチでリラックス"],
-      "bestTimeToVisit": "9月〜1月",
+      "bestTimeToVisit": "2月~5月",
       "visaRequired": false,
       "imageUrl": "https://images.unsplash.com/photo-1585926449367-64689895b3fe?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fCVFMyU4MyU4MCVFMyU4MyU4QSVFMyU4MyVCM3xlbnwwfHwwfHx8MA%3D%3D",
-      "requiredDays": 3,
-      "flightCost": "4万円〜9万円"
+      "requiredDays": "3~4",
+      "flightCost": "4~8万円"
     },
     {
       "id": "hongkong",
@@ -534,11 +534,11 @@
       "scores": { "safety": 4, "cost": 2 },
       "description": "アジアの金融センター。高層ビルと伝統文化が融合した魅力的な街。",
       "tips": ["ビクトリアピーク", "天星小輪でクルーズ", "ディムサムを楽しむ"],
-      "bestTimeToVisit": "11月〜4月",
+      "bestTimeToVisit": "10月~12月",
       "visaRequired": false,
       "imageUrl": "https://plus.unsplash.com/premium_photo-1661908853318-893732a14e42?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8JUU5JUE2JTk5JUU2JUI4JUFGfGVufDB8fDB8fHww",
-      "requiredDays": 3,
-      "flightCost": "4万円〜8万円"
+      "requiredDays": "3~4",
+      "flightCost": "4~7万円"
     },
     {
       "id": "uk-london",
@@ -549,11 +549,11 @@
       "scores": { "safety": 2, "cost": 1 },
       "description": "歴史と文化の都。世界有数の観光都市で、美術館や劇場が豊富。",
       "tips": ["大英博物館", "ウェストミンスター寺院", "パブ巡り"],
-      "bestTimeToVisit": "6月〜8月",
+      "bestTimeToVisit": "4月~6月、9月~10月",
       "visaRequired": false,
       "imageUrl": "https://images.unsplash.com/photo-1486299267070-83823f5448dd?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8JUUzJTgzJUFEJUUzJTgzJUIzJUUzJTgzJTg5JUUzJTgzJUIzfGVufDB8fDB8fHww",
-      "requiredDays": 3,
-      "flightCost": "12万円〜20万円"
+      "requiredDays": "4~5",
+      "flightCost": "10~16万円"
     },
     {
       "id": "spain-madrid",
@@ -564,11 +564,11 @@
       "scores": { "safety": 3, "cost": 3 },
       "description": "スペインの首都。美術館とナイトライフが有名で、タパス文化が楽しい。",
       "tips": ["プラド美術館", "レティーロ公園", "タパス巡り"],
-      "bestTimeToVisit": "3月〜5月、9月〜11月",
+      "bestTimeToVisit": "4月~6月、9月~10月",
       "visaRequired": false,
       "imageUrl": "https://images.unsplash.com/photo-1539037116277-4db20889f2d4?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8bWFkcmlkfGVufDB8fDB8fHww",
-      "requiredDays": 3,
-      "flightCost": "12万円〜20万円"
+      "requiredDays": "3~4",
+      "flightCost": "9~15万円"
     },
     {
       "id": "portugal-porto",
@@ -579,11 +579,11 @@
       "scores": { "safety": 4, "cost": 3 },
       "description": "ポートワインの産地。美しい川沿いの街並みと歴史的建造物が魅力。",
       "tips": ["ポートワイン試飲", "ドウロ川クルーズ", "リベイラ地区散策"],
-      "bestTimeToVisit": "3月〜10月",
+      "bestTimeToVisit": "4月~6月、9月~10月",
       "visaRequired": false,
       "imageUrl": "https://images.unsplash.com/photo-1555881400-74d7acaacd8b?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8JUUzJTgzJTlEJUUzJTgzJUFCJUUzJTgzJTg4fGVufDB8fDB8fHww",
-      "requiredDays": 3,
-      "flightCost": "12万円〜20万円"
+      "requiredDays": "3~4",
+      "flightCost": "9~15万円"
     },
     {
       "id": "hungary-budapest",
@@ -594,10 +594,10 @@
       "scores": { "safety": 4, "cost": 4 },
       "description": "ドナウ川の真珠。温泉と歴史的建造物が美しい中欧の古都。",
       "tips": ["セチェーニ温泉", "国会議事堂見学", "ドナウ川クルーズ"],
-      "bestTimeToVisit": "5月〜10月",
+      "bestTimeToVisit": "4月~6月、9月~10月",
       "visaRequired": false,
       "imageUrl": "https://images.unsplash.com/photo-1616432902940-b7a1acbc60b3?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8JUUzJTgzJTk2JUUzJTgzJTgwJUUzJTgzJTlBJUUzJTgyJUI5JUUzJTgzJTg4fGVufDB8fDB8fHww",
-      "requiredDays": 3,
+      "requiredDays": "3~4",
       "flightCost": "12万円〜20万円"
     },
     {
@@ -609,11 +609,11 @@
       "scores": { "safety": 5, "cost": 1 },
       "description": "バイエルン州の州都。オクトーバーフェストとビール文化が有名。",
       "tips": ["マリエンプラッツ", "イングリッシュガーデン", "ビアホール体験"],
-      "bestTimeToVisit": "5月〜9月",
+      "bestTimeToVisit": "5月~6月、9月~10月",
       "visaRequired": false,
       "imageUrl": "https://images.unsplash.com/photo-1595867818082-083862f3d630?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8bXVuaWNofGVufDB8fDB8fHww",
-      "requiredDays": 3,
-      "flightCost": "12万円〜20万円"
+      "requiredDays": "3~4",
+      "flightCost": "9~14万円"
     },
     {
       "id": "croatia-zagreb",
@@ -624,10 +624,10 @@
       "scores": { "safety": 4, "cost": 3 },
       "description": "クロアチアの首都。中世の街並みとモダンな文化が融合した魅力的な街。",
       "tips": ["上町地区散策", "ドラムリャ市場", "聖マルコ教会"],
-      "bestTimeToVisit": "5月〜9月",
+      "bestTimeToVisit": "5月~9月",
       "visaRequired": false,
       "imageUrl": "https://images.unsplash.com/photo-1563708848350-2b7f37174b94?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8JUUzJTgyJUI2JUUzJTgyJUIwJUUzJTgzJUFDJUUzJTgzJTk2fGVufDB8fDB8fHww",
-      "requiredDays": 3,
+      "requiredDays": "2~3",
       "flightCost": "13万円〜21万円"
     },
     {
@@ -639,11 +639,11 @@
       "scores": { "safety": 4, "cost": 2 },
       "description": "アドリア海の真珠。中世の城壁に囲まれた美しい世界遺産都市。",
       "tips": ["城壁散策", "ロクルム島", "アドリア海クルーズ"],
-      "bestTimeToVisit": "5月〜10月",
+      "bestTimeToVisit": "5月~6月、9月~10月",
       "visaRequired": false,
       "imageUrl": "https://images.unsplash.com/photo-1589472501747-1660aeed4d80?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8JUUzJTgzJTg5JUUzJTgzJTk2JUUzJTgzJUFEJUUzJTgzJTk2JUUzJTgzJThCJUUzJTgyJUFGfGVufDB8fDB8fHww",
-      "requiredDays": 3,
-      "flightCost": "13万円〜21万円"
+      "requiredDays": "3~4",
+      "flightCost": "9~14万円"
     },
     {
       "id": "iceland-reykjavik",
@@ -654,11 +654,11 @@
       "scores": { "safety": 4, "cost": 1 },
       "description": "北欧の島国。オーロラ、温泉、火山など自然の驚異が満載。",
       "tips": ["ブルーラグーン", "オーロラ観測", "ゴールデンサークル"],
-      "bestTimeToVisit": "6月〜8月",
+      "bestTimeToVisit": "6月~8月",
       "visaRequired": false,
       "imageUrl": "https://images.unsplash.com/photo-1606130503037-6a8ef67c9d2d?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fCVFMyU4MyVBQyVFMyU4MiVBNCVFMyU4MiVBRCVFMyU4MyVBMyVFMyU4MyU5MyVFMyU4MiVBRnxlbnwwfHwwfHx8MA%3D%3D",
-      "requiredDays": 3,
-      "flightCost": "18万円〜28万円"
+      "requiredDays": "2~3",
+      "flightCost": "13~22万円"
     },
     {
       "id": "uk-edinburgh",
@@ -669,11 +669,11 @@
       "scores": { "safety": 4, "cost": 2 },
       "description": "スコットランドの首都。中世の街並みとエディンバラ城が美しい。",
       "tips": ["エディンバラ城", "ロイヤルマイル散策", "スコッチウイスキー試飲"],
-      "bestTimeToVisit": "6月〜8月",
+      "bestTimeToVisit": "5月~9月",
       "visaRequired": false,
       "imageUrl": "https://plus.unsplash.com/premium_photo-1714573189973-018546b10078?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTN8fCVFMyU4MiVBOCVFMyU4MyU4NyVFMyU4MiVBMyVFMyU4MyVCMyVFMyU4MyU5MCVFMyU4MyVBOXxlbnwwfHwwfHx8MA%3D%3D",
-      "requiredDays": 3,
-      "flightCost": "12万円〜20万円"
+      "requiredDays": "3~4",
+      "flightCost": "10~16万円"
     },
     {
       "id": "france-nice",
@@ -684,11 +684,11 @@
       "scores": { "safety": 3, "cost": 2 },
       "description": "コート・ダジュールの中心地。美しいビーチと地中海の景色が魅力。",
       "tips": ["プロムナード・デ・ザングレ", "旧市街散策", "地中海料理を楽しむ"],
-      "bestTimeToVisit": "5月〜9月",
+      "bestTimeToVisit": "5月~6月、9月~10月",
       "visaRequired": false,
       "imageUrl": "https://images.unsplash.com/photo-1643914729809-4aa59fdc4c17?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8JUUzJTgzJThCJUUzJTgzJUJDJUUzJTgyJUI5fGVufDB8fDB8fHww",
-      "requiredDays": 3,
-      "flightCost": "12万円〜20万円"
+      "requiredDays": "2~3",
+      "flightCost": "11~17万円"
     },
     {
       "id": "usa-newyork",
@@ -699,11 +699,11 @@
       "scores": { "safety": 2, "cost": 1 },
       "description": "世界の中心都市。自由の女神、タイムズスクエア、ブロードウェイが有名。",
       "tips": ["自由の女神", "セントラルパーク", "ブロードウェイミュージカル"],
-      "bestTimeToVisit": "4月〜6月、9月〜11月",
+      "bestTimeToVisit": "4月~6月、9月~10月",
       "visaRequired": true,
       "imageUrl": "https://images.unsplash.com/photo-1605617697069-959ec9dfc9de?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NjN8fCVFMyU4MyU4QiVFMyU4MyVBNSVFMyU4MyVCQyVFMyU4MyVBOCVFMyU4MyVCQyVFMyU4MiVBRnxlbnwwfHwwfHx8MA%3D%3D",
-      "requiredDays": 3,
-      "flightCost": "15万円〜25万円"
+      "requiredDays": "5~6",
+      "flightCost": "18~30万円"
     },
     {
       "id": "usa-boston",
@@ -714,10 +714,10 @@
       "scores": { "safety": 3, "cost": 1 },
       "description": "アメリカの歴史の街。ハーバード大学とMITがあり、学術都市としても有名。",
       "tips": ["フリーダムトレイル", "ハーバード大学見学", "ボストン美術館"],
-      "bestTimeToVisit": "6月〜10月",
+      "bestTimeToVisit": "5月~6月、9月~10月",
       "visaRequired": true,
       "imageUrl": "https://images.unsplash.com/photo-1565127803082-69dd82351360?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8JUUzJTgzJTlDJUUzJTgyJUI5JUUzJTgzJTg4JUUzJTgzJUIzfGVufDB8fDB8fHww",
-      "requiredDays": 3,
+      "requiredDays": "3~4",
       "flightCost": "15万円〜25万円"
     },
     {
@@ -729,11 +729,11 @@
       "scores": { "safety": 2, "cost": 1 },
       "description": "パシフィックノースウェストの中心地。コーヒー文化とテクノロジー企業が集まる。",
       "tips": ["スペースニードル", "パイクプレイスマーケット", "スターバックス本店"],
-      "bestTimeToVisit": "6月〜9月",
+      "bestTimeToVisit": "6月~9月",
       "visaRequired": true,
       "imageUrl": "https://images.unsplash.com/photo-1549092273-8b23dde8ac2b?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fCVFMyU4MiVCNyVFMyU4MiVBMiVFMyU4MyU4OCVFMyU4MyVBQnxlbnwwfHwwfHx8MA%3D%3D",
-      "requiredDays": 3,
-      "flightCost": "15万円〜25万円"
+      "requiredDays": "3~4",
+      "flightCost": "17~28万円"
     },
     {
       "id": "usa-portland",
@@ -744,11 +744,11 @@
       "scores": { "safety": 2, "cost": 2 },
       "description": "オレゴン州の最大都市。フードカルチャーとアートが豊富で、環境意識が高い。",
       "tips": ["パウエルズ・シティ・オブ・ブックス", "フードカート巡り", "ワインカントリー"],
-      "bestTimeToVisit": "6月〜9月",
+      "bestTimeToVisit": "6月~9月",
       "visaRequired": true,
       "imageUrl": "https://images.unsplash.com/photo-1635209896150-ef275dbd52a2?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8JUUzJTgzJTlEJUUzJTgzJUFCJUUzJTgzJTg4fGVufDB8fDB8fHww",
-      "requiredDays": 3,
-      "flightCost": "15万円〜25万円"
+      "requiredDays": "2~3",
+      "flightCost": "10~18万円"
     },
     {
       "id": "usa-sanfrancisco",
@@ -759,11 +759,11 @@
       "scores": { "safety": 1, "cost": 1 },
       "description": "シリコンバレーの中心地。ゴールデンゲートブリッジとケーブルカーが有名。",
       "tips": ["ゴールデンゲートブリッジ", "アルカトラズ島", "フィッシャーマンズワーフ"],
-      "bestTimeToVisit": "9月〜11月",
+      "bestTimeToVisit": "9月~11月",
       "visaRequired": true,
       "imageUrl": "https://images.unsplash.com/photo-1500111709600-7761aa8216c7?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fCVFMyU4MiVCNSVFMyU4MyVCMyVFMyU4MyU5NSVFMyU4MyVBOSVFMyU4MyVCMyVFMyU4MiVCNyVFMyU4MiVCOSVFMyU4MiVCM3xlbnwwfHwwfHx8MA%3D%3D",
-      "requiredDays": 3,
-      "flightCost": "15万円〜25万円"
+      "requiredDays": "4~5",
+      "flightCost": "10~18万円"
     },
     {
       "id": "canada-montreal",
@@ -774,11 +774,11 @@
       "scores": { "safety": 4, "cost": 2 },
       "description": "ケベック州の最大都市。フランス文化と英語文化が融合した魅力的な街。",
       "tips": ["ノートルダム大聖堂", "オールドモントリオール", "プーティン（料理）"],
-      "bestTimeToVisit": "6月〜9月",
+      "bestTimeToVisit": "5月~6月、9月~10月",
       "visaRequired": false,
       "imageUrl": "https://images.unsplash.com/photo-1470181942237-78ce33fec141?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8JUUzJTgzJUEyJUUzJTgzJUIzJUUzJTgzJTg4JUUzJTgzJUFBJUUzJTgyJUFBJUUzJTgzJUJDJUUzJTgzJUFCfGVufDB8fDB8fHww",
-      "requiredDays": 3,
-      "flightCost": "15万円〜25万円"
+      "requiredDays": "3~4",
+      "flightCost": "14~24万円"
     },
     {
       "id": "canada-toronto",
@@ -789,11 +789,11 @@
       "scores": { "safety": 3, "cost": 1 },
       "description": "カナダ最大の都市。多文化都市で、CNタワーとナイアガラの滝が有名。",
       "tips": ["CNタワー", "ロイヤルオンタリオ博物館", "ナイアガラの滝"],
-      "bestTimeToVisit": "6月〜9月",
+      "bestTimeToVisit": "5月~6月、9月~10月",
       "visaRequired": false,
       "imageUrl": "https://images.unsplash.com/photo-1542704792-e30dac463c90?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fCVFMyU4MyU4OCVFMyU4MyVBRCVFMyU4MyVCMyVFMyU4MyU4OHxlbnwwfHwwfHx8MA%3D%3D",
-      "requiredDays": 3,
-      "flightCost": "15万円〜25万円"
+      "requiredDays": "3~4",
+      "flightCost": "14~24万円"
     },
     {
       "id": "mexico-mexicocity",
@@ -804,11 +804,11 @@
       "scores": { "safety": 1, "cost": 4 },
       "description": "メキシコの首都。アステカ文明の遺跡とコロニアル建築が美しい。",
       "tips": ["テオティワカン遺跡", "ソカロ広場", "メキシコ料理を楽しむ"],
-      "bestTimeToVisit": "11月〜4月",
+      "bestTimeToVisit": "3月~5月",
       "visaRequired": false,
       "imageUrl": "https://images.unsplash.com/photo-1585464231875-d9ef1f5ad396?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8JUUzJTgzJUExJUUzJTgyJUFEJUUzJTgyJUI3JUUzJTgyJUIzJUUzJTgyJUI3JUUzJTgzJTg2JUUzJTgyJUEzfGVufDB8fDB8fHww",
-      "requiredDays": 3,
-      "flightCost": "14万円〜24万円"
+      "requiredDays": "4~5",
+      "flightCost": "13~24万円"
     },
     {
       "id": "mexico-guanajuato",
@@ -819,11 +819,11 @@
       "scores": { "safety": 1, "cost": 5 },
       "description": "世界遺産の美しいコロニアル都市。カラフルな建物と地下トンネルが有名。",
       "tips": ["カラフルな街並み散策", "地下トンネル見学", "セルバンティーノ祭り"],
-      "bestTimeToVisit": "11月〜4月",
+      "bestTimeToVisit": "10月~3月",
       "visaRequired": false,
       "imageUrl": "https://images.unsplash.com/photo-1585975983978-457f5cbc7dab?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8JUUzJTgyJUIwJUUzJTgyJUEyJUUzJTgzJThBJUUzJTgzJTk1JUUzJTgyJUExJUUzJTgzJTg4fGVufDB8fDB8fHww",
-      "requiredDays": 3,
-      "flightCost": "14万円〜24万円"
+      "requiredDays": "3~4",
+      "flightCost": "14~26万円"
     },
     {
       "id": "australia-sydney",
@@ -834,11 +834,11 @@
       "scores": { "safety": 4, "cost": 1 },
       "description": "オーストラリア最大の都市。世界的に有名なオペラハウスや美しいビーチがあり、初めての一人旅にも安心な都市インフラが整っています。",
       "tips": ["シドニー・オペラハウス", "ボンダイビーチ", "シドニー・ハーバー・ブリッジ"],
-      "bestTimeToVisit": "9月〜11月",
+      "bestTimeToVisit": "9月~11月、3月~5月",
       "visaRequired": false,
       "imageUrl": "https://images.unsplash.com/photo-1506973035872-a4ec16b8e8d9?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8JUUzJTgyJUI3JUUzJTgzJTg5JUUzJTgzJThCJUUzJTgzJUJDfGVufDB8fDB8fHww",
-      "requiredDays": 3,
-      "flightCost": "10万円〜18万円"
+      "requiredDays": "4~5",
+      "flightCost": "8~14万円"
     },
     {
       "id": "newzealand-christchurch",
@@ -849,11 +849,11 @@
       "scores": { "safety": 3, "cost": 2 },
       "description": "南島最大の都市。イギリス風の街並みとガーデンシティとして知られる。",
       "tips": ["ボタニックガーデン", "トラム乗車", "カンタベリー博物館"],
-      "bestTimeToVisit": "12月〜2月",
+      "bestTimeToVisit": "12月~2月",
       "visaRequired": false,
       "imageUrl": "https://images.unsplash.com/photo-1704669324636-4b50020d0ce8?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8JUUzJTgyJUFGJUUzJTgzJUE5JUUzJTgyJUE0JUUzJTgyJUI5JUUzJTgzJTg4JUUzJTgzJTgxJUUzJTgzJUEzJUUzJTgzJUJDJUUzJTgzJTgxfGVufDB8fDB8fHww",
-      "requiredDays": 3,
-      "flightCost": "10万円〜18万円"
+      "requiredDays": "2~3",
+      "flightCost": "9~15万円"
     },
     {
       "id": "uae-dubai",
@@ -864,11 +864,11 @@
       "scores": { "safety": 5, "cost": 1 },
       "description": "中東の現代都市。ブルジュ・ハリファと砂漠のコントラストが魅力。",
       "tips": ["ブルジュ・ハリファ", "砂漠サファリ", "ドバイ・モール"],
-      "bestTimeToVisit": "11月〜3月",
+      "bestTimeToVisit": "11月~3月",
       "visaRequired": false,
       "imageUrl": "https://images.unsplash.com/photo-1580674684081-7617fbf3d745?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fCVFMyU4MyU4OSVFMyU4MyU5MCVFMyU4MiVBNHxlbnwwfHwwfHx8MA%3D%3D",
-      "requiredDays": 3,
-      "flightCost": "10万円〜18万円"
+      "requiredDays": "3~4",
+      "flightCost": "7~13万円"
     }
   ]
 } 

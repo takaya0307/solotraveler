@@ -13,7 +13,7 @@ export async function GET() {
     console.log(`Total countries in db.json: ${countriesData.countries.length}`);
     
     // countries配列のみ返す
-    return NextResponse.json(countriesData.countries);
+  return NextResponse.json(countriesData.countries);
   } catch (error) {
     console.error('Error reading db.json:', error);
     return NextResponse.json({ error: 'Failed to load countries data' }, { status: 500 });

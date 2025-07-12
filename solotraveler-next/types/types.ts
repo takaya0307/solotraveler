@@ -15,4 +15,5 @@ export interface Country {
   imageUrl: string;
   requiredDays: number; // 観光に必要な日数
   flightCost: string; // 航空券の料金目安
+  countryCode: string; // ISO 2文字国コード
 } 

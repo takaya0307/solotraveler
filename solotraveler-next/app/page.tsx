@@ -2,6 +2,7 @@
 import React, { useState, useMemo, useEffect, useRef } from "react";
 import { Country } from "../types/types";
 import Image from "next/image";
+import Link from "next/link";
 
 // 難易度の型
 type SortOption = "none" | "beginner" | "intermediate" | "advanced" | "expert" | "bestseason";
@@ -244,9 +245,51 @@ export default function Home() {
 
   return (
     <div className="App">
-      <header className="App-header">
+      <header className="App-header" style={{ position: 'relative' }}>
+        {/* 右上のはてなボタン */}
+        <Link
+          href="/about"
+          aria-label="このサイトについて"
+          style={{
+            position: 'absolute',
+            top: 18,
+            right: 18,
+            width: 44,
+            height: 44,
+            borderRadius: '50%',
+            background: 'rgba(255,255,255,0.85)',
+            color: '#2F4F2F',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            fontSize: '1.7rem',
+            fontWeight: 700,
+            boxShadow: '0 2px 8px rgba(0,0,0,0.08)',
+            border: 'none',
+            cursor: 'pointer',
+            transition: 'background 0.2s, color 0.2s',
+            zIndex: 10,
+          }}
+          onMouseOver={e => { e.currentTarget.style.background = '#2F4F2F'; e.currentTarget.style.color = '#fff'; }}
+          onMouseOut={e => { e.currentTarget.style.background = 'rgba(255,255,255,0.85)'; e.currentTarget.style.color = '#2F4F2F'; }}
+        >
+          ?
+        </Link>
         <h1>Solotraveler</h1>
         <div className="subtitle">世界を旅して、新しい自分に出会おう</div>
+        <div style={{
+          display: 'flex',
+          justifyContent: 'center',
+          alignItems: 'flex-start',
+          gap: '4rem',
+          margin: '2.5rem auto 0 auto',
+          maxWidth: 900,
+          width: '100%',
+          flexWrap: 'wrap',
+        }}>
+          </div>
+        
+      
       </header>
       <main>
         <div className="controls">
@@ -363,7 +406,7 @@ export default function Home() {
                         }}
                         style={{ margin: 0 }}
                       />
-                      <span style={{ color: '#f59e0b', fontSize: '1em' }}>{'★'.repeat(star)}</span>
+                      <span style={{ color: '#f59e0b', fontSize: '1em' }}>{'¥'.repeat(star)}</span>
                     </label>
                   ))}
                 </div>
@@ -558,7 +601,7 @@ export default function Home() {
                 <div className="card-content">
                   <div className="card-score-row">
                     <span>治安: <span className="score-stars">{'⭐'.repeat(country.scores.safety)}</span></span>
-                    <span>コスト: <span className="score-stars">{'⭐'.repeat(country.scores.cost)}</span></span>
+                    <span>コスト: <span className="score-stars">{'¥'.repeat(country.scores.cost)}</span></span>
                   </div>
                   <div className="card-best-season">ベストシーズン: {country.bestTimeToVisit}</div>
                   <div className="card-required-days">おすすめ滞在日数: {country.requiredDays}日</div>
@@ -658,7 +701,7 @@ export default function Home() {
                               </div>
                               <div className="modal-score-item">
                                 <span className="score-label">コスト</span>
-                                <span className="score-stars">{'⭐'.repeat(selectedCountry.scores.cost)}</span>
+                                <span className="score-stars">{'¥'.repeat(selectedCountry.scores.cost)}</span>
                               </div>
                             </div>
                           </div>
@@ -722,7 +765,7 @@ export default function Home() {
                       </div>
                       <div className="modal-score-item">
                         <span className="score-label">コスト</span>
-                        <span className="score-stars">{'⭐'.repeat(selectedCountry.scores.cost)}</span>
+                        <span className="score-stars">{'¥'.repeat(selectedCountry.scores.cost)}</span>
                       </div>
                     </div>
                   </div>
@@ -761,41 +804,64 @@ export default function Home() {
           <div className="footer-section">
             <h3>Solotraveler</h3>
             <p>一人旅の世界を発見しよう</p>
+            <div style={{ marginTop: '1rem' }}>
+              <a 
+                href="/about" 
+                style={{ 
+                  color: 'inherit', 
+                  textDecoration: 'none',
+                  borderBottom: '1px solid transparent',
+                  transition: 'border-color 0.2s',
+                  fontSize: '0.95rem'
+                }}
+                onMouseOver={(e) => e.currentTarget.style.borderBottomColor = 'currentColor'}
+                onMouseOut={(e) => e.currentTarget.style.borderBottomColor = 'transparent'}
+              >
+                → このサイトについて
+              </a>
+            </div>
           </div>
+          
           <div className="footer-section">
-            <h4>難易度について</h4>
+            <h4>難易度レベル</h4>
             <div className="difficulty-info">
               <div className="difficulty-item">
                 <span className="difficulty-badge level-beginner">初級</span>
-                <span>初めての一人旅に最適</span>
+                <span>初心者向け</span>
               </div>
               <div className="difficulty-item">
                 <span className="difficulty-badge level-intermediate">中級</span>
-                <span>少し経験のある方向け</span>
+                <span>経験者向け</span>
               </div>
               <div className="difficulty-item">
                 <span className="difficulty-badge level-advanced">上級</span>
-                <span>経験豊富な方向け</span>
+                <span>上級者向け</span>
               </div>
               <div className="difficulty-item">
                 <span className="difficulty-badge level-expert">超上級</span>
-                <span>上級者向けの挑戦的な旅</span>
+                <span>冒険者向け</span>
               </div>
             </div>
           </div>
+          
           <div className="footer-section">
-            <h4>評価基準</h4>
+            <h4>評価項目</h4>
             <ul className="evaluation-criteria">
               <li>
-                ⭐ 治安の良さ
+                <span style={{ marginRight: '0.5rem' }}>🛡️</span>
+                治安の良さ
                 <span className="info-icon" data-tooltip="治安スコアはNumbeoデータを参考"></span>
               </li>
-              <li>⭐ コストパフォーマンス</li>
+              <li>
+                <span style={{ marginRight: '0.5rem' }}>💰</span>
+                コストパフォーマンス
+              </li>
             </ul>
           </div>
         </div>
+        
         <div className="footer-bottom">
-          <p>&copy; 2024 Solotraveler. All rights reserved.</p>
+          <p>&copy; 2025 Solotraveler. All rights reserved.</p>
         </div>
       </footer>
     </div>

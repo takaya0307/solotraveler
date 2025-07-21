@@ -377,12 +377,6 @@ function PageComponent() {
                       cursor: 'pointer',
                       boxShadow: '0 1px 4px rgba(37,99,235,0.04)',
                     }}
-                    onMouseOver={e => {
-                      e.currentTarget.style.background = '#eaf1fb';
-                    }}
-                    onMouseOut={e => {
-                      e.currentTarget.style.background = '#fff';
-                    }}
                   >
                     都市一覧
                   </button>

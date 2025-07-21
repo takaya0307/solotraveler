@@ -2,8 +2,6 @@ import { NextRequest, NextResponse } from 'next/server';
 import fs from 'fs';
 import path from 'path';
 
-export const dynamic = 'force-dynamic';
-
 const DATA_PATH = path.join(process.cwd(), 'boards.json');
 
 function readBoards() {
@@ -16,7 +14,7 @@ function writeBoards(data: any) {
   fs.writeFileSync(DATA_PATH, JSON.stringify(data, null, 2), 'utf-8');
 }
 
-export async function GET(_: Request, { params }: { params: { cityId: string } }) {
+export async function GET(req: NextRequest, { params }: { params: { cityId: string } }) {
   const boards = readBoards();
   const cityId = params.cityId;
   const posts = boards[cityId] || [];

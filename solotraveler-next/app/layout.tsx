@@ -21,8 +21,8 @@ const dancingScript = Dancing_Script({
 });
 
 export const metadata: Metadata = {
-  title: "Solotraveler",
-  description: "一人旅の世界を発見しよう",
+  title: "ワーホリパス",
+  description: "ワーホリの行き先を決めよう",
 };
 
 export default function RootLayout({

@@ -1,4 +1,5 @@
 @import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Kiwi+Maru:wght@500;700&display=swap');
 
 :root {
   --background: #ffffff;
@@ -52,25 +53,73 @@ code {
   }
 }
 
-.App-header {
-  background: linear-gradient(135deg, #2F4F2F 0%, #556B2F 50%, #6B8E23 100%);
-  padding: 2rem 1.2rem;
-  color: white;
+.App-header, .stylish-header {
+  background: #fff;
+  color: #222;
+  border-bottom: none;
+  padding: 0.2rem 0 0.2rem 0;
+  min-height: 120px;
+  text-align: center;
+  border-radius: 0 0 16px 16px;
+  box-shadow: 0 2px 8px 0 rgba(37,99,235,0.06);
   position: relative;
-  overflow: hidden;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
 }
 
-.App-header h1, .App-header .subtitle {
+.header-title, .refined-header-title {
+  font-size: 2.7rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  margin: 0 0 0.5em 0;
+  font-family: 'Noto Sans JP', 'Helvetica Neue', Arial, sans-serif;
+}
+
+.refined-header-subtitle, .App-header .subtitle {
+  color: #3b4a6b !important;
+  font-size: 1.13rem;
+  font-weight: 500;
+  text-align: center;
+  margin: 0.7em auto 0.2em auto;
+  letter-spacing: 0.03em;
+  background: none;
+  opacity: 0.97;
+  font-style: normal;
+  text-shadow: 0 1px 4px rgba(37,99,235,0.06);
+  padding-bottom: 0;
+}
+
+/* 都市一覧表示時のヘッダーの高さを大きく */
+.city-list-header {
+  padding: 4.2rem 1.2rem !important;
+  min-height: 240px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  box-shadow: none !important;
+  border-bottom: none !important;
+}
+
+.App-header h1, .App-header .subtitle, .App-header .refined-header-title {
   text-align: center;
   margin-left: auto;
   margin-right: auto;
 }
 
+.App-header nav {
+  margin-left: auto;
+}
+
 @media (max-width: 768px) {
   .App-header {
     padding: 1.2rem 0.7rem;
+  }
+  
+  .city-list-header {
+    padding: 3rem 0.7rem !important;
+    min-height: 192px !important;
   }
 }
 
@@ -78,61 +127,57 @@ code {
   .App-header {
     padding: 0.8rem 0.4rem;
   }
+  
+  .city-list-header {
+    padding: 2.4rem 0.4rem !important;
+    min-height: 168px !important;
+  }
 }
 
 .App-header h1 {
   margin: 0;
-  font-size: 3.2rem;
-  font-family: var(--font-dancing-script), cursive;
+  font-size: 2.5rem;
+  font-family: 'Noto Sans JP', 'Helvetica Neue', Arial, sans-serif;
   font-weight: 700;
-  text-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
-  position: relative;
-  z-index: 1;
-  animation: fadeInUp 0.8s ease-out;
-  letter-spacing: 0.03em;
-  background: linear-gradient(45deg, #ffffff, #f8f8f8, #e8e8e8);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
+  color: #222;
   text-align: center;
+  letter-spacing: 0.03em;
+  background: none;
+  text-shadow: none;
+  filter: none;
+  -webkit-background-clip: unset;
+  -webkit-text-fill-color: unset;
+  background-clip: unset;
+  animation: none;
   margin-left: auto;
   margin-right: auto;
   margin-top: 1.5rem;
 }
 
-@media (max-width: 768px) {
-  .App-header h1 {
-    font-size: 2.4rem;
-  }
-}
-
-@media (max-width: 480px) {
-  .App-header h1 {
-    font-size: 2rem;
-  }
-}
-
-.App-header h1::before {
-  content: '✈️';
-  margin-right: 1rem;
-  font-size: 3rem;
-  animation: float 3s ease-in-out infinite;
+/* 都市一覧表示時のヘッダーテキストスタイル */
+.city-list-header h1,
+.city-list-header .refined-header-title {
+  color: #fff !important;
+  -webkit-text-fill-color: #fff !important;
+  background: none !important;
+  background-clip: unset !important;
+  -webkit-background-clip: unset !important;
+  border-radius: 0.7em;
+  padding: 0.25em 1.2em;
   display: inline-block;
-  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+  text-shadow: none !important;
+  filter: none !important;
 }
 
 @media (max-width: 768px) {
-  .App-header h1::before {
+  .App-header h1 {
     font-size: 2.4rem;
-    margin-right: 0.8rem;
   }
 }
 
 @media (max-width: 480px) {
-  .App-header h1::before {
+  .App-header h1 {
     font-size: 2rem;
-    margin-right: 0.6rem;
   }
 }
 
@@ -141,16 +186,27 @@ code {
   margin-top: 0.5rem;
   opacity: 0.95;
   font-weight: 400;
+  color: #888;
   position: relative;
   z-index: 1;
-  animation: fadeInUp 0.8s ease-out 0.2s both;
   letter-spacing: 0.03em;
-  font-style: italic;
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
-  background: linear-gradient(45deg, rgba(255, 255, 255, 0.95), rgba(255, 255, 255, 0.85));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  font-style: normal;
+  text-shadow: none;
+  background: none;
+  -webkit-background-clip: unset;
+  -webkit-text-fill-color: unset;
+  background-clip: unset;
+  animation: none;
+}
+
+/* 都市一覧表示時のサブタイトルスタイル */
+.city-list-header .subtitle {
+  color: #fff !important;
+  background: rgba(32,32,32,0.5);
+  border-radius: 0.6em;
+  padding: 0.15em 0.8em;
+  display: inline-block;
+  text-shadow: none !important;
 }
 
 @media (max-width: 768px) {
@@ -852,66 +908,74 @@ img.modal-image {
 }
 
 .country-card {
-  background: #fff;
-  border-radius: 20px;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.10);
+  background: white;
+  border-radius: 16px;
   overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.07), 0 1px 3px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
   display: flex;
   flex-direction: column;
-  align-items: stretch;
-  transition: box-shadow 0.3s, transform 0.3s;
-  transform: translateY(0);
-  cursor: pointer;
-  border: 1px solid rgba(0,0,0,0.04);
-  position: relative;
+  height: 100%;
+  min-height: 320px;
+  border: 1px solid rgba(0, 0, 0, 0.05);
 }
 
 .country-card:hover {
-  box-shadow: 0 24px 48px rgba(47,79,47,0.18);
-  transform: translateY(-10px) scale(1.03);
-  border-color: #2F4F2F33;
+  transform: translateY(-4px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15), 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-color: rgba(47, 79, 47, 0.2);
+}
+
+.country-card:hover .card-min-wage,
+.country-card:hover .card-age-range,
+.country-card:hover .card-stay-period,
+.country-card:hover .card-quota {
+  background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+  border-left-width: 4px;
+  transform: translateX(2px);
+  transition: all 0.2s ease;
 }
 
 .card-image {
-  width: 100%;
-  height: 180px;
+  height: 160px;
   background-size: cover;
   background-position: center;
+  background-repeat: no-repeat;
   position: relative;
   display: flex;
   align-items: flex-end;
-  justify-content: flex-start;
   overflow: hidden;
 }
 
 .card-image::after {
   content: '';
   position: absolute;
-  left: 0; right: 0; bottom: 0; top: 0;
-  background: linear-gradient(180deg,rgba(0,0,0,0.05) 40%,rgba(0,0,0,0.45) 100%);
-  z-index: 1;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 60%;
+  background: linear-gradient(to top, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.3) 50%, transparent 100%);
   pointer-events: none;
 }
 
 .card-title-overlay {
-  position: absolute;
-  left: 0; bottom: 0; z-index: 2;
+  position: relative;
+  z-index: 2;
+  padding: 1rem 1.2rem 1rem 1.2rem;
   width: 100%;
-  padding: 1.1rem 1.2rem 1.1rem 1.2rem;
   display: flex;
-  flex-direction: row;
-  align-items: flex-end;
-  justify-content: flex-start;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .card-title {
-  font-size: 1.4rem;
+  color: white;
+  font-size: 1.3rem;
   font-weight: 700;
-  color: #fff;
   margin: 0;
-  text-shadow: 0 2px 8px rgba(0,0,0,0.25);
-  letter-spacing: -0.02em;
-  pointer-events: auto;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+  line-height: 1.2;
 }
 
 .card-difficulty-badge {
@@ -936,11 +1000,115 @@ img.modal-image {
 .card-difficulty-badge.level-expert { background: #7c3aed; border-color: #7c3aed; }
 
 .card-content {
-  padding: 1rem 0.8rem 0.8rem 0.8rem;
+  padding: 1rem 1.2rem 1.2rem 1.2rem;
+  background: white;
+  border-radius: 0 0 16px 16px;
+  flex: 1;
   display: flex;
   flex-direction: column;
+  gap: 0.8rem;
+  min-height: 0;
+}
+
+.card-min-wage, .card-age-range, .card-stay-period, .card-quota {
+  flex-shrink: 0;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+.card-min-wage {
+  font-size: 0.95em;
+  color: #2c3e50;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.4rem 0.6rem;
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  border-radius: 6px;
+  border-left: 3px solid #28a745;
+}
+
+.card-min-wage::before {
+  content: '💰';
+  font-size: 1.1em;
+}
+
+.card-age-range {
+  font-size: 0.95em;
+  color: #2c3e50;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.4rem 0.6rem;
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  border-radius: 6px;
+  border-left: 3px solid #ff9800;
+}
+
+.card-age-range::before {
+  content: '🎂';
+  font-size: 1.1em;
+}
+
+.card-stay-period {
+  font-size: 0.95em;
+  color: #2c3e50;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.4rem 0.6rem;
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  border-radius: 6px;
+  border-left: 3px solid #03a9f4;
+}
+
+.card-stay-period::before {
+  content: '⏳';
+  font-size: 1.1em;
+}
+
+.card-visa-info {
+  font-size: 0.9em;
+  color: #495057;
+  display: flex;
   align-items: flex-start;
-  gap: 0.7rem;
+  gap: 0.5rem;
+  padding: 0.4rem 0.6rem;
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  border-radius: 6px;
+  border-left: 3px solid #007bff;
+  line-height: 1.4;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  hyphens: auto;
+}
+
+.card-visa-info::before {
+  content: '📋';
+  font-size: 1.1em;
+  flex-shrink: 0;
+  margin-top: 0.1em;
+}
+
+.card-quota {
+  font-size: 0.9em;
+  color: #495057;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.4rem 0.6rem;
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  border-radius: 6px;
+  border-left: 3px solid #6f42c1;
+  font-weight: 600;
+}
+
+.card-quota::before {
+  content: '👥';
+  font-size: 1.1em;
 }
 
 .card-country {
@@ -994,28 +1162,53 @@ img.modal-image {
 
 @media (max-width: 768px) {
   .card-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1rem;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.2rem;
   }
   .card-image { height: 120px; }
   .card-title { font-size: 1.2rem; }
-  .card-content { padding: 0.8rem 0.6rem 0.6rem 0.6rem; }
-  .card-country { font-size: 0.95rem; }
-  .card-score-row { font-size: 0.9rem; gap: 0.8rem; }
-  .card-best-season, .card-required-days, .card-flight-cost { font-size: 0.85rem; }
+  .card-content { 
+    padding: 0.8rem 1rem 1rem 1rem; 
+    gap: 0.6rem;
+  }
+  .card-min-wage, .card-age-range, .card-stay-period, .card-quota {
+    font-size: 0.85em;
+    padding: 0.3rem 0.5rem;
+    line-height: 1.3;
+  }
+  .card-min-wage::before, .card-age-range::before, .card-stay-period::before, .card-quota::before {
+    font-size: 1em;
+  }
+  .country-card {
+    min-height: 280px;
+  }
 }
 
 @media (max-width: 600px) {
   .card-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
     gap: 1rem;
   }
-  .country-card { border-radius: 14px; }
+  .country-card { 
+    border-radius: 14px; 
+    min-height: 260px;
+  }
   .card-image { height: 90px; }
-  .card-content { padding: 1rem 0.8rem 0.8rem 0.8rem; }
+  .card-content { 
+    padding: 0.7rem 0.8rem 0.8rem 0.8rem; 
+    gap: 0.5rem;
+  }
   .card-title { font-size: 1.1rem; }
   .card-title-overlay { padding: 0.8rem 1rem 0.8rem 1rem; }
   .card-difficulty-badge { font-size: 0.8rem; padding: 0.2em 0.7em; }
+  .card-min-wage, .card-age-range, .card-stay-period, .card-quota {
+    font-size: 0.8em;
+    padding: 0.25rem 0.4rem;
+    line-height: 1.25;
+  }
+  .card-min-wage::before, .card-age-range::before, .card-stay-period::before, .card-quota::before {
+    font-size: 0.9em;
+  }
   .modal-score-grid {
     grid-template-columns: 1fr;
     gap: 1rem;
@@ -1040,28 +1233,42 @@ img.modal-image {
 
 @media (max-width: 480px) {
   .card-grid {
+    grid-template-columns: 1fr;
     gap: 0.8rem;
-    margin: 1.5rem 0;
   }
   .card-image { height: 80px; }
-  .card-content { padding: 0.7rem 0.6rem 0.6rem 0.6rem; }
+  .card-content { 
+    padding: 0.6rem 0.7rem 0.7rem 0.7rem; 
+    gap: 0.4rem;
+  }
   .card-title { font-size: 1rem; }
   .card-title-overlay { padding: 0.6rem 0.8rem 0.6rem 0.8rem; }
   .card-country { font-size: 0.9rem; }
   .card-score-row { font-size: 0.85rem; gap: 0.6rem; }
   .card-best-season, .card-required-days, .card-flight-cost { font-size: 0.8rem; }
   .card-difficulty-badge { font-size: 0.75rem; padding: 0.15em 0.6em; margin-left: 0.8em; }
+  .card-min-wage, .card-age-range, .card-stay-period, .card-quota {
+    font-size: 0.75em;
+    padding: 0.2rem 0.3rem;
+    line-height: 1.3;
+  }
+  .card-min-wage::before, .card-age-range::before, .card-stay-period::before, .card-quota::before {
+    font-size: 0.85em;
+  }
+  .country-card {
+    min-height: 240px;
+  }
 }
 
 /* フッタースタイル */
 .App-footer {
-  background: linear-gradient(135deg, #2F4F2F 0%, #556B2F 50%, #6B8E23 100%);
-  color: white;
-  margin-top: 4rem;
-  padding: 4rem 0 2rem 0;
-  position: relative;
-  overflow: hidden;
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  border-top: 1.5px solid #e5eaf3;
+  background: #fff;
+  color: #888;
+  padding: 2.2rem 0 1.2rem 0;
+  text-align: center;
+  font-size: 1.08rem;
+  margin-top: 3rem;
 }
 
 .App-footer::before {
@@ -1078,14 +1285,11 @@ img.modal-image {
 }
 
 .footer-content {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 2rem;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 2.5rem;
-  position: relative;
-  z-index: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5em;
+  flex-wrap: wrap;
 }
 
 .footer-section h3 {
@@ -1714,4 +1918,328 @@ img.modal-image {
     padding: 0.2rem 0;
     gap: 0.5em;
   }
+}
+
+/* 左下固定の戻るボタン */
+.fixed-back-button {
+  position: fixed;
+  left: 2.2rem;
+  bottom: 2.2rem;
+  z-index: 1001;
+  background: rgba(47, 79, 47, 0.85);
+  color: #fff;
+  border: none;
+  border-radius: 50px;
+  padding: 1.1em 2.1em;
+  font-size: 1.25rem;
+  font-weight: 600;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.18);
+  cursor: pointer;
+  transition: background 0.2s, box-shadow 0.2s, transform 0.1s;
+  opacity: 0.96;
+  outline: none;
+}
+.fixed-back-button:hover, .fixed-back-button:focus {
+  background: rgba(47, 79, 47, 1);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.22);
+  opacity: 1;
+  transform: scale(1.04);
+}
+@media (max-width: 768px) {
+  .fixed-back-button {
+    left: 1rem;
+    bottom: 1rem;
+    font-size: 1.05rem;
+    padding: 0.9em 1.5em;
+  }
+}
+@media (max-width: 480px) {
+  .fixed-back-button {
+    left: 0.5rem;
+    bottom: 0.5rem;
+    font-size: 0.98rem;
+    padding: 0.7em 1.1em;
+  }
+}
+
+/* refined header layout for better balance */
+.refined-header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  min-height: 64px;
+  padding: 0 1.2rem;
+  box-sizing: border-box;
+  position: relative;
+  background: none !important;
+  color: #2563eb !important;
+}
+.refined-header-left {
+  flex: 0 0 80px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  height: 100%;
+}
+.refined-header-logo {
+  font-size: 2.1rem;
+  filter: drop-shadow(0 2px 4px rgba(0,0,0,0.18));
+  user-select: none;
+  display: flex;
+  align-items: center;
+  height: 100%;
+  margin-left: 0.2rem;
+}
+.refined-header-center {
+  flex: 1 1 0%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  min-width: 0;
+}
+.refined-header-title {
+  color: #2563eb !important;
+  font-weight: 800;
+  font-size: 2.7rem;
+  text-align: center;
+  letter-spacing: 0.04em;
+  margin: 0 0 0.2em 0;
+  background: none;
+  -webkit-text-stroke: 0;
+  text-shadow: 0 2px 8px rgba(37,99,235,0.08);
+  font-family: 'Kiwi Maru', 'Noto Sans JP', sans-serif !important;
+}
+
+.refined-header-subtitle, .App-header .subtitle {
+  color: #3b4a6b !important;
+  font-size: 1.13rem;
+  font-weight: 500;
+  text-align: center;
+  margin: 0.7em auto 0.2em auto;
+  letter-spacing: 0.03em;
+  background: none;
+  opacity: 0.97;
+  font-style: normal;
+  text-shadow: 0 1px 4px rgba(37,99,235,0.06);
+  padding-bottom: 0;
+}
+
+/* レスポンシブ対応 */
+@media (max-width: 768px) {
+  .city-card-title-overlay {
+    padding: 1rem 1.2rem 1.2rem 1.2rem;
+  }
+  
+  .city-card-title {
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .city-card-title-overlay {
+    padding: 0.8rem 1rem 1rem 1rem;
+  }
+  
+  .city-card-title {
+    font-size: 1.1rem;
+  }
+}
+
+/* レスポンシブ対応 */
+@media (max-width: 768px) {
+  .city-card {
+    min-height: 260px;
+  }
+  
+  .city-card-image {
+    height: 140px;
+  }
+  
+  .city-card-content {
+    padding: 1.2rem;
+  }
+  
+  .city-card-description {
+    font-size: 0.9rem;
+    padding: 0.8rem;
+  }
+  
+
+}
+
+@media (max-width: 480px) {
+  .city-card {
+    min-height: 240px;
+  }
+  
+  .city-card-image {
+    height: 120px;
+  }
+  
+  .city-card-content {
+    padding: 1rem;
+  }
+  
+  .city-card-description {
+    font-size: 0.85rem;
+    padding: 0.7rem;
+    margin-bottom: 0.8rem;
+  }
+  
+
+}
+
+/* 都市カード用グリッド */
+.city-card-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  margin: 2rem 0;
+  justify-content: start;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+@media (max-width: 900px) {
+  .city-card-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.2rem;
+  }
+}
+@media (max-width: 600px) {
+  .city-card-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+}
+.city-card {
+  background: #fff;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  display: flex;
+  flex-direction: column;
+  min-height: 320px;
+  height: 100%;
+  transition: box-shadow 0.2s, transform 0.2s;
+  border: 1px solid #e5eaf3;
+}
+.city-card:hover {
+  box-shadow: 0 8px 24px rgba(37,99,235,0.13);
+  transform: translateY(-3px) scale(1.02);
+}
+.city-card-image {
+  height: 160px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  overflow: hidden;
+}
+.city-card-title-overlay {
+  position: relative;
+  z-index: 2;
+  padding: 1rem 1.2rem 1rem 1.2rem;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  background: linear-gradient(0deg, rgba(0,0,0,0.55) 0%, rgba(0,0,0,0.12) 100%);
+  border-radius: 0 0 12px 12px;
+}
+.city-card-title {
+  color: #fff;
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin: 0;
+  text-shadow: 0 2px 6px rgba(0,0,0,0.32);
+  line-height: 1.2;
+}
+.city-card-content {
+  padding: 1.1rem 1.3rem 1.3rem 1.3rem;
+  background: #fff;
+  border-radius: 0 0 16px 16px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  min-height: 0;
+}
+.city-card-description {
+  font-size: 1rem;
+  color: #444;
+  margin-bottom: 0.7em;
+  line-height: 1.7;
+  min-height: 48px;
+  text-align: left;
+  padding-left: 2px;
+  padding-right: 2px;
+  letter-spacing: 0.01em;
+}
+@media (max-width: 600px) {
+  .city-card-description {
+    font-size: 0.92rem;
+    min-height: 36px;
+    padding-left: 1px;
+    padding-right: 1px;
+  }
+}
+@media (max-width: 480px) {
+  .city-card-description {
+    font-size: 0.85rem;
+    min-height: 24px;
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+.city-board-button {
+  margin-top: auto;
+  padding: 0.6em 1.4em;
+  background: linear-gradient(90deg, #3b82f6 0%, #06b6d4 100%);
+  color: #fff;
+  font-weight: 700;
+  border: none;
+  border-radius: 24px;
+  cursor: pointer;
+  font-size: 1.05rem;
+  box-shadow: 0 2px 8px rgba(59,130,246,0.08);
+  transition: background 0.2s, box-shadow 0.2s, transform 0.1s;
+}
+.city-board-button:hover {
+  background: linear-gradient(90deg, #2563eb 0%, #06b6d4 100%);
+  box-shadow: 0 4px 16px rgba(37,99,235,0.13);
+  transform: scale(1.04);
+}
+@media (max-width: 900px) {
+  .city-card-image { height: 120px; }
+  .city-card-title { font-size: 1.1rem; }
+}
+@media (max-width: 600px) {
+  .city-card { min-height: 220px; }
+  .city-card-image { height: 90px; }
+  .city-card-content { padding: 0.8rem 1rem 1rem 1rem; }
+  .city-card-title-overlay { padding: 0.7rem 1rem 0.7rem 1rem; }
+  .city-card-title { font-size: 1rem; }
+  .city-card-description { font-size: 0.92rem; min-height: 36px; }
+}
+@media (max-width: 480px) {
+  .city-card-grid { gap: 0.7rem; }
+  .city-card { min-height: 180px; }
+  .city-card-image { height: 70px; }
+  .city-card-content { padding: 0.6rem 0.7rem 0.7rem 0.7rem; }
+  .city-card-title-overlay { padding: 0.5rem 0.7rem 0.5rem 0.7rem; }
+  .city-card-title { font-size: 0.92rem; }
+  .city-card-description { font-size: 0.85rem; min-height: 24px; }
+}
+
+.travel-title {
+  font-family: 'Kiwi Maru', 'Noto Sans JP', sans-serif !important;
+  font-weight: 700;
+  letter-spacing: 0.04em;
 }

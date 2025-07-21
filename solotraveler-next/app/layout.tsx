@@ -17,7 +17,7 @@ const dancingScript = Dancing_Script({
 
 export const metadata: Metadata = {
   title: "ワーホリパス",
-  description: "ワーホリの行き先を決めよう",
+  description: "次はどこの国へ行こう？",
 };
 
 export default function RootLayout({

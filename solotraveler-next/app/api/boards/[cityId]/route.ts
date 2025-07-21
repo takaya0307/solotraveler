@@ -14,9 +14,9 @@ function writeBoards(data: any) {
   fs.writeFileSync(DATA_PATH, JSON.stringify(data, null, 2), 'utf-8');
 }
 
-export async function GET(request: Request, { params }: { params: { cityId: string } }) {
+export async function GET(request: Request, context: { params: { cityId: string } }) {
   const boards = readBoards();
-  const cityId = params.cityId;
+  const cityId = context.params.cityId;
   const posts = boards[cityId] || [];
   return NextResponse.json(posts);
 }

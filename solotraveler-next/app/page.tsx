@@ -313,7 +313,11 @@ function PageComponent() {
       <main>
         <div className="card-grid">
           {Array.isArray(countries) && countries.map((country) => (
-            <div className="country-card" key={country.id} style={{cursor: 'default'}}>
+            <div 
+              className="country-card" 
+              key={`${country.id}-${openAccordionCountryIds.includes(country.id)}`} 
+              style={{cursor: 'default'}}
+            >
                 <div className="card-image" style={{backgroundImage: `url('${country.imageUrl}')`}}>
                   <div className="card-title-overlay">
                     <div style={{ display: 'flex', alignItems: 'center', gap: '0.5em' }}>

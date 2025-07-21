@@ -1,5 +1,5 @@
 "use client";
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, Suspense } from "react";
 import { WorkingHolidayCountry, WorkingHolidayCity } from "../types/types";
 import Image from "next/image";
 import Link from "next/link";
@@ -172,7 +172,7 @@ function CityBoardModal({ city, countryId, onClose }: { city: WorkingHolidayCity
   );
 }
 
-export default function Home() {
+function PageComponent() {
   const [countries, setCountries] = useState<WorkingHolidayCountry[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
   const [selectedCountry, setSelectedCountry] = useState<WorkingHolidayCountry | null>(null);
@@ -459,5 +459,21 @@ export default function Home() {
         </div>
       </footer>
     </div>
+  );
+}
+
+export default function Home() {
+  return (
+    <Suspense fallback={
+      <div className="App">  
+        <main>
+          <div className="loading-container">
+            <p>データを読み込んでいます...</p>
+          </div>
+        </main>
+      </div>
+    }>
+      <PageComponent />
+    </Suspense>
   );
 }

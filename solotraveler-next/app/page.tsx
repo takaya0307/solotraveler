@@ -357,32 +357,7 @@ function PageComponent() {
                           : [...ids, country.id]
                       );
                     }}
-                    style={{
-                      flex: 1,
-                      borderRadius: 10,
-                      background: openAccordionCountryIds.includes(country.id) ? '#2563eb' : '#eaf1fb',
-                      color: '#222',
-                      fontWeight: 700,
-                      border: openAccordionCountryIds.includes(country.id) ? 'none' : '1.5px solid #d1d8e6',
-                      fontSize: 15.5,
-                      padding: '0.7em 0',
-                      minHeight: 44,
-                      transition: 'all 0.18s',
-                      cursor: 'pointer',
-                      boxShadow: openAccordionCountryIds.includes(country.id)
-                        ? '0 2px 8px rgba(37,99,235,0.10)'
-                        : '0 1px 4px rgba(37,99,235,0.04)',
-                    }}
-                    onMouseOver={e => {
-                      e.currentTarget.style.background = '#2563eb';
-                      e.currentTarget.style.color = '#fff';
-                    }}
-                    onMouseOut={e => {
-                      if (!openAccordionCountryIds.includes(country.id)) {
-                        e.currentTarget.style.background = '#eaf1fb';
-                        e.currentTarget.style.color = '#222';
-                      }
-                    }}
+                    className={`accordion-button ${openAccordionCountryIds.includes(country.id) ? 'active' : ''}`}
                   >
                     詳細情報
                   </button>

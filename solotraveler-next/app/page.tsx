@@ -297,38 +297,16 @@ export default function Home() {
   // 国一覧表示
   return (
     <div className="App">
-      <header className="App-header stylish-header" style={{display: 'flex', flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between'}}>
+      <header className="App-header stylish-header main-header">
         <img
           src="/header.png"
           alt="旅のイメージ"
-          style={{
-            display: 'block',
-            margin: '20px 0 0 20px',
-            width: '320px',
-            height: '70px',
-            objectFit: 'cover',
-            objectPosition: 'center',
-          }}
+          className="header-logo"
         />
-        <nav style={{
-          marginRight: '2.5vw',
-          height: '100%',
-          display: 'flex',
-          alignItems: 'center',
-        }}>
-          <a href="/about-workingholiday" style={{
-            fontSize: '0.98rem',
-            color: '#222',
-            fontWeight: 700,
-            textDecoration: 'none',
-            padding: '0.7em 1.3em',
-            borderRadius: '999px',
-            background: 'linear-gradient(90deg, #fafdff 0%, #eaf1fb 100%)',
-            boxShadow: '0 1px 4px rgba(37,99,235,0.06)',
-            transition: 'background 0.18s',
-            border: '1.5px solid #e5eaf3',
-            display: 'inline-block',
-          }}>ワーキングホリデー制度とは</a>
+        <nav className="header-nav">
+          <a href="/about-workingholiday" className="nav-link">
+            ワーキングホリデー制度とは
+          </a>
         </nav>
         <div className="header-gradient-bar" />
       </header>
@@ -383,7 +361,7 @@ export default function Home() {
                       flex: 1,
                       borderRadius: 10,
                       background: openAccordionCountryIds.includes(country.id) ? '#2563eb' : '#eaf1fb',
-                      color: openAccordionCountryIds.includes(country.id) ? '#fff' : '#2563eb',
+                      color: '#222',
                       fontWeight: 700,
                       border: openAccordionCountryIds.includes(country.id) ? 'none' : '1.5px solid #d1d8e6',
                       fontSize: 15.5,
@@ -402,7 +380,7 @@ export default function Home() {
                     onMouseOut={e => {
                       if (!openAccordionCountryIds.includes(country.id)) {
                         e.currentTarget.style.background = '#eaf1fb';
-                        e.currentTarget.style.color = '#2563eb';
+                        e.currentTarget.style.color = '#222';
                       }
                     }}
                   >
@@ -414,7 +392,7 @@ export default function Home() {
                       flex: 1,
                       borderRadius: 10,
                       background: '#fff',
-                      color: '#2563eb',
+                      color: '#222',
                       fontWeight: 700,
                       border: '1.5px solid #d1d8e6',
                       fontSize: 15.5,

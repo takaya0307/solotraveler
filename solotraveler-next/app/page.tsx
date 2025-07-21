@@ -351,11 +351,13 @@ function PageComponent() {
                 <div style={{ display: 'flex', gap: '1em', marginTop: '0.2em', marginBottom: '0.2em' }}>
                   <button
                     onClick={() => {
-                      setOpenAccordionCountryIds(ids =>
-                        ids.includes(country.id)
-                          ? ids.filter(id => id !== country.id)
-                          : [...ids, country.id]
-                      );
+                      setOpenAccordionCountryIds(prevIds => {
+                        if (prevIds.includes(country.id)) {
+                          return prevIds.filter(id => id !== country.id);
+                        } else {
+                          return [...prevIds, country.id];
+                        }
+                      });
                     }}
                     className={`accordion-button ${openAccordionCountryIds.includes(country.id) ? 'active' : ''}`}
                   >

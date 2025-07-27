@@ -273,14 +273,7 @@ function PageComponent() {
                     >
                       {city.description}
                     </div>
-                    <button
-                      className="city-board-button"
-                      style={{ background: '#bbb', cursor: 'not-allowed', opacity: 0.7 }}
-                      disabled
-                      title="近日公開予定"
-                    >
-                      掲示板（Coming Soon）
-                    </button>
+
                   </div>
                 </div>
               ))
@@ -306,6 +299,9 @@ function PageComponent() {
         <nav className="header-nav">
           <a href="/about-workingholiday" className="nav-link">
             ワーキングホリデー制度とは
+          </a>
+          <a href="/lp" className="nav-link" style={{ marginLeft: '1rem' }}>
+            コミュニティ
           </a>
         </nav>
         <div className="header-gradient-bar" />

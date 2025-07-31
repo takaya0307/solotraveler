@@ -126,7 +126,7 @@ export default function Legal() {
             <table style={{ width: '100%', borderCollapse: 'collapse' }}>
               <tbody>
                 <tr style={{ borderBottom: '1px solid #dee2e6' }}>
-                  <td style={{ padding: '1em 0', fontWeight: 600, color: '#333', width: '30%' }}>法人名</td>
+                  <td style={{ padding: '1em 0', fontWeight: 600, color: '#333', width: '30%' }}>サービス名</td>
                   <td style={{ padding: '1em 0', color: '#333' }}>ワーホリパス</td>
                 </tr>
                 <tr style={{ borderBottom: '1px solid #dee2e6' }}>

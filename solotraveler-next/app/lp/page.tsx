@@ -147,13 +147,15 @@ export default function LandingPage() {
               <p>ワーキングホリデーをより安心で楽しく</p>
             </div>
             <div className="footer-section">
-              <h4>特定商取引法に基づく表記</h4>
-              <p>事業者名: ワーホリパス</p>
-              <p>代表者: 森 貴哉</p>
-              <p>所在地、連絡先: 住所・電話番号は、請求があれば遅滞なく提供します</p>
-              <p>料金: 月額550円（税込）</p>
-              <p>支払方法: クレジットカード決済</p>
-              <p>退会方法: Discordサーバーからの退出</p>
+              <p style={{ marginTop: '1rem' }}>
+                <a href="/legal" style={{ 
+                  color: '#ff6b6b', 
+                  textDecoration: 'underline',
+                  fontWeight: 600
+                }}>
+                  特定商取引法に基づく表記
+                </a>
+              </p>
             </div>
           </div>
           <div className="footer-bottom">

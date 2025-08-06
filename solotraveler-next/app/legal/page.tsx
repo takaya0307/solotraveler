@@ -1,58 +1,29 @@
 "use client";
 import React from "react";
 import { useRouter } from "next/navigation";
+import Link from "next/link";
 
 export default function Legal() {
   const router = useRouter();
   return (
     <>
-      <header className="App-header stylish-header" style={{display: 'flex', flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between'}}>
-        <img
-          src="/header.png"
-          alt="旅のイメージ"
-          style={{
-            display: 'block',
-            margin: '20px 0 0 0',
-            width: '320px',
-            height: '70px',
-            objectFit: 'cover',
-            objectPosition: 'center',
-          }}
-        />
-        <nav style={{
-          marginRight: '2.5vw',
-          height: '100%',
-          display: 'flex',
-          alignItems: 'center',
-        }}>
-          <a href="/about-workingholiday" style={{
-            fontSize: '0.98rem',
-            color: '#222',
-            fontWeight: 700,
-            textDecoration: 'none',
-            padding: '0.7em 1.3em',
-            borderRadius: '999px',
-            background: 'linear-gradient(90deg, #fafdff 0%, #eaf1fb 100%)',
-            boxShadow: '0 1px 4px rgba(37,99,235,0.06)',
-            transition: 'background 0.18s',
-            border: '1.5px solid #e5eaf3',
-            display: 'inline-block',
-          }}>ワーキングホリデー制度とは</a>
-          <a href="/lp" style={{
-            fontSize: '0.98rem',
-            color: '#222',
-            fontWeight: 700,
-            textDecoration: 'none',
-            padding: '0.7em 1.3em',
-            borderRadius: '999px',
-            background: 'linear-gradient(90deg, #fafdff 0%, #eaf1fb 100%)',
-            boxShadow: '0 1px 4px rgba(37,99,235,0.06)',
-            transition: 'background 0.18s',
-            border: '1.5px solid #e5eaf3',
-            display: 'inline-block',
-            marginLeft: '1rem',
-          }}>コミュニティ</a>
-        </nav>
+      <header className="App-header stylish-header main-header">
+        <div className="header-container">
+          <div className="header-logo">
+            <Link href="/" style={{ textDecoration: 'none', color: 'inherit' }}>
+              <span className="logo-text">
+                <span className="logo-main">ワーホリ</span>
+                <span className="logo-sub">パス</span>
+              </span>
+              <span className="logo-subtitle">Working Holiday Portal</span>
+            </Link>
+          </div>
+          <nav className="header-nav">
+            <a href="/about-workingholiday" className="nav-link">
+              ワーキングホリデー制度とは
+            </a>
+          </nav>
+        </div>
         <div className="header-gradient-bar" />
       </header>
       <button

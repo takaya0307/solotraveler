@@ -25,7 +25,10 @@ export default function LandingPage() {
             現地の最新情報、住まい探し、仕事探しのコツを共有。<br />
             同じ都市の仲間とつながって、ワーホリ生活を充実させませんか？
           </p>
-          <button onClick={scrollToCTA} className="cta-button primary">
+          <button 
+            onClick={() => window.open('https://buy.stripe.com/5kQdR3dSd6dTd6V2rl93y00', '_blank')}
+            className="cta-button primary"
+          >
             今すぐ参加する
           </button>
           <p className="hero-note">
@@ -129,7 +132,10 @@ export default function LandingPage() {
           <h2>今すぐワーホリ仲間とつながる</h2>
           <p>一人で不安な海外生活も、仲間がいれば心強いもの。</p>
           <p>今なら最初の100人限定で3ヶ月間無料！</p>
-          <button className="cta-button primary large">
+          <button 
+            onClick={() => window.open('https://buy.stripe.com/5kQdR3dSd6dTd6V2rl93y00', '_blank')}
+            className="cta-button primary large"
+          >
             今すぐ参加する
           </button>
           <p className="cta-note">

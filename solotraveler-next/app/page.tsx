@@ -3,7 +3,7 @@ import React, { useState, useEffect, Suspense } from "react";
 import { WorkingHolidayCountry, WorkingHolidayCity } from "../types/types";
 import Image from "next/image";
 import Link from "next/link";
-import { useSearchParams } from "next/navigation";
+import { useSearchParams, useRouter } from "next/navigation";
 
 function CityBoardModal({ city, countryId, onClose }: { city: WorkingHolidayCity, countryId: string, onClose: () => void }) {
   const cityId = city.id;
@@ -173,6 +173,7 @@ function CityBoardModal({ city, countryId, onClose }: { city: WorkingHolidayCity
 }
 
 function PageComponent() {
+  const router = useRouter();
   const [countries, setCountries] = useState<WorkingHolidayCountry[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
   const [selectedCountry, setSelectedCountry] = useState<WorkingHolidayCountry | null>(null);
@@ -291,19 +292,22 @@ function PageComponent() {
   return (
     <div className="App">
       <header className="App-header stylish-header main-header">
-        <img
-          src="/header.png"
-          alt="旅のイメージ"
-          className="header-logo"
-        />
-        <nav className="header-nav">
-          <a href="/about-workingholiday" className="nav-link">
-            ワーキングホリデー制度とは
-          </a>
-          <a href="/lp" className="nav-link" style={{ marginLeft: '1rem' }}>
-            コミュニティ
-          </a>
-        </nav>
+        <div className="header-container">
+          <div className="header-logo">
+            <Link href="/" style={{ textDecoration: 'none', color: 'inherit' }}>
+              <span className="logo-text">
+                <span className="logo-main">ワーホリ</span>
+                <span className="logo-sub">パス</span>
+              </span>
+              <span className="logo-subtitle">Working Holiday Portal</span>
+            </Link>
+          </div>
+          <nav className="header-nav">
+            <a href="/about-workingholiday" className="nav-link">
+              ワーキングホリデー制度とは
+            </a>
+          </nav>
+        </div>
         <div className="header-gradient-bar" />
       </header>
       <main>
@@ -330,34 +334,23 @@ function PageComponent() {
               </div>
               <div className="card-content">
                 {/* 概要（summary）を表示。なければrecommendationや説明文を仮で表示 */}
-                <div
-                  className="country-summary"
-                  style={{
-                    background: 'linear-gradient(90deg, #fafdff 0%, #eaf1fb 100%)',
-                    borderRadius: 12,
-                    padding: '1.1em 1.3em',
-                    marginBottom: '1.1em',
-                    color: '#222',
-                    fontWeight: 500,
-                    fontSize: 15.5,
-                    lineHeight: 1.7,
-                    letterSpacing: '0.01em',
-                    boxShadow: '0 2px 8px rgba(37,99,235,0.06)',
-                    textAlign: 'left',
-                  }}
-                >
+                <div className="country-summary">
                   {country.summary || country.recommendation || 'ワーホリ協定国です。'}
                 </div>
                 <div style={{ display: 'flex', gap: '1em', marginTop: '0.2em', marginBottom: '0.2em' }}>
                   <button
                     onClick={() => {
-                      setOpenAccordionCountryIds(prevIds => {
-                        if (prevIds.includes(country.id)) {
-                          return prevIds.filter(id => id !== country.id);
-                        } else {
-                          return [...prevIds, country.id];
-                        }
-                      });
+                      if (country.id === 'australia' || country.id === 'canada' || country.id === 'newzealand' || country.id === 'uk' || country.id === 'ireland' || country.id === 'france' || country.id === 'germany' || country.id === 'spain' || country.id === 'italy' || country.id === 'portugal' || country.id === 'austria' || country.id === 'norway' || country.id === 'denmark' || country.id === 'poland' || country.id === 'czech') {
+                        router.push(`/countries/${country.id}`);
+                      } else {
+                        setOpenAccordionCountryIds(prevIds => {
+                          if (prevIds.includes(country.id)) {
+                            return prevIds.filter(id => id !== country.id);
+                          } else {
+                            return [...prevIds, country.id];
+                          }
+                        });
+                      }
                     }}
                     className={`accordion-button ${openAccordionCountryIds.includes(country.id) ? 'active' : ''}`}
                   >
@@ -367,17 +360,25 @@ function PageComponent() {
                     onClick={() => setSelectedCountry(country)}
                     style={{
                       flex: 1,
-                      borderRadius: 10,
-                      background: '#fff',
-                      color: '#222',
+                      borderRadius: 12,
+                      background: 'linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%)',
+                      color: '#fff',
                       fontWeight: 700,
-                      border: '1.5px solid #d1d8e6',
-                      fontSize: 15.5,
-                      padding: '0.7em 0',
-                      minHeight: 44,
-                      transition: 'all 0.18s',
+                      border: '2px solid #2563eb',
+                      fontSize: 15,
+                      padding: '0.8em 0',
+                      minHeight: 48,
+                      transition: 'all 0.2s ease',
                       cursor: 'pointer',
-                      boxShadow: '0 1px 4px rgba(37,99,235,0.04)',
+                      boxShadow: '0 4px 16px rgba(37,99,235,0.2)',
+                    }}
+                    onMouseOver={(e) => {
+                      e.currentTarget.style.transform = 'translateY(-1px)';
+                      e.currentTarget.style.boxShadow = '0 6px 20px rgba(37,99,235,0.3)';
+                    }}
+                    onMouseOut={(e) => {
+                      e.currentTarget.style.transform = 'translateY(0)';
+                      e.currentTarget.style.boxShadow = '0 4px 16px rgba(37,99,235,0.2)';
                     }}
                   >
                     都市一覧

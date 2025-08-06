@@ -6,9 +6,24 @@ export default function About() {
   return (
     <div className="App">
       {/* ヘッダー */}
-      <header className="App-header">
-        <h1>このサイトについて</h1>
-        <p className="subtitle">Solotraveler - 一人旅の新しい体験を</p>
+      <header className="App-header stylish-header main-header">
+        <div className="header-container">
+          <div className="header-logo">
+            <Link href="/" style={{ textDecoration: 'none', color: 'inherit' }}>
+              <span className="logo-text">
+                <span className="logo-main">ワーホリ</span>
+                <span className="logo-sub">パス</span>
+              </span>
+              <span className="logo-subtitle">Working Holiday Portal</span>
+            </Link>
+          </div>
+          <nav className="header-nav">
+            <a href="/about-workingholiday" className="nav-link">
+              ワーキングホリデー制度とは
+            </a>
+          </nav>
+        </div>
+        <div className="header-gradient-bar" />
       </header>
 
       <main style={{ padding: '2rem 4rem', maxWidth: 1000, margin: '0 auto' }}>

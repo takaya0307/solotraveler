@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useEffect } from "react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
 import ukData from "../../../db.json";
@@ -7,6 +7,17 @@ import ukData from "../../../db.json";
 export default function UKDetailPage() {
   const router = useRouter();
   const country = ukData.countries.find(c => c.id === "uk")!;
+
+  // ページタイトルとメタディスクリプションの最適化
+  useEffect(() => {
+    document.title = `ワーホリ イギリス比較｜費用・条件・おすすめエージェントを徹底比較`;
+    
+    // meta descriptionの更新
+    const metaDescription = document.querySelector('meta[name="description"]');
+    if (metaDescription) {
+      metaDescription.setAttribute('content', `イギリワーホリの費用、条件、おすすめエージェントを徹底比較。歴史と文化が薫るヨーロッパの中心でワーホリ体験。`);
+    }
+  }, []);
 
   return (
     <>

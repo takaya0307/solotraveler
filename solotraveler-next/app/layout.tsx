@@ -16,8 +16,63 @@ const dancingScript = Dancing_Script({
 });
 
 export const metadata: Metadata = {
-  title: "ワーホリパス",
-  description: "次はどこの国へ行こう？",
+  title: "ワーホリ比較｜オーストラリア・カナダ・ニュージーランドなど費用・条件を徹底比較",
+  description: "オーストラリア、カナダ、ニュージーランドなど世界各国のワーホリ費用・条件・おすすめエージェントを徹底比較。あなたに合ったワーホリプランが見つかります。",
+  keywords: "ワーホリ比較,ワーホリ費用,ワーホリ条件,オーストラリアワーホリ,カナダワーホリ,ニュージーランドワーホリ,イギリスワーホリ,アイルランドワーホリ,フランスワーホリ,ドイツワーホリ,スペインワーホリ,イタリアワーホリ,ポルトガルワーホリ,オーストリアワーホリ,ノルウェーワーホリ,デンマークワーホリ,ポーランドワーホリ,チェコワーホリ,海外就労,海外生活",
+  authors: [{ name: "ワーホリパス" }],
+  creator: "ワーホリパス",
+  publisher: "ワーホリパス",
+  formatDetection: {
+    email: false,
+    address: false,
+    telephone: false,
+  },
+  metadataBase: new URL('https://your-domain.com'), // 実際のドメインに変更してください
+  alternates: {
+    canonical: '/',
+    languages: {
+      'ja-JP': '/',
+    },
+  },
+  openGraph: {
+    title: "ワーホリ比較｜オーストラリア・カナダ・ニュージーランドなど費用・条件を徹底比較",
+    description: "オーストラリア、カナダ、ニュージーランドなど世界各国のワーホリ費用・条件・おすすめエージェントを徹底比較。あなたに合ったワーホリプランが見つかります。",
+    url: 'https://your-domain.com', // 実際のドメインに変更してください
+    siteName: 'ワーホリパス',
+    locale: 'ja_JP',
+    type: 'website',
+    images: [
+      {
+        url: '/ogp.png',
+        width: 1200,
+        height: 630,
+        alt: 'ワーホリ比較｜オーストラリア・カナダ・ニュージーランドなど費用・条件を徹底比較',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: "ワーホリ比較｜オーストラリア・カナダ・ニュージーランドなど費用・条件を徹底比較",
+    description: "オーストラリア、カナダ、ニュージーランドなど世界各国のワーホリ費用・条件・おすすめエージェントを徹底比較。あなたに合ったワーホリプランが見つかります。",
+    images: ['/ogp.png'],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
+  verification: {
+    google: 'G-4K2MGYJY8L', // Google Search Consoleの検証コード（GA4と同じIDを使用）
+  },
+  other: {
+    'hreflang': 'ja-JP',
+  },
 };
 
 export default function RootLayout({
@@ -45,6 +100,10 @@ export default function RootLayout({
         <meta property="og:image" content="/ogp.png" />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
+        {/* 日本語サイト指定 */}
+        <meta name="hreflang" content="ja-JP" />
+        <link rel="alternate" hrefLang="ja-JP" href="https://your-domain.com" />
+        <link rel="alternate" hrefLang="x-default" href="https://your-domain.com" />
       </head>
       <body
         className={`${inter.variable} ${dancingScript.variable} antialiased`}

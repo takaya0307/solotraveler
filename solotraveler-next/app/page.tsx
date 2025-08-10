@@ -4,6 +4,108 @@ import { WorkingHolidayCountry, WorkingHolidayCity } from "../types/types";
 import Image from "next/image";
 import Link from "next/link";
 import { useSearchParams, useRouter } from "next/navigation";
+import Script from "next/script";
+
+// GA4イベント計測用のヘルパー関数
+const trackEvent = (action: string, category: string, label?: string, value?: string | number) => {
+  if (typeof window !== 'undefined' && (window as any).gtag) {
+    (window as any).gtag('event', action, {
+      event_category: category,
+      event_label: label,
+      value: value
+    });
+  }
+};
+
+// 構造化データ（JSON-LD）
+const structuredData = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "ワーホリパス",
+  "description": "世界各国のワーキングホリデー制度の詳細情報を提供する総合情報サイト",
+  "url": "https://your-domain.com",
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": "https://your-domain.com/search?q={search_term_string}",
+    "query-input": "required name=search_term_string"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "ワーホリパス",
+    "url": "https://your-domain.com"
+  }
+};
+
+// パンくずリストの構造化データ
+const generateBreadcrumbData = (countryName?: string) => {
+  if (countryName) {
+    return {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "ホーム",
+          "item": "https://your-domain.com"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "各国詳細",
+          "item": "https://your-domain.com"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": countryName,
+          "item": `https://your-domain.com/countries/${countryName}`
+        }
+      ]
+    };
+  }
+  return null;
+};
+
+// 順位付きリスト（ItemList）の構造化データ
+const generateItemListData = (countries: WorkingHolidayCountry[]) => {
+  return {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "name": "ワーキングホリデー協定国ランキング",
+    "description": "世界各国のワーキングホリデー制度の比較ランキング",
+    "numberOfItems": countries.length,
+    "itemListElement": countries.map((country, index) => ({
+      "@type": "ListItem",
+      "position": index + 1,
+      "name": country.nameJa,
+      "description": country.summary || country.recommendation || 'ワーホリ協定国です。',
+      "url": `https://your-domain.com/countries/${country.id}`,
+      "additionalProperty": [
+        {
+          "@type": "PropertyValue",
+          "name": "最低賃金",
+          "value": country.minWage
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "対象年齢",
+          "value": country.ageRange
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "滞在期間",
+          "value": country.stayPeriod
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "定員数",
+          "value": country.quota
+        }
+      ]
+    }))
+  };
+};
 
 function CityBoardModal({ city, countryId, onClose }: { city: WorkingHolidayCity, countryId: string, onClose: () => void }) {
   const cityId = city.id;
@@ -14,6 +116,24 @@ function CityBoardModal({ city, countryId, onClose }: { city: WorkingHolidayCity
   const [posting, setPosting] = useState(false);
   const [adminPw, setAdminPw] = useState("");
   const [adminMode, setAdminMode] = useState(false);
+
+  // 掲示板モーダル表示時にnoindexを設定（一時的な状態ページ）
+  useEffect(() => {
+    let robotsMeta = document.querySelector('meta[name="robots"]') as HTMLMetaElement;
+    if (!robotsMeta) {
+      robotsMeta = document.createElement('meta');
+      robotsMeta.name = 'robots';
+      document.head.appendChild(robotsMeta);
+    }
+    robotsMeta.setAttribute('content', 'noindex, nofollow');
+    
+    // モーダルが閉じられた時に元の設定に戻す
+    return () => {
+      if (robotsMeta) {
+        robotsMeta.setAttribute('content', 'index, follow');
+      }
+    };
+  }, []);
   useEffect(() => {
     fetch(`/api/boards/${cityId}`)
       .then(res => res.json())
@@ -28,6 +148,10 @@ function CityBoardModal({ city, countryId, onClose }: { city: WorkingHolidayCity
     }
     setPosting(true);
     setError("");
+    
+    // GA4: 掲示板投稿開始イベント
+    trackEvent('submit', '掲示板', `投稿開始_${city.nameJa}`, 1);
+    
     try {
       const res = await fetch(`/api/boards/${cityId}`, {
         method: "POST",
@@ -40,12 +164,21 @@ function CityBoardModal({ city, countryId, onClose }: { city: WorkingHolidayCity
         const postsRes = await fetch(`/api/boards/${cityId}`);
         const postsData = await postsRes.json();
         setPosts(postsData);
+        
+        // GA4: 掲示板投稿成功イベント
+        trackEvent('submit', '掲示板', `投稿成功_${city.nameJa}`, 1);
       } else {
         const data = await res.json();
         setError(data.error || `投稿に失敗しました (status: ${res.status})`);
+        
+        // GA4: 掲示板投稿失敗イベント
+        trackEvent('submit', '掲示板', `投稿失敗_${city.nameJa}`, 0);
       }
     } catch (err: any) {
       setError("ネットワークエラー: " + (err?.message || err));
+      
+      // GA4: 掲示板投稿エラーイベント
+      trackEvent('submit', '掲示板', `投稿エラー_${city.nameJa}`, 0);
     }
     setPosting(false);
   };
@@ -59,6 +192,9 @@ function CityBoardModal({ city, countryId, onClose }: { city: WorkingHolidayCity
     setAdminMode(true);
     setAdminInput("");
     setAdminError("");
+    
+    // GA4: 管理者ログインイベント
+    trackEvent('login', '管理者', '掲示板管理ログイン', 1);
   };
   // 投稿削除
   const handleDelete = async (postId: string) => {
@@ -71,12 +207,21 @@ function CityBoardModal({ city, countryId, onClose }: { city: WorkingHolidayCity
       });
       if (res.ok) {
         setPosts(posts.filter(p => p.id !== postId));
+        
+        // GA4: 投稿削除成功イベント
+        trackEvent('delete', '掲示板', `投稿削除成功_${city.nameJa}`, 1);
       } else {
         const data = await res.json();
         alert(data.error || "削除に失敗しました");
+        
+        // GA4: 投稿削除失敗イベント
+        trackEvent('delete', '掲示板', `投稿削除失敗_${city.nameJa}`, 0);
       }
     } catch (err: any) {
       alert("ネットワークエラー: " + (err?.message || err));
+      
+      // GA4: 投稿削除エラーイベント
+      trackEvent('delete', '掲示板', `投稿削除エラー_${city.nameJa}`, 0);
     }
   };
   return (
@@ -206,6 +351,167 @@ function PageComponent() {
       });
   }, [searchParams]);
 
+  // クエリパラメータがある場合のcanonicalタグ制御（重複URL防止）
+  useEffect(() => {
+    const hasQueryParams = searchParams.toString().length > 0;
+    
+    if (hasQueryParams) {
+      // クエリパラメータがある場合は、パラメータなしのURLをcanonicalとして設定
+      let canonicalLink = document.querySelector('link[rel="canonical"]') as HTMLLinkElement;
+      if (!canonicalLink) {
+        canonicalLink = document.createElement('link');
+        canonicalLink.rel = 'canonical';
+        document.head.appendChild(canonicalLink);
+      }
+      
+      // 現在のパスからクエリパラメータを除去したURLをcanonicalに設定
+      const currentPath = window.location.pathname;
+      canonicalLink.setAttribute('href', `https://your-domain.com${currentPath}`);
+      
+      // robotsメタタグでインデックスを許可（canonicalで正規化されるため）
+      let robotsMeta = document.querySelector('meta[name="robots"]') as HTMLMetaElement;
+      if (!robotsMeta) {
+        robotsMeta = document.createElement('meta');
+        robotsMeta.name = 'robots';
+        document.head.appendChild(robotsMeta);
+      }
+      robotsMeta.setAttribute('content', 'index, follow');
+    }
+  }, [searchParams]);
+
+  // スクロール深度計測
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+      const windowHeight = window.innerHeight;
+      const documentHeight = document.documentElement.scrollHeight;
+      const scrollPercentage = Math.round((scrollTop / (documentHeight - windowHeight)) * 100);
+      
+      // 25%, 50%, 75%, 100%のスクロールポイントでイベント送信
+      if (scrollPercentage >= 25 && scrollPercentage < 50) {
+        trackEvent('scroll', 'エンゲージメント', 'スクロール25%', scrollPercentage);
+      } else if (scrollPercentage >= 50 && scrollPercentage < 75) {
+        trackEvent('scroll', 'エンゲージメント', 'スクロール50%', scrollPercentage);
+      } else if (scrollPercentage >= 75 && scrollPercentage < 100) {
+        trackEvent('scroll', 'エンゲージメント', 'スクロール75%', scrollPercentage);
+      } else if (scrollPercentage >= 100) {
+        trackEvent('scroll', 'エンゲージメント', 'スクロール100%', scrollPercentage);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  // 選択された国に応じてメタタグを動的に更新
+  useEffect(() => {
+    if (selectedCountry) {
+      // GA4: 国選択イベント
+      trackEvent('view', 'ページ', `国選択_${selectedCountry.nameJa}`, 1);
+      
+      document.title = `ワーホリ ${selectedCountry.nameJa}比較｜費用・条件・都市情報を徹底比較`;
+      
+      // meta descriptionの更新
+      const metaDescription = document.querySelector('meta[name="description"]');
+      if (metaDescription) {
+        metaDescription.setAttribute('content', `${selectedCountry.nameJa}ワーホリの費用、条件、おすすめ都市を徹底比較。${selectedCountry.nameJa}でワーホリ体験ができる都市の詳細情報と比較ポイントをご紹介。`);
+      }
+      
+      // hreflangの更新（各国ページでも日本語指定を維持）
+      const hreflangMeta = document.querySelector('meta[name="hreflang"]');
+      if (hreflangMeta) {
+        hreflangMeta.setAttribute('content', 'ja-JP');
+      }
+      
+      // canonicalタグの更新（都市一覧ページ用）
+      let canonicalLink = document.querySelector('link[rel="canonical"]') as HTMLLinkElement;
+      if (!canonicalLink) {
+        canonicalLink = document.createElement('link');
+        canonicalLink.rel = 'canonical';
+        document.head.appendChild(canonicalLink);
+      }
+      canonicalLink.setAttribute('href', `https://your-domain.com/countries/${selectedCountry.id}`);
+      
+      // robotsメタタグの更新（都市一覧ページはインデックス対象）
+      let robotsMeta = document.querySelector('meta[name="robots"]') as HTMLMetaElement;
+      if (!robotsMeta) {
+        robotsMeta = document.createElement('meta');
+        robotsMeta.name = 'robots';
+        document.head.appendChild(robotsMeta);
+      }
+      robotsMeta.setAttribute('content', 'index, follow');
+      
+      // パンくずリストの構造化データを追加
+      const breadcrumbData = generateBreadcrumbData(selectedCountry.nameJa);
+      if (breadcrumbData) {
+        const script = document.createElement('script');
+        script.type = 'application/ld+json';
+        script.textContent = JSON.stringify(breadcrumbData);
+        script.id = 'breadcrumb-structured-data';
+        document.head.appendChild(script);
+      }
+    } else {
+      // GA4: ホームページ表示イベント
+      trackEvent('view', 'ページ', 'ホームページ', 1);
+      
+      document.title = "ワーホリ比較｜オーストラリア・カナダ・ニュージーランドなど費用・条件を徹底比較";
+      
+      // meta descriptionを元に戻す
+      const metaDescription = document.querySelector('meta[name="description"]');
+      if (metaDescription) {
+        metaDescription.setAttribute('content', "オーストラリア、カナダ、ニュージーランドなど世界各国のワーホリ費用・条件・おすすめエージェントを徹底比較。あなたに合ったワーホリプランが見つかります。");
+      }
+      
+      // hreflangの維持
+      const hreflangMeta = document.querySelector('meta[name="hreflang"]');
+      if (hreflangMeta) {
+        hreflangMeta.setAttribute('content', 'ja-JP');
+      }
+      
+      // canonicalタグをホームページに戻す
+      let canonicalLink = document.querySelector('link[rel="canonical"]') as HTMLLinkElement;
+      if (!canonicalLink) {
+        canonicalLink = document.createElement('link');
+        canonicalLink.rel = 'canonical';
+        document.head.appendChild(canonicalLink);
+      }
+      canonicalLink.setAttribute('href', 'https://your-domain.com/');
+      
+      // robotsメタタグをホームページ設定に戻す
+      let robotsMeta = document.querySelector('meta[name="robots"]') as HTMLMetaElement;
+      if (!robotsMeta) {
+        robotsMeta = document.createElement('meta');
+        robotsMeta.name = 'robots';
+        document.head.appendChild(robotsMeta);
+      }
+      robotsMeta.setAttribute('content', 'index, follow');
+      
+      // パンくずリストの構造化データを削除
+      const existingBreadcrumb = document.getElementById('breadcrumb-structured-data');
+      if (existingBreadcrumb) {
+        existingBreadcrumb.remove();
+      }
+    }
+  }, [selectedCountry]);
+
+  // 順位付きリストの構造化データを追加
+  useEffect(() => {
+    if (countries.length > 0 && !selectedCountry) {
+      const itemListData = generateItemListData(countries);
+      const script = document.createElement('script');
+      script.type = 'application/ld+json';
+      script.textContent = JSON.stringify(itemListData);
+      script.id = 'itemlist-structured-data';
+      document.head.appendChild(script);
+    } else if (selectedCountry) {
+      // 国選択時は順位付きリストを削除
+      const existingItemList = document.getElementById('itemlist-structured-data');
+      if (existingItemList) {
+        existingItemList.remove();
+      }
+    }
+  }, [countries, selectedCountry]);
+
   if (loading) {
     return (
       <div className="App">  
@@ -224,7 +530,10 @@ function PageComponent() {
       <div className="App">
         {/* 戻るボタンを左下に固定表示 */}
         <button
-          onClick={() => setSelectedCountry(null)}
+          onClick={() => {
+            trackEvent('click', 'ナビゲーション', '戻るボタン', 1);
+            setSelectedCountry(null);
+          }}
           className="fixed-back-button"
           aria-label="戻る"
         >
@@ -311,8 +620,10 @@ function PageComponent() {
         <div className="header-gradient-bar" />
       </header>
       <main>
-        <div className="card-grid">
-          {Array.isArray(countries) && countries.map((country) => (
+        <section aria-label="ワーキングホリデー協定国一覧">
+          <h2 className="sr-only">ワーキングホリデー協定国一覧</h2>
+          <div className="card-grid">
+            {Array.isArray(countries) && countries.map((country) => (
             <div 
               className="country-card" 
               key={`${country.id}-${openAccordionCountryIds.includes(country.id)}`} 
@@ -322,10 +633,12 @@ function PageComponent() {
                   <div className="card-title-overlay">
                     <div style={{ display: 'flex', alignItems: 'center', gap: '0.5em' }}>
                       {country.countryCode && (
-                        <img
+                        <Image
                           src={`https://flagcdn.com/w20/${country.countryCode.toLowerCase()}.png`}
-                          alt={country.name}
-                          style={{ width: 20, height: 15, borderRadius: '2px', objectFit: 'cover', boxShadow: '0 1px 4px rgba(0,0,0,0.08)' }}
+                          alt={`${country.nameJa}の国旗`}
+                          width={20}
+                          height={15}
+                          style={{ borderRadius: '2px', objectFit: 'cover', boxShadow: '0 1px 4px rgba(0,0,0,0.08)' }}
                         />
                       )}
                     <h2 className="card-title">{country.nameJa}</h2>
@@ -341,8 +654,11 @@ function PageComponent() {
                   <button
                     onClick={() => {
                       if (country.id === 'australia' || country.id === 'canada' || country.id === 'newzealand' || country.id === 'uk' || country.id === 'ireland' || country.id === 'france' || country.id === 'germany' || country.id === 'spain' || country.id === 'italy' || country.id === 'portugal' || country.id === 'austria' || country.id === 'norway' || country.id === 'denmark' || country.id === 'poland' || country.id === 'czech') {
+                        trackEvent('click', 'CTA', `詳細情報_${country.nameJa}_外部ページ`, 1);
                         router.push(`/countries/${country.id}`);
                       } else {
+                        const isOpening = !openAccordionCountryIds.includes(country.id);
+                        trackEvent('click', 'CTA', `詳細情報_${country.nameJa}_アコーディオン`, isOpening ? 1 : 0);
                         setOpenAccordionCountryIds(prevIds => {
                           if (prevIds.includes(country.id)) {
                             return prevIds.filter(id => id !== country.id);
@@ -357,7 +673,10 @@ function PageComponent() {
                     詳細情報
                   </button>
                   <button
-                    onClick={() => setSelectedCountry(country)}
+                    onClick={() => {
+                      trackEvent('click', 'CTA', `都市一覧_${country.nameJa}`, 1);
+                      setSelectedCountry(country);
+                    }}
                     style={{
                       flex: 1,
                       borderRadius: 12,
@@ -421,9 +740,10 @@ function PageComponent() {
                 )}
               </div>
             </div>
-          ))}
-        </div>
-      </main>
+                      ))}
+          </div>
+        </section>
+        </main>
       <footer className="App-footer">
         <div className="footer-content">
           <span>© 2025 ワーホリパス</span>
@@ -446,6 +766,9 @@ export default function Home() {
       </div>
     }>
       <PageComponent />
+      <Script id="main-structured-data" type="application/ld+json">
+        {JSON.stringify(structuredData)}
+      </Script>
     </Suspense>
   );
 }

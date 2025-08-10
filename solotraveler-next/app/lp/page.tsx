@@ -1,9 +1,25 @@
 "use client";
-import React from "react";
+import React, { useEffect } from "react";
 import { useRouter } from "next/navigation";
+
+// GA4イベント計測用のヘルパー関数
+const trackEvent = (action: string, category: string, label?: string, value?: string | number) => {
+  if (typeof window !== 'undefined' && (window as any).gtag) {
+    (window as any).gtag('event', action, {
+      event_category: category,
+      event_label: label,
+      value: value
+    });
+  }
+};
 
 export default function LandingPage() {
   const router = useRouter();
+
+  // ページビュー計測
+  useEffect(() => {
+    trackEvent('view', 'ページ', 'ランディングページ', 1);
+  }, []);
 
   const scrollToCTA = () => {
     const ctaSection = document.getElementById('cta-section');
@@ -26,7 +42,10 @@ export default function LandingPage() {
             同じ都市の仲間とつながって、ワーホリ生活を充実させませんか？
           </p>
           <button 
-            onClick={() => window.open('https://buy.stripe.com/5kQdR3dSd6dTd6V2rl93y00', '_blank')}
+            onClick={() => {
+              trackEvent('click', 'CTA', '今すぐ参加する_ヒーロー', 1);
+              window.open('https://buy.stripe.com/5kQdR3dSd6dTd6V2rl93y00', '_blank');
+            }}
             className="cta-button primary"
           >
             今すぐ参加する
@@ -133,7 +152,10 @@ export default function LandingPage() {
           <p>一人で不安な海外生活も、仲間がいれば心強いもの。</p>
           <p>今なら最初の100人限定で3ヶ月間無料！</p>
           <button 
-            onClick={() => window.open('https://buy.stripe.com/5kQdR3dSd6dTd6V2rl93y00', '_blank')}
+            onClick={() => {
+              trackEvent('click', 'CTA', '今すぐ参加する_CTAセクション', 1);
+              window.open('https://buy.stripe.com/5kQdR3dSd6dTd6V2rl93y00', '_blank');
+            }}
             className="cta-button primary large"
           >
             今すぐ参加する
@@ -172,7 +194,10 @@ export default function LandingPage() {
 
       {/* 戻るボタン */}
       <button
-        onClick={() => router.push("/")}
+        onClick={() => {
+          trackEvent('click', 'ナビゲーション', '戻るボタン_ランディングページ', 1);
+          router.push("/");
+        }}
         className="fixed-back-button"
         aria-label="戻る"
       >

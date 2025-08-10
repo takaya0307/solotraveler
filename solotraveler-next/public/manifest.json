@@ -1,1 +1,27 @@
- 
+{
+  "name": "ワーホリパス - ワーキングホリデー制度の総合情報サイト",
+  "short_name": "ワーホリパス",
+  "description": "世界各国のワーキングホリデー制度の詳細情報を提供",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#2563eb",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/logo192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/logo512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["travel", "education", "lifestyle"],
+  "lang": "ja",
+  "dir": "ltr"
+} 

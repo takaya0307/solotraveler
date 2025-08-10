@@ -2,20 +2,20 @@
 import React, { useEffect } from "react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
-import newzealandData from "../../../db.json";
+import hungaryData from "../../../db.json";
 
-export default function NewZealandDetailPage() {
+export default function HungaryDetailPage() {
   const router = useRouter();
-  const country = newzealandData.countries.find(c => c.id === "newzealand")!;
+  const country = hungaryData.countries.find(c => c.id === "hungary")!;
 
   // ページタイトルとメタディスクリプションの最適化
   useEffect(() => {
-    document.title = `ワーホリ ニュージーランド比較｜費用・条件・おすすめエージェントを徹底比較`;
+    document.title = `ワーホリ ハンガリー比較｜費用・条件・おすすめエージェントを徹底比較`;
     
     // meta descriptionの更新
     const metaDescription = document.querySelector('meta[name="description"]');
     if (metaDescription) {
-      metaDescription.setAttribute('content', `ニュージーランドワーホリの費用、条件、おすすめエージェントを徹底比較。大自然とフレンドリーな人々が魅力の南太平洋の国でワーホリ体験。`);
+      metaDescription.setAttribute('content', `ハンガリーワーホリの費用、条件、おすすめエージェントを徹底比較。温泉と歴史、音楽の国でワーホリ体験。`);
     }
   }, []);
 
@@ -92,11 +92,11 @@ export default function NewZealandDetailPage() {
             fontWeight: 400,
             lineHeight: 1.5
           }}>
-            大自然とフレンドリーな人々が魅力の南太平洋の国
+            ドナウの輝きと温泉文化が息づく中欧の国
           </p>
         </div>
 
-        {/* 滞在情報カード - ビジュアルヒエラルキー強化 */}
+        {/* 滞在情報カード */}
         <div className="info-cards-grid" style={{
           marginBottom: '5rem'
         }}>
@@ -188,8 +188,8 @@ export default function NewZealandDetailPage() {
             </div>
             <h3 style={{ margin: '0 0 1rem 0', fontSize: '1.1rem', fontWeight: 600, opacity: 0.9 }}>滞在期間</h3>
             <div style={{ margin: 0 }}>
-              <p style={{ margin: '0 0 0.3rem 0', fontSize: '1.8rem', fontWeight: 800 }}>最大1年3ヶ月</p>
-              <p style={{ margin: 0, fontSize: '1rem', fontWeight: 400, opacity: 0.8 }}>（条件あり）</p>
+              <p style={{ margin: '0 0 0.3rem 0', fontSize: '1.8rem', fontWeight: 800 }}>{country.stayPeriod || '最大1年間'}</p>
+              <p style={{ margin: 0, fontSize: '1rem', fontWeight: 400, opacity: 0.8 }}>（延長不可）</p>
             </div>
           </div>
           
@@ -227,7 +227,7 @@ export default function NewZealandDetailPage() {
         {/* 記事コンテンツ */}
         <article style={{ lineHeight: 1.8, color: '#374151' }}>
           
-          {/* ニュージーランドの魅力セクション */}
+          {/* ハンガリーの魅力セクション */}
           <section style={{ marginBottom: '5rem' }}>
             <h2 style={{ 
               fontSize: '2.2rem', 
@@ -244,13 +244,13 @@ export default function NewZealandDetailPage() {
                 WebkitTextFillColor: 'transparent',
                 backgroundClip: 'text'
               }}>
-                🌟 ニュージーランドの魅力
+                🌟 ハンガリーの魅力
               </span>
             </h2>
             
             <div style={{ fontSize: '1.1rem', lineHeight: 1.8 }}>
               <p style={{ marginBottom: '2.5rem', color: '#4b5563', fontSize: '1.15rem' }}>
-                ニュージーランドは、南太平洋に浮かぶ美しい島国。雄大な自然とフレンドリーな人々が魅力で、のんびりとした雰囲気が特徴です。フィヨルドや山々、美しい湖など、大自然を満喫できる環境が整っています。
+                ハンガリーは、ドナウ川が流れる美しい街並みと温泉文化が魅力の国。首都ブダペストは「ドナウの真珠」と呼ばれ、歴史的建造物やカフェ文化、夜景が有名です。物価は比較的安く、ヨーロッパ各国へのアクセスも良好。文化や芸術を楽しむのに最適な環境です。
               </p>
               
               {/* ワーホリ生活のイメージ写真 */}
@@ -261,7 +261,7 @@ export default function NewZealandDetailPage() {
                 marginBottom: '3rem'
               }}>
                 <div style={{
-                  background: 'url("https://images.unsplash.com/photo-1595125990323-885cec5217ff?w=600&auto=format&fit=crop&q=60")',
+                  background: 'url("https://images.unsplash.com/photo-1616432902940-b7a1acbc60b3?w=600&auto=format&fit=crop&q=60")',
                   backgroundSize: 'cover',
                   backgroundPosition: 'center',
                   height: '250px',
@@ -279,37 +279,13 @@ export default function NewZealandDetailPage() {
                     padding: '1.5rem',
                     borderRadius: '0 0 12px 12px'
                   }}>
-                    <h4 style={{ margin: '0 0 0.5rem 0', fontSize: '1.1rem', fontWeight: 600 }}>大自然</h4>
-                    <p style={{ margin: 0, fontSize: '0.9rem', opacity: 0.9 }}>フィヨルドや山々でのアウトドア</p>
+                    <h4 style={{ margin: '0 0 0.5rem 0', fontSize: '1.1rem', fontWeight: 600 }}>歴史的建造物</h4>
+                    <p style={{ margin: 0, fontSize: '0.9rem', opacity: 0.9 }}>国会議事堂やくさり橋の壮麗な景観</p>
                   </div>
                 </div>
                 
                 <div style={{
-                  background: 'url("https://images.unsplash.com/photo-1515253648320-6d70d901f0ac?w=600&auto=format&fit=crop&q=60")',
-                  backgroundSize: 'cover',
-                  backgroundPosition: 'center',
-                  height: '250px',
-                  borderRadius: 12,
-                  position: 'relative',
-                  boxShadow: '0 4px 15px rgba(0,0,0,0.1)'
-                }}>
-                  <div style={{
-                    position: 'absolute',
-                    bottom: 0,
-                    left: 0,
-                    right: 0,
-                    background: 'linear-gradient(transparent, rgba(0,0,0,0.7))',
-                    color: 'white',
-                    padding: '1.5rem',
-                    borderRadius: '0 0 12px 12px'
-                  }}>
-                    <h4 style={{ margin: '0 0 0.5rem 0', fontSize: '1.1rem', fontWeight: 600 }}>アドベンチャー</h4>
-                    <p style={{ margin: 0, fontSize: '0.9rem', opacity: 0.9 }}>バンジージャンプやスカイダイビング</p>
-                  </div>
-                </div>
-                
-                <div style={{
-                  background: 'url("https://images.unsplash.com/photo-1680180730599-61216c165c96?w=600&auto=format&fit=crop&q=60")',
+                  background: 'url("https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?w=600&auto=format&fit=crop&q=60")',
                   backgroundSize: 'cover',
                   backgroundPosition: 'center',
                   height: '250px',
@@ -328,7 +304,31 @@ export default function NewZealandDetailPage() {
                     borderRadius: '0 0 12px 12px'
                   }}>
                     <h4 style={{ margin: '0 0 0.5rem 0', fontSize: '1.1rem', fontWeight: 600 }}>温泉文化</h4>
-                    <p style={{ margin: 0, fontSize: '0.9rem', opacity: 0.9 }}>地熱地帯での温泉体験</p>
+                    <p style={{ margin: 0, fontSize: '0.9rem', opacity: 0.9 }}>セーチェーニ温泉などの伝統的な温泉</p>
+                  </div>
+                </div>
+                
+                <div style={{
+                  background: 'url("https://images.unsplash.com/photo-1526483360412-f4dbaf036963?w=600&auto=format&fit=crop&q=60")',
+                  backgroundSize: 'cover',
+                  backgroundPosition: 'center',
+                  height: '250px',
+                  borderRadius: 12,
+                  position: 'relative',
+                  boxShadow: '0 4px 15px rgba(0,0,0,0.1)'
+                }}>
+                  <div style={{
+                    position: 'absolute',
+                    bottom: 0,
+                    left: 0,
+                    right: 0,
+                    background: 'linear-gradient(transparent, rgba(0,0,0,0.7))',
+                    color: 'white',
+                    padding: '1.5rem',
+                    borderRadius: '0 0 12px 12px'
+                  }}>
+                    <h4 style={{ margin: '0 0 0.5rem 0', fontSize: '1.1rem', fontWeight: 600 }}>カフェ文化</h4>
+                    <p style={{ margin: 0, fontSize: '0.9rem', opacity: 0.9 }}>歴史あるカフェでのくつろぎ時間</p>
                   </div>
                 </div>
               </div>
@@ -355,7 +355,7 @@ export default function NewZealandDetailPage() {
                     🌤️ 気候
                   </h4>
                   <p style={{ margin: 0, color: '#78350f', lineHeight: 1.6 }}>
-                    四季がはっきりしており、夏は温暖、冬は比較的穏やか。地域によって気候が異なり、北島は温暖、南島は涼しい気候です。
+                    四季がはっきりしており、夏は暑く乾燥、冬は寒くなります。春と秋は過ごしやすく、観光に適しています。
                   </p>
                 </div>
                 
@@ -370,7 +370,7 @@ export default function NewZealandDetailPage() {
                     🛡️ 治安
                   </h4>
                   <p style={{ margin: 0, color: '#1e3a8a', lineHeight: 1.6 }}>
-                    世界でも最も安全な国の一つとして知られています。日本人にとって安心して生活できる環境で、人々も親切です。
+                    観光地ではスリなどの軽犯罪に注意が必要ですが、一般的には比較的安全で、基本的な注意で快適に過ごせます。
                   </p>
                 </div>
                 
@@ -385,7 +385,7 @@ export default function NewZealandDetailPage() {
                     😊 人々の性格
                   </h4>
                   <p style={{ margin: 0, color: '#14532d', lineHeight: 1.6 }}>
-                    ニュージーランド人は親切でフレンドリーな性格の人が多いです。のんびりとした雰囲気で、自然を愛する人が多いです。
+                    ハンガリーの人々は温かく親しみやすい性格。伝統と家族を大切にし、音楽や芸術にも関心が高いです。
                   </p>
                 </div>
               </div>
@@ -401,21 +401,21 @@ export default function NewZealandDetailPage() {
                 lineHeight: 1.8
               }}>
                 <li style={{ marginBottom: '1rem' }}>
-                  <strong>英語学習環境：</strong>英語圏で、比較的聞き取りやすいニュージーランド英語
+                  <strong>温泉文化：</strong>セーチェーニ温泉など、疲れを癒やせる温泉が豊富
                 </li>
                 <li style={{ marginBottom: '1rem' }}>
-                  <strong>豊富な仕事：</strong>農業や観光業の仕事が豊富で、ワーホリビザでも比較的仕事を見つけやすい
+                  <strong>物価の安さ：</strong>西欧に比べて生活コストが抑えやすい
                 </li>
                 <li style={{ marginBottom: '1rem' }}>
-                  <strong>高い賃金：</strong>最低賃金が高いため、生活費を稼ぎながら英語を学べる
+                  <strong>ヨーロッパ各国へのアクセス：</strong>周辺国への旅行が便利で、週末旅行も楽しめる
                 </li>
                 <li style={{ marginBottom: '1rem' }}>
-                  <strong>自然体験：</strong>雄大な自然の中でアウトドアアクティビティが楽しめる
+                  <strong>文化体験：</strong>音楽、建築、カフェ文化など、多彩な文化に触れられる
                 </li>
               </ul>
               
               <h3 style={{ fontSize: '1.4rem', fontWeight: 700, color: '#1f2937', margin: '3rem 0 1.5rem 0' }}>
-                📚 英語学習の環境
+                📚 ハンガリー語学習の環境
               </h3>
               <ul style={{ 
                 marginBottom: '2.5rem', 
@@ -425,21 +425,21 @@ export default function NewZealandDetailPage() {
                 lineHeight: 1.8
               }}>
                 <li style={{ marginBottom: '1rem' }}>
-                  <strong>聞き取りやすい英語：</strong>ニュージーランド英語は比較的聞き取りやすく、英語学習初心者にも適しています
+                  <strong>英語も通じる：</strong>観光地や若い世代では英語が通じ、生活のハードルは高くない
                 </li>
                 <li style={{ marginBottom: '1rem' }}>
-                  <strong>充実した語学学校：</strong>語学学校も充実しており、英語力を伸ばすのに最適な環境です
+                  <strong>ハンガリー語の学習：</strong>現地語を学ぶことで、より深い交流と体験が可能
                 </li>
                 <li style={{ marginBottom: '1rem' }}>
-                  <strong>多文化社会：</strong>様々な国の人々と交流でき、実践的な英語力を身につけることができます
+                  <strong>多言語環境：</strong>中欧の中心に位置し、様々な言語や文化に触れられる
                 </li>
               </ul>
               
               <h3 style={{ fontSize: '1.4rem', fontWeight: 700, color: '#1f2937', margin: '3rem 0 1.5rem 0' }}>
-                🏃‍♂️ アウトドアライフ
+                🎻 文化・芸術体験
               </h3>
               <p style={{ marginBottom: '2.5rem', color: '#4b5563', fontSize: '1.15rem' }}>
-                フィヨルド、山々、美しい湖など、自然が豊富です。ハイキング、スキー、キャンプ、アドベンチャースポーツなど、四季を通じて様々なアウトドアアクティビティが楽しめます。
+                ドナウ川沿いの夜景、壮麗な建築、美しい音楽文化、そしてカフェ文化。歴史と芸術が調和するハンガリーならではの体験ができます。
               </p>
             </div>
           </section>
@@ -499,7 +499,7 @@ export default function NewZealandDetailPage() {
                     margin: '0 0 12px 0',
                     lineHeight: 1.4
                   }}>
-                    🏔️ アウトドア好き
+                    🛁 温泉好き
                   </h3>
                   <p style={{ 
                     margin: 0, 
@@ -507,7 +507,7 @@ export default function NewZealandDetailPage() {
                     lineHeight: 1.6,
                     fontSize: '1rem'
                   }}>
-                    雄大な自然が好きな人には最高の環境。ハイキング、スキー、キャンプ、アドベンチャースポーツなど、四季を通じて様々なアウトドアアクティビティが楽しめます。
+                    歴史ある温泉に癒やされたい人に最適。セーチェーニ温泉などの大規模温泉を満喫できます。
                   </p>
                 </div>
                 
@@ -538,7 +538,7 @@ export default function NewZealandDetailPage() {
                     margin: '0 0 12px 0',
                     lineHeight: 1.4
                   }}>
-                    🗣️ 英語を話したい
+                    🎼 クラシック音楽・芸術好き
                   </h3>
                   <p style={{ 
                     margin: 0, 
@@ -546,7 +546,7 @@ export default function NewZealandDetailPage() {
                     lineHeight: 1.6,
                     fontSize: '1rem'
                   }}>
-                    英語圏で、比較的聞き取りやすいニュージーランド英語。語学学校も充実しており、英語力を伸ばすのに最適です。
+                    音楽ホールや美術館が充実。文化的な体験を深めたい人に向いています。
                   </p>
                 </div>
                 
@@ -577,7 +577,7 @@ export default function NewZealandDetailPage() {
                     margin: '0 0 12px 0',
                     lineHeight: 1.4
                   }}>
-                    🌍 のんびりしたい
+                    💰 コスパ重視
                   </h3>
                   <p style={{ 
                     margin: 0, 
@@ -585,7 +585,7 @@ export default function NewZealandDetailPage() {
                     lineHeight: 1.6,
                     fontSize: '1rem'
                   }}>
-                    のんびりとした雰囲気が魅力。自然の中でリラックスした生活を送りたい人に最適です。ストレスフリーな環境で過ごせます。
+                    西欧より物価が低く、生活コストを抑えながらヨーロッパ生活を楽しみたい人に。
                   </p>
                 </div>
                 
@@ -616,7 +616,7 @@ export default function NewZealandDetailPage() {
                     margin: '0 0 12px 0',
                     lineHeight: 1.4
                   }}>
-                    💼 仕事をしながら生活したい
+                    ✈️ 旅行好き
                   </h3>
                   <p style={{ 
                     margin: 0, 
@@ -624,14 +624,14 @@ export default function NewZealandDetailPage() {
                     lineHeight: 1.6,
                     fontSize: '1rem'
                   }}>
-                    最低賃金が高く、農業や観光業の仕事が豊富。生活費を稼ぎながら海外生活を楽しめます。
+                    中欧の拠点として、近隣諸国への週末旅行を楽しみたい人に最適です。
                   </p>
                 </div>
               </div>
             </div>
           </section>
 
-          {/* CTAセクション - 改善されたボタン */}
+          {/* CTAセクション */}
           <section style={{ 
             background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
             padding: '4rem 3rem',
@@ -670,7 +670,7 @@ export default function NewZealandDetailPage() {
               position: 'relative',
               zIndex: 1
             }}>
-              🚀 ニュージーランドでワーホリを始めよう
+              🚀 ハンガリーでワーホリを始めよう
             </h2>
             <p style={{ 
               fontSize: '1.2rem', 
@@ -680,7 +680,7 @@ export default function NewZealandDetailPage() {
               zIndex: 1,
               lineHeight: 1.6
             }}>
-              雄大な自然、フレンドリーな人々、のんびりとした雰囲気。ニュージーランドはワーホリに最適な国です。
+              温泉、歴史、音楽、夜景。文化体験が詰まったハンガリーでの生活を始めましょう。
             </p>
             <button 
               onClick={() => router.push("/")}

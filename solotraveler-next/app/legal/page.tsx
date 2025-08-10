@@ -1,16 +1,83 @@
 "use client";
-import React from "react";
+import React, { useEffect } from "react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
 
+// GA4イベント計測用のヘルパー関数
+const trackEvent = (action: string, category: string, label?: string, value?: string | number) => {
+  if (typeof window !== 'undefined' && (window as any).gtag) {
+    (window as any).gtag('event', action, {
+      event_category: category,
+      event_label: label,
+      value: value
+    });
+  }
+};
+
 export default function Legal() {
   const router = useRouter();
+
+  // ページ表示時のイベント計測
+  useEffect(() => {
+    // GA4: 特定商取引法ページ表示イベント
+    trackEvent('view', 'ページ', '特定商取引法ページ', 1);
+    
+    // ページタイトルの設定
+    document.title = "特定商取引法に基づく表記｜ワーホリパス";
+    
+    // meta descriptionの設定
+    const metaDescription = document.querySelector('meta[name="description"]');
+    if (metaDescription) {
+      metaDescription.setAttribute('content', 'ワーホリパスの特定商取引法に基づく表記。事業者情報、販売条件、決済方法などの詳細情報をご確認いただけます。');
+    }
+  }, []);
+
+  // スクロール深度計測
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+      const windowHeight = window.innerHeight;
+      const documentHeight = document.documentElement.scrollHeight;
+      const scrollPercentage = Math.round((scrollTop / (documentHeight - windowHeight)) * 100);
+      
+      // 25%, 50%, 75%, 100%のスクロールポイントでイベント送信
+      if (scrollPercentage >= 25 && scrollPercentage < 50) {
+        trackEvent('scroll', 'エンゲージメント', '特定商取引法ページ_スクロール25%', scrollPercentage);
+      } else if (scrollPercentage >= 50 && scrollPercentage < 75) {
+        trackEvent('scroll', 'エンゲージメント', '特定商取引法ページ_スクロール50%', scrollPercentage);
+      } else if (scrollPercentage >= 75 && scrollPercentage < 100) {
+        trackEvent('scroll', 'エンゲージメント', '特定商取引法ページ_スクロール75%', scrollPercentage);
+      } else if (scrollPercentage >= 100) {
+        trackEvent('scroll', 'エンゲージメント', '特定商取引法ページ_スクロール100%', scrollPercentage);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  // 戻るボタンクリック時のイベント計測
+  const handleBackClick = () => {
+    trackEvent('click', 'ナビゲーション', '特定商取引法ページ_戻るボタン', 1);
+    router.push("/");
+  };
+
+  // ナビゲーションリンククリック時のイベント計測
+  const handleNavLinkClick = () => {
+    trackEvent('click', 'ナビゲーション', '特定商取引法ページ_ワーキングホリデー制度とは', 1);
+  };
+
+  // ロゴクリック時のイベント計測
+  const handleLogoClick = () => {
+    trackEvent('click', 'ナビゲーション', '特定商取引法ページ_ロゴクリック', 1);
+  };
+
   return (
     <>
       <header className="App-header stylish-header main-header">
         <div className="header-container">
           <div className="header-logo">
-            <Link href="/" style={{ textDecoration: 'none', color: 'inherit' }}>
+            <Link href="/" style={{ textDecoration: 'none', color: 'inherit' }} onClick={handleLogoClick}>
               <span className="logo-text">
                 <span className="logo-main">ワーホリ</span>
                 <span className="logo-sub">パス</span>
@@ -19,7 +86,7 @@ export default function Legal() {
             </Link>
           </div>
           <nav className="header-nav">
-            <a href="/about-workingholiday" className="nav-link">
+            <a href="/about-workingholiday" className="nav-link" onClick={handleNavLinkClick}>
               ワーキングホリデー制度とは
             </a>
           </nav>
@@ -27,7 +94,7 @@ export default function Legal() {
         <div className="header-gradient-bar" />
       </header>
       <button
-        onClick={() => router.push("/")}
+        onClick={handleBackClick}
         className="fixed-back-button"
         aria-label="戻る"
       >

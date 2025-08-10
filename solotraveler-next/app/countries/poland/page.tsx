@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useEffect } from "react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
 import polandData from "../../../db.json";
@@ -7,6 +7,17 @@ import polandData from "../../../db.json";
 export default function PolandDetailPage() {
   const router = useRouter();
   const country = polandData.countries.find(c => c.id === "poland")!;
+
+  // ページタイトルとメタディスクリプションの最適化
+  useEffect(() => {
+    document.title = `ワーホリ ポーランド比較｜費用・条件・おすすめエージェントを徹底比較`;
+    
+    // meta descriptionの更新
+    const metaDescription = document.querySelector('meta[name="description"]');
+    if (metaDescription) {
+      metaDescription.setAttribute('content', `ポーランドワーホリの費用、条件、おすすめエージェントを徹底比較。中世の街並みと歴史が息づく国でワーホリ体験。`);
+    }
+  }, []);
 
   return (
     <>

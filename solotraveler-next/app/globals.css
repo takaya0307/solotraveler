@@ -3749,3 +3749,48 @@ img.modal-image {
     font-size: 0.9rem;
   }
 }
+
+/* スクリーンリーダー用のクラス */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* SEO最適化用のスタイル */
+.seo-optimized {
+  /* 検索エンジンが理解しやすい構造化されたコンテンツ */
+}
+
+/* パフォーマンス最適化 */
+.performance-optimized {
+  will-change: auto;
+  contain: layout style paint;
+}
+
+/* アクセシビリティ向上 */
+.focus-visible {
+  outline: 2px solid #2563eb;
+  outline-offset: 2px;
+}
+
+/* プリロード用のスタイル */
+.preload-critical {
+  font-display: swap;
+}
+
+/* 構造化データ用のスタイル */
+.structured-data {
+  /* 構造化データの視覚的表現 */
+}
+
+/* メタデータ最適化 */
+.meta-optimized {
+  /* メタデータの最適化された表示 */
+}

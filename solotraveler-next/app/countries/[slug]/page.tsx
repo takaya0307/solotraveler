@@ -1,19 +1,38 @@
 "use client";
-import React from "react";
+import React, { useEffect } from "react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
 import australiaData from "../../../db.json";
 
+// GA4イベント計測用のヘルパー関数
+const trackEvent = (action: string, category: string, label?: string, value?: string | number) => {
+  if (typeof window !== 'undefined' && (window as any).gtag) {
+    (window as any).gtag('event', action, {
+      event_category: category,
+      event_label: label,
+      value: value
+    });
+  }
+};
+
 export default function CountryDetailPage({ params }: { params: { slug: string } }) {
   const router = useRouter();
   const country = australiaData.countries.find(c => c.id === "australia")!;
+
+  // ページビュー計測
+  useEffect(() => {
+    trackEvent('view', 'ページ', `国詳細_${country.nameJa}`, 1);
+  }, [country.nameJa]);
 
   // 現在はオーストラリアのみ対応
   if (params.slug !== "australia") {
     return (
       <div style={{ padding: '2rem', textAlign: 'center' }}>
         <h1>ページが見つかりません</h1>
-        <button onClick={() => router.push("/")}>ホームに戻る</button>
+        <button onClick={() => {
+          trackEvent('click', 'CTA', 'ホームに戻る_エラーページ', 1);
+          router.push("/");
+        }}>ホームに戻る</button>
       </div>
     );
   }
@@ -41,7 +60,10 @@ export default function CountryDetailPage({ params }: { params: { slug: string }
       </header>
       
       <button
-        onClick={() => router.push("/")}
+        onClick={() => {
+          trackEvent('click', 'ナビゲーション', '戻るボタン_国詳細ページ', 1);
+          router.push("/");
+        }}
         className="fixed-back-button"
         aria-label="戻る"
       >
@@ -682,7 +704,10 @@ export default function CountryDetailPage({ params }: { params: { slug: string }
               温暖な気候、フレンドリーな人々、豊富な仕事。オーストラリアはワーホリに最適な国です。
             </p>
             <button 
-              onClick={() => router.push("/")}
+              onClick={() => {
+                trackEvent('click', 'CTA', '他の国も見てみる_国詳細ページ', 1);
+                router.push("/");
+              }}
               style={{
                 background: 'linear-gradient(135deg, #f093fb 0%, #f5576c 100%)',
                 color: 'white',
@@ -763,7 +788,10 @@ export default function CountryDetailPage({ params }: { params: { slug: string }
               ワーキングホリデーについて詳しく知りたい方、不安なことがある方はお気軽にご相談ください。
             </p>
             <button 
-              onClick={() => router.push("/lp")}
+              onClick={() => {
+                trackEvent('click', 'CTA', '無料相談_国詳細ページ', 1);
+                router.push("/lp");
+              }}
               style={{
                 background: 'linear-gradient(135deg, #f093fb 0%, #f5576c 100%)',
                 color: 'white',

@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useEffect } from "react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
 import italyData from "../../../db.json";
@@ -7,6 +7,17 @@ import italyData from "../../../db.json";
 export default function ItalyDetailPage() {
   const router = useRouter();
   const country = italyData.countries.find(c => c.id === "italy")!;
+
+  // ページタイトルとメタディスクリプションの最適化
+  useEffect(() => {
+    document.title = `ワーホリ イタリア比較｜費用・条件・おすすめエージェントを徹底比較`;
+    
+    // meta descriptionの更新
+    const metaDescription = document.querySelector('meta[name="description"]');
+    if (metaDescription) {
+      metaDescription.setAttribute('content', `イタリアワーホリの費用、条件、おすすめエージェントを徹底比較。芸術と歴史、美食の国でワーホリ体験。`);
+    }
+  }, []);
 
   return (
     <>

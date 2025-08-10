@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useEffect } from "react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
 import czechData from "../../../db.json";
@@ -7,6 +7,17 @@ import czechData from "../../../db.json";
 export default function CzechDetailPage() {
   const router = useRouter();
   const country = czechData.countries.find(c => c.id === "czech")!;
+
+  // ページタイトルとメタディスクリプションの最適化
+  useEffect(() => {
+    document.title = `ワーホリ チェコ比較｜費用・条件・おすすめエージェントを徹底比較`;
+    
+    // meta descriptionの更新
+    const metaDescription = document.querySelector('meta[name="description"]');
+    if (metaDescription) {
+      metaDescription.setAttribute('content', `チェコワーホリの費用、条件、おすすめエージェントを徹底比較。中世の街並みとビール文化の国でワーホリ体験。`);
+    }
+  }, []);
 
   return (
     <>

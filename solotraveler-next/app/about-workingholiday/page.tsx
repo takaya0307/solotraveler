@@ -1,17 +1,36 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
+
+// GA4イベント計測用のヘルパー関数
+const trackEvent = (action: string, category: string, label?: string, value?: string | number) => {
+  if (typeof window !== 'undefined' && (window as any).gtag) {
+    (window as any).gtag('event', action, {
+      event_category: category,
+      event_label: label,
+      value: value
+    });
+  }
+};
 
 export default function AboutWorkingHoliday() {
   const router = useRouter();
   const [openFaq, setOpenFaq] = useState<number | null>(null);
 
+  // ページビュー計測
+  useEffect(() => {
+    trackEvent('view', 'ページ', 'ワーキングホリデー制度とは', 1);
+  }, []);
+
   const toggleFaq = (index: number) => {
+    const isOpening = openFaq !== index;
+    trackEvent('click', 'FAQ', `FAQ_${faqData[index].question}`, isOpening ? 1 : 0);
     setOpenFaq(openFaq === index ? null : index);
   };
 
   const scrollToSection = (sectionId: string) => {
+    trackEvent('click', 'ナビゲーション', `セクション移動_${sectionId}`, 1);
     const element = document.getElementById(sectionId);
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });
@@ -64,7 +83,10 @@ export default function AboutWorkingHoliday() {
       </header>
       
       <button
-        onClick={() => router.push("/")}
+        onClick={() => {
+          trackEvent('click', 'ナビゲーション', '戻るボタン_ワーキングホリデー制度', 1);
+          router.push("/");
+        }}
         className="fixed-back-button"
         aria-label="戻る"
       >

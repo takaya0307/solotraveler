@@ -6,7 +6,10 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "analyze": "ANALYZE=true next build",
+    "sitemap": "next build && node scripts/generate-sitemap.js",
+    "seo-check": "npm run build && npm run sitemap"
   },
   "dependencies": {
     "react": "^18",
@@ -19,6 +22,7 @@
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "@tailwindcss/postcss": "^4",
-    "tailwindcss": "^4"
+    "tailwindcss": "^4",
+    "@next/bundle-analyzer": "^14.2.3"
   }
 }

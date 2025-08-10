@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useEffect } from "react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
 import austriaData from "../../../db.json";
@@ -7,6 +7,17 @@ import austriaData from "../../../db.json";
 export default function AustriaDetailPage() {
   const router = useRouter();
   const country = austriaData.countries.find(c => c.id === "austria")!;
+
+  // ページタイトルとメタディスクリプションの最適化
+  useEffect(() => {
+    document.title = `ワーホリ オーストリア比較｜費用・条件・おすすめエージェントを徹底比較`;
+    
+    // meta descriptionの更新
+    const metaDescription = document.querySelector('meta[name="description"]');
+    if (metaDescription) {
+      metaDescription.setAttribute('content', `オーストリアワーホリの費用、条件、おすすめエージェントを徹底比較。音楽と芸術、歴史的な街並みが魅力のアルプスの国でワーホリ体験。`);
+    }
+  }, []);
 
   return (
     <>

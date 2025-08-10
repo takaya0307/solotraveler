@@ -2,20 +2,20 @@
 import React, { useEffect } from "react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
-import newzealandData from "../../../db.json";
+import hongkongData from "../../../db.json";
 
-export default function NewZealandDetailPage() {
+export default function HongKongDetailPage() {
   const router = useRouter();
-  const country = newzealandData.countries.find(c => c.id === "newzealand")!;
+  const country = hongkongData.countries.find(c => c.id === "hongkong")!;
 
   // ページタイトルとメタディスクリプションの最適化
   useEffect(() => {
-    document.title = `ワーホリ ニュージーランド比較｜費用・条件・おすすめエージェントを徹底比較`;
+    document.title = `ワーホリ 香港比較｜費用・条件・おすすめエージェントを徹底比較`;
     
     // meta descriptionの更新
     const metaDescription = document.querySelector('meta[name="description"]');
     if (metaDescription) {
-      metaDescription.setAttribute('content', `ニュージーランドワーホリの費用、条件、おすすめエージェントを徹底比較。大自然とフレンドリーな人々が魅力の南太平洋の国でワーホリ体験。`);
+      metaDescription.setAttribute('content', `香港ワーホリの費用、条件、おすすめエージェントを徹底比較。アジアの金融センターと文化が融合した都市でワーホリ体験。`);
     }
   }, []);
 
@@ -92,7 +92,7 @@ export default function NewZealandDetailPage() {
             fontWeight: 400,
             lineHeight: 1.5
           }}>
-            大自然とフレンドリーな人々が魅力の南太平洋の国
+            アジアと西洋が融合する国際都市の魅力
           </p>
         </div>
 
@@ -188,8 +188,8 @@ export default function NewZealandDetailPage() {
             </div>
             <h3 style={{ margin: '0 0 1rem 0', fontSize: '1.1rem', fontWeight: 600, opacity: 0.9 }}>滞在期間</h3>
             <div style={{ margin: 0 }}>
-              <p style={{ margin: '0 0 0.3rem 0', fontSize: '1.8rem', fontWeight: 800 }}>最大1年3ヶ月</p>
-              <p style={{ margin: 0, fontSize: '1rem', fontWeight: 400, opacity: 0.8 }}>（条件あり）</p>
+              <p style={{ margin: '0 0 0.3rem 0', fontSize: '1.8rem', fontWeight: 800 }}>最大360日</p>
+              <p style={{ margin: 0, fontSize: '1rem', fontWeight: 400, opacity: 0.8 }}>（延長不可）</p>
             </div>
           </div>
           
@@ -227,7 +227,7 @@ export default function NewZealandDetailPage() {
         {/* 記事コンテンツ */}
         <article style={{ lineHeight: 1.8, color: '#374151' }}>
           
-          {/* ニュージーランドの魅力セクション */}
+          {/* 香港の魅力セクション */}
           <section style={{ marginBottom: '5rem' }}>
             <h2 style={{ 
               fontSize: '2.2rem', 
@@ -244,13 +244,13 @@ export default function NewZealandDetailPage() {
                 WebkitTextFillColor: 'transparent',
                 backgroundClip: 'text'
               }}>
-                🌟 ニュージーランドの魅力
+                🌟 香港の魅力
               </span>
             </h2>
             
             <div style={{ fontSize: '1.1rem', lineHeight: 1.8 }}>
               <p style={{ marginBottom: '2.5rem', color: '#4b5563', fontSize: '1.15rem' }}>
-                ニュージーランドは、南太平洋に浮かぶ美しい島国。雄大な自然とフレンドリーな人々が魅力で、のんびりとした雰囲気が特徴です。フィヨルドや山々、美しい湖など、大自然を満喫できる環境が整っています。
+                香港は、アジアと西洋の文化が融合する国際都市。高層ビルが林立する美しいスカイライン、世界有数の夜景、そして豊富な飲茶文化が魅力です。活気ある都市生活と伝統文化が共存する魅力的な街です。
               </p>
               
               {/* ワーホリ生活のイメージ写真 */}
@@ -261,7 +261,7 @@ export default function NewZealandDetailPage() {
                 marginBottom: '3rem'
               }}>
                 <div style={{
-                  background: 'url("https://images.unsplash.com/photo-1595125990323-885cec5217ff?w=600&auto=format&fit=crop&q=60")',
+                  background: 'url("https://images.unsplash.com/photo-1536599018102-9f803c140fc1?w=600&auto=format&fit=crop&q=60")',
                   backgroundSize: 'cover',
                   backgroundPosition: 'center',
                   height: '250px',
@@ -279,13 +279,13 @@ export default function NewZealandDetailPage() {
                     padding: '1.5rem',
                     borderRadius: '0 0 12px 12px'
                   }}>
-                    <h4 style={{ margin: '0 0 0.5rem 0', fontSize: '1.1rem', fontWeight: 600 }}>大自然</h4>
-                    <p style={{ margin: 0, fontSize: '0.9rem', opacity: 0.9 }}>フィヨルドや山々でのアウトドア</p>
+                    <h4 style={{ margin: '0 0 0.5rem 0', fontSize: '1.1rem', fontWeight: 600 }}>スカイライン</h4>
+                    <p style={{ margin: 0, fontSize: '0.9rem', opacity: 0.9 }}>世界有数の美しい高層ビル群</p>
                   </div>
                 </div>
                 
                 <div style={{
-                  background: 'url("https://images.unsplash.com/photo-1515253648320-6d70d901f0ac?w=600&auto=format&fit=crop&q=60")',
+                  background: 'url("https://images.unsplash.com/photo-1620015092538-e33c665fc181?w=600&auto=format&fit=crop&q=60")',
                   backgroundSize: 'cover',
                   backgroundPosition: 'center',
                   height: '250px',
@@ -303,13 +303,13 @@ export default function NewZealandDetailPage() {
                     padding: '1.5rem',
                     borderRadius: '0 0 12px 12px'
                   }}>
-                    <h4 style={{ margin: '0 0 0.5rem 0', fontSize: '1.1rem', fontWeight: 600 }}>アドベンチャー</h4>
-                    <p style={{ margin: 0, fontSize: '0.9rem', opacity: 0.9 }}>バンジージャンプやスカイダイビング</p>
+                    <h4 style={{ margin: '0 0 0.5rem 0', fontSize: '1.1rem', fontWeight: 600 }}>夜景</h4>
+                    <p style={{ margin: 0, fontSize: '0.9rem', opacity: 0.9 }}>ビクトリアピークからの絶景</p>
                   </div>
                 </div>
                 
                 <div style={{
-                  background: 'url("https://images.unsplash.com/photo-1680180730599-61216c165c96?w=600&auto=format&fit=crop&q=60")',
+                  background: 'url("https://images.unsplash.com/photo-1552993873-0dd1110e025f?w=600&auto=format&fit=crop&q=60")',
                   backgroundSize: 'cover',
                   backgroundPosition: 'center',
                   height: '250px',
@@ -327,8 +327,8 @@ export default function NewZealandDetailPage() {
                     padding: '1.5rem',
                     borderRadius: '0 0 12px 12px'
                   }}>
-                    <h4 style={{ margin: '0 0 0.5rem 0', fontSize: '1.1rem', fontWeight: 600 }}>温泉文化</h4>
-                    <p style={{ margin: 0, fontSize: '0.9rem', opacity: 0.9 }}>地熱地帯での温泉体験</p>
+                    <h4 style={{ margin: '0 0 0.5rem 0', fontSize: '1.1rem', fontWeight: 600 }}>飲茶文化</h4>
+                    <p style={{ margin: 0, fontSize: '0.9rem', opacity: 0.9 }}>伝統的な点心とお茶の文化</p>
                   </div>
                 </div>
               </div>
@@ -355,7 +355,7 @@ export default function NewZealandDetailPage() {
                     🌤️ 気候
                   </h4>
                   <p style={{ margin: 0, color: '#78350f', lineHeight: 1.6 }}>
-                    四季がはっきりしており、夏は温暖、冬は比較的穏やか。地域によって気候が異なり、北島は温暖、南島は涼しい気候です。
+                    亜熱帯気候で、夏は暑く湿度が高く、冬は比較的穏やか。台風シーズンもありますが、基本的に過ごしやすい気候です。
                   </p>
                 </div>
                 
@@ -370,7 +370,7 @@ export default function NewZealandDetailPage() {
                     🛡️ 治安
                   </h4>
                   <p style={{ margin: 0, color: '#1e3a8a', lineHeight: 1.6 }}>
-                    世界でも最も安全な国の一つとして知られています。日本人にとって安心して生活できる環境で、人々も親切です。
+                    非常に安全で、日本と同様に安心して生活できます。公共交通機関も発達しており、移動も便利です。
                   </p>
                 </div>
                 
@@ -385,7 +385,7 @@ export default function NewZealandDetailPage() {
                     😊 人々の性格
                   </h4>
                   <p style={{ margin: 0, color: '#14532d', lineHeight: 1.6 }}>
-                    ニュージーランド人は親切でフレンドリーな性格の人が多いです。のんびりとした雰囲気で、自然を愛する人が多いです。
+                    香港人は親しみやすく、外国人に対してとても友好的です。英語も広く通じ、コミュニケーションが取りやすい環境です。
                   </p>
                 </div>
               </div>
@@ -401,21 +401,21 @@ export default function NewZealandDetailPage() {
                 lineHeight: 1.8
               }}>
                 <li style={{ marginBottom: '1rem' }}>
-                  <strong>英語学習環境：</strong>英語圏で、比較的聞き取りやすいニュージーランド英語
+                  <strong>国際的な環境：</strong>アジアと西洋の文化が融合し、多様な価値観を学べる
                 </li>
                 <li style={{ marginBottom: '1rem' }}>
-                  <strong>豊富な仕事：</strong>農業や観光業の仕事が豊富で、ワーホリビザでも比較的仕事を見つけやすい
+                  <strong>豊富な美食文化：</strong>飲茶や広東料理など、世界に誇る香港料理を楽しめる
                 </li>
                 <li style={{ marginBottom: '1rem' }}>
-                  <strong>高い賃金：</strong>最低賃金が高いため、生活費を稼ぎながら英語を学べる
+                  <strong>都市と自然の融合：</strong>高層ビルと美しい自然景観が共存する環境
                 </li>
                 <li style={{ marginBottom: '1rem' }}>
-                  <strong>自然体験：</strong>雄大な自然の中でアウトドアアクティビティが楽しめる
+                  <strong>英語環境：</strong>英語が広く通じ、国際的な仕事環境で英語力を伸ばせる
                 </li>
               </ul>
               
               <h3 style={{ fontSize: '1.4rem', fontWeight: 700, color: '#1f2937', margin: '3rem 0 1.5rem 0' }}>
-                📚 英語学習の環境
+                🍜 香港料理の魅力
               </h3>
               <ul style={{ 
                 marginBottom: '2.5rem', 
@@ -425,21 +425,21 @@ export default function NewZealandDetailPage() {
                 lineHeight: 1.8
               }}>
                 <li style={{ marginBottom: '1rem' }}>
-                  <strong>聞き取りやすい英語：</strong>ニュージーランド英語は比較的聞き取りやすく、英語学習初心者にも適しています
+                  <strong>飲茶：</strong>世界に誇る香港の名物文化で、本場の点心を楽しめます
                 </li>
                 <li style={{ marginBottom: '1rem' }}>
-                  <strong>充実した語学学校：</strong>語学学校も充実しており、英語力を伸ばすのに最適な環境です
+                  <strong>広東料理：</strong>香港を代表する料理で、新鮮な食材と繊細な調理が特徴です
                 </li>
                 <li style={{ marginBottom: '1rem' }}>
-                  <strong>多文化社会：</strong>様々な国の人々と交流でき、実践的な英語力を身につけることができます
+                  <strong>屋台グルメ：</strong>街角の屋台で様々なローカルフードを楽しめます
                 </li>
               </ul>
               
               <h3 style={{ fontSize: '1.4rem', fontWeight: 700, color: '#1f2937', margin: '3rem 0 1.5rem 0' }}>
-                🏃‍♂️ アウトドアライフ
+                🏮 文化と歴史体験
               </h3>
               <p style={{ marginBottom: '2.5rem', color: '#4b5563', fontSize: '1.15rem' }}>
-                フィヨルド、山々、美しい湖など、自然が豊富です。ハイキング、スキー、キャンプ、アドベンチャースポーツなど、四季を通じて様々なアウトドアアクティビティが楽しめます。
+                香港は、イギリスの植民地時代の名残と中国の伝統文化が融合した独特な文化を持っています。歴史的建造物や寺院、そして現代的なショッピングモールまで、多様な文化体験ができる環境が整っています。
               </p>
             </div>
           </section>
@@ -499,7 +499,7 @@ export default function NewZealandDetailPage() {
                     margin: '0 0 12px 0',
                     lineHeight: 1.4
                   }}>
-                    🏔️ アウトドア好き
+                    🍜 グルメ好き
                   </h3>
                   <p style={{ 
                     margin: 0, 
@@ -507,7 +507,7 @@ export default function NewZealandDetailPage() {
                     lineHeight: 1.6,
                     fontSize: '1rem'
                   }}>
-                    雄大な自然が好きな人には最高の環境。ハイキング、スキー、キャンプ、アドベンチャースポーツなど、四季を通じて様々なアウトドアアクティビティが楽しめます。
+                    飲茶や広東料理など、世界に誇る香港料理を本場で楽しめます。屋台グルメも充実しています。
                   </p>
                 </div>
                 
@@ -538,7 +538,7 @@ export default function NewZealandDetailPage() {
                     margin: '0 0 12px 0',
                     lineHeight: 1.4
                   }}>
-                    🗣️ 英語を話したい
+                    🌆 都市生活が好き
                   </h3>
                   <p style={{ 
                     margin: 0, 
@@ -546,7 +546,7 @@ export default function NewZealandDetailPage() {
                     lineHeight: 1.6,
                     fontSize: '1rem'
                   }}>
-                    英語圏で、比較的聞き取りやすいニュージーランド英語。語学学校も充実しており、英語力を伸ばすのに最適です。
+                    高層ビルが林立する美しいスカイラインと、活気ある都市生活を楽しめます。
                   </p>
                 </div>
                 
@@ -574,10 +574,10 @@ export default function NewZealandDetailPage() {
                     fontSize: '1.3rem', 
                     fontWeight: 700, 
                     color: '#1f2937', 
-                    margin: '0 0 12px 0',
+                    margin: 0, 
                     lineHeight: 1.4
                   }}>
-                    🌍 のんびりしたい
+                    🌍 国際的な環境
                   </h3>
                   <p style={{ 
                     margin: 0, 
@@ -585,7 +585,7 @@ export default function NewZealandDetailPage() {
                     lineHeight: 1.6,
                     fontSize: '1rem'
                   }}>
-                    のんびりとした雰囲気が魅力。自然の中でリラックスした生活を送りたい人に最適です。ストレスフリーな環境で過ごせます。
+                    アジアと西洋の文化が融合する国際都市で、多様な価値観を学べます。
                   </p>
                 </div>
                 
@@ -616,7 +616,7 @@ export default function NewZealandDetailPage() {
                     margin: '0 0 12px 0',
                     lineHeight: 1.4
                   }}>
-                    💼 仕事をしながら生活したい
+                    💼 キャリア志向
                   </h3>
                   <p style={{ 
                     margin: 0, 
@@ -624,7 +624,7 @@ export default function NewZealandDetailPage() {
                     lineHeight: 1.6,
                     fontSize: '1rem'
                   }}>
-                    最低賃金が高く、農業や観光業の仕事が豊富。生活費を稼ぎながら海外生活を楽しめます。
+                    国際的なビジネス環境で、英語力を活かした仕事経験を積めます。
                   </p>
                 </div>
               </div>
@@ -670,7 +670,7 @@ export default function NewZealandDetailPage() {
               position: 'relative',
               zIndex: 1
             }}>
-              🚀 ニュージーランドでワーホリを始めよう
+              🚀 香港でワーホリを始めよう
             </h2>
             <p style={{ 
               fontSize: '1.2rem', 
@@ -680,7 +680,7 @@ export default function NewZealandDetailPage() {
               zIndex: 1,
               lineHeight: 1.6
             }}>
-              雄大な自然、フレンドリーな人々、のんびりとした雰囲気。ニュージーランドはワーホリに最適な国です。
+              アジアと西洋が融合する国際都市。香港はワーホリに最適な国です。
             </p>
             <button 
               onClick={() => router.push("/")}

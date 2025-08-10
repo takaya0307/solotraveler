@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useEffect } from "react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
 import franceData from "../../../db.json";
@@ -7,6 +7,17 @@ import franceData from "../../../db.json";
 export default function FranceDetailPage() {
   const router = useRouter();
   const country = franceData.countries.find(c => c.id === "france")!;
+
+  // ページタイトルとメタディスクリプションの最適化
+  useEffect(() => {
+    document.title = `ワーホリ フランス比較｜費用・条件・おすすめエージェントを徹底比較`;
+    
+    // meta descriptionの更新
+    const metaDescription = document.querySelector('meta[name="description"]');
+    if (metaDescription) {
+      metaDescription.setAttribute('content', `フランスワーホリの費用、条件、おすすめエージェントを徹底比較。芸術と美食、ファッションの都でワーホリ体験。`);
+    }
+  }, []);
 
   return (
     <>

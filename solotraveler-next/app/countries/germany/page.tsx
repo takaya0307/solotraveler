@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useEffect } from "react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
 import germanyData from "../../../db.json";
@@ -7,6 +7,17 @@ import germanyData from "../../../db.json";
 export default function GermanyDetailPage() {
   const router = useRouter();
   const country = germanyData.countries.find(c => c.id === "germany")!;
+
+  // ページタイトルとメタディスクリプションの最適化
+  useEffect(() => {
+    document.title = `ワーホリ ドイツ比較｜費用・条件・おすすめエージェントを徹底比較`;
+    
+    // meta descriptionの更新
+    const metaDescription = document.querySelector('meta[name="description"]');
+    if (metaDescription) {
+      metaDescription.setAttribute('content', `ドイツワーホリの費用、条件、おすすめエージェントを徹底比較。技術と文化、歴史が融合した国でワーホリ体験。`);
+    }
+  }, []);
 
   return (
     <>

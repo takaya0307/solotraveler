@@ -641,10 +641,10 @@ function PageComponent() {
                           style={{ borderRadius: '2px', objectFit: 'cover', boxShadow: '0 1px 4px rgba(0,0,0,0.08)' }}
                         />
                       )}
-                    <h2 className="card-title">{country.nameJa}</h2>
+                      <h2 className="card-title">{country.nameJa}</h2>
+                    </div>
                   </div>
                 </div>
-              </div>
               <div className="card-content">
                 {/* 概要（summary）を表示。なければrecommendationや説明文を仮で表示 */}
                 <div className="country-summary">
@@ -653,7 +653,14 @@ function PageComponent() {
                 <div style={{ display: 'flex', gap: '1em', marginTop: '0.2em', marginBottom: '0.2em' }}>
                   <button
                     onClick={() => {
-                      if (country.id === 'australia' || country.id === 'canada' || country.id === 'newzealand' || country.id === 'uk' || country.id === 'ireland' || country.id === 'france' || country.id === 'germany' || country.id === 'spain' || country.id === 'italy' || country.id === 'portugal' || country.id === 'austria' || country.id === 'norway' || country.id === 'denmark' || country.id === 'poland' || country.id === 'czech') {
+                      // 外部ページがある国のリスト
+                      const externalPageCountries = [
+                        'australia', 'canada', 'newzealand', 'uk', 'ireland', 
+                        'france', 'germany', 'spain', 'italy', 'portugal', 
+                        'austria', 'norway', 'denmark', 'poland', 'czech'
+                      ];
+                      
+                      if (externalPageCountries.includes(country.id)) {
                         trackEvent('click', 'CTA', `詳細情報_${country.nameJa}_外部ページ`, 1);
                         router.push(`/countries/${country.id}`);
                       } else {

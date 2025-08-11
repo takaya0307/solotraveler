@@ -2,20 +2,20 @@
 import React, { useEffect } from "react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
-import latviaData from "../../../db.json";
+import netherlandsData from "../../../db.json";
 
-export default function LatviaDetailPage() {
+export default function NetherlandsDetailPage() {
   const router = useRouter();
-  const country = latviaData.countries.find(c => c.id === "latvia")!;
+  const country = netherlandsData.countries.find(c => c.id === "netherlands")!;
 
   // ページタイトルとメタディスクリプションの最適化
   useEffect(() => {
-    document.title = `ワーホリ ラトビア比較｜費用・条件・おすすめエージェントを徹底比較`;
+    document.title = `ワーホリ オランダ比較｜費用・条件・おすすめエージェントを徹底比較`;
     
     // meta descriptionの更新
     const metaDescription = document.querySelector('meta[name="description"]');
     if (metaDescription) {
-      metaDescription.setAttribute('content', `ラトビアワーホリの費用、条件、おすすめエージェントを徹底比較。バルト海沿岸の自然と歴史的な街並みが魅力の国でワーホリ体験。`);
+      metaDescription.setAttribute('content', `オランダワーホリの費用、条件、おすすめエージェントを徹底比較。自由な雰囲気と美しい運河が魅力の国でワーホリ体験。`);
     }
   }, []);
 
@@ -92,7 +92,7 @@ export default function LatviaDetailPage() {
             fontWeight: 400,
             lineHeight: 1.5
           }}>
-            バルト海沿岸の自然と歴史的な街並みが魅力の国
+            自由な雰囲気と美しい運河が魅力の国
           </p>
         </div>
 
@@ -127,7 +127,10 @@ export default function LatviaDetailPage() {
               💰
             </div>
             <h3 style={{ margin: '0 0 1rem 0', fontSize: '1.1rem', fontWeight: 600, opacity: 0.9 }}>最低賃金</h3>
-            <p style={{ margin: 0, fontSize: '1.8rem', fontWeight: 800 }}>{country.minWage}</p>
+            <div style={{ margin: 0 }}>
+              <p style={{ margin: '0 0 0.3rem 0', fontSize: '1.8rem', fontWeight: 800 }}>EUR 14.4/時</p>
+              <p style={{ margin: 0, fontSize: '1rem', fontWeight: 400, opacity: 0.8 }}>（年齢により異なる）</p>
+            </div>
           </div>
           
           <div className="info-card" style={{
@@ -227,7 +230,7 @@ export default function LatviaDetailPage() {
         {/* 記事コンテンツ */}
         <article style={{ lineHeight: 1.8, color: '#374151' }}>
           
-          {/* ラトビアの魅力セクション */}
+          {/* オランダの魅力セクション */}
           <section style={{ marginBottom: '5rem' }}>
             <h2 style={{ 
               fontSize: '2.2rem', 
@@ -244,13 +247,13 @@ export default function LatviaDetailPage() {
                 WebkitTextFillColor: 'transparent',
                 backgroundClip: 'text'
               }}>
-                🌟 ラトビアの魅力
+                🌟 オランダの魅力
               </span>
             </h2>
             
             <div style={{ fontSize: '1.1rem', lineHeight: 1.8 }}>
               <p style={{ marginBottom: '2.5rem', color: '#4b5563', fontSize: '1.15rem' }}>
-                ラトビアは、バルト海沿岸の美しい自然と歴史的な街並みが魅力の国です。首都リガの世界遺産に登録された旧市街、アールヌーボー建築が並ぶ美しい街並み、そして豊富な森と湖の景観が特徴です。物価も安く、英語も通じやすいため、日本人にとって住みやすい環境で、ヨーロッパ文化と現地の人々との交流を楽しめる魅力的な国です。
+                オランダは、美しい運河と歴史的建造物が織りなす水の都として知られる魅力的な国です。首都アムステルダムの自由な雰囲気、自転車文化が根づく街並み、そして世界遺産に登録された運河地区が特徴です。英語も広く通じ、多国籍な環境で、ヨーロッパ各国への旅行も気軽にできる国として人気があります。
               </p>
               
               {/* ワーホリ生活のイメージ写真 */}
@@ -261,7 +264,55 @@ export default function LatviaDetailPage() {
                 marginBottom: '3rem'
               }}>
                 <div style={{
-                  background: 'url("https://images.unsplash.com/photo-1567669721460-221b82865ee0?w=600&auto=format&fit=crop&q=60")',
+                  background: 'url("https://images.unsplash.com/photo-1534351590666-13e3e96b5017?w=600&auto=format&fit=crop&q=60")',
+                  backgroundSize: 'cover',
+                  backgroundPosition: 'center',
+                  height: '250px',
+                  borderRadius: 12,
+                  position: 'relative',
+                  boxShadow: '0 4px 15px rgba(0,0,0,0.1)'
+                }}>
+                  <div style={{
+                    position: 'absolute',
+                    bottom: 0,
+                    left: 0,
+                    right: 0,
+                    background: 'linear-gradient(transparent, rgba(0,0,0,0.7))',
+                    color: 'white',
+                    padding: '1.5rem',
+                    borderRadius: '0 0 12px 12px'
+                  }}>
+                    <h4 style={{ margin: '0 0 0.5rem 0', fontSize: '1.1rem', fontWeight: 600 }}>水の都</h4>
+                    <p style={{ margin: 0, fontSize: '0.9rem', opacity: 0.9 }}>アムステルダムの美しい運河</p>
+                  </div>
+                </div>
+                
+                <div style={{
+                  background: 'url("https://images.unsplash.com/photo-1565611487608-281f9c0cafb0?w=600&auto=format&fit=crop&q=60")',
+                  backgroundSize: 'cover',
+                  backgroundPosition: 'center',
+                  height: '250px',
+                  borderRadius: 12,
+                  position: 'relative',
+                  boxShadow: '0 4px 15px rgba(0,0,0,0.1)'
+                }}>
+                  <div style={{
+                    position: 'absolute',
+                    bottom: 0,
+                    left: 0,
+                    right: 0,
+                    background: 'linear-gradient(transparent, rgba(0,0,0,0.7))',
+                    color: 'white',
+                    padding: '1.5rem',
+                    borderRadius: '0 0 12px 12px'
+                  }}>
+                    <h4 style={{ margin: '0 0 0.5rem 0', fontSize: '1.1rem', fontWeight: 600 }}>近代建築</h4>
+                    <p style={{ margin: 0, fontSize: '0.9rem', opacity: 0.9 }}>ロッテルダムのキューブハウス</p>
+                  </div>
+                </div>
+                
+                <div style={{
+                  background: 'url("https://images.unsplash.com/photo-1555676820-aff818cb98af?w=600&auto=format&fit=crop&q=60")',
                   backgroundSize: 'cover',
                   backgroundPosition: 'center',
                   height: '250px',
@@ -280,55 +331,7 @@ export default function LatviaDetailPage() {
                     borderRadius: '0 0 12px 12px'
                   }}>
                     <h4 style={{ margin: '0 0 0.5rem 0', fontSize: '1.1rem', fontWeight: 600 }}>歴史的街並み</h4>
-                    <p style={{ margin: 0, fontSize: '0.9rem', opacity: 0.9 }}>リガの世界遺産旧市街</p>
-                  </div>
-                </div>
-                
-                <div style={{
-                  background: 'url("https://images.unsplash.com/photo-1669667560423-b44337b9b7cb?w=600&auto=format&fit=crop&q=60")',
-                  backgroundSize: 'cover',
-                  backgroundPosition: 'center',
-                  height: '250px',
-                  borderRadius: 12,
-                  position: 'relative',
-                  boxShadow: '0 4px 15px rgba(0,0,0,0.1)'
-                }}>
-                  <div style={{
-                    position: 'absolute',
-                    bottom: 0,
-                    left: 0,
-                    right: 0,
-                    background: 'linear-gradient(transparent, rgba(0,0,0,0.7))',
-                    color: 'white',
-                    padding: '1.5rem',
-                    borderRadius: '0 0 12px 12px'
-                  }}>
-                    <h4 style={{ margin: '0 0 0.5rem 0', fontSize: '1.1rem', fontWeight: 600 }}>要塞の街</h4>
-                    <p style={{ margin: 0, fontSize: '0.9rem', opacity: 0.9 }}>ダウガフピルスの歴史的建造物</p>
-                  </div>
-                </div>
-                
-                <div style={{
-                  background: 'url("https://images.unsplash.com/photo-1564951537954-29dd59397b90?w=600&auto=format&fit=crop&q=60")',
-                  backgroundSize: 'cover',
-                  backgroundPosition: 'center',
-                  height: '250px',
-                  borderRadius: 12,
-                  position: 'relative',
-                  boxShadow: '0 4px 15px rgba(0,0,0,0.1)'
-                }}>
-                  <div style={{
-                    position: 'absolute',
-                    bottom: 0,
-                    left: 0,
-                    right: 0,
-                    background: 'linear-gradient(transparent, rgba(0,0,0,0.7))',
-                    color: 'white',
-                    padding: '1.5rem',
-                    borderRadius: '0 0 12px 12px'
-                  }}>
-                    <h4 style={{ margin: '0 0 0.5rem 0', fontSize: '1.1rem', fontWeight: 600 }}>自然の美しさ</h4>
-                    <p style={{ margin: 0, fontSize: '0.9rem', opacity: 0.9 }}>森と湖が織りなす美しい景観</p>
+                    <p style={{ margin: 0, fontSize: '0.9rem', opacity: 0.9 }}>ユトレヒトのドム塔と旧市街</p>
                   </div>
                 </div>
               </div>
@@ -355,7 +358,7 @@ export default function LatviaDetailPage() {
                     🌤️ 気候
                   </h4>
                   <p style={{ margin: 0, color: '#78350f', lineHeight: 1.6 }}>
-                    バルト海沿岸の海洋性気候で、四季がはっきりしています。夏は涼しく過ごしやすく、冬は雪が降る寒い気候です。春と秋は美しい自然を楽しめる季節です。
+                    海洋性気候で、四季がはっきりしています。夏は涼しく過ごしやすく、冬は比較的温暖です。春と秋は美しい自然を楽しめる季節で、特に春のチューリップの季節は見事です。
                   </p>
                 </div>
                 
@@ -370,7 +373,7 @@ export default function LatviaDetailPage() {
                     🛡️ 治安
                   </h4>
                   <p style={{ margin: 0, color: '#1e3a8a', lineHeight: 1.6 }}>
-                    ヨーロッパの中でも治安が良く、日本人にとっては安心して生活できる環境です。特に旧市街は観光客も多く、安全な地域です。
+                    ヨーロッパの中でも治安が良く、日本人にとっては安心して生活できる環境です。特に観光地は安全で、夜間の外出も問題ありません。
                   </p>
                 </div>
                 
@@ -385,7 +388,7 @@ export default function LatviaDetailPage() {
                     😊 人々の性格
                   </h4>
                   <p style={{ margin: 0, color: '#14532d', lineHeight: 1.6 }}>
-                    ラトビア人は控えめで礼儀正しく、英語も広く通じます。歴史と伝統を大切にする国民性で、親切で温かい人々が多いです。
+                    オランダ人は親切でオープンな性格で、英語も広く通じます。個人の自由と権利を大切にし、多様性を受け入れる寛容な国民性です。
                   </p>
                 </div>
               </div>
@@ -401,10 +404,10 @@ export default function LatviaDetailPage() {
                 lineHeight: 1.8
               }}>
                 <li style={{ marginBottom: '1rem' }}>
-                  <strong>歴史的街並み：</strong>世界遺産に登録された美しい旧市街とアールヌーボー建築
+                  <strong>自由な雰囲気：</strong>個人の自由と権利が尊重される開放的な社会
                 </li>
                 <li style={{ marginBottom: '1rem' }}>
-                  <strong>豊富な自然：</strong>森と湖が織りなす美しい自然景観
+                  <strong>美しい運河：</strong>世界遺産に登録された美しい運河地区
                 </li>
                 <li style={{ marginBottom: '1rem' }}>
                   <strong>英語環境：</strong>若い世代を中心に英語が広く通じる
@@ -415,7 +418,7 @@ export default function LatviaDetailPage() {
               </ul>
               
               <h3 style={{ fontSize: '1.4rem', fontWeight: 700, color: '#1f2937', margin: '3rem 0 1.5rem 0' }}>
-                🏛️ 歴史と文化の魅力
+                🚴 自転車文化とライフスタイル
               </h3>
               <ul style={{ 
                 marginBottom: '2.5rem', 
@@ -425,21 +428,21 @@ export default function LatviaDetailPage() {
                 lineHeight: 1.8
               }}>
                 <li style={{ marginBottom: '1rem' }}>
-                  <strong>世界遺産：</strong>リガ旧市街は世界遺産に登録された歴史的建造物群
+                  <strong>自転車インフラ：</strong>世界最高レベルの自転車専用道路網
                 </li>
                 <li style={{ marginBottom: '1rem' }}>
-                  <strong>アールヌーボー建築：</strong>19世紀末から20世紀初頭の美しい建築様式
+                  <strong>エコライフ：</strong>環境に配慮した持続可能な生活スタイル
                 </li>
                 <li style={{ marginBottom: '1rem' }}>
-                  <strong>バルト文化：</strong>バルト三国の伝統文化と歴史を体験できる
+                  <strong>健康志向：</strong>自転車通勤やアウトドアアクティビティが盛ん
                 </li>
               </ul>
               
               <h3 style={{ fontSize: '1.4rem', fontWeight: 700, color: '#1f2937', margin: '3rem 0 1.5rem 0' }}>
-                🌲 自然とアウトドア
+                🎨 アートと文化
               </h3>
               <p style={{ marginBottom: '2.5rem', color: '#4b5563', fontSize: '1.15rem' }}>
-                ラトビアは豊富な森と湖、そしてバルト海の美しい海岸線を持つ国です。ガウヤ国立公園やケメリ国立公園など、美しい自然公園が数多くあり、ハイキング、サイクリング、湖水浴などのアウトドアアクティビティを楽しめます。四季折々の自然景観が美しく、特に夏の緑と秋の紅葉は見事です。また、バルト海の美しい海岸線では、ビーチアクティビティや海辺の散策も楽しめます。
+                オランダは豊富なアートと文化の歴史を持つ国です。ゴッホ美術館、アンネ・フランクの家、そして数多くの美術館や博物館があります。また、オランダの伝統的な風車、チューリップ畑、そして美しい運河沿いの街並みは、絵画のような美しさを誇ります。現代アートやデザインも盛んで、文化的な刺激に満ちた環境です。
               </p>
             </div>
           </section>
@@ -499,7 +502,7 @@ export default function LatviaDetailPage() {
                     margin: '0 0 12px 0',
                     lineHeight: 1.4
                   }}>
-                    🏰 歴史・建築
+                    🎨 アート・文化
                   </h3>
                   <p style={{ 
                     margin: 0, 
@@ -507,7 +510,7 @@ export default function LatviaDetailPage() {
                     lineHeight: 1.6,
                     fontSize: '1rem'
                   }}>
-                    世界遺産に登録されたリガ旧市街やアールヌーボー建築に興味がある方におすすめです。美しい歴史的建造物と街並みを満喫できます。
+                    ゴッホ美術館やアンネ・フランクの家など、世界的に有名なアートと文化を体験できます。オランダの豊富な美術館や博物館で、芸術的な刺激を受けることができます。
                   </p>
                 </div>
                 
@@ -538,7 +541,7 @@ export default function LatviaDetailPage() {
                     margin: '0 0 12px 0',
                     lineHeight: 1.4
                   }}>
-                    🌲 自然・アウトドア
+                    🚴 自転車・アウトドア
                   </h3>
                   <p style={{ 
                     margin: 0, 
@@ -546,7 +549,7 @@ export default function LatviaDetailPage() {
                     lineHeight: 1.6,
                     fontSize: '1rem'
                   }}>
-                    豊富な自然とアウトドアアクティビティが好きな方におすすめです。森と湖、美しい海岸線で、四季折々の自然を楽しめます。
+                    世界最高レベルの自転車インフラを楽しめます。自転車通勤やサイクリング、そして美しい運河沿いの散策など、健康的で環境に優しいライフスタイルを体験できます。
                   </p>
                 </div>
                 
@@ -577,7 +580,7 @@ export default function LatviaDetailPage() {
                     margin: '0 0 12px 0',
                     lineHeight: 1.4
                   }}>
-                    🌍 ヨーロッパ旅行
+                    🌍 多文化・国際交流
                   </h3>
                   <p style={{ 
                     margin: 0, 
@@ -585,7 +588,7 @@ export default function LatviaDetailPage() {
                     lineHeight: 1.6,
                     fontSize: '1rem'
                   }}>
-                    EU加盟国として、ヨーロッパ各国への旅行が便利です。エストニア、リトアニア、ポーランドなど近隣国へのアクセスも良好で、バルト海クルーズも楽しめます。
+                    多国籍な環境で、世界中から人々が集まる活気ある雰囲気を楽しめます。国際的な視野を広げながら、様々な文化や価値観に触れることができます。
                   </p>
                 </div>
                 
@@ -616,7 +619,7 @@ export default function LatviaDetailPage() {
                     margin: '0 0 12px 0',
                     lineHeight: 1.4
                   }}>
-                    💰 コスト重視
+                    🌷 自然・季節
                   </h3>
                   <p style={{ 
                     margin: 0, 
@@ -624,7 +627,7 @@ export default function LatviaDetailPage() {
                     lineHeight: 1.6,
                     fontSize: '1rem'
                   }}>
-                    物価が安く、コストを抑えてワーホリを楽しみたい方におすすめです。生活費が安いため、長期間の滞在も可能です。
+                    春のチューリップ畑、美しい運河沿いの景観、そして四季折々の自然を楽しめます。特に春の花の季節は見事で、オランダの美しい自然を満喫できます。
                   </p>
                 </div>
               </div>
@@ -670,7 +673,7 @@ export default function LatviaDetailPage() {
               position: 'relative',
               zIndex: 1
             }}>
-              🚀 ラトビアでワーホリを始めよう
+              🚀 オランダでワーホリを始めよう
             </h2>
             <p style={{ 
               fontSize: '1.2rem', 
@@ -680,7 +683,7 @@ export default function LatviaDetailPage() {
               zIndex: 1,
               lineHeight: 1.6
             }}>
-              バルト海沿岸の自然と歴史的な街並みが魅力のラトビアで、特別なワーホリ体験を。
+              自由な雰囲気と美しい運河が魅力のオランダで、特別なワーホリ体験を。
             </p>
             <button 
               onClick={() => router.push("/")}

@@ -2,20 +2,20 @@
 import React, { useEffect } from "react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
-import latviaData from "../../../db.json";
+import chileData from "../../../db.json";
 
-export default function LatviaDetailPage() {
+export default function ChileDetailPage() {
   const router = useRouter();
-  const country = latviaData.countries.find(c => c.id === "latvia")!;
+  const country = chileData.countries.find(c => c.id === "chile")!;
 
   // ページタイトルとメタディスクリプションの最適化
   useEffect(() => {
-    document.title = `ワーホリ ラトビア比較｜費用・条件・おすすめエージェントを徹底比較`;
+    document.title = `ワーホリ チリ比較｜費用・条件・おすすめエージェントを徹底比較`;
     
     // meta descriptionの更新
     const metaDescription = document.querySelector('meta[name="description"]');
     if (metaDescription) {
-      metaDescription.setAttribute('content', `ラトビアワーホリの費用、条件、おすすめエージェントを徹底比較。バルト海沿岸の自然と歴史的な街並みが魅力の国でワーホリ体験。`);
+      metaDescription.setAttribute('content', `チリワーホリの費用、条件、おすすめエージェントを徹底比較。アンデス山脈とパタゴニアの大自然でワーホリ体験。`);
     }
   }, []);
 
@@ -92,7 +92,7 @@ export default function LatviaDetailPage() {
             fontWeight: 400,
             lineHeight: 1.5
           }}>
-            バルト海沿岸の自然と歴史的な街並みが魅力の国
+            アンデス山脈とパタゴニアの大自然が特徴の南米の国
           </p>
         </div>
 
@@ -188,7 +188,7 @@ export default function LatviaDetailPage() {
             </div>
             <h3 style={{ margin: '0 0 1rem 0', fontSize: '1.1rem', fontWeight: 600, opacity: 0.9 }}>滞在期間</h3>
             <div style={{ margin: 0 }}>
-              <p style={{ margin: '0 0 0.3rem 0', fontSize: '1.8rem', fontWeight: 800 }}>最大1年間</p>
+              <p style={{ margin: '0 0 0.3rem 0', fontSize: '1.8rem', fontWeight: 800 }}>最大2年間</p>
               <p style={{ margin: 0, fontSize: '1rem', fontWeight: 400, opacity: 0.8 }}>（延長不可）</p>
             </div>
           </div>
@@ -227,7 +227,7 @@ export default function LatviaDetailPage() {
         {/* 記事コンテンツ */}
         <article style={{ lineHeight: 1.8, color: '#374151' }}>
           
-          {/* ラトビアの魅力セクション */}
+          {/* チリの魅力セクション */}
           <section style={{ marginBottom: '5rem' }}>
             <h2 style={{ 
               fontSize: '2.2rem', 
@@ -244,13 +244,13 @@ export default function LatviaDetailPage() {
                 WebkitTextFillColor: 'transparent',
                 backgroundClip: 'text'
               }}>
-                🌟 ラトビアの魅力
+                🌟 チリの魅力
               </span>
             </h2>
             
             <div style={{ fontSize: '1.1rem', lineHeight: 1.8 }}>
               <p style={{ marginBottom: '2.5rem', color: '#4b5563', fontSize: '1.15rem' }}>
-                ラトビアは、バルト海沿岸の美しい自然と歴史的な街並みが魅力の国です。首都リガの世界遺産に登録された旧市街、アールヌーボー建築が並ぶ美しい街並み、そして豊富な森と湖の景観が特徴です。物価も安く、英語も通じやすいため、日本人にとって住みやすい環境で、ヨーロッパ文化と現地の人々との交流を楽しめる魅力的な国です。
+                チリは、アンデス山脈とパタゴニアの壮大な自然、美しい海岸線、そして豊富なワインが特徴の南米の国。サンティアゴの近代的な都市文化、バルパライソのカラフルな街並み、そしてビニャ・デル・マルの美しいビーチが魅力です。南北に細長い国土を持つチリは、砂漠から氷河まで、多様な自然景観を楽しめる国として知られています。
               </p>
               
               {/* ワーホリ生活のイメージ写真 */}
@@ -261,7 +261,7 @@ export default function LatviaDetailPage() {
                 marginBottom: '3rem'
               }}>
                 <div style={{
-                  background: 'url("https://images.unsplash.com/photo-1567669721460-221b82865ee0?w=600&auto=format&fit=crop&q=60")',
+                  background: 'url("https://images.unsplash.com/photo-1597006438013-0f0cca2c1a03?w=600&auto=format&fit=crop&q=60")',
                   backgroundSize: 'cover',
                   backgroundPosition: 'center',
                   height: '250px',
@@ -279,13 +279,13 @@ export default function LatviaDetailPage() {
                     padding: '1.5rem',
                     borderRadius: '0 0 12px 12px'
                   }}>
-                    <h4 style={{ margin: '0 0 0.5rem 0', fontSize: '1.1rem', fontWeight: 600 }}>歴史的街並み</h4>
-                    <p style={{ margin: 0, fontSize: '0.9rem', opacity: 0.9 }}>リガの世界遺産旧市街</p>
+                    <h4 style={{ margin: '0 0 0.5rem 0', fontSize: '1.1rem', fontWeight: 600 }}>アンデスの都</h4>
+                    <p style={{ margin: 0, fontSize: '0.9rem', opacity: 0.9 }}>サンティアゴの山々と近代都市</p>
                   </div>
                 </div>
                 
                 <div style={{
-                  background: 'url("https://images.unsplash.com/photo-1669667560423-b44337b9b7cb?w=600&auto=format&fit=crop&q=60")',
+                  background: 'url("https://images.unsplash.com/photo-1552686629-ea987bdf4ad5?w=600&auto=format&fit=crop&q=60")',
                   backgroundSize: 'cover',
                   backgroundPosition: 'center',
                   height: '250px',
@@ -303,13 +303,13 @@ export default function LatviaDetailPage() {
                     padding: '1.5rem',
                     borderRadius: '0 0 12px 12px'
                   }}>
-                    <h4 style={{ margin: '0 0 0.5rem 0', fontSize: '1.1rem', fontWeight: 600 }}>要塞の街</h4>
-                    <p style={{ margin: 0, fontSize: '0.9rem', opacity: 0.9 }}>ダウガフピルスの歴史的建造物</p>
+                    <h4 style={{ margin: '0 0 0.5rem 0', fontSize: '1.1rem', fontWeight: 600 }}>カラフルな港町</h4>
+                    <p style={{ margin: 0, fontSize: '0.9rem', opacity: 0.9 }}>バルパライソの壁画アートと丘の街並み</p>
                   </div>
                 </div>
                 
                 <div style={{
-                  background: 'url("https://images.unsplash.com/photo-1564951537954-29dd59397b90?w=600&auto=format&fit=crop&q=60")',
+                  background: 'url("https://images.unsplash.com/photo-1633268759991-3bfaf956a52a?w=600&auto=format&fit=crop&q=60")',
                   backgroundSize: 'cover',
                   backgroundPosition: 'center',
                   height: '250px',
@@ -327,8 +327,8 @@ export default function LatviaDetailPage() {
                     padding: '1.5rem',
                     borderRadius: '0 0 12px 12px'
                   }}>
-                    <h4 style={{ margin: '0 0 0.5rem 0', fontSize: '1.1rem', fontWeight: 600 }}>自然の美しさ</h4>
-                    <p style={{ margin: 0, fontSize: '0.9rem', opacity: 0.9 }}>森と湖が織りなす美しい景観</p>
+                    <h4 style={{ margin: '0 0 0.5rem 0', fontSize: '1.1rem', fontWeight: 600 }}>美しいリゾート</h4>
+                    <p style={{ margin: 0, fontSize: '0.9rem', opacity: 0.9 }}>ビニャ・デル・マルのビーチと花時計</p>
                   </div>
                 </div>
               </div>
@@ -355,7 +355,7 @@ export default function LatviaDetailPage() {
                     🌤️ 気候
                   </h4>
                   <p style={{ margin: 0, color: '#78350f', lineHeight: 1.6 }}>
-                    バルト海沿岸の海洋性気候で、四季がはっきりしています。夏は涼しく過ごしやすく、冬は雪が降る寒い気候です。春と秋は美しい自然を楽しめる季節です。
+                    南北に細長い国土のため、地域によって気候が大きく異なります。サンティアゴは地中海性気候で過ごしやすく、パタゴニアは寒い気候です。
                   </p>
                 </div>
                 
@@ -370,7 +370,7 @@ export default function LatviaDetailPage() {
                     🛡️ 治安
                   </h4>
                   <p style={{ margin: 0, color: '#1e3a8a', lineHeight: 1.6 }}>
-                    ヨーロッパの中でも治安が良く、日本人にとっては安心して生活できる環境です。特に旧市街は観光客も多く、安全な地域です。
+                    南米の中では比較的治安が良く、日本人にとっては安心して生活できる環境です。ただし、観光地や夜間は注意が必要です。
                   </p>
                 </div>
                 
@@ -385,7 +385,7 @@ export default function LatviaDetailPage() {
                     😊 人々の性格
                   </h4>
                   <p style={{ margin: 0, color: '#14532d', lineHeight: 1.6 }}>
-                    ラトビア人は控えめで礼儀正しく、英語も広く通じます。歴史と伝統を大切にする国民性で、親切で温かい人々が多いです。
+                    チリ人は温かく親切で、家族や友人を大切にする文化があります。スペイン語が主な言語で、観光客にもフレンドリーに接してくれます。
                   </p>
                 </div>
               </div>
@@ -401,21 +401,21 @@ export default function LatviaDetailPage() {
                 lineHeight: 1.8
               }}>
                 <li style={{ marginBottom: '1rem' }}>
-                  <strong>歴史的街並み：</strong>世界遺産に登録された美しい旧市街とアールヌーボー建築
+                  <strong>スペイン語学習：</strong>本場でスペイン語を学べる環境です
                 </li>
                 <li style={{ marginBottom: '1rem' }}>
-                  <strong>豊富な自然：</strong>森と湖が織りなす美しい自然景観
+                  <strong>壮大な自然：</strong>アンデス山脈やパタゴニアなど、世界有数の自然景観
                 </li>
                 <li style={{ marginBottom: '1rem' }}>
-                  <strong>英語環境：</strong>若い世代を中心に英語が広く通じる
+                  <strong>豊富なワイン：</strong>世界有数のワイン産地で、チリワインを楽しめる
                 </li>
                 <li style={{ marginBottom: '1rem' }}>
-                  <strong>ヨーロッパアクセス：</strong>EU加盟国として、ヨーロッパ各国への旅行が便利
+                  <strong>多様な文化：</strong>先住民文化とヨーロッパ文化が融合した独特の文化
                 </li>
               </ul>
               
               <h3 style={{ fontSize: '1.4rem', fontWeight: 700, color: '#1f2937', margin: '3rem 0 1.5rem 0' }}>
-                🏛️ 歴史と文化の魅力
+                📚 スペイン語学習の環境
               </h3>
               <ul style={{ 
                 marginBottom: '2.5rem', 
@@ -425,21 +425,21 @@ export default function LatviaDetailPage() {
                 lineHeight: 1.8
               }}>
                 <li style={{ marginBottom: '1rem' }}>
-                  <strong>世界遺産：</strong>リガ旧市街は世界遺産に登録された歴史的建造物群
+                  <strong>実践的な学習：</strong>日常生活を通じて自然にスペイン語が身につく
                 </li>
                 <li style={{ marginBottom: '1rem' }}>
-                  <strong>アールヌーボー建築：</strong>19世紀末から20世紀初頭の美しい建築様式
+                  <strong>チリスペイン語：</strong>チリ独特のスペイン語アクセントや表現を学べる
                 </li>
                 <li style={{ marginBottom: '1rem' }}>
-                  <strong>バルト文化：</strong>バルト三国の伝統文化と歴史を体験できる
+                  <strong>南米文化：</strong>南米の文化や価値観を学べる
                 </li>
               </ul>
               
               <h3 style={{ fontSize: '1.4rem', fontWeight: 700, color: '#1f2937', margin: '3rem 0 1.5rem 0' }}>
-                🌲 自然とアウトドア
+                🍷 ワインとグルメ
               </h3>
               <p style={{ marginBottom: '2.5rem', color: '#4b5563', fontSize: '1.15rem' }}>
-                ラトビアは豊富な森と湖、そしてバルト海の美しい海岸線を持つ国です。ガウヤ国立公園やケメリ国立公園など、美しい自然公園が数多くあり、ハイキング、サイクリング、湖水浴などのアウトドアアクティビティを楽しめます。四季折々の自然景観が美しく、特に夏の緑と秋の紅葉は見事です。また、バルト海の美しい海岸線では、ビーチアクティビティや海辺の散策も楽しめます。
+                チリは世界有数のワイン産地として知られ、特にカベルネ・ソーヴィニヨンやカルメネールが有名です。また、シーフードやエンパナーダなど、豊富で美味しい料理が楽しめます。サンティアゴには高級レストランから地元の味まで、様々なグルメスポットがあります。
               </p>
             </div>
           </section>
@@ -499,7 +499,7 @@ export default function LatviaDetailPage() {
                     margin: '0 0 12px 0',
                     lineHeight: 1.4
                   }}>
-                    🏰 歴史・建築
+                    🏔️ 自然好き
                   </h3>
                   <p style={{ 
                     margin: 0, 
@@ -507,7 +507,7 @@ export default function LatviaDetailPage() {
                     lineHeight: 1.6,
                     fontSize: '1rem'
                   }}>
-                    世界遺産に登録されたリガ旧市街やアールヌーボー建築に興味がある方におすすめです。美しい歴史的建造物と街並みを満喫できます。
+                    アンデス山脈やパタゴニアなど、世界有数の自然景観を満喫できます。トレッキングやスキー、野生動物観察など、アウトドアアクティビティが豊富です。
                   </p>
                 </div>
                 
@@ -538,7 +538,7 @@ export default function LatviaDetailPage() {
                     margin: '0 0 12px 0',
                     lineHeight: 1.4
                   }}>
-                    🌲 自然・アウトドア
+                    🎨 アート好き
                   </h3>
                   <p style={{ 
                     margin: 0, 
@@ -546,7 +546,7 @@ export default function LatviaDetailPage() {
                     lineHeight: 1.6,
                     fontSize: '1rem'
                   }}>
-                    豊富な自然とアウトドアアクティビティが好きな方におすすめです。森と湖、美しい海岸線で、四季折々の自然を楽しめます。
+                    バルパライソのカラフルな壁画アートや、チリの現代アートを楽しめます。多くのアートギャラリーや文化施設があり、芸術文化が盛んです。
                   </p>
                 </div>
                 
@@ -577,7 +577,7 @@ export default function LatviaDetailPage() {
                     margin: '0 0 12px 0',
                     lineHeight: 1.4
                   }}>
-                    🌍 ヨーロッパ旅行
+                    🗣️ スペイン語を学びたい
                   </h3>
                   <p style={{ 
                     margin: 0, 
@@ -585,7 +585,7 @@ export default function LatviaDetailPage() {
                     lineHeight: 1.6,
                     fontSize: '1rem'
                   }}>
-                    EU加盟国として、ヨーロッパ各国への旅行が便利です。エストニア、リトアニア、ポーランドなど近隣国へのアクセスも良好で、バルト海クルーズも楽しめます。
+                    本場でスペイン語を学べる環境。チリ独特のアクセントや表現を学びながら、南米の文化と共に言語を学べます。
                   </p>
                 </div>
                 
@@ -616,7 +616,7 @@ export default function LatviaDetailPage() {
                     margin: '0 0 12px 0',
                     lineHeight: 1.4
                   }}>
-                    💰 コスト重視
+                    🍷 ワインとグルメ
                   </h3>
                   <p style={{ 
                     margin: 0, 
@@ -624,7 +624,7 @@ export default function LatviaDetailPage() {
                     lineHeight: 1.6,
                     fontSize: '1rem'
                   }}>
-                    物価が安く、コストを抑えてワーホリを楽しみたい方におすすめです。生活費が安いため、長期間の滞在も可能です。
+                    世界有数のワイン産地で、カベルネ・ソーヴィニヨンやカルメネールを楽しめます。シーフードやエンパナーダなど、豊富なグルメ体験ができます。
                   </p>
                 </div>
               </div>
@@ -670,7 +670,7 @@ export default function LatviaDetailPage() {
               position: 'relative',
               zIndex: 1
             }}>
-              🚀 ラトビアでワーホリを始めよう
+              🚀 チリでワーホリを始めよう
             </h2>
             <p style={{ 
               fontSize: '1.2rem', 
@@ -680,7 +680,7 @@ export default function LatviaDetailPage() {
               zIndex: 1,
               lineHeight: 1.6
             }}>
-              バルト海沿岸の自然と歴史的な街並みが魅力のラトビアで、特別なワーホリ体験を。
+              アンデス山脈とパタゴニアの大自然が特徴のチリで、特別なワーホリ体験を。
             </p>
             <button 
               onClick={() => router.push("/")}

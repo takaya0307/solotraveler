@@ -657,7 +657,7 @@ function PageComponent() {
                       const externalPageCountries = [
                         'australia', 'canada', 'newzealand', 'uk', 'ireland', 
                         'france', 'germany', 'spain', 'italy', 'portugal', 
-                        'austria', 'norway', 'denmark', 'poland', 'czech'
+                        'austria', 'norway', 'denmark', 'poland', 'czech', 'hungary', 'slovakia', 'iceland', 'southkorea', 'taiwan', 'hongkong', 'argentina', 'chile', 'estonia', 'lithuania', 'netherlands', 'finland', 'latvia', 'uruguay', 'luxembourg'
                       ];
                       
                       if (externalPageCountries.includes(country.id)) {

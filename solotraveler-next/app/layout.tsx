@@ -27,7 +27,7 @@ export const metadata: Metadata = {
     address: false,
     telephone: false,
   },
-  metadataBase: new URL('https://your-domain.com'), // 実際のドメインに変更してください
+  metadataBase: new URL('https://workingholidaypass.jp'), // 実際のドメインに変更してください
   alternates: {
     canonical: '/',
     languages: {
@@ -37,7 +37,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "ワーホリ比較｜オーストラリア・カナダ・ニュージーランドなど費用・条件を徹底比較",
     description: "オーストラリア、カナダ、ニュージーランドなど世界各国のワーホリ費用・条件・おすすめエージェントを徹底比較。あなたに合ったワーホリプランが見つかります。",
-    url: 'https://your-domain.com', // 実際のドメインに変更してください
+    url: 'https://workingholidaypass.jp', // 実際のドメインに変更してください
     siteName: 'ワーホリパス',
     locale: 'ja_JP',
     type: 'website',
@@ -102,8 +102,8 @@ export default function RootLayout({
         <meta property="og:image:height" content="630" />
         {/* 日本語サイト指定 */}
         <meta name="hreflang" content="ja-JP" />
-        <link rel="alternate" hrefLang="ja-JP" href="https://your-domain.com" />
-        <link rel="alternate" hrefLang="x-default" href="https://your-domain.com" />
+        <link rel="alternate" hrefLang="ja-JP" href="https://workingholidaypass.jp" />
+        <link rel="alternate" hrefLang="x-default" href="https://workingholidaypass.jp" />
       </head>
       <body
         className={`${inter.variable} ${dancingScript.variable} antialiased`}

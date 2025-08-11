@@ -1,3 +1,5 @@
+
+
 "use client";
 import React, { useState, useEffect, Suspense } from "react";
 import { WorkingHolidayCountry, WorkingHolidayCity } from "../types/types";
@@ -23,16 +25,16 @@ const structuredData = {
   "@type": "WebSite",
   "name": "ワーホリパス",
   "description": "世界各国のワーキングホリデー制度の詳細情報を提供する総合情報サイト",
-  "url": "https://your-domain.com",
+  "url": "https://workingholidaypass.jp",
   "potentialAction": {
     "@type": "SearchAction",
-    "target": "https://your-domain.com/search?q={search_term_string}",
+    "target": "https://workingholidaypass.jp/search?q={search_term_string}",
     "query-input": "required name=search_term_string"
   },
   "publisher": {
     "@type": "Organization",
     "name": "ワーホリパス",
-    "url": "https://your-domain.com"
+    "url": "https://workingholidaypass.jp"
   }
 };
 
@@ -47,19 +49,19 @@ const generateBreadcrumbData = (countryName?: string) => {
           "@type": "ListItem",
           "position": 1,
           "name": "ホーム",
-          "item": "https://your-domain.com"
+          "item": "https://workingholidaypass.jp"
         },
         {
           "@type": "ListItem",
           "position": 2,
           "name": "各国詳細",
-          "item": "https://your-domain.com"
+          "item": "https://workingholidaypass.jp"
         },
         {
           "@type": "ListItem",
           "position": 3,
           "name": countryName,
-          "item": `https://your-domain.com/countries/${countryName}`
+          "item": `https://workingholidaypass.jp/countries/${countryName}`
         }
       ]
     };
@@ -80,7 +82,7 @@ const generateItemListData = (countries: WorkingHolidayCountry[]) => {
       "position": index + 1,
       "name": country.nameJa,
       "description": country.summary || country.recommendation || 'ワーホリ協定国です。',
-      "url": `https://your-domain.com/countries/${country.id}`,
+      "url": `https://workingholidaypass.jp/countries/${country.id}`,
       "additionalProperty": [
         {
           "@type": "PropertyValue",

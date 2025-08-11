@@ -35,10 +35,10 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: "ワーホリ比較｜オーストラリア・カナダ・ニュージーランドなど費用・条件を徹底比較",
-    description: "オーストラリア、カナダ、ニュージーランドなど世界各国のワーホリ費用・条件・おすすめエージェントを徹底比較。あなたに合ったワーホリプランが見つかります。",
+    title: "ワーホリパス｜ワーホリに行ける国を一覧比較",
+    description: "ワーホリパスはワーホリに行ける国を一覧比較できるサイトです。ワーホリに行ける国を一覧比較できます。",
     url: 'https://workingholidaypass.jp', // 実際のドメインに変更してください
-    siteName: 'ワーホリ比較サイト',
+    siteName: 'ワーホリパス｜ワーホリに行ける国を一覧比較',
     locale: 'ja_JP',
     type: 'website',
     images: [

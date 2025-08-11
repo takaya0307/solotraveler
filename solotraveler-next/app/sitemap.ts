@@ -1,7 +1,7 @@
 import { MetadataRoute } from 'next'
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  const baseUrl = 'https://your-domain.com' // 実際のドメインに変更してください
+  const baseUrl = 'https://workingholidaypass.jp' // 実際のドメインに変更してください
   
   // 最終更新日を動的に取得
   let lastModifiedData: {
@@ -77,7 +77,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   // 画像サイトマップのURLを追加
   sitemap.push({
     url: `${baseUrl}/image-sitemap.xml`,
-    lastModified: currentDate,
+    lastModified: currentDate.toISOString(),
     changeFrequency: 'weekly' as const,
     priority: 0.7,
   })

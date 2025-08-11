@@ -20,9 +20,9 @@ const nextConfig = {
   compress: true,
   
   // パフォーマンス最適化
-  experimental: {
-    optimizeCss: true,
-  },
+  // experimental: {
+  //   optimizeCss: true,
+  // },
   
   // ヘッダー設定
   async headers() {

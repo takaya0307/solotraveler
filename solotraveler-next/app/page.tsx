@@ -1,5 +1,4 @@
 
-
 "use client";
 import React, { useState, useEffect, Suspense } from "react";
 import { WorkingHolidayCountry, WorkingHolidayCity } from "../types/types";

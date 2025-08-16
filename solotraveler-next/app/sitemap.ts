@@ -26,7 +26,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   // 静的ページの最終更新日を設定
   const staticPagesLastModified = lastModified
   
-  // 静的ページ
+  // 静的ページ（画像情報付き）
   const staticPages = [
     {
       url: baseUrl,
@@ -55,32 +55,53 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   ]
 
   // 各国詳細ページ
-  const countryPages = [
-    'australia', 'canada', 'newzealand', 'uk', 'ireland', 'france', 'germany',
-    'spain', 'italy', 'portugal', 'austria', 'norway', 'denmark', 'poland',
-    'czech', 'slovakia', 'hungary', 'iceland', 'southkorea', 'taiwan', 'hongkong'
-  ].map(countryId => {
+  const countryFlags = [
+    { id: 'australia', name: 'オーストラリア', code: 'au' },
+    { id: 'canada', name: 'カナダ', code: 'ca' },
+    { id: 'newzealand', name: 'ニュージーランド', code: 'nz' },
+    { id: 'uk', name: 'イギリス', code: 'gb' },
+    { id: 'ireland', name: 'アイルランド', code: 'ie' },
+    { id: 'france', name: 'フランス', code: 'fr' },
+    { id: 'germany', name: 'ドイツ', code: 'de' },
+    { id: 'spain', name: 'スペイン', code: 'es' },
+    { id: 'italy', name: 'イタリア', code: 'it' },
+    { id: 'portugal', name: 'ポルトガル', code: 'pt' },
+    { id: 'austria', name: 'オーストリア', code: 'at' },
+    { id: 'norway', name: 'ノルウェー', code: 'no' },
+    { id: 'denmark', name: 'デンマーク', code: 'dk' },
+    { id: 'poland', name: 'ポーランド', code: 'pl' },
+    { id: 'czech', name: 'チェコ', code: 'cz' },
+    { id: 'slovakia', name: 'スロバキア', code: 'sk' },
+    { id: 'hungary', name: 'ハンガリー', code: 'hu' },
+    { id: 'iceland', name: 'アイスランド', code: 'is' },
+    { id: 'southkorea', name: '韓国', code: 'kr' },
+    { id: 'taiwan', name: '台湾', code: 'tw' },
+    { id: 'hongkong', name: '香港', code: 'hk' },
+    { id: 'netherlands', name: 'オランダ', code: 'nl' },
+    { id: 'lithuania', name: 'リトアニア', code: 'lt' },
+    { id: 'estonia', name: 'エストニア', code: 'ee' },
+    { id: 'chile', name: 'チリ', code: 'cl' },
+    { id: 'argentina', name: 'アルゼンチン', code: 'ar' },
+    { id: 'uruguay', name: 'ウルグアイ', code: 'uy' },
+    { id: 'luxembourg', name: 'ルクセンブルク', code: 'lu' },
+    { id: 'latvia', name: 'ラトビア', code: 'lv' },
+    { id: 'finland', name: 'フィンランド', code: 'fi' },
+  ]
+
+  const countryPages = countryFlags.map(country => {
     // 各国の個別最終更新日を取得
-    const countryLastModified = lastModifiedData?.countryUpdates?.[countryId] || lastModified;
+    const countryLastModified = lastModifiedData?.countryUpdates?.[country.id] || lastModified;
     
     return {
-      url: `${baseUrl}/countries/${countryId}`,
+      url: `${baseUrl}/countries/${country.id}`,
       lastModified: countryLastModified,
       changeFrequency: 'weekly' as const,
       priority: 0.9,
     };
   });
 
-  // 画像サイトマップへの参照を追加
+  // 全サイトマップを結合
   const sitemap = [...staticPages, ...countryPages]
-  
-  // 画像サイトマップのURLを追加
-  sitemap.push({
-    url: `${baseUrl}/image-sitemap.xml`,
-    lastModified: currentDate.toISOString(),
-    changeFrequency: 'weekly' as const,
-    priority: 0.7,
-  })
 
   return sitemap
 } 

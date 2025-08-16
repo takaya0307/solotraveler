@@ -15,8 +15,7 @@ Disallow: /*?*
 Disallow: /*&*
 
 # サイトマップ
-Sitemap: https://your-domain.com/sitemap.xml
-Sitemap: https://your-domain.com/image-sitemap.xml
+Sitemap: https://workingholidaypass.jp/sitemap.xml
 
 # クロール遅延（サーバー負荷軽減）
 Crawl-delay: 1

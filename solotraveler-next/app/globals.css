@@ -4,6 +4,10 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --main-blue: #1E4E8C;
+  --sub-blue: #3A7DFF;
+  --accent-green: #2BBFA0;
+  --neutral: #F5F7FA;
 }
 
 @theme inline {
@@ -54,14 +58,14 @@ code {
 }
 
 .App-header, .stylish-header {
-  background: #fff;
-  color: #222;
+  background: var(--main-blue);
+  color: #fff;
   border-bottom: none;
   padding: 0.2rem 0 0.2rem 0;
   min-height: 120px;
   text-align: center;
   border-radius: 0 0 16px 16px;
-  box-shadow: 0 2px 8px 0 rgba(37,99,235,0.06);
+  box-shadow: 0 2px 8px 0 rgba(30,78,140,0.15);
   position: relative;
   display: flex;
   flex-direction: column;
@@ -78,7 +82,7 @@ code {
 }
 
 .refined-header-subtitle, .App-header .subtitle {
-  color: #3b4a6b !important;
+  color: var(--neutral) !important;
   font-size: 1.13rem;
   font-weight: 500;
   text-align: center;
@@ -87,7 +91,7 @@ code {
   background: none;
   opacity: 0.97;
   font-style: normal;
-  text-shadow: 0 1px 4px rgba(37,99,235,0.06);
+  text-shadow: 0 1px 4px rgba(30,78,140,0.1);
   padding-bottom: 0;
 }
 
@@ -189,21 +193,21 @@ code {
 .logo-main {
   font-size: 2.2rem;
   font-weight: 800;
-  color: #2563eb;
+  color: #fff;
   letter-spacing: 0.02em;
-  text-shadow: 0 2px 4px rgba(37,99,235,0.1);
+  text-shadow: 0 2px 4px rgba(0,0,0,0.2);
 }
 
 .logo-sub {
   font-size: 1.8rem;
   font-weight: 700;
-  color: #374151;
+  color: var(--neutral);
   letter-spacing: 0.01em;
 }
 
 .logo-subtitle {
   font-size: 0.75rem;
-  color: #6b7280;
+  color: var(--neutral);
   font-weight: 500;
   letter-spacing: 0.05em;
   text-transform: uppercase;
@@ -212,13 +216,13 @@ code {
 }
 
 .header-logo:hover .logo-main {
-  color: #1d4ed8;
-  text-shadow: 0 2px 8px rgba(37,99,235,0.2);
+  color: var(--sub-blue);
+  text-shadow: 0 2px 8px rgba(58,125,255,0.3);
   transition: all 0.2s ease;
 }
 
 .header-logo:hover .logo-sub {
-  color: #1f2937;
+  color: #fff;
   transition: all 0.2s ease;
 }
 
@@ -232,25 +236,25 @@ code {
 
 .nav-link {
   font-size: 0.95rem;
-  color: #374151;
+  color: var(--main-blue);
   font-weight: 700;
   text-decoration: none;
   padding: 0.8em 1.5em;
   border-radius: 999px;
-  background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
-  box-shadow: 0 2px 8px rgba(37,99,235,0.08);
+  background: var(--neutral);
+  box-shadow: 0 2px 8px rgba(30,78,140,0.08);
   transition: all 0.2s ease;
-  border: 2px solid #d1d8e6;
+  border: 2px solid var(--neutral);
   display: inline-block;
   position: relative;
   overflow: hidden;
 }
 
 .nav-link:hover {
-  background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+  background: var(--sub-blue);
   color: #fff;
-  border-color: #2563eb;
-  box-shadow: 0 4px 16px rgba(37,99,235,0.2);
+  border-color: var(--sub-blue);
+  box-shadow: 0 4px 16px rgba(58,125,255,0.2);
   transform: translateY(-1px);
 }
 
@@ -496,12 +500,12 @@ main {
   padding: 2rem 4rem;
   max-width: 1400px;
   margin: 0 auto;
-  background: #f9f9f9;
+  background: var(--neutral);
   min-height: 100vh;
 }
 
 .city-list-section {
-  background: #f9f9f9;
+  background: var(--neutral);
   padding: 2rem 0;
   margin-top: 60px;
 }
@@ -573,8 +577,8 @@ main {
 
 .search-input:focus {
   outline: none;
-  border-color: #2F4F2F;
-  box-shadow: 0 0 0 3px rgba(47, 79, 47, 0.1);
+  border-color: var(--accent-green);
+  box-shadow: 0 0 0 3px rgba(43, 191, 160, 0.1);
 }
 
 .sort-container {
@@ -608,8 +612,8 @@ main {
 
 .sort-select:focus {
   outline: none;
-  border-color: #2F4F2F;
-  box-shadow: 0 0 0 3px rgba(47, 79, 47, 0.1);
+  border-color: var(--accent-green);
+  box-shadow: 0 0 0 3px rgba(43, 191, 160, 0.1);
 }
 
 .no-results {
@@ -1183,8 +1187,8 @@ img.modal-image {
 }
 
 .country-card:hover {
-  box-shadow: 0 12px 32px rgba(37, 99, 235, 0.15), 0 6px 16px rgba(37, 99, 235, 0.1);
-  border-color: #2563eb;
+  box-shadow: 0 12px 32px rgba(30, 78, 140, 0.15), 0 6px 16px rgba(30, 78, 140, 0.1);
+  border-color: var(--main-blue);
   transform: translateY(-4px) scale(1.02);
 }
 
@@ -1275,18 +1279,18 @@ img.modal-image {
 }
 
 .country-summary {
-  background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+  background: var(--neutral);
   border-radius: 12px;
   padding: 1.2em 1.4em;
   margin-bottom: 1.2em;
-  color: #374151;
+  color: var(--main-blue);
   font-weight: 500;
   font-size: 15px;
   line-height: 1.6;
   letter-spacing: 0.01em;
-  box-shadow: 0 2px 8px rgba(37,99,235,0.08);
+  box-shadow: 0 2px 8px rgba(30,78,140,0.08);
   text-align: left;
-  border: 1px solid #e5eaf3;
+  border: 1px solid var(--neutral);
 }
 
 .card-min-wage, .card-age-range, .card-stay-period, .card-quota {
@@ -1434,15 +1438,15 @@ img.modal-image {
 .accordion-button {
   flex: 1;
   border-radius: 12px;
-  background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
-  color: #374151;
+  background: var(--neutral);
+  color: var(--main-blue);
   font-weight: 700;
-  border: 2px solid #d1d8e6;
+  border: 2px solid var(--neutral);
   font-size: 15px;
   padding: 0.8em 0;
   min-height: 48px;
   cursor: pointer;
-  box-shadow: 0 2px 8px rgba(37, 99, 235, 0.06);
+  box-shadow: 0 2px 8px rgba(30, 78, 140, 0.06);
   transition: all 0.2s ease;
   position: relative;
   overflow: hidden;
@@ -1450,10 +1454,10 @@ img.modal-image {
 
 .accordion-button:hover,
 .accordion-button.active {
-  background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+  background: var(--sub-blue);
   color: #fff;
-  border-color: #2563eb;
-  box-shadow: 0 4px 16px rgba(37, 99, 235, 0.2);
+  border-color: var(--sub-blue);
+  box-shadow: 0 4px 16px rgba(58, 125, 255, 0.2);
   transform: translateY(-1px);
 }
 
@@ -1516,9 +1520,9 @@ img.modal-image {
 
 /* フッタースタイル */
 .App-footer {
-  border-top: 1.5px solid #e5eaf3;
-  background: #fff;
-  color: #888;
+  border-top: 1.5px solid var(--main-blue);
+  background: var(--main-blue);
+  color: var(--neutral);
   padding: 2.2rem 0 1.2rem 0;
   text-align: center;
   font-size: 1.08rem;
@@ -1551,10 +1555,7 @@ img.modal-image {
   margin: 0 0 1.2rem 0;
   font-weight: 800;
   text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
-  background: linear-gradient(45deg, #ffffff, #f0f0f0);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  color: var(--neutral);
 }
 
 .footer-section h4 {
@@ -1562,7 +1563,7 @@ img.modal-image {
   margin: 0 0 1.2rem 0;
   font-weight: 700;
   text-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
-  color: rgba(255, 255, 255, 0.95);
+  color: var(--accent-green);
 }
 
 .footer-section p {
@@ -1571,6 +1572,7 @@ img.modal-image {
   opacity: 0.95;
   text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
   font-weight: 400;
+  color: var(--neutral);
 }
 
 .difficulty-info {
@@ -1710,7 +1712,7 @@ img.modal-image {
 }
 
 .footer-bottom {
-  border-top: 1px solid rgba(255, 255, 255, 0.15);
+  border-top: 1px solid rgba(245, 247, 250, 0.3);
   margin-top: 3rem;
   padding-top: 1.5rem;
   text-align: center;
@@ -1724,6 +1726,7 @@ img.modal-image {
   font-size: 0.95rem;
   font-weight: 400;
   text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  color: var(--neutral);
 }
 
 @media (max-width: 768px) {
@@ -2238,7 +2241,7 @@ img.modal-image {
   box-sizing: border-box;
   position: relative;
   background: none !important;
-  color: #2563eb !important;
+  color: #fff !important;
 }
 .refined-header-left {
   flex: 0 0 80px;
@@ -2265,7 +2268,7 @@ img.modal-image {
   min-width: 0;
 }
 .refined-header-title {
-  color: #2563eb !important;
+  color: #fff !important;
   font-weight: 800;
   font-size: 2.7rem;
   text-align: center;
@@ -2273,7 +2276,7 @@ img.modal-image {
   margin: 0 0 0.2em 0;
   background: none;
   -webkit-text-stroke: 0;
-  text-shadow: 0 2px 8px rgba(37,99,235,0.08);
+  text-shadow: 0 2px 8px rgba(0,0,0,0.2);
   font-family: 'Kiwi Maru', 'Noto Sans JP', sans-serif !important;
 }
 
@@ -2527,19 +2530,19 @@ img.modal-image {
 .city-board-button {
   margin-top: auto;
   padding: 0.6em 1.4em;
-  background: linear-gradient(90deg, #3b82f6 0%, #06b6d4 100%);
+  background: var(--accent-green);
   color: #fff;
   font-weight: 700;
   border: none;
   border-radius: 24px;
   cursor: pointer;
   font-size: 1.05rem;
-  box-shadow: 0 2px 8px rgba(59,130,246,0.08);
+  box-shadow: 0 2px 8px rgba(43,191,160,0.08);
   transition: background 0.2s, box-shadow 0.2s, transform 0.1s;
 }
 .city-board-button:hover {
-  background: linear-gradient(90deg, #2563eb 0%, #06b6d4 100%);
-  box-shadow: 0 4px 16px rgba(37,99,235,0.13);
+  background: var(--sub-blue);
+  box-shadow: 0 4px 16px rgba(58,125,255,0.13);
   transform: scale(1.04);
 }
 @media (max-width: 900px) {

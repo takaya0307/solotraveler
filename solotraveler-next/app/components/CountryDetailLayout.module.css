@@ -1,0 +1,229 @@
+/* 国の詳細ページ共通スタイル */
+
+.info-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  margin-bottom: 5rem;
+}
+
+.info-card {
+  background: #1E4E8C;
+  color: white;
+  padding: 2.5rem 2rem;
+  border-radius: 16px;
+  text-align: center;
+  box-shadow: 0 8px 25px rgba(30, 78, 140, 0.3);
+  border: none;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.info-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 35px rgba(30, 78, 140, 0.4);
+}
+
+.info-card-icon {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  width: 60px;
+  height: 60px;
+  background: rgba(255,255,255,0.1);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+}
+
+.info-card h3 {
+  margin: 0 0 1rem 0;
+  font-size: 1.1rem;
+  font-weight: 600;
+  opacity: 0.9;
+}
+
+.info-card p {
+  margin: 0;
+  font-size: 1.8rem;
+  font-weight: 800;
+}
+
+.section-title {
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: #1E4E8C;
+  margin: 0 0 3rem 0;
+  border-bottom: 3px solid #3A7DFF;
+  padding-bottom: 1.5rem;
+  position: relative;
+}
+
+.section-title-icon {
+  color: #FF6B35;
+}
+
+.city-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+.city-card {
+  background: white;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+  border: 1px solid #e5e7eb;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.city-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 35px rgba(0,0,0,0.15);
+}
+
+.city-image {
+  background-size: cover;
+  background-position: center;
+  height: 200px;
+  position: relative;
+}
+
+.city-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(transparent, rgba(0,0,0,0.6));
+}
+
+.city-info {
+  position: absolute;
+  bottom: 1rem;
+  left: 1rem;
+  color: white;
+}
+
+.city-name {
+  margin: 0 0 0.5rem 0;
+  font-size: 1.4rem;
+  font-weight: 500;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.8);
+  color: white;
+}
+
+.city-description {
+  margin: 0;
+  color: #374151;
+  line-height: 1.6;
+  font-size: 1rem;
+  font-weight: 500;
+  padding: 1.5rem;
+}
+
+.recommended-grid {
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+  width: 100%;
+  overflow-x: auto;
+  padding-bottom: 1rem;
+}
+
+.recommended-card {
+  padding: 2rem;
+  border-radius: 16px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  min-height: 240px;
+  width: 320px;
+  flex-shrink: 0;
+}
+
+.recommended-card:hover {
+  transform: translateY(-5px);
+}
+
+.recommended-title {
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin: 0 0 12px 0;
+  line-height: 1.4;
+  white-space: nowrap;
+}
+
+.recommended-description {
+  margin: 0;
+  color: #374151;
+  line-height: 1.6;
+  font-size: 1rem;
+}
+
+.consultation-section {
+  background: #F0F4F8;
+  padding: 4rem 3rem;
+  border-radius: 16px;
+  border: 1px solid #3A7DFF;
+  text-align: center;
+  box-shadow: 0 8px 25px rgba(58, 125, 255, 0.2);
+  position: relative;
+  overflow: hidden;
+}
+
+.consultation-button {
+  background: #FF6B35;
+  color: white;
+  border: none;
+  padding: 1.2rem 3rem;
+  border-radius: 50px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 8px 25px rgba(255, 107, 53, 0.4);
+  position: relative;
+  z-index: 1;
+  min-width: 200px;
+  min-height: 50px;
+}
+
+.consultation-button:hover {
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 12px 35px rgba(255, 107, 53, 0.6);
+}
+
+/* レスポンシブデザイン */
+@media (max-width: 768px) {
+  .info-cards-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  
+  .city-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  
+  .recommended-grid {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  
+  .recommended-card {
+    width: 100%;
+  }
+  
+  .section-title {
+    font-size: 1.8rem;
+  }
+} 

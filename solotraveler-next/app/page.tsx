@@ -569,7 +569,7 @@ function PageComponent() {
                     <div
                       className="city-card-description"
                       style={{
-                        background: 'linear-gradient(90deg, #fafdff 0%, #eaf1fb 100%)',
+                        background: 'var(--neutral)',
                         borderRadius: 12,
                         padding: '1.1em 1.3em',
                         marginBottom: '1.1em',
@@ -578,7 +578,7 @@ function PageComponent() {
                         fontSize: 15.5,
                         lineHeight: 1.7,
                         letterSpacing: '0.01em',
-                        boxShadow: '0 2px 8px rgba(37,99,235,0.06)',
+                        boxShadow: '0 2px 8px rgba(30,78,140,0.06)',
                         textAlign: 'left',
                       }}
                     >
@@ -651,14 +651,14 @@ function PageComponent() {
                 <div className="country-summary">
                   {country.summary || country.recommendation || 'ワーホリ協定国です。'}
                 </div>
-                <div style={{ display: 'flex', gap: '1em', marginTop: '0.2em', marginBottom: '0.2em' }}>
+                <div style={{ marginTop: '0.2em', marginBottom: '0.2em' }}>
                   <button
                     onClick={() => {
                       // 外部ページがある国のリスト
                       const externalPageCountries = [
                         'australia', 'canada', 'newzealand', 'uk', 'ireland', 
                         'france', 'germany', 'spain', 'italy', 'portugal', 
-                        'austria', 'norway', 'denmark', 'poland', 'czech', 'hungary', 'slovakia', 'iceland', 'southkorea', 'taiwan', 'hongkong', 'argentina', 'chile', 'estonia', 'lithuania', 'netherlands', 'finland', 'latvia', 'uruguay', 'luxembourg'
+                        'austria', 'norway', 'denmark', 'poland', 'czech', 'hungary', 'slovakia', 'iceland', 'southkorea', 'taiwan', 'hongkong', 'argentina', 'chile', 'estonia', 'lithuania', 'netherlands', 'finland', 'latvia', 'uruguay', 'luxembourg', 'sweden'
                       ];
                       
                       if (externalPageCountries.includes(country.id)) {
@@ -671,77 +671,62 @@ function PageComponent() {
                           if (prevIds.includes(country.id)) {
                             return prevIds.filter(id => id !== country.id);
                           } else {
-                            return [...prevIds, country.id];
+                            return prevIds.filter(id => id !== country.id);
                           }
                         });
                       }
                     }}
                     className={`accordion-button ${openAccordionCountryIds.includes(country.id) ? 'active' : ''}`}
+                    style={{ 
+                      width: '100%',
+                      background: 'var(--main-blue)',
+                      color: '#fff',
+                      border: '2px solid var(--main-blue)',
+                      borderRadius: '12px',
+                      fontWeight: '700',
+                      fontSize: '15px',
+                      padding: '0.8em 0',
+                      minHeight: '48px',
+                      transition: 'all 0.2s ease',
+                      cursor: 'pointer',
+                      boxShadow: '0 4px 16px rgba(30,78,140,0.2)'
+                    }}
                   >
                     詳細情報
                   </button>
-                  <button
-                    onClick={() => {
-                      trackEvent('click', 'CTA', `都市一覧_${country.nameJa}`, 1);
-                      setSelectedCountry(country);
-                    }}
-                    style={{
-                      flex: 1,
-                      borderRadius: 12,
-                      background: 'linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%)',
-                      color: '#fff',
-                      fontWeight: 700,
-                      border: '2px solid #2563eb',
-                      fontSize: 15,
-                      padding: '0.8em 0',
-                      minHeight: 48,
-                      transition: 'all 0.2s ease',
-                      cursor: 'pointer',
-                      boxShadow: '0 4px 16px rgba(37,99,235,0.2)',
-                    }}
-                    onMouseOver={(e) => {
-                      e.currentTarget.style.transform = 'translateY(-1px)';
-                      e.currentTarget.style.boxShadow = '0 6px 20px rgba(37,99,235,0.3)';
-                    }}
-                    onMouseOut={(e) => {
-                      e.currentTarget.style.transform = 'translateY(0)';
-                      e.currentTarget.style.boxShadow = '0 4px 16px rgba(37,99,235,0.2)';
-                    }}
-                  >
-                    都市一覧
-                  </button>
+
                 </div>
                 {/* 詳細情報アコーディオン展開部分 */}
                 {openAccordionCountryIds.includes(country.id) && (
                   <div style={{
                     marginTop: '1.2em',
-                    background: 'linear-gradient(135deg, #fafdff 0%, #f3f6fa 100%)',
+                    background: 'var(--neutral)',
                     borderRadius: 12,
                     padding: '1.3em 1.5em',
-                    border: '1.5px solid #e5eaf3',
-                    boxShadow: '0 2px 8px rgba(37,99,235,0.08)',
+                    border: '1.5px solid var(--neutral)',
+                    boxShadow: '0 2px 8px rgba(30,78,140,0.08)',
                     display: 'flex',
                     flexDirection: 'column',
                     gap: '0.9em',
                   }}>
                     <div style={{display: 'flex', alignItems: 'center', gap: 10, fontSize: 16}}>
                       <span style={{fontSize: 20}}>💰</span>
-                      <span style={{fontWeight: 700, color: '#2563eb', minWidth: 80}}>最低賃金</span>
+                      <span style={{fontWeight: 700, color: 'var(--main-blue)', minWidth: 80}}>最低賃金</span>
                       <span style={{color: '#222'}}>{country.minWage}</span>
                     </div>
                     <div style={{display: 'flex', alignItems: 'center', gap: 10, fontSize: 16}}>
                       <span style={{fontSize: 20}}>🎂</span>
-                      <span style={{fontWeight: 700, color: '#2563eb', minWidth: 80}}>対象年齢</span>
+                      <span style={{fontWeight: 700, color: 'var(--main-blue)', minWidth: 80}}>対象年齢</span>
                       <span style={{color: '#222'}}>{country.ageRange}</span>
                     </div>
                     <div style={{display: 'flex', alignItems: 'center', gap: 10, fontSize: 16}}>
                       <span style={{fontSize: 20}}>🕒</span>
-                      <span style={{fontWeight: 700, color: '#2563eb', minWidth: 80}}>滞在期間</span>
+                      <span style={{fontWeight: 700, color: 'var(--main-blue)', minWidth: 80}}>滞在期間</span>
                       <span style={{color: '#222'}}>{country.stayPeriod}</span>
                     </div>
                     <div style={{display: 'flex', alignItems: 'center', gap: 10, fontSize: 16}}>
                       <span style={{fontSize: 20}}>👥</span>
-                      <span style={{fontWeight: 700, color: '#2563eb', minWidth: 80}}>定員数</span>
+                      <span style={{fontWeight: 700, color: 'var(--main-blue)', minWidth: 80}}>定員数</span>
                       <span style={{color: '#222'}}>{country.quota}</span>
                     </div>
                   </div>

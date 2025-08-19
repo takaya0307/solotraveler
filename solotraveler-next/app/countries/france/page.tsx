@@ -1,11 +1,9 @@
 "use client";
 import React, { useEffect } from "react";
-import { useRouter } from "next/navigation";
-import Link from "next/link";
+import CountryDetailLayout from "../../components/CountryDetailLayout";
 import franceData from "../../../db.json";
 
 export default function FranceDetailPage() {
-  const router = useRouter();
   const country = franceData.countries.find(c => c.id === "france")!;
 
   // ページタイトルとメタディスクリプションの最適化
@@ -19,782 +17,112 @@ export default function FranceDetailPage() {
     }
   }, []);
 
+  const pageTitle = `${country.nameJa}ワーキングホリデーの魅力`;
+  const pageDescription = "芸術・ファッション・美食の本場、ヨーロッパの中心地";
+  
+  const countryDescription = "フランスは、芸術、ファッション、美食の本場として知られるヨーロッパの中心地です。パリをはじめとする美しい都市、豊かな文化、そして世界最高峰の料理を楽しむことができます。";
+  
+  const countryFeatures = [
+    {
+      title: "芸術と文化",
+      description: "ルーブル美術館やオルセー美術館など世界最高峰の美術館",
+      imageUrl: "https://images.unsplash.com/photo-1541961017774-22349e4a1262?w=600&auto=format&fit=crop&q=60",
+      imageAlt: "フランスの芸術と文化"
+    },
+    {
+      title: "美食の国",
+      description: "世界最高峰のレストランとワイン文化",
+      imageUrl: "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=600&auto=format&fit=crop&q=60",
+      imageAlt: "フランスの美食"
+    },
+    {
+      title: "ファッション",
+      description: "パリコレクションと世界のファッションの中心",
+      imageUrl: "https://images.unsplash.com/photo-1445205170230-053b83016050?w=600&auto=format&fit=crop&q=60",
+      imageAlt: "フランスのファッション"
+    }
+  ];
+  
+  const countryAtmosphere = [
+    {
+      title: "気候",
+      description: "四季がはっきりしており、春と秋が過ごしやすいです。夏は温暖、冬は比較的寒い地域が多いです。",
+      icon: "🌤️"
+    },
+    {
+      title: "治安",
+      description: "観光地は比較的安全ですが、都市部では注意が必要です。基本的な防犯意識を持つことが大切です。",
+      icon: "🛡️"
+    },
+    {
+      title: "人々の性格",
+      description: "フランス人は芸術や文化を大切にし、美食を愛する人が多いです。最初は少し距離感がありますが、親しくなると親切です。",
+      icon: "😊"
+    }
+  ];
+  
+  const workingHolidayReasons = [
+    "芸術文化体験：世界最高峰の美術館や文化施設で芸術に触れられる",
+    "語学学習：フランス語を学びながら、実践的な会話力を身につけられる",
+    "美食体験：世界最高峰のレストランで本格的なフランス料理を楽しめる",
+    "ファッション体験：パリコレクションなど世界のファッションの最前線を体験できる"
+  ];
+  
+  const englishLearningEnvironment = [
+    "フランス語学習：フランス語圏で、本格的なフランス語を学べる環境",
+    "語学学校：フランス語学校も充実しており、語学力を伸ばすのに最適",
+    "多文化社会：様々な国の人々と交流でき、国際的な視点を身につけられる"
+  ];
+  
+  const outdoorLifeDescription = "フランスには美しい田園地帯やアルプス山脈、地中海沿岸など、様々な自然環境があります。ハイキング、スキー、ビーチリゾートなど、四季を通じて様々なアウトドアアクティビティが楽しめます。";
+  
+  const recommendedFor = [
+    {
+      title: "芸術文化好き",
+      description: "世界最高峰の美術館や文化施設で芸術に触れたい人に最適。ルーブル美術館やオルセー美術館など、一生に一度は訪れたい場所がたくさんあります。",
+      color: "#166534",
+      borderColor: "#22C55E",
+      bgColor: "#F0FDF4",
+      icon: "🎨"
+    },
+    {
+      title: "美食家",
+      description: "世界最高峰のレストランで本格的なフランス料理を楽しみたい人に最適。ワイン文化も豊富で、食の本場を体験できます。",
+      color: "#1E40AF",
+      borderColor: "#3B82F6",
+      bgColor: "#EFF6FF",
+      icon: "🍷"
+    },
+    {
+      title: "ファッション好き",
+      description: "パリコレクションなど世界のファッションの最前線を体験したい人に最適。ファッションの本場でトレンドを学べます。",
+      color: "#92400E",
+      borderColor: "#F59E0B",
+      bgColor: "#FEF3C7",
+      icon: "👗"
+    },
+    {
+      title: "語学学習",
+      description: "フランス語を本格的に学びたい人に最適。フランス語圏で実践的な語学力を身につけられます。",
+      color: "#C2410C",
+      borderColor: "#F97316",
+      bgColor: "#FFF7ED",
+      icon: "🗣️"
+    }
+  ];
+
   return (
-    <>
-      <header className="App-header stylish-header main-header">
-        <div className="header-container">
-          <div className="header-logo">
-            <Link href="/" style={{ textDecoration: 'none', color: 'inherit' }}>
-              <span className="logo-text">
-                <span className="logo-main">ワーホリ</span>
-                <span className="logo-sub">パス</span>
-              </span>
-              <span className="logo-subtitle">Working Holiday Portal</span>
-            </Link>
-          </div>
-          <nav className="header-nav">
-            <a href="/about-workingholiday" className="nav-link">
-              ワーキングホリデー制度とは
-            </a>
-          </nav>
-        </div>
-        <div className="header-gradient-bar" />
-      </header>
-      
-      <button
-        onClick={() => router.push("/")}
-        className="fixed-back-button"
-        aria-label="戻る"
-      >
-        ← 戻る
-      </button>
-
-      <main style={{
-        maxWidth: 1200,
-        margin: '3.5em auto 2.5em auto',
-        padding: '3rem 2rem',
-        background: '#fff',
-        borderRadius: 12,
-        boxShadow: '0 2px 8px rgba(0,0,0,0.08)',
-        minHeight: 380,
-        fontFamily: 'Noto Sans JP',
-        border: '1px solid #e5e7eb',
-      }}>
-        
-        {/* ヒーローセクション */}
-        <div style={{
-          background: `linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('${country.imageUrl}')`,
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-          borderRadius: 12,
-          padding: '5rem 3rem',
-          color: 'white',
-          textAlign: 'center',
-          marginBottom: '4rem',
-          position: 'relative',
-          boxShadow: '0 4px 20px rgba(0,0,0,0.15)',
-        }}>
-          <h1 style={{ 
-            fontSize: '2.8rem', 
-            fontWeight: 800, 
-            margin: '0 0 1.5rem 0',
-            textShadow: '0 2px 4px rgba(0,0,0,0.4)',
-            letterSpacing: '0.02em',
-            lineHeight: 1.2
-          }}>
-            {country.nameJa}ワーキングホリデーの魅力
-          </h1>
-          <p style={{ 
-            fontSize: '1.2rem', 
-            margin: 0,
-            opacity: 0.95,
-            textShadow: '0 1px 2px rgba(0,0,0,0.4)',
-            fontWeight: 400,
-            lineHeight: 1.5
-          }}>
-            芸術・ファッション・美食の本場、ヨーロッパの中心地
-          </p>
-        </div>
-
-        {/* 滞在情報カード - ビジュアルヒエラルキー強化 */}
-        <div className="info-cards-grid" style={{
-          marginBottom: '5rem'
-        }}>
-          <div className="info-card" style={{
-            background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
-            color: 'white',
-            padding: '2.5rem 2rem',
-            borderRadius: 16,
-            textAlign: 'center',
-            boxShadow: '0 8px 25px rgba(102, 126, 234, 0.3)',
-            border: 'none',
-            position: 'relative',
-            overflow: 'hidden'
-          }}>
-            <div style={{
-              position: 'absolute',
-              top: '-10px',
-              right: '-10px',
-              width: '60px',
-              height: '60px',
-              background: 'rgba(255,255,255,0.1)',
-              borderRadius: '50%',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              fontSize: '24px'
-            }}>
-              💰
-            </div>
-            <h3 style={{ margin: '0 0 1rem 0', fontSize: '1.1rem', fontWeight: 600, opacity: 0.9 }}>最低賃金</h3>
-            <p style={{ margin: 0, fontSize: '1.8rem', fontWeight: 800 }}>{country.minWage}</p>
-          </div>
-          
-          <div className="info-card" style={{
-            background: 'linear-gradient(135deg, #f093fb 0%, #f5576c 100%)',
-            color: 'white',
-            padding: '2.5rem 2rem',
-            borderRadius: 16,
-            textAlign: 'center',
-            boxShadow: '0 8px 25px rgba(240, 147, 251, 0.3)',
-            border: 'none',
-            position: 'relative',
-            overflow: 'hidden'
-          }}>
-            <div style={{
-              position: 'absolute',
-              top: '-10px',
-              right: '-10px',
-              width: '60px',
-              height: '60px',
-              background: 'rgba(255,255,255,0.1)',
-              borderRadius: '50%',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              fontSize: '24px'
-            }}>
-              👥
-            </div>
-            <h3 style={{ margin: '0 0 1rem 0', fontSize: '1.1rem', fontWeight: 600, opacity: 0.9 }}>対象年齢</h3>
-            <p style={{ margin: 0, fontSize: '1.8rem', fontWeight: 800 }}>{country.ageRange}</p>
-          </div>
-          
-          <div className="info-card" style={{
-            background: 'linear-gradient(135deg, #4facfe 0%, #00f2fe 100%)',
-            color: 'white',
-            padding: '2.5rem 2rem',
-            borderRadius: 16,
-            textAlign: 'center',
-            boxShadow: '0 8px 25px rgba(79, 172, 254, 0.3)',
-            border: 'none',
-            position: 'relative',
-            overflow: 'hidden'
-          }}>
-            <div style={{
-              position: 'absolute',
-              top: '-10px',
-              right: '-10px',
-              width: '60px',
-              height: '60px',
-              background: 'rgba(255,255,255,0.1)',
-              borderRadius: '50%',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              fontSize: '24px'
-            }}>
-              ⏰
-            </div>
-            <h3 style={{ margin: '0 0 1rem 0', fontSize: '1.1rem', fontWeight: 600, opacity: 0.9 }}>滞在期間</h3>
-            <div style={{ margin: 0 }}>
-              <p style={{ margin: '0 0 0.3rem 0', fontSize: '1.8rem', fontWeight: 800 }}>最大1年間</p>
-              <p style={{ margin: 0, fontSize: '1rem', fontWeight: 400, opacity: 0.8 }}>（延長不可）</p>
-            </div>
-          </div>
-          
-          <div className="info-card" style={{
-            background: 'linear-gradient(135deg, #43e97b 0%, #38f9d7 100%)',
-            color: 'white',
-            padding: '2.5rem 2rem',
-            borderRadius: 16,
-            textAlign: 'center',
-            boxShadow: '0 8px 25px rgba(67, 233, 123, 0.3)',
-            border: 'none',
-            position: 'relative',
-            overflow: 'hidden'
-          }}>
-            <div style={{
-              position: 'absolute',
-              top: '-10px',
-              right: '-10px',
-              width: '60px',
-              height: '60px',
-              background: 'rgba(255,255,255,0.1)',
-              borderRadius: '50%',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              fontSize: '24px'
-            }}>
-              🎯
-            </div>
-            <h3 style={{ margin: '0 0 1rem 0', fontSize: '1.1rem', fontWeight: 600, opacity: 0.9 }}>定員数</h3>
-            <p style={{ margin: 0, fontSize: '1.8rem', fontWeight: 800 }}>{country.quota}</p>
-          </div>
-        </div>
-
-        {/* 記事コンテンツ */}
-        <article style={{ lineHeight: 1.8, color: '#374151' }}>
-          
-          {/* フランスの魅力セクション */}
-          <section style={{ marginBottom: '5rem' }}>
-            <h2 style={{ 
-              fontSize: '2.2rem', 
-              fontWeight: 800, 
-              color: '#1e40af', 
-              margin: '0 0 3rem 0',
-              borderBottom: '3px solid #3b82f6',
-              paddingBottom: '1.5rem',
-              position: 'relative'
-            }}>
-              <span style={{
-                background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
-                WebkitBackgroundClip: 'text',
-                WebkitTextFillColor: 'transparent',
-                backgroundClip: 'text'
-              }}>
-                🌟 フランスの魅力
-              </span>
-            </h2>
-            
-            <div style={{ fontSize: '1.1rem', lineHeight: 1.8 }}>
-              <p style={{ marginBottom: '2.5rem', color: '#4b5563', fontSize: '1.15rem' }}>
-                フランスは、芸術・ファッション・美食の本場として世界的に知られる国。パリをはじめとする美しい都市から、プロヴァンスの田園風景まで、多様な魅力を持つ国です。世界最高峰の文化施設や歴史的建造物が数多く存在します。
-              </p>
-              
-              {/* ワーホリ生活のイメージ写真 */}
-              <div style={{
-                display: 'grid',
-                gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
-                gap: '2rem',
-                marginBottom: '3rem'
-              }}>
-                <div style={{
-                  background: 'url("https://images.unsplash.com/photo-1499856871958-5b9627545d1a?w=600&auto=format&fit=crop&q=60")',
-                  backgroundSize: 'cover',
-                  backgroundPosition: 'center',
-                  height: '250px',
-                  borderRadius: 12,
-                  position: 'relative',
-                  boxShadow: '0 4px 15px rgba(0,0,0,0.1)'
-                }}>
-                  <div style={{
-                    position: 'absolute',
-                    bottom: 0,
-                    left: 0,
-                    right: 0,
-                    background: 'linear-gradient(transparent, rgba(0,0,0,0.7))',
-                    color: 'white',
-                    padding: '1.5rem',
-                    borderRadius: '0 0 12px 12px'
-                  }}>
-                    <h4 style={{ margin: '0 0 0.5rem 0', fontSize: '1.1rem', fontWeight: 600 }}>芸術と文化</h4>
-                    <p style={{ margin: 0, fontSize: '0.9rem', opacity: 0.9 }}>ルーブル美術館やオルセー美術館</p>
-                  </div>
-                </div>
-                
-                <div style={{
-                  background: 'url("https://images.unsplash.com/photo-1602087594298-706ccc894bfd?w=600&auto=format&fit=crop&q=60")',
-                  backgroundSize: 'cover',
-                  backgroundPosition: 'center',
-                  height: '250px',
-                  borderRadius: 12,
-                  position: 'relative',
-                  boxShadow: '0 4px 15px rgba(0,0,0,0.1)'
-                }}>
-                  <div style={{
-                    position: 'absolute',
-                    bottom: 0,
-                    left: 0,
-                    right: 0,
-                    background: 'linear-gradient(transparent, rgba(0,0,0,0.7))',
-                    color: 'white',
-                    padding: '1.5rem',
-                    borderRadius: '0 0 12px 12px'
-                  }}>
-                    <h4 style={{ margin: '0 0 0.5rem 0', fontSize: '1.1rem', fontWeight: 600 }}>美食文化</h4>
-                    <p style={{ margin: 0, fontSize: '0.9rem', opacity: 0.9 }}>世界最高峰のフランス料理</p>
-                  </div>
-                </div>
-                
-                <div style={{
-                  background: 'url("https://images.unsplash.com/photo-1567351673954-0cb49f639dc4?w=600&auto=format&fit=crop&q=60")',
-                  backgroundSize: 'cover',
-                  backgroundPosition: 'center',
-                  height: '250px',
-                  borderRadius: 12,
-                  position: 'relative',
-                  boxShadow: '0 4px 15px rgba(0,0,0,0.1)'
-                }}>
-                  <div style={{
-                    position: 'absolute',
-                    bottom: 0,
-                    left: 0,
-                    right: 0,
-                    background: 'linear-gradient(transparent, rgba(0,0,0,0.7))',
-                    color: 'white',
-                    padding: '1.5rem',
-                    borderRadius: '0 0 12px 12px'
-                  }}>
-                    <h4 style={{ margin: '0 0 0.5rem 0', fontSize: '1.1rem', fontWeight: 600 }}>ワイン文化</h4>
-                    <p style={{ margin: 0, fontSize: '0.9rem', opacity: 0.9 }}>世界最高峰のワイン産地</p>
-                  </div>
-                </div>
-              </div>
-              
-              <h3 style={{ fontSize: '1.4rem', fontWeight: 700, color: '#1f2937', margin: '3rem 0 1.5rem 0' }}>
-                🌍 その国の雰囲気
-              </h3>
-              
-              {/* 情報カード */}
-              <div style={{
-                display: 'grid',
-                gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
-                gap: '2rem',
-                marginBottom: '3rem'
-              }}>
-                <div style={{
-                  background: 'linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%)',
-                  padding: '2rem',
-                  borderRadius: 12,
-                  border: '1px solid #fbbf24',
-                  boxShadow: '0 4px 15px rgba(251, 191, 36, 0.2)'
-                }}>
-                  <h4 style={{ fontSize: '1.2rem', fontWeight: 700, color: '#92400e', margin: '0 0 1rem 0' }}>
-                    🌤️ 気候
-                  </h4>
-                  <p style={{ margin: 0, color: '#78350f', lineHeight: 1.6 }}>
-                    四季がはっきりしており、夏は温暖、冬は比較的穏やか。地域によって気候が異なり、地中海沿岸は温暖、北部は涼しい気候です。
-                  </p>
-                </div>
-                
-                <div style={{
-                  background: 'linear-gradient(135deg, #dbeafe 0%, #bfdbfe 100%)',
-                  padding: '2rem',
-                  borderRadius: 12,
-                  border: '1px solid #60a5fa',
-                  boxShadow: '0 4px 15px rgba(96, 165, 250, 0.2)'
-                }}>
-                  <h4 style={{ fontSize: '1.2rem', fontWeight: 700, color: '#1e40af', margin: '0 0 1rem 0' }}>
-                    🛡️ 治安
-                  </h4>
-                  <p style={{ margin: 0, color: '#1e3a8a', lineHeight: 1.6 }}>
-                    比較的安全ですが、都市部では一般的な防犯意識が必要です。公共交通機関も発達しており、移動も便利です。
-                  </p>
-                </div>
-                
-                <div style={{
-                  background: 'linear-gradient(135deg, #dcfce7 0%, #bbf7d0 100%)',
-                  padding: '2rem',
-                  borderRadius: 12,
-                  border: '1px solid #4ade80',
-                  boxShadow: '0 4px 15px rgba(74, 222, 128, 0.2)'
-                }}>
-                  <h4 style={{ fontSize: '1.2rem', fontWeight: 700, color: '#166534', margin: '0 0 1rem 0' }}>
-                    😊 人々の性格
-                  </h4>
-                  <p style={{ margin: 0, color: '#14532d', lineHeight: 1.6 }}>
-                    フランス人は芸術や文化を愛し、美食を大切にする人が多いです。礼儀正しく、自分の意見をはっきりと持つ文化があります。
-                  </p>
-                </div>
-              </div>
-              
-              <h3 style={{ fontSize: '1.4rem', fontWeight: 700, color: '#1f2937', margin: '3rem 0 1.5rem 0' }}>
-                🎯 ワーキングホリデーに向いている理由
-              </h3>
-              <ul style={{ 
-                marginBottom: '2.5rem', 
-                color: '#4b5563',
-                paddingLeft: '2rem',
-                fontSize: '1.1rem',
-                lineHeight: 1.8
-              }}>
-                <li style={{ marginBottom: '1rem' }}>
-                  <strong>フランス語学習環境：</strong>フランス語の本場で、正統なフランス語を学べる
-                </li>
-                <li style={{ marginBottom: '1rem' }}>
-                  <strong>豊富な文化施設：</strong>世界クラスの美術館や博物館が数多くある
-                </li>
-                <li style={{ marginBottom: '1rem' }}>
-                  <strong>ヨーロッパ旅行の拠点：</strong>他のヨーロッパ各国へのアクセスが便利
-                </li>
-                <li style={{ marginBottom: '1rem' }}>
-                  <strong>美食体験：</strong>世界最高峰のフランス料理やワインを楽しめる
-                </li>
-              </ul>
-              
-              <h3 style={{ fontSize: '1.4rem', fontWeight: 700, color: '#1f2937', margin: '3rem 0 1.5rem 0' }}>
-                📚 フランス語学習の環境
-              </h3>
-              <ul style={{ 
-                marginBottom: '2.5rem', 
-                color: '#4b5563',
-                paddingLeft: '2rem',
-                fontSize: '1.1rem',
-                lineHeight: 1.8
-              }}>
-                <li style={{ marginBottom: '1rem' }}>
-                  <strong>正統なフランス語：</strong>フランス語の本場で、正統なフランス語を学べます
-                </li>
-                <li style={{ marginBottom: '1rem' }}>
-                  <strong>充実した語学学校：</strong>語学学校も充実しており、フランス語力を伸ばすのに最適な環境です
-                </li>
-                <li style={{ marginBottom: '1rem' }}>
-                  <strong>多文化社会：</strong>様々な国の人々と交流でき、実践的なフランス語力を身につけることができます
-                </li>
-              </ul>
-              
-              <h3 style={{ fontSize: '1.4rem', fontWeight: 700, color: '#1f2937', margin: '3rem 0 1.5rem 0' }}>
-                🎨 芸術と文化体験
-              </h3>
-              <p style={{ marginBottom: '2.5rem', color: '#4b5563', fontSize: '1.15rem' }}>
-                ルーブル美術館やオルセー美術館など、世界クラスの美術館が数多くあります。また、ファッションや音楽、映画など、芸術文化も豊富で、感性を磨くのに最適な環境です。
-              </p>
-            </div>
-          </section>
-
-          {/* こんな人におすすめセクション */}
-          <section style={{ marginBottom: '5rem' }}>
-            <h2 style={{ 
-              fontSize: '2.2rem', 
-              fontWeight: 800, 
-              color: '#1e40af', 
-              margin: '0 0 3rem 0',
-              borderBottom: '3px solid #3b82f6',
-              paddingBottom: '1.5rem',
-              position: 'relative'
-            }}>
-              <span style={{
-                background: 'linear-gradient(135deg, #f093fb 0%, #f5576c 100%)',
-                WebkitBackgroundClip: 'text',
-                WebkitTextFillColor: 'transparent',
-                backgroundClip: 'text'
-              }}>
-                🎯 こんな人におすすめ
-              </span>
-            </h2>
-            
-            <div style={{ fontSize: '1.1rem', lineHeight: 1.8 }}>
-              <div style={{
-                display: 'grid',
-                gridTemplateColumns: 'repeat(4, 1fr)',
-                gap: '1.5rem',
-                width: '100%'
-              }}>
-                <div style={{
-                  background: 'linear-gradient(135deg, #a8edea 0%, #fed6e3 100%)',
-                  padding: '2rem',
-                  borderRadius: 16,
-                  border: '1px solid #e5e7eb',
-                  boxShadow: '0 8px 25px rgba(0,0,0,0.1)',
-                  transition: 'transform 0.3s ease, box-shadow 0.3s ease',
-                  cursor: 'pointer',
-                  display: 'flex',
-                  flexDirection: 'column',
-                  justifyContent: 'flex-start',
-                  minHeight: '240px',
-                  width: '100%'
-                }} onMouseEnter={(e) => {
-                  e.currentTarget.style.transform = 'translateY(-5px)';
-                  e.currentTarget.style.boxShadow = '0 12px 35px rgba(0,0,0,0.15)';
-                }} onMouseLeave={(e) => {
-                  e.currentTarget.style.transform = 'translateY(0)';
-                  e.currentTarget.style.boxShadow = '0 8px 25px rgba(0,0,0,0.1)';
-                }}>
-                  <h3 style={{ 
-                    fontSize: '1.3rem', 
-                    fontWeight: 700, 
-                    color: '#1f2937', 
-                    margin: '0 0 12px 0',
-                    lineHeight: 1.4
-                  }}>
-                    🎨 アート好き
-                  </h3>
-                  <p style={{ 
-                    margin: 0, 
-                    color: '#4b5563', 
-                    lineHeight: 1.6,
-                    fontSize: '1rem'
-                  }}>
-                    世界クラスの美術館や博物館が数多くある環境。芸術文化を満喫しながら感性を磨くことができます。
-                  </p>
-                </div>
-                
-                <div style={{
-                  background: 'linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%)',
-                  padding: '2rem',
-                  borderRadius: 16,
-                  border: '1px solid #e5e7eb',
-                  boxShadow: '0 8px 25px rgba(0,0,0,0.1)',
-                  transition: 'transform 0.3s ease, box-shadow 0.3s ease',
-                  cursor: 'pointer',
-                  display: 'flex',
-                  flexDirection: 'column',
-                  justifyContent: 'flex-start',
-                  minHeight: '240px',
-                  width: '100%'
-                }} onMouseEnter={(e) => {
-                  e.currentTarget.style.transform = 'translateY(-5px)';
-                  e.currentTarget.style.boxShadow = '0 12px 35px rgba(0,0,0,0.15)';
-                }} onMouseLeave={(e) => {
-                  e.currentTarget.style.transform = 'translateY(0)';
-                  e.currentTarget.style.boxShadow = '0 8px 25px rgba(0,0,0,0.1)';
-                }}>
-                  <h3 style={{ 
-                    fontSize: '1.3rem', 
-                    fontWeight: 700, 
-                    color: '#1f2937', 
-                    margin: '0 0 12px 0',
-                    lineHeight: 1.4
-                  }}>
-                    🗣️ フランス語を学びたい
-                  </h3>
-                  <p style={{ 
-                    margin: 0, 
-                    color: '#4b5563', 
-                    lineHeight: 1.6,
-                    fontSize: '1rem'
-                  }}>
-                    フランス語の本場で、正統なフランス語を学べる環境。語学学校も充実しており、フランス語力を伸ばすのに最適です。
-                  </p>
-                </div>
-                
-                <div style={{
-                  background: 'linear-gradient(135deg, #d299c2 0%, #fef9d7 100%)',
-                  padding: '2rem',
-                  borderRadius: 16,
-                  border: '1px solid #e5e7eb',
-                  boxShadow: '0 8px 25px rgba(0,0,0,0.1)',
-                  transition: 'transform 0.3s ease, box-shadow 0.3s ease',
-                  cursor: 'pointer',
-                  display: 'flex',
-                  flexDirection: 'column',
-                  justifyContent: 'flex-start',
-                  minHeight: '240px',
-                  width: '100%'
-                }} onMouseEnter={(e) => {
-                  e.currentTarget.style.transform = 'translateY(-5px)';
-                  e.currentTarget.style.boxShadow = '0 12px 35px rgba(0,0,0,0.15)';
-                }} onMouseLeave={(e) => {
-                  e.currentTarget.style.transform = 'translateY(0)';
-                  e.currentTarget.style.boxShadow = '0 8px 25px rgba(0,0,0,0.1)';
-                }}>
-                  <h3 style={{ 
-                    fontSize: '1.3rem', 
-                    fontWeight: 700, 
-                    color: '#1f2937', 
-                    margin: '0 0 12px 0',
-                    lineHeight: 1.4
-                  }}>
-                    🍷 美食が好き
-                  </h3>
-                  <p style={{ 
-                    margin: 0, 
-                    color: '#4b5563', 
-                    lineHeight: 1.6,
-                    fontSize: '1rem'
-                  }}>
-                    世界最高峰のフランス料理やワインを楽しめる環境。美食文化を深く体験できます。
-                  </p>
-                </div>
-                
-                <div style={{
-                  background: 'linear-gradient(135deg, #89f7fe 0%, #66a6ff 100%)',
-                  padding: '2rem',
-                  borderRadius: 16,
-                  border: '1px solid #e5e7eb',
-                  boxShadow: '0 8px 25px rgba(0,0,0,0.1)',
-                  transition: 'transform 0.3s ease, box-shadow 0.3s ease',
-                  cursor: 'pointer',
-                  display: 'flex',
-                  flexDirection: 'column',
-                  justifyContent: 'flex-start',
-                  minHeight: '240px',
-                  width: '100%'
-                }} onMouseEnter={(e) => {
-                  e.currentTarget.style.transform = 'translateY(-5px)';
-                  e.currentTarget.style.boxShadow = '0 12px 35px rgba(0,0,0,0.15)';
-                }} onMouseLeave={(e) => {
-                  e.currentTarget.style.transform = 'translateY(0)';
-                  e.currentTarget.style.boxShadow = '0 8px 25px rgba(0,0,0,0.1)';
-                }}>
-                  <h3 style={{ 
-                    fontSize: '1.3rem', 
-                    fontWeight: 700, 
-                    color: '#1f2937', 
-                    margin: '0 0 12px 0',
-                    lineHeight: 1.4
-                  }}>
-                    🌍 ヨーロッパ旅行したい
-                  </h3>
-                  <p style={{ 
-                    margin: 0, 
-                    color: '#4b5563', 
-                    lineHeight: 1.6,
-                    fontSize: '1rem'
-                  }}>
-                    ヨーロッパ各国へのアクセスが便利。イタリア、スペイン、ドイツなど、近隣諸国への旅行も気軽に楽しめます。
-                  </p>
-                </div>
-              </div>
-            </div>
-          </section>
-
-          {/* CTAセクション - 改善されたボタン */}
-          <section style={{ 
-            background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
-            padding: '4rem 3rem',
-            borderRadius: 16,
-            border: '1px solid #e2e8f0',
-            textAlign: 'center',
-            boxShadow: '0 8px 25px rgba(102, 126, 234, 0.3)',
-            position: 'relative',
-            overflow: 'hidden',
-            marginBottom: '3rem'
-          }}>
-            <div style={{
-              position: 'absolute',
-              top: '-50px',
-              right: '-50px',
-              width: '200px',
-              height: '200px',
-              background: 'rgba(255,255,255,0.1)',
-              borderRadius: '50%'
-            }} />
-            <div style={{
-              position: 'absolute',
-              bottom: '-30px',
-              left: '-30px',
-              width: '150px',
-              height: '150px',
-              background: 'rgba(255,255,255,0.05)',
-              borderRadius: '50%'
-            }} />
-            
-            <h2 style={{ 
-              fontSize: '2rem', 
-              fontWeight: 800, 
-              margin: '0 0 1.5rem 0', 
-              color: 'white',
-              position: 'relative',
-              zIndex: 1
-            }}>
-              🚀 フランスでワーホリを始めよう
-            </h2>
-            <p style={{ 
-              fontSize: '1.2rem', 
-              margin: '0 0 3rem 0', 
-              color: 'rgba(255,255,255,0.9)',
-              position: 'relative',
-              zIndex: 1,
-              lineHeight: 1.6
-            }}>
-              芸術・ファッション・美食の本場、ヨーロッパ旅行の拠点。フランスはワーホリに最適な国です。
-            </p>
-            <button 
-              onClick={() => router.push("/")}
-              style={{
-                background: 'linear-gradient(135deg, #f093fb 0%, #f5576c 100%)',
-                color: 'white',
-                border: 'none',
-                padding: '1.2rem 3rem',
-                borderRadius: 50,
-                fontSize: '1.1rem',
-                fontWeight: 700,
-                cursor: 'pointer',
-                transition: 'all 0.3s ease',
-                boxShadow: '0 8px 25px rgba(240, 147, 251, 0.4)',
-                position: 'relative',
-                zIndex: 1,
-                minWidth: '200px',
-                minHeight: '50px'
-              }}
-              onMouseEnter={(e) => {
-                e.currentTarget.style.transform = 'translateY(-3px) scale(1.05)';
-                e.currentTarget.style.boxShadow = '0 12px 35px rgba(240, 147, 251, 0.6)';
-              }}
-              onMouseLeave={(e) => {
-                e.currentTarget.style.transform = 'translateY(0) scale(1)';
-                e.currentTarget.style.boxShadow = '0 8px 25px rgba(240, 147, 251, 0.4)';
-              }}
-            >
-              🌍 他の国も見てみる
-            </button>
-          </section>
-
-          {/* 無料相談セクション */}
-          <section style={{ 
-            background: 'linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%)',
-            padding: '4rem 3rem',
-            borderRadius: 16,
-            border: '1px solid #fbbf24',
-            textAlign: 'center',
-            boxShadow: '0 8px 25px rgba(251, 191, 36, 0.3)',
-            position: 'relative',
-            overflow: 'hidden'
-          }}>
-            <div style={{
-              position: 'absolute',
-              top: '-30px',
-              left: '-30px',
-              width: '120px',
-              height: '120px',
-              background: 'rgba(255,255,255,0.1)',
-              borderRadius: '50%'
-            }} />
-            <div style={{
-              position: 'absolute',
-              bottom: '-20px',
-              right: '-20px',
-              width: '100px',
-              height: '100px',
-              background: 'rgba(255,255,255,0.05)',
-              borderRadius: '50%'
-            }} />
-            
-            <h2 style={{ 
-              fontSize: '2rem', 
-              fontWeight: 800, 
-              margin: '0 0 1.5rem 0', 
-              color: '#92400e',
-              position: 'relative',
-              zIndex: 1
-            }}>
-              💬 無料相談はこちら
-            </h2>
-            <p style={{ 
-              fontSize: '1.2rem', 
-              margin: '0 0 3rem 0', 
-              color: '#78350f',
-              position: 'relative',
-              zIndex: 1,
-              lineHeight: 1.6
-            }}>
-              ワーキングホリデーについて詳しく知りたい方、不安なことがある方はお気軽にご相談ください。
-            </p>
-            <button 
-              onClick={() => router.push("/lp")}
-              style={{
-                background: 'linear-gradient(135deg, #f093fb 0%, #f5576c 100%)',
-                color: 'white',
-                border: 'none',
-                padding: '1.2rem 3rem',
-                borderRadius: 50,
-                fontSize: '1.1rem',
-                fontWeight: 700,
-                cursor: 'pointer',
-                transition: 'all 0.3s ease',
-                boxShadow: '0 8px 25px rgba(240, 147, 251, 0.4)',
-                position: 'relative',
-                zIndex: 1,
-                minWidth: '200px',
-                minHeight: '50px'
-              }}
-              onMouseEnter={(e) => {
-                e.currentTarget.style.transform = 'translateY(-3px) scale(1.05)';
-                e.currentTarget.style.boxShadow = '0 12px 35px rgba(240, 147, 251, 0.6)';
-              }}
-              onMouseLeave={(e) => {
-                e.currentTarget.style.transform = 'translateY(0) scale(1)';
-                e.currentTarget.style.boxShadow = '0 8px 25px rgba(240, 147, 251, 0.4)';
-              }}
-            >
-              📞 無料相談を始める
-            </button>
-          </section>
-        </article>
-      </main>
-    </>
+    <CountryDetailLayout
+      country={country}
+      pageTitle={pageTitle}
+      pageDescription={pageDescription}
+      countryDescription={countryDescription}
+      countryFeatures={countryFeatures}
+      countryAtmosphere={countryAtmosphere}
+      workingHolidayReasons={workingHolidayReasons}
+      englishLearningEnvironment={englishLearningEnvironment}
+      outdoorLifeDescription={outdoorLifeDescription}
+      recommendedFor={recommendedFor}
+    />
   );
 } 

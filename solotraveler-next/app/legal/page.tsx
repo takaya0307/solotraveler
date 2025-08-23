@@ -87,7 +87,7 @@ export default function Legal() {
           </div>
           <nav className="header-nav">
             <a href="/about-workingholiday" className="nav-link" onClick={handleNavLinkClick}>
-              ワーキングホリデー制度とは
+              ワーホリとは
             </a>
           </nav>
         </div>

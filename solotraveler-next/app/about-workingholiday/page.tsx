@@ -20,7 +20,7 @@ export default function AboutWorkingHoliday() {
 
   // ページビュー計測
   useEffect(() => {
-    trackEvent('view', 'ページ', 'ワーキングホリデー制度とは', 1);
+    trackEvent('view', 'ページ', 'ワーホリとは', 1);
   }, []);
 
   const toggleFaq = (index: number) => {
@@ -74,9 +74,9 @@ export default function AboutWorkingHoliday() {
             </Link>
           </div>
           <nav className="header-nav">
-            <a href="/about-workingholiday" className="nav-link">
-              ワーキングホリデー制度とは
-            </a>
+            <Link href="/about-workingholiday" className="nav-link">
+              ワーホリとは
+            </Link>
           </nav>
         </div>
         <div className="header-gradient-bar" />
@@ -118,6 +118,21 @@ export default function AboutWorkingHoliday() {
               </a>
             </li>
             <li className="wh-nav-item">
+              <a href="#application" className="wh-nav-link" onClick={(e) => { e.preventDefault(); scrollToSection('application'); }}>
+                📋 申請の流れ
+              </a>
+            </li>
+            <li className="wh-nav-item">
+              <a href="#documents" className="wh-nav-link" onClick={(e) => { e.preventDefault(); scrollToSection('documents'); }}>
+                📄 必要書類・費用
+              </a>
+            </li>
+            <li className="wh-nav-item">
+              <a href="#warnings" className="wh-nav-link" onClick={(e) => { e.preventDefault(); scrollToSection('warnings'); }}>
+                ⚠️ 注意点・失敗例
+              </a>
+            </li>
+            <li className="wh-nav-item">
               <a href="#summary" className="wh-nav-link" onClick={(e) => { e.preventDefault(); scrollToSection('summary'); }}>
                 📝 まとめ
               </a>
@@ -129,12 +144,14 @@ export default function AboutWorkingHoliday() {
         <section className="wh-hero-section">
           <div className="wh-hero-content">
             <h1 className="wh-hero-title">
-              ワーキングホリデー制度とは？<br />
-              海外で働ける夢の制度を解説
+              ワーホリとは？ワーキングホリデーの意味・制度をやさしく解説
             </h1>
+            <p className="wh-hero-definition">
+              <strong>ワーホリとは、18〜30歳（国により35歳）を中心とした若者が、協定国に最長1〜2年滞在し、休暇を主目的に就労・就学も体験できる特別なビザ制度</strong>です。
+            </p>
             <p className="wh-hero-description">
-              「ワーキングホリデーって何？」「どんな国に行けるの？」「英語ができなくても大丈夫？」<br />
-              このページでは、ワーキングホリデー制度について詳しく解説します。海外で働きながら生活できる特別なビザ制度の魅力と注意点を、わかりやすくお伝えします。
+              「ワーホリって何？」「どんな国に行けるの？」「英語ができなくても大丈夫？」<br />
+              このページでは、ワーホリについて詳しく解説します。海外で働きながら生活できる特別なビザ制度の魅力と注意点を、わかりやすくお伝えします。
             </p>
             
             {/* ファーストビュー強化 */}
@@ -158,10 +175,10 @@ export default function AboutWorkingHoliday() {
           </div>
         </section>
 
-        {/* ワーキングホリデー制度の概要 */}
+        {/* ワーホリの概要（定義・目的・できること） */}
         <section id="overview" className="wh-section">
           <h2 className="wh-section-title">
-            📋 ワーキングホリデー制度の概要
+            📋 ワーホリの概要（定義・目的・できること）
           </h2>
           
           <div className="wh-card">
@@ -180,8 +197,24 @@ export default function AboutWorkingHoliday() {
 
           <div className="wh-card">
             <h3 className="wh-subsection-title">
-              👥 対象年齢・参加条件
+              💼 どんなことができるか
             </h3>
+            <ul className="wh-list">
+              <li><strong>就労：</strong>現地でアルバイトやパートタイムで働く</li>
+              <li><strong>就学：</strong>語学学校や専門学校で勉強する</li>
+              <li><strong>観光：</strong>休暇として旅行や観光を楽しむ</li>
+              <li><strong>文化交流：</strong>現地の人々との交流や文化体験</li>
+            </ul>
+          </div>
+        </section>
+
+        {/* 対象年齢・参加条件 */}
+        <section id="requirements" className="wh-section wh-section-alt">
+          <h2 className="wh-section-title">
+            👥 対象年齢・参加条件
+          </h2>
+          
+          <div className="wh-card">
             <ul className="wh-list">
               <li><strong>年齢：</strong>18歳〜30歳（一部の国では35歳まで）</li>
               <li><strong>国籍：</strong>日本国籍を有すること</li>
@@ -191,11 +224,15 @@ export default function AboutWorkingHoliday() {
               <li><strong>犯罪歴：</strong>重大な犯罪歴がないこと</li>
             </ul>
           </div>
+        </section>
 
+        {/* 滞在可能な国と期間 */}
+        <section id="countries" className="wh-section">
+          <h2 className="wh-section-title">
+            🌍 滞在可能な国と期間
+          </h2>
+          
           <div className="wh-card">
-            <h3 className="wh-subsection-title">
-              🌍 滞在可能な国と期間
-            </h3>
             <div className="wh-info-box">
               <p><strong>主要な協定国：</strong></p>
               <ul className="wh-list">
@@ -210,24 +247,12 @@ export default function AboutWorkingHoliday() {
               </ul>
             </div>
           </div>
-
-          <div className="wh-card">
-            <h3 className="wh-subsection-title">
-              💼 どんなことができるか
-            </h3>
-            <ul className="wh-list">
-              <li><strong>就労：</strong>現地でアルバイトやパートタイムで働く</li>
-              <li><strong>就学：</strong>語学学校や専門学校で勉強する</li>
-              <li><strong>観光：</strong>休暇として旅行や観光を楽しむ</li>
-              <li><strong>文化交流：</strong>現地の人々との交流や文化体験</li>
-            </ul>
-          </div>
         </section>
 
-        {/* メリットとデメリット */}
+        {/* メリット・デメリット */}
         <section id="pros-cons" className="wh-section wh-section-alt">
           <h2 className="wh-section-title">
-            ⚖️ メリットとデメリット
+            ⚖️ メリット・デメリット
           </h2>
           
           <div className="wh-card-grid">
@@ -266,22 +291,30 @@ export default function AboutWorkingHoliday() {
           </h2>
           
           <div>
-            {faqData.map((faq, index) => (
-              <div key={index} className="wh-faq-item">
-                <div 
-                  className={`wh-faq-question ${openFaq === index ? 'active' : ''}`}
-                  onClick={() => toggleFaq(index)}
-                >
-                  <span>{faq.question}</span>
-                  <span className={`wh-faq-toggle ${openFaq === index ? 'active' : ''}`}>
-                    ▼
-                  </span>
+            {faqData.map((faq, index) => {
+              const isOpen = openFaq === index;
+              return (
+                <div key={index} className="wh-faq-item">
+                  <button
+                    className={`wh-faq-question ${isOpen ? "active" : ""}`}
+                    aria-expanded={isOpen}
+                    aria-controls={`faq-panel-${index}`}
+                    onClick={() => toggleFaq(index)}
+                  >
+                    <span>{faq.question}</span>
+                    <span className={`wh-faq-toggle ${isOpen ? "active" : ""}`}>▼</span>
+                  </button>
+                  <div 
+                    id={`faq-panel-${index}`} 
+                    role="region" 
+                    aria-labelledby={`faq-q-${index}`}
+                    className={`wh-faq-answer ${isOpen ? "active" : ""}`}
+                  >
+                    {faq.answer}
+                  </div>
                 </div>
-                <div className={`wh-faq-answer ${openFaq === index ? 'active' : ''}`}>
-                  {faq.answer}
-                </div>
-              </div>
-            ))}
+              );
+            })}
           </div>
         </section>
 
@@ -300,6 +333,103 @@ export default function AboutWorkingHoliday() {
               <li><strong>🤝 国際的な人脈を作りたい人</strong> - 世界中の友人やビジネスパートナーを作りたい方</li>
               <li><strong>🎯 キャリアの方向性を決めたい人</strong> - 海外経験を通じて将来のキャリアを考えたい方</li>
             </ul>
+          </div>
+        </section>
+
+        {/* 申請の流れ */}
+        <section id="application" className="wh-section">
+          <h2 className="wh-section-title">
+            📋 申請の流れ
+          </h2>
+          
+          <div className="wh-card">
+            <div className="wh-content">
+              <h3 className="wh-subsection-title">1️⃣ 事前準備（3〜6ヶ月前）</h3>
+              <ul className="wh-list">
+                <li><strong>渡航先の決定：</strong>行きたい国と都市を決める</li>
+                <li><strong>語学力の確認：</strong>必要に応じて語学学校の手配</li>
+                <li><strong>資金計画：</strong>航空券、保険、初期費用の準備</li>
+                <li><strong>健康診断：</strong>必要に応じて健康診断を受ける</li>
+              </ul>
+              
+              <h3 className="wh-subsection-title">2️⃣ ビザ申請（2〜3ヶ月前）</h3>
+              <ul className="wh-list">
+                <li><strong>必要書類の準備：</strong>パスポート、写真、証明書など</li>
+                <li><strong>オンライン申請：</strong>各国の公式サイトで申請</li>
+                <li><strong>申請料の支払い：</strong>クレジットカードで支払い</li>
+                <li><strong>審査待ち：</strong>通常1〜4週間で結果</li>
+              </ul>
+              
+              <h3 className="wh-subsection-title">3️⃣ 渡航準備（1ヶ月前）</h3>
+              <ul className="wh-list">
+                <li><strong>航空券の手配：</strong>往復航空券の購入</li>
+                <li><strong>保険の加入：</strong>海外旅行保険・医療保険</li>
+                <li><strong>宿泊先の手配：</strong>最初の1〜2週間分</li>
+                <li><strong>現地情報の収集：</strong>交通手段、銀行口座開設など</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        {/* 必要書類と費用の目安 */}
+        <section id="documents" className="wh-section wh-section-alt">
+          <h2 className="wh-section-title">
+            📄 必要書類と費用の目安
+          </h2>
+          
+          <div className="wh-card-grid">
+            <div className="wh-card">
+              <h3 className="wh-subsection-title">📋 必要書類</h3>
+              <ul className="wh-list">
+                <li><strong>パスポート：</strong>有効期限が滞在期間+6ヶ月以上</li>
+                <li><strong>証明写真：</strong>各国の規格に合った写真</li>
+                <li><strong>資金証明：</strong>銀行残高証明書</li>
+                <li><strong>健康証明：</strong>必要に応じて健康診断書</li>
+                <li><strong>犯罪歴証明：</strong>必要に応じて警察証明書</li>
+                <li><strong>履歴書：</strong>職歴や学歴の証明</li>
+              </ul>
+            </div>
+            
+            <div className="wh-card">
+              <h3 className="wh-subsection-title">💰 費用の目安</h3>
+              <ul className="wh-list">
+                <li><strong>ビザ申請料：</strong>3,000〜15,000円（国により異なる）</li>
+                <li><strong>航空券：</strong>往復10〜30万円</li>
+                <li><strong>海外保険：</strong>年間5〜15万円</li>
+                <li><strong>初期費用：</strong>現地での生活費3〜6ヶ月分</li>
+                <li><strong>語学学校：</strong>月5〜15万円（希望する場合）</li>
+                <li><strong>その他：</strong>予防接種、ビザ延長料など</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        {/* 注意点・よくある失敗 */}
+        <section id="warnings" className="wh-section">
+          <h2 className="wh-section-title">
+            ⚠️ 注意点・よくある失敗
+          </h2>
+          
+          <div className="wh-card">
+            <div className="wh-content">
+              <h3 className="wh-subsection-title">🚫 よくある失敗例</h3>
+              <ul className="wh-list">
+                <li><strong>資金不足：</strong>現地での生活費が足りずに早期帰国</li>
+                <li><strong>語学力不足：</strong>コミュニケーションが取れずに孤立</li>
+                <li><strong>準備不足：</strong>現地の文化やルールを知らずにトラブル</li>
+                <li><strong>仕事探しの遅れ：</strong>到着後すぐに仕事が見つからない</li>
+                <li><strong>保険未加入：</strong>病気や怪我で高額な医療費が発生</li>
+              </ul>
+              
+              <h3 className="wh-subsection-title">💡 成功のポイント</h3>
+              <ul className="wh-list">
+                <li><strong>十分な資金準備：</strong>最低6ヶ月分の生活費を確保</li>
+                <li><strong>事前学習：</strong>現地の文化、法律、生活習慣を学ぶ</li>
+                <li><strong>ネットワーク構築：</strong>現地の日本人コミュニティに参加</li>
+                <li><strong>柔軟な対応：</strong>計画通りにいかないことを前提に準備</li>
+                <li><strong>健康管理：</strong>体調管理と適切な保険加入</li>
+              </ul>
+            </div>
           </div>
         </section>
 
@@ -327,6 +457,45 @@ export default function AboutWorkingHoliday() {
         <div className="wh-footer-note">
           ※ 詳細は各国大使館・公式サイト等でご確認ください
         </div>
+
+        {/* スキーマ（構造化データ） */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "FAQPage",
+              "mainEntity": [
+                ...faqData.map(f => ({
+                  "@type": "Question",
+                  "name": f.question,
+                  "acceptedAnswer": { "@type": "Answer", "text": f.answer }
+                })),
+                {
+                  "@type": "Question",
+                  "name": "ワーホリとは何の略？意味は？",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "ワーホリは\"ワーキングホリデー\"の略で、休暇を主目的に就労・就学も可能な若者向けの在留制度を指します。"
+                  }
+                }
+              ]
+            })
+          }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "BreadcrumbList",
+              "itemListElement": [
+                { "@type": "ListItem", "position": 1, "name": "ホーム", "item": "https://solotraveler-next.vercel.app/" },
+                { "@type": "ListItem", "position": 2, "name": "ワーホリとは", "item": "https://solotraveler-next.vercel.app/about-workingholiday" }
+              ]
+            })
+          }}
+        />
       </div>
     </>
   );

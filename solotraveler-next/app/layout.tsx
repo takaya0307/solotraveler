@@ -35,10 +35,10 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: "ワーホリパス｜ワーホリに行ける国を一覧比較",
-    description: "ワーホリパスはワーホリに行ける国を一覧比較できるサイトです。ワーホリに行ける国を一覧比較できます。",
-    url: 'https://workingholidaypass.jp', // 実際のドメインに変更してください
-    siteName: 'ワーホリパス｜ワーホリに行ける国を一覧比較',
+    title: "ワーホリパス｜ワーホリで行ける国一覧・比較",
+    description: "オーストラリア、カナダ、ニュージーランドなど世界各国のワーホリ国・都市を徹底比較。",
+    url: 'https://workingholidaypass.jp', 
+    siteName: 'ワーホリパス',
     locale: 'ja_JP',
     type: 'website',
     images: [
@@ -107,9 +107,6 @@ export default function RootLayout({
           `}
         </Script>
         <link rel="icon" href="/favicon.png" />
-        <meta property="og:image" content="/ogp.png" />
-        <meta property="og:image:width" content="1200" />
-        <meta property="og:image:height" content="630" />
         {/* 日本語サイト指定 */}
         <meta name="hreflang" content="ja-JP" />
         <link rel="alternate" hrefLang="ja-JP" href="https://workingholidaypass.jp" />

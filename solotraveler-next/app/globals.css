@@ -3105,7 +3105,7 @@ img.modal-image {
   padding: 0 24px;
   font-family: 'Noto Sans JP', 'M PLUS Rounded 1c', sans-serif;
   line-height: 1.6;
-  color: #333;
+  color: #1E4E8C;
 }
 
 /* ナビゲーション */
@@ -3114,7 +3114,7 @@ img.modal-image {
   top: 0;
   background: rgba(255, 255, 255, 0.95);
   backdrop-filter: blur(10px);
-  border-bottom: 1px solid #e5eaf3;
+  border-bottom: 1px solid #1E4E8C;
   padding: 1rem 0;
   margin-bottom: 2rem;
   z-index: 100;
@@ -3139,10 +3139,10 @@ img.modal-image {
   align-items: center;
   gap: 0.5rem;
   padding: 0.5rem 1rem;
-  background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
-  border: 1px solid #d1d8e6;
+  background: #F5F7FA;
+  border: 1px solid #1E4E8C;
   border-radius: 20px;
-  color: #374151;
+  color: #1E4E8C;
   text-decoration: none;
   font-size: 0.9rem;
   font-weight: 600;
@@ -3151,14 +3151,14 @@ img.modal-image {
 }
 
 .wh-nav-link:hover {
-  background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+  background: #3A7DFF;
   color: white;
   transform: translateY(-1px);
-  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.2);
+  box-shadow: 0 4px 12px rgba(58, 125, 255, 0.2);
 }
 
 .wh-hero-section {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: #1E4E8C;
   color: white;
   padding: 4rem 2rem;
   text-align: center;
@@ -3258,19 +3258,19 @@ img.modal-image {
   left: 0;
   right: 0;
   height: 4px;
-  background: linear-gradient(90deg, #2563EB, #3B82F6, #F59E0B);
+  background: #2BBFA0;
   border-radius: 16px 16px 0 0;
 }
 
 .wh-section-alt {
-  background: #F9FAFB;
-  border: 1px solid #e5eaf3;
+  background: #F5F7FA;
+  border: 1px solid #F5F7FA;
 }
 
 .wh-section-title {
   font-size: 2.4rem;
   font-weight: 800;
-  color: #2563EB;
+  color: #1E4E8C;
   margin-bottom: 2.5rem;
   text-align: center;
   position: relative;
@@ -3289,26 +3289,26 @@ img.modal-image {
   transform: translateX(-50%);
   width: 100px;
   height: 4px;
-  background: linear-gradient(90deg, #2563EB, #3B82F6);
+  background: #3A7DFF;
   border-radius: 2px;
 }
 
 .wh-subsection-title {
   font-size: 1.8rem;
   font-weight: 700;
-  color: #1F2937;
+  color: #1E4E8C;
   margin-bottom: 1.5rem;
   display: flex;
   align-items: center;
   gap: 0.8rem;
   padding-bottom: 0.5rem;
-  border-bottom: 2px solid #e5eaf3;
+  border-bottom: 2px solid #F5F7FA;
 }
 
 .wh-content {
   font-size: 1.1rem;
   line-height: 1.8;
-  color: #374151;
+  color: #1E4E8C;
   margin-bottom: 1.5rem;
 }
 
@@ -3317,7 +3317,7 @@ img.modal-image {
 }
 
 .wh-content strong {
-  color: #1F2937;
+  color: #1E4E8C;
   font-weight: 700;
 }
 
@@ -3325,8 +3325,8 @@ img.modal-image {
   background: white;
   padding: 2rem;
   border-radius: 12px;
-  box-shadow: 0 2px 12px rgba(0,0,0,0.06);
-  border: 1px solid #e5eaf3;
+  box-shadow: 0 2px 12px rgba(30, 78, 140, 0.06);
+  border: 1px solid #F5F7FA;
   margin-bottom: 2rem;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
@@ -3344,8 +3344,8 @@ img.modal-image {
 }
 
 .wh-benefits-card {
-  background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%);
-  border: 1px solid #bbf7d0;
+  background: #F5F7FA;
+  border: 1px solid #2BBFA0;
   padding: 2rem;
   border-radius: 12px;
   position: relative;
@@ -3359,11 +3359,11 @@ img.modal-image {
   left: 0;
   width: 4px;
   height: 100%;
-  background: #10b981;
+  background: #2BBFA0;
 }
 
 .wh-benefits-card h3 {
-  color: #166534;
+  color: #2BBFA0;
   font-size: 1.5rem;
   font-weight: 700;
   margin-bottom: 1rem;
@@ -3373,8 +3373,8 @@ img.modal-image {
 }
 
 .wh-drawbacks-card {
-  background: linear-gradient(135deg, #fef2f2 0%, #fee2e2 100%);
-  border: 1px solid #fecaca;
+  background: #F5F7FA;
+  border: 1px solid #3A7DFF;
   padding: 2rem;
   border-radius: 12px;
   position: relative;
@@ -3388,11 +3388,11 @@ img.modal-image {
   left: 0;
   width: 4px;
   height: 100%;
-  background: #ef4444;
+  background: #3A7DFF;
 }
 
 .wh-drawbacks-card h3 {
-  color: #991b1b;
+  color: #3A7DFF;
   font-size: 1.5rem;
   font-weight: 700;
   margin-bottom: 1rem;
@@ -3421,7 +3421,7 @@ img.modal-image {
 
 .wh-list li::before {
   content: '•';
-  color: #F59E0B;
+  color: #2BBFA0;
   font-weight: bold;
   font-size: 1.2rem;
   flex-shrink: 0;
@@ -3443,12 +3443,12 @@ img.modal-image {
 }
 
 .wh-faq-question {
-  background: #f8fafc;
+  background: #F5F7FA;
   padding: 1.5rem;
   cursor: pointer;
   font-weight: 600;
   font-size: 1.1rem;
-  color: #1F2937;
+  color: #1E4E8C;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -3456,11 +3456,11 @@ img.modal-image {
 }
 
 .wh-faq-question:hover {
-  background: #f1f5f9;
+  background: #F5F7FA;
 }
 
 .wh-faq-question.active {
-  background: #2563EB;
+  background: #1E4E8C;
   color: white;
 }
 
@@ -3468,7 +3468,7 @@ img.modal-image {
   padding: 1.5rem;
   font-size: 1rem;
   line-height: 1.7;
-  color: #374151;
+  color: #1E4E8C;
   display: none;
 }
 
@@ -3479,7 +3479,7 @@ img.modal-image {
 .wh-faq-toggle {
   font-size: 1.2rem;
   transition: transform 0.2s;
-  color: #F59E0B;
+  color: #2BBFA0;
 }
 
 .wh-faq-toggle.active {
@@ -3488,8 +3488,8 @@ img.modal-image {
 }
 
 .wh-info-box {
-  background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
-  border: 1px solid #bae6fd;
+  background: #F5F7FA;
+  border: 1px solid #3A7DFF;
   padding: 2rem;
   border-radius: 12px;
   margin-bottom: 2rem;
@@ -3504,12 +3504,12 @@ img.modal-image {
   left: 0;
   width: 4px;
   height: 100%;
-  background: #0ea5e9;
+  background: #3A7DFF;
 }
 
 .wh-warning-box {
-  background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
-  border: 1px solid #fbbf24;
+  background: #F5F7FA;
+  border: 1px solid #2BBFA0;
   padding: 2rem;
   border-radius: 12px;
   margin-bottom: 2rem;
@@ -3524,12 +3524,12 @@ img.modal-image {
   left: 0;
   width: 4px;
   height: 100%;
-  background: #f59e0b;
+  background: #2BBFA0;
 }
 
 .wh-summary-box {
-  background: linear-gradient(135deg, #e0e7ff 0%, #c7d2fe 100%);
-  border: 1px solid #a5b4fc;
+  background: #F5F7FA;
+  border: 1px solid #1E4E8C;
   padding: 2rem;
   border-radius: 12px;
   margin-bottom: 2rem;
@@ -3544,18 +3544,18 @@ img.modal-image {
   left: 0;
   width: 4px;
   height: 100%;
-  background: #6366f1;
+  background: #1E4E8C;
 }
 
 .wh-footer-note {
   font-size: 0.9rem;
-  color: #6b7280;
+  color: #1E4E8C;
   text-align: center;
   margin-top: 2rem;
   padding: 1rem;
-  background: #f9fafb;
+  background: #F5F7FA;
   border-radius: 8px;
-  border: 1px solid #e5eaf3;
+  border: 1px solid #1E4E8C;
 }
 
 /* レスポンシブ対応 */

@@ -108,223 +108,13 @@ const generateItemListData = (countries: WorkingHolidayCountry[]) => {
   };
 };
 
-function CityBoardModal({ city, countryId, onClose }: { city: WorkingHolidayCity, countryId: string, onClose: () => void }) {
-  const cityId = city.id;
-  const [posts, setPosts] = useState<any[]>([]);
-  const [content, setContent] = useState("");
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState("");
-  const [posting, setPosting] = useState(false);
-  const [adminPw, setAdminPw] = useState("");
-  const [adminMode, setAdminMode] = useState(false);
-
-  // 掲示板モーダル表示時にnoindexを設定（一時的な状態ページ）
-  useEffect(() => {
-    let robotsMeta = document.querySelector('meta[name="robots"]') as HTMLMetaElement;
-    if (!robotsMeta) {
-      robotsMeta = document.createElement('meta');
-      robotsMeta.name = 'robots';
-      document.head.appendChild(robotsMeta);
-    }
-    robotsMeta.setAttribute('content', 'noindex, nofollow');
-    
-    // モーダルが閉じられた時に元の設定に戻す
-    return () => {
-      if (robotsMeta) {
-        robotsMeta.setAttribute('content', 'index, follow');
-      }
-    };
-  }, []);
-  useEffect(() => {
-    fetch(`/api/boards/${cityId}`)
-      .then(res => res.json())
-      .then(setPosts)
-      .finally(() => setLoading(false));
-  }, [cityId]);
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    if (!content.trim()) {
-      setError("投稿内容を入力してください");
-      return;
-    }
-    setPosting(true);
-    setError("");
-    
-    // GA4: 掲示板投稿開始イベント
-    trackEvent('submit', '掲示板', `投稿開始_${city.nameJa}`, 1);
-    
-    try {
-      const res = await fetch(`/api/boards/${cityId}`, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ content })
-      });
-      if (res.ok) {
-        setContent("");
-        // 投稿後に再取得
-        const postsRes = await fetch(`/api/boards/${cityId}`);
-        const postsData = await postsRes.json();
-        setPosts(postsData);
-        
-        // GA4: 掲示板投稿成功イベント
-        trackEvent('submit', '掲示板', `投稿成功_${city.nameJa}`, 1);
-      } else {
-        const data = await res.json();
-        setError(data.error || `投稿に失敗しました (status: ${res.status})`);
-        
-        // GA4: 掲示板投稿失敗イベント
-        trackEvent('submit', '掲示板', `投稿失敗_${city.nameJa}`, 0);
-      }
-    } catch (err: any) {
-      setError("ネットワークエラー: " + (err?.message || err));
-      
-      // GA4: 掲示板投稿エラーイベント
-      trackEvent('submit', '掲示板', `投稿エラー_${city.nameJa}`, 0);
-    }
-    setPosting(false);
-  };
-  // 管理者パスワード入力（フォーム式）
-  const [adminInput, setAdminInput] = useState("");
-  const [adminError, setAdminError] = useState("");
-  const handleAdminLogin = (e: React.FormEvent) => {
-    e.preventDefault();
-    if (!adminInput) return;
-    setAdminPw(adminInput);
-    setAdminMode(true);
-    setAdminInput("");
-    setAdminError("");
-    
-    // GA4: 管理者ログインイベント
-    trackEvent('login', '管理者', '掲示板管理ログイン', 1);
-  };
-  // 投稿削除
-  const handleDelete = async (postId: string) => {
-    if (!adminPw) return;
-    try {
-      const res = await fetch(`/api/boards/${cityId}`, {
-        method: "DELETE",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ postId, password: adminPw })
-      });
-      if (res.ok) {
-        setPosts(posts.filter(p => p.id !== postId));
-        
-        // GA4: 投稿削除成功イベント
-        trackEvent('delete', '掲示板', `投稿削除成功_${city.nameJa}`, 1);
-      } else {
-        const data = await res.json();
-        alert(data.error || "削除に失敗しました");
-        
-        // GA4: 投稿削除失敗イベント
-        trackEvent('delete', '掲示板', `投稿削除失敗_${city.nameJa}`, 0);
-      }
-    } catch (err: any) {
-      alert("ネットワークエラー: " + (err?.message || err));
-      
-      // GA4: 投稿削除エラーイベント
-      trackEvent('delete', '掲示板', `投稿削除エラー_${city.nameJa}`, 0);
-    }
-  };
-  return (
-    <div
-      style={{ position: 'fixed', zIndex: 2000, left: 0, top: 0, width: '100vw', height: '100vh', background: 'rgba(0,0,0,0.32)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}
-      onClick={() => { if (!adminMode) onClose(); }}
-    >
-      <div
-        style={{
-          maxWidth: 900,
-          width: '96vw',
-          minHeight: '600px',
-          maxHeight: '90vh',
-          overflowY: 'auto',
-          background: 'linear-gradient(135deg, #fafdff 0%, #f3f6fa 100%)',
-          borderRadius: 18,
-          boxShadow: '0 8px 32px 0 rgba(37,99,235,0.10)',
-          padding: '2.5em 2em 2em 2em',
-          position: 'relative',
-          display: 'flex',
-          flexDirection: 'column',
-          border: '1.5px solid #e5eaf3',
-        }}
-        onClick={e => e.stopPropagation()}
-      >
-        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '0.7em' }}>
-          <h2 style={{ fontSize: '1.5em', fontWeight: 800, letterSpacing: '0.04em', color: '#2563eb', margin: 0, textShadow: '0 1px 0 #fff' }}>{city.nameJa} 掲示板</h2>
-          <button onClick={onClose} style={{ fontSize: 22, background: 'none', border: 'none', cursor: 'pointer', color: '#b0b8c9', marginLeft: 12, borderRadius: 8, padding: '0 0.4em', transition: 'background 0.2s' }} aria-label="閉じる" onMouseOver={e => e.currentTarget.style.background = '#e5eaf3'} onMouseOut={e => e.currentTarget.style.background = 'none'}>×</button>
-        </div>
-        {/* 管理者ログインフォーム（モーダル内、目立たない） */}
-        {!adminMode && (
-          <form
-            onSubmit={handleAdminLogin}
-            style={{
-              display: 'flex', alignItems: 'center', gap: 4,
-              background: '#e5eaf3',
-              borderRadius: 8,
-              fontSize: 12,
-              padding: '0.2em 0.7em',
-              marginBottom: '1.2em',
-              width: 'fit-content',
-              opacity: 0.6,
-              transition: 'opacity 0.2s',
-              border: '1px solid #d1d8e6',
-            }}
-            onMouseOver={e => (e.currentTarget.style.opacity = '1')}
-            onMouseOut={e => (e.currentTarget.style.opacity = '0.6')}
-          >
-            <input
-              type="password"
-              value={adminInput}
-              onChange={e => setAdminInput(e.target.value)}
-              placeholder="管理PW"
-              style={{ outline: 'none', borderRadius: 8, padding: '0.1em 0.5em', fontSize: 12, background: '#f7fafd', color: '#2563eb', minWidth: 48, border: '1px solid #d1d8e6' }}
-            />
-            <button type="submit" style={{ background: 'none', border: 'none', color: '#2563eb', fontWeight: 700, cursor: 'pointer', fontSize: 12, padding: 0 }}>OK</button>
-          </form>
-        )}
-        <form onSubmit={handleSubmit} style={{ marginBottom: '2.2em', display: 'flex', gap: '1.2em', alignItems: 'flex-start', background: '#f7fafd', borderRadius: 12, boxShadow: '0 1px 4px rgba(37,99,235,0.04)', padding: '1.2em 1em 1em 1em', border: '1px solid #e5eaf3' }}>
-          <textarea
-            placeholder="投稿内容を入力..."
-            value={content}
-            onChange={e => setContent(e.target.value)}
-            style={{ flex: 1, padding: '1em 1.2em', borderRadius: 10, border: '1.5px solid #bcd', fontSize: 15, minHeight: 60, resize: 'vertical', background: '#fff', boxShadow: '0 1px 4px rgba(0,0,0,0.02)' }}
-          />
-          <button type="submit" disabled={posting} style={{ height: 44, minWidth: 110, borderRadius: 10, background: posting ? '#bcd' : '#2563eb', color: '#fff', fontWeight: 700, border: 'none', fontSize: 16, cursor: posting ? 'not-allowed' : 'pointer', boxShadow: '0 2px 8px rgba(37,99,235,0.08)' }}>
-            投稿する
-          </button>
-          {error && <div style={{ color: '#e11d48', marginTop: 6 }}>{error}</div>}
-        </form>
-        {/* 管理者ログインボタンは右下に移動 */}
-        <div style={{ flex: 1 }}>
-          {loading ? (
-            <div>読み込み中...</div>
-          ) : posts.length === 0 ? (
-            <div style={{ color: '#888' }}>まだ投稿がありません</div>
-          ) : (
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '1.1em', marginBottom: '1em' }}>
-              {posts.map(post => (
-                <div key={post.id} style={{ background: '#fff', borderRadius: 10, padding: '1.1em 1.3em', boxShadow: '0 1px 4px rgba(37,99,235,0.06)', display: 'flex', flexDirection: 'column', minHeight: 80, position: 'relative', border: '1px solid #e5eaf3' }}>
-                  <div style={{ whiteSpace: 'pre-wrap', marginBottom: 7, fontSize: 15, color: '#222', flex: 1 }}>{post.content}</div>
-                  <div style={{ fontSize: '0.91em', color: '#7a869a', marginTop: 'auto', letterSpacing: '0.01em' }}>{new Date(post.createdAt).toLocaleString()}</div>
-                  {adminMode && (
-                    <button onClick={() => handleDelete(post.id)} style={{ position: 'absolute', right: 12, top: 12, fontSize: 13, color: '#e11d48', background: 'none', border: 'none', cursor: 'pointer', textDecoration: 'underline', borderRadius: 6, padding: '0 0.3em', transition: 'background 0.2s' }} onMouseOver={e => e.currentTarget.style.background = '#fbe9eb'} onMouseOut={e => e.currentTarget.style.background = 'none'}>削除</button>
-                  )}
-                </div>
-              ))}
-            </div>
-          )}
-        </div>
-      </div>
-    </div>
-  );
-}
-
 function PageComponent() {
   const router = useRouter();
   const [countries, setCountries] = useState<WorkingHolidayCountry[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
   const [selectedCountry, setSelectedCountry] = useState<WorkingHolidayCountry | null>(null);
   const searchParams = useSearchParams();
-  const [boardModalCity, setBoardModalCity] = useState<WorkingHolidayCity|null>(null);
+
   const [openAccordionCountryIds, setOpenAccordionCountryIds] = useState<string[]>([]);
 
   useEffect(() => {
@@ -590,9 +380,7 @@ function PageComponent() {
               ))
             )}
           </div>
-          {boardModalCity && (
-            <CityBoardModal city={boardModalCity} countryId={selectedCountry.id} onClose={() => setBoardModalCity(null)} />
-          )}
+
         </main>
       </div>
     );
@@ -614,7 +402,7 @@ function PageComponent() {
           </div>
           <nav className="header-nav">
             <a href="/about-workingholiday" className="nav-link">
-              ワーキングホリデー制度とは
+              ワーホリとは
             </a>
           </nav>
         </div>

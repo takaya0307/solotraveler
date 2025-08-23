@@ -143,6 +143,19 @@ function PageComponent() {
       });
   }, [searchParams]);
 
+  // スクロール位置の復元
+  useEffect(() => {
+    const savedScrollPosition = sessionStorage.getItem('mainPageScrollPosition');
+    if (savedScrollPosition) {
+      // 少し遅延を入れてスクロール位置を復元（DOMの描画完了後）
+      setTimeout(() => {
+        window.scrollTo(0, parseInt(savedScrollPosition));
+        // 復元後は保存された位置を削除
+        sessionStorage.removeItem('mainPageScrollPosition');
+      }, 100);
+    }
+  }, [countries, loading]); // countriesとloadingの状態が変わった後に実行
+
   // クエリパラメータがある場合のcanonicalタグ制御（重複URL防止）
   useEffect(() => {
     const hasQueryParams = searchParams.toString().length > 0;
@@ -463,6 +476,8 @@ function PageComponent() {
                       
                       if (externalPageCountries.includes(country.id)) {
                         trackEvent('click', 'CTA', `詳細情報_${country.nameJa}_外部ページ`, 1);
+                        // 現在のスクロール位置を保存
+                        sessionStorage.setItem('mainPageScrollPosition', window.pageYOffset.toString());
                         router.push(`/countries/${country.id}`);
                       } else {
                         const isOpening = !openAccordionCountryIds.includes(country.id);

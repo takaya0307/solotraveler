@@ -65,7 +65,15 @@ export default function CountryDetailLayout({
       <Header />
       
       <button
-        onClick={() => router.push("/")}
+        onClick={() => {
+          // ブラウザの履歴を使って戻る（より自然な戻り方）
+          if (window.history.length > 1) {
+            router.back();
+          } else {
+            // 履歴がない場合はホームに戻る
+            router.push("/");
+          }
+        }}
         className="fixed-back-button"
         aria-label="戻る"
       >

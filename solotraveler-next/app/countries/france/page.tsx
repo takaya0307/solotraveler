@@ -1,21 +1,11 @@
-"use client";
 import React, { useEffect } from "react";
 import CountryDetailLayout from "../../components/CountryDetailLayout";
 import franceData from "../../../db.json";
+import { generateCountryMetadata, countryData } from "../../components/CountryMetadata";
+
 
 export default function FranceDetailPage() {
   const country = franceData.countries.find(c => c.id === "france")!;
-
-  // ページタイトルとメタディスクリプションの最適化
-  useEffect(() => {
-    document.title = `ワーホリ フランス比較｜費用・条件・おすすめエージェントを徹底比較`;
-    
-    // meta descriptionの更新
-    const metaDescription = document.querySelector('meta[name="description"]');
-    if (metaDescription) {
-      metaDescription.setAttribute('content', `フランスワーホリの費用、条件、おすすめエージェントを徹底比較。芸術と美食、ファッションの都でワーホリ体験。`);
-    }
-  }, []);
 
   const pageTitle = `${country.nameJa}ワーキングホリデーの魅力`;
   const pageDescription = "芸術・ファッション・美食の本場、ヨーロッパの中心地";

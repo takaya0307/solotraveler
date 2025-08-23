@@ -2,6 +2,7 @@
 import React, { useEffect } from "react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
+import Header from "../components/Header";
 
 // GA4イベント計測用のヘルパー関数
 const trackEvent = (action: string, category: string, label?: string, value?: string | number) => {
@@ -74,25 +75,7 @@ export default function Legal() {
 
   return (
     <>
-      <header className="App-header stylish-header main-header">
-        <div className="header-container">
-          <div className="header-logo">
-            <Link href="/" style={{ textDecoration: 'none', color: 'inherit' }} onClick={handleLogoClick}>
-              <span className="logo-text">
-                <span className="logo-main">ワーホリ</span>
-                <span className="logo-sub">パス</span>
-              </span>
-              <span className="logo-subtitle">Working Holiday Portal</span>
-            </Link>
-          </div>
-          <nav className="header-nav">
-            <a href="/about-workingholiday" className="nav-link" onClick={handleNavLinkClick}>
-              ワーホリとは
-            </a>
-          </nav>
-        </div>
-        <div className="header-gradient-bar" />
-      </header>
+      <Header />
       <button
         onClick={handleBackClick}
         className="fixed-back-button"

@@ -1,7 +1,9 @@
 "use client";
 import React, { useEffect } from "react";
 import CountryDetailLayout from "../../components/CountryDetailLayout";
+import { generateCountryMetadata, countryData } from "../../components/CountryMetadata";
 import lithuaniaData from "../../../db.json";
+
 
 export default function LithuaniaDetailPage() {
   const country = lithuaniaData.countries.find(c => c.id === "lithuania")!;

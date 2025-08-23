@@ -2,6 +2,7 @@
 import React, { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
+import Header from "../components/Header";
 
 // GA4イベント計測用のヘルパー関数
 const trackEvent = (action: string, category: string, label?: string, value?: string | number) => {
@@ -62,25 +63,7 @@ export default function AboutWorkingHoliday() {
 
   return (
     <>
-      <header className="App-header stylish-header main-header">
-        <div className="header-container">
-          <div className="header-logo">
-            <Link href="/" style={{ textDecoration: 'none', color: 'inherit' }}>
-              <span className="logo-text">
-                <span className="logo-main">ワーホリ</span>
-                <span className="logo-sub">パス</span>
-              </span>
-              <span className="logo-subtitle">Working Holiday Portal</span>
-            </Link>
-          </div>
-          <nav className="header-nav">
-            <Link href="/about-workingholiday" className="nav-link">
-              ワーホリとは
-            </Link>
-          </nav>
-        </div>
-        <div className="header-gradient-bar" />
-      </header>
+      <Header />
       
       <button
         onClick={() => {
@@ -93,65 +76,17 @@ export default function AboutWorkingHoliday() {
         ← 戻る
       </button>
 
-      <div className="wh-page-container">
-        {/* ナビゲーション */}
-        <nav className="wh-navigation">
-          <ul className="wh-nav-list">
-            <li className="wh-nav-item">
-              <a href="#overview" className="wh-nav-link" onClick={(e) => { e.preventDefault(); scrollToSection('overview'); }}>
-                📋 概要
-              </a>
-            </li>
-            <li className="wh-nav-item">
-              <a href="#pros-cons" className="wh-nav-link" onClick={(e) => { e.preventDefault(); scrollToSection('pros-cons'); }}>
-                ⚖️ メリット・デメリット
-              </a>
-            </li>
-            <li className="wh-nav-item">
-              <a href="#faq" className="wh-nav-link" onClick={(e) => { e.preventDefault(); scrollToSection('faq'); }}>
-                ❓ FAQ
-              </a>
-            </li>
-            <li className="wh-nav-item">
-              <a href="#target" className="wh-nav-link" onClick={(e) => { e.preventDefault(); scrollToSection('target'); }}>
-                🎯 対象者
-              </a>
-            </li>
-            <li className="wh-nav-item">
-              <a href="#application" className="wh-nav-link" onClick={(e) => { e.preventDefault(); scrollToSection('application'); }}>
-                📋 申請の流れ
-              </a>
-            </li>
-            <li className="wh-nav-item">
-              <a href="#documents" className="wh-nav-link" onClick={(e) => { e.preventDefault(); scrollToSection('documents'); }}>
-                📄 必要書類・費用
-              </a>
-            </li>
-            <li className="wh-nav-item">
-              <a href="#warnings" className="wh-nav-link" onClick={(e) => { e.preventDefault(); scrollToSection('warnings'); }}>
-                ⚠️ 注意点・失敗例
-              </a>
-            </li>
-            <li className="wh-nav-item">
-              <a href="#summary" className="wh-nav-link" onClick={(e) => { e.preventDefault(); scrollToSection('summary'); }}>
-                📝 まとめ
-              </a>
-            </li>
-          </ul>
-        </nav>
+      <div className="wh-page-container" style={{ marginTop: '2rem' }}>
+
 
         {/* ヒーローセクション */}
         <section className="wh-hero-section">
           <div className="wh-hero-content">
             <h1 className="wh-hero-title">
-              ワーホリとは？ワーキングホリデーの意味・制度をやさしく解説
+              ワーホリとは？
             </h1>
             <p className="wh-hero-definition">
               <strong>ワーホリとは、18〜30歳（国により35歳）を中心とした若者が、協定国に最長1〜2年滞在し、休暇を主目的に就労・就学も体験できる特別なビザ制度</strong>です。
-            </p>
-            <p className="wh-hero-description">
-              「ワーホリって何？」「どんな国に行けるの？」「英語ができなくても大丈夫？」<br />
-              このページでは、ワーホリについて詳しく解説します。海外で働きながら生活できる特別なビザ制度の魅力と注意点を、わかりやすくお伝えします。
             </p>
             
             {/* ファーストビュー強化 */}

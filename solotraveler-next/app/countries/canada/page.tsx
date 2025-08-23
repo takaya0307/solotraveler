@@ -1,21 +1,11 @@
-"use client";
 import React, { useEffect } from "react";
 import CountryDetailLayout from "../../components/CountryDetailLayout";
 import canadaData from "../../../db.json";
+import { generateCountryMetadata, countryData } from "../../components/CountryMetadata";
+
 
 export default function CanadaDetailPage() {
   const country = canadaData.countries.find(c => c.id === "canada")!;
-
-  // ページタイトルとメタディスクリプションの最適化
-  useEffect(() => {
-    document.title = `ワーホリ カナダ比較｜費用・条件・おすすめエージェントを徹底比較`;
-    
-    // meta descriptionの更新
-    const metaDescription = document.querySelector('meta[name="description"]');
-    if (metaDescription) {
-      metaDescription.setAttribute('content', `カナダワーホリの費用、条件、おすすめエージェントを徹底比較。自然と都市が調和した北米の魅力あふれる国でワーホリ体験。`);
-    }
-  }, []);
 
   const pageTitle = `${country.nameJa}ワーキングホリデーの魅力`;
   const pageDescription = "自然と都市が調和した北米の魅力あふれる国";

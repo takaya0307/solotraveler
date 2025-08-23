@@ -1,21 +1,11 @@
-"use client";
 import React, { useEffect } from "react";
 import CountryDetailLayout from "../../components/CountryDetailLayout";
 import newzealandData from "../../../db.json";
+import { generateCountryMetadata, countryData } from "../../components/CountryMetadata";
+
 
 export default function NewZealandDetailPage() {
   const country = newzealandData.countries.find(c => c.id === "newzealand")!;
-
-  // ページタイトルとメタディスクリプションの最適化
-  useEffect(() => {
-    document.title = `ワーホリ ニュージーランド比較｜費用・条件・おすすめエージェントを徹底比較`;
-    
-    // meta descriptionの更新
-    const metaDescription = document.querySelector('meta[name="description"]');
-    if (metaDescription) {
-      metaDescription.setAttribute('content', `ニュージーランドワーホリの費用、条件、おすすめエージェントを徹底比較。大自然とフレンドリーな人々が魅力の南太平洋の国でワーホリ体験。`);
-    }
-  }, []);
 
   const pageTitle = `${country.nameJa}ワーキングホリデーの魅力`;
   const pageDescription = "大自然とフレンドリーな人々が魅力の南太平洋の国";

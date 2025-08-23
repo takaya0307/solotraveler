@@ -1,21 +1,11 @@
-"use client";
 import React, { useEffect } from "react";
 import CountryDetailLayout from "../../components/CountryDetailLayout";
 import polandData from "../../../db.json";
+import { generateCountryMetadata, countryData } from "../../components/CountryMetadata";
+
 
 export default function PolandDetailPage() {
   const country = polandData.countries.find(c => c.id === "poland")!;
-
-  // ページタイトルとメタディスクリプションの最適化
-  useEffect(() => {
-    document.title = `ワーホリ ポーランド比較｜費用・条件・おすすめエージェントを徹底比較`;
-    
-    // meta descriptionの更新
-    const metaDescription = document.querySelector('meta[name="description"]');
-    if (metaDescription) {
-      metaDescription.setAttribute('content', `ポーランドワーホリの費用、条件、おすすめエージェントを徹底比較。歴史・文化・自然の国でワーホリ体験。`);
-    }
-  }, []);
 
   const pageTitle = `${country.nameJa}ワーキングホリデーの魅力`;
   const pageDescription = "歴史・文化・自然の国";

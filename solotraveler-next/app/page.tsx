@@ -6,6 +6,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useSearchParams, useRouter } from "next/navigation";
 import Script from "next/script";
+import Header from "./components/Header";
 
 // GA4イベント計測用のヘルパー関数
 const trackEvent = (action: string, category: string, label?: string, value?: string | number) => {
@@ -200,12 +201,13 @@ function PageComponent() {
       // GA4: 国選択イベント
       trackEvent('view', 'ページ', `国選択_${selectedCountry.nameJa}`, 1);
       
-      document.title = `ワーホリ ${selectedCountry.nameJa}比較｜費用・条件・都市情報を徹底比較`;
+      const title = `${selectedCountry.nameJa}ワーホリ｜魅力、人気都市、最低賃金などを一覧比較`;
+      document.title = title;
       
       // meta descriptionの更新
       const metaDescription = document.querySelector('meta[name="description"]');
       if (metaDescription) {
-        metaDescription.setAttribute('content', `${selectedCountry.nameJa}ワーホリの費用、条件、おすすめ都市を徹底比較。${selectedCountry.nameJa}でワーホリ体験ができる都市の詳細情報と比較ポイントをご紹介。`);
+        metaDescription.setAttribute('content', `${selectedCountry.nameJa}ワーホリの魅力、人気都市、最低賃金などを一覧比較。${selectedCountry.nameJa}でワーホリ体験ができる都市の詳細情報とおすすめポイントをご紹介。`);
       }
       
       // hreflangの更新（各国ページでも日本語指定を維持）
@@ -245,7 +247,7 @@ function PageComponent() {
       // GA4: ホームページ表示イベント
       trackEvent('view', 'ページ', 'ホームページ', 1);
       
-      document.title = "ワーホリ比較｜オーストラリア・カナダ・ニュージーランドなど費用・条件を徹底比較";
+      document.title = "ワーホリパス｜ワーホリで行ける国一覧・比較";
       
       // meta descriptionを元に戻す
       const metaDescription = document.querySelector('meta[name="description"]');
@@ -278,9 +280,13 @@ function PageComponent() {
       robotsMeta.setAttribute('content', 'index, follow');
       
       // パンくずリストの構造化データを削除
-      const existingBreadcrumb = document.getElementById('breadcrumb-structured-data');
-      if (existingBreadcrumb) {
-        existingBreadcrumb.remove();
+      try {
+        const existingBreadcrumb = document.getElementById('breadcrumb-structured-data');
+        if (existingBreadcrumb) {
+          existingBreadcrumb.remove();
+        }
+      } catch (error) {
+        console.warn('Breadcrumb removal failed:', error);
       }
     }
   }, [selectedCountry]);
@@ -296,9 +302,13 @@ function PageComponent() {
       document.head.appendChild(script);
     } else if (selectedCountry) {
       // 国選択時は順位付きリストを削除
-      const existingItemList = document.getElementById('itemlist-structured-data');
-      if (existingItemList) {
-        existingItemList.remove();
+      try {
+        const existingItemList = document.getElementById('itemlist-structured-data');
+        if (existingItemList) {
+          existingItemList.remove();
+        }
+      } catch (error) {
+        console.warn('Item list removal failed:', error);
       }
     }
   }, [countries, selectedCountry]);
@@ -319,6 +329,7 @@ function PageComponent() {
   if (selectedCountry) {
     return (
       <div className="App">
+        <Header />
         {/* 戻るボタンを左下に固定表示 */}
         <button
           onClick={() => {
@@ -330,19 +341,38 @@ function PageComponent() {
         >
           ← 戻る
         </button>
-        <header 
-          className="App-header stylish-header city-list-header"
+        <div 
+          className="city-header-section"
           style={{
             background: `url('${selectedCountry.imageUrl}')`,
             backgroundSize: 'cover',
             backgroundPosition: 'center',
-            backgroundRepeat: 'no-repeat'
+            backgroundRepeat: 'no-repeat',
+            padding: '4rem 2rem',
+            textAlign: 'center',
+            color: 'white',
+            position: 'relative'
           }}
         >
-          <div className="header-inner refined-header-inner" style={{justifyContent: 'center'}}>
-            <h1 className="header-title refined-header-title city-header-title travel-title" style={{margin: '0 auto'}}>{selectedCountry.nameJa}の都市一覧</h1>
+          <div className="city-header-overlay" style={{
+            position: 'absolute',
+            top: 0,
+            left: 0,
+            right: 0,
+            bottom: 0,
+            background: 'rgba(0,0,0,0.4)',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center'
+          }}>
+            <h1 style={{
+              fontSize: '2.5rem',
+              fontWeight: '700',
+              margin: 0,
+              textShadow: '2px 2px 4px rgba(0,0,0,0.5)'
+            }}>{selectedCountry.nameJa}の都市一覧</h1>
           </div>
-        </header>
+        </div>
         <main>
           <div className={`city-card-grid ${selectedCountry.cities.length === 2 ? 'two-cities' : ''}`}>
             {selectedCountry.cities.length === 0 ? (
@@ -389,25 +419,7 @@ function PageComponent() {
   // 国一覧表示
   return (
     <div className="App">
-      <header className="App-header stylish-header main-header">
-        <div className="header-container">
-          <div className="header-logo">
-            <Link href="/" style={{ textDecoration: 'none', color: 'inherit' }}>
-              <span className="logo-text">
-                <span className="logo-main">ワーホリ</span>
-                <span className="logo-sub">パス</span>
-              </span>
-              <span className="logo-subtitle">Working Holiday Portal</span>
-            </Link>
-          </div>
-          <nav className="header-nav">
-            <a href="/about-workingholiday" className="nav-link">
-              ワーホリとは
-            </a>
-          </nav>
-        </div>
-        <div className="header-gradient-bar" />
-      </header>
+      <Header />
       <main>
         <section aria-label="ワーキングホリデー協定国一覧">
           <h2 className="sr-only">ワーキングホリデー協定国一覧</h2>

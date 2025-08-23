@@ -1,41 +1,11 @@
-"use client";
 import React, { useEffect } from "react";
-import { useRouter } from "next/navigation";
 import CountryDetailLayout from "../../components/CountryDetailLayout";
 import australiaData from "../../../db.json";
+import { generateCountryMetadata, countryData } from "../../components/CountryMetadata";
 
-// GA4イベント計測用のヘルパー関数
-const trackEvent = (action: string, category: string, label?: string, value?: string | number) => {
-  if (typeof window !== 'undefined' && (window as any).gtag) {
-    (window as any).gtag('event', action, {
-      event_category: category,
-      event_label: label,
-      value: value
-    });
-  }
-};
 
-export default function CountryDetailPage({ params }: { params: { slug: string } }) {
-  const router = useRouter();
+export default function AustraliaDetailPage() {
   const country = australiaData.countries.find(c => c.id === "australia")!;
-
-  // ページビュー計測
-  useEffect(() => {
-    trackEvent('view', 'ページ', `国詳細_${country.nameJa}`, 1);
-  }, [country.nameJa]);
-
-  // 現在はオーストラリアのみ対応
-  if (params.slug !== "australia") {
-    return (
-      <div style={{ padding: '2rem', textAlign: 'center' }}>
-        <h1>ページが見つかりません</h1>
-        <button onClick={() => {
-          trackEvent('click', 'CTA', 'ホームに戻る_エラーページ', 1);
-          router.push("/");
-        }}>ホームに戻る</button>
-      </div>
-    );
-  }
 
   const pageTitle = `${country.nameJa}ワーキングホリデーの魅力`;
   const pageDescription = "温暖な気候とフレンドリーな人々が魅力の南半球の国";
@@ -98,36 +68,28 @@ export default function CountryDetailPage({ params }: { params: { slug: string }
   
   const recommendedFor = [
     {
-      title: "アウトドア好き",
-      description: "ビーチや自然が好きな人には最高の環境。サーフィン、ダイビング、ハイキングなど、様々なアウトドアアクティビティが楽しめます。",
+      title: "ビーチ好き",
+      description: "美しいビーチでサーフィンや日光浴を楽しみたい人に最適。一年中温暖な気候でビーチライフを満喫できます。",
       color: "#166534",
       borderColor: "#22C55E",
       bgColor: "#F0FDF4",
-      icon: "🏄‍♂️"
+      icon: "🏖️"
     },
     {
-      title: "英語を話したい",
-      description: "英語圏で、比較的聞き取りやすいオーストラリア英語。語学学校も充実しており、英語力を伸ばすのに最適です。",
+      title: "英語を学びたい",
+      description: "英語圏で、比較的聞き取りやすいオーストラリア英語。語学学校も充実しています。",
       color: "#1E40AF",
       borderColor: "#3B82F6",
       bgColor: "#EFF6FF",
       icon: "🗣️"
     },
     {
-      title: "異文化交流が好き",
-      description: "多文化社会で、世界中から人々が集まります。様々な国の人々と交流でき、視野を広げることができます。",
-      color: "#7C3AED",
-      borderColor: "#8B5CF6",
-      bgColor: "#FAF5FF",
-      icon: "🌍"
-    },
-    {
-      title: "長期滞在したい",
-      description: "最大3年間の滞在が可能で、じっくりと海外生活を楽しめます。",
-      color: "#C2410C",
-      borderColor: "#F97316",
-      bgColor: "#FFF7ED",
-      icon: "⏰"
+      title: "アウトドア好き",
+      description: "自然の中でハイキングやキャンプを楽しみたい人に最適。美しい自然環境が整っています。",
+      color: "#92400E",
+      borderColor: "#F59E0B",
+      bgColor: "#FFFBEB",
+      icon: "🏕️"
     }
   ];
 

@@ -2,6 +2,7 @@
 import React from "react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
+import Header from "./Header";
 
 interface CountryDetailLayoutProps {
   country: {
@@ -61,25 +62,7 @@ export default function CountryDetailLayout({
 
   return (
     <>
-      <header className="App-header stylish-header main-header">
-        <div className="header-container">
-          <div className="header-logo">
-            <Link href="/" style={{ textDecoration: 'none', color: 'inherit' }}>
-              <span className="logo-text">
-                <span className="logo-main">ワーホリ</span>
-                <span className="logo-sub">パス</span>
-              </span>
-              <span className="logo-subtitle">Working Holiday Portal</span>
-            </Link>
-          </div>
-          <nav className="header-nav">
-            <a href="/about-workingholiday" className="nav-link">
-              ワーキングホリデー制度とは
-            </a>
-          </nav>
-        </div>
-        <div className="header-gradient-bar" />
-      </header>
+      <Header />
       
       <button
         onClick={() => router.push("/")}

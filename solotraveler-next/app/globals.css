@@ -3443,7 +3443,7 @@ img.modal-image {
 }
 
 .wh-faq-question {
-  background: #F5F7FA;
+  background: white;
   padding: 1.5rem;
   cursor: pointer;
   font-weight: 600;
@@ -3456,7 +3456,7 @@ img.modal-image {
 }
 
 .wh-faq-question:hover {
-  background: #F5F7FA;
+  background: #f8f9fa;
 }
 
 .wh-faq-question.active {

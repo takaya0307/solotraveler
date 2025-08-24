@@ -65,16 +65,7 @@ export default function AboutWorkingHoliday() {
     <>
       <Header />
       
-      <button
-        onClick={() => {
-          trackEvent('click', 'ナビゲーション', '戻るボタン_ワーキングホリデー制度', 1);
-          router.push("/");
-        }}
-        className="fixed-back-button"
-        aria-label="戻る"
-      >
-        ← 戻る
-      </button>
+
 
       <div className="wh-page-container" style={{ marginTop: '2rem' }}>
 

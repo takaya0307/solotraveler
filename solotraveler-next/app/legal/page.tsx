@@ -76,13 +76,7 @@ export default function Legal() {
   return (
     <>
       <Header />
-      <button
-        onClick={handleBackClick}
-        className="fixed-back-button"
-        aria-label="戻る"
-      >
-        ← 戻る
-      </button>
+
       <main style={{
         maxWidth: 800,
         margin: '3.5em auto 2.5em auto',

@@ -2177,56 +2177,7 @@ img.modal-image {
   }
 }
 
-/* 左下固定の戻るボタン */
-.fixed-back-button {
-  position: fixed;
-  left: 2.2rem;
-  bottom: 2.2rem;
-  z-index: 1001;
-  background: rgba(47, 79, 47, 0.9);
-  color: #fff;
-  border: none;
-  border-radius: 50px;
-  padding: 1.1em 2.1em;
-  font-size: 1.25rem;
-  font-weight: 600;
-  box-shadow: 0 6px 20px rgba(0,0,0,0.25);
-  cursor: pointer;
-  transition: all 0.3s ease;
-  opacity: 0.98;
-  outline: none;
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(255,255,255,0.2);
-}
 
-.fixed-back-button:hover {
-  background: rgba(47, 79, 47, 1);
-  box-shadow: 0 8px 25px rgba(0,0,0,0.3);
-  transform: translateY(-2px) scale(1.05);
-  opacity: 1;
-}
-.fixed-back-button:focus {
-  background: rgba(47, 79, 47, 1);
-  box-shadow: 0 8px 25px rgba(0,0,0,0.3);
-  transform: translateY(-2px) scale(1.05);
-  opacity: 1;
-}
-@media (max-width: 768px) {
-  .fixed-back-button {
-    left: 1.5rem;
-    bottom: 1.5rem;
-    font-size: 1.05rem;
-    padding: 0.9em 1.5em;
-  }
-}
-@media (max-width: 480px) {
-  .fixed-back-button {
-    left: 1rem;
-    bottom: 1rem;
-    font-size: 0.98rem;
-    padding: 0.7em 1.1em;
-  }
-}
 
 /* refined header layout for better balance */
 .refined-header-inner {

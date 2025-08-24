@@ -343,17 +343,7 @@ function PageComponent() {
     return (
       <div className="App">
         <Header />
-        {/* 戻るボタンを左下に固定表示 */}
-        <button
-          onClick={() => {
-            trackEvent('click', 'ナビゲーション', '戻るボタン', 1);
-            setSelectedCountry(null);
-          }}
-          className="fixed-back-button"
-          aria-label="戻る"
-        >
-          ← 戻る
-        </button>
+
         <div 
           className="city-header-section"
           style={{

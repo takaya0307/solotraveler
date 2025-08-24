@@ -36,6 +36,13 @@ const Header: React.FC = () => {
         {/* デスクトップナビゲーション */}
         <nav className={styles.desktopNavigation} role="navigation" aria-label="メインナビゲーション">
           <Link 
+            href="/" 
+            className={styles.navLink}
+            aria-label="ホームページへ戻る"
+          >
+            ホーム
+          </Link>
+          <Link 
             href="/about-workingholiday" 
             className={styles.navLink}
             aria-label="ワーホリについて詳しく知る"
@@ -60,6 +67,14 @@ const Header: React.FC = () => {
               {/* モバイルナビゲーション */}
         <div className={`${styles.mobileNavigation} ${isMenuOpen ? styles.open : ''}`}>
           <nav className={styles.mobileNav} role="navigation" aria-label="モバイルナビゲーション">
+            <Link 
+              href="/" 
+              className={styles.mobileNavLink}
+              onClick={closeMenu}
+              aria-label="ホームページへ戻る"
+            >
+              ホーム
+            </Link>
             <Link 
               href="/about-workingholiday" 
               className={styles.mobileNavLink}

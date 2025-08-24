@@ -117,6 +117,34 @@ function PageComponent() {
   const searchParams = useSearchParams();
 
   const [openAccordionCountryIds, setOpenAccordionCountryIds] = useState<string[]>([]);
+  const [openDropdown, setOpenDropdown] = useState<boolean>(false);
+  const [selectedCategory, setSelectedCategory] = useState<string>('');
+
+  // ドロップダウン選択時のハンドラー
+  const handleDropdownSelect = (category: string) => {
+    setOpenDropdown(false);
+    setSelectedCategory(category);
+    // カテゴリに応じた処理をここに追加
+    console.log('Selected category:', category);
+  };
+
+  // ドロップダウンの外をクリックした時に閉じる
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      const target = event.target as Element;
+      if (openDropdown && !target.closest('.dropdown-container')) {
+        setOpenDropdown(false);
+      }
+    };
+
+    if (openDropdown) {
+      document.addEventListener('mousedown', handleClickOutside);
+    }
+
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, [openDropdown]);
 
   useEffect(() => {
     fetch("/api/countries")
@@ -425,9 +453,86 @@ function PageComponent() {
       <Header />
       <main>
         <section aria-label="ワーキングホリデー協定国一覧">
-          <h2 className="sr-only">ワーキングホリデー協定国一覧</h2>
+          <h1 className="main-heading">ワーホリ対応国一覧・比較</h1>
+                                  <p className="main-description">
+              ワーキングホリデー（ワーホリ）で行ける国を一覧で紹介しています。<br />
+              オーストラリア・カナダ・ニュージーランドなど人気国から、ヨーロッパや南米の国まで比較できます。
+            </p>
+            
+            <div className="dropdown-section">
+              <div className="dropdown-container">
+                <button 
+                  className="dropdown-button"
+                  onClick={() => setOpenDropdown(!openDropdown)}
+                  aria-expanded={openDropdown}
+                  aria-haspopup="true"
+                >
+                  <span>
+                    {selectedCategory === 'beginner' && '🌱 初めての人におすすめ'}
+                    {selectedCategory === 'english' && '📚 英語力を伸ばす'}
+                    {selectedCategory === 'no-quota' && '♾️ 定員上限なし'}
+                    {selectedCategory === 'spanish' && '🇪🇸 スペイン語を学ぶ'}
+                    {!selectedCategory && '条件で絞る'}
+                  </span>
+                  <span className={`dropdown-arrow ${openDropdown ? 'open' : ''}`}>▼</span>
+                </button>
+                
+                {openDropdown && (
+                  <div className="dropdown-menu">
+                    <button 
+                      className="dropdown-item"
+                      onClick={() => handleDropdownSelect('')}
+                    >
+                      📋 条件をリセット
+                    </button>
+                    <button 
+                      className="dropdown-item"
+                      onClick={() => handleDropdownSelect('beginner')}
+                    >
+                      🌱 初めての人におすすめ
+                    </button>
+                    <button 
+                      className="dropdown-item"
+                      onClick={() => handleDropdownSelect('english')}
+                    >
+                      📚 英語力を伸ばす
+                    </button>
+                    <button 
+                      className="dropdown-item"
+                      onClick={() => handleDropdownSelect('no-quota')}
+                    >
+                      ♾️ 定員上限なし
+                    </button>
+                    <button 
+                      className="dropdown-item"
+                      onClick={() => handleDropdownSelect('spanish')}
+                    >
+                      🇪🇸 スペイン語を学ぶ
+                    </button>
+                  </div>
+                )}
+              </div>
+            </div>
+            
+            <h2 className="sr-only">ワーキングホリデー協定国一覧</h2>
           <div className="card-grid">
-            {Array.isArray(countries) && countries.map((country) => (
+            {Array.isArray(countries) && countries
+              .filter(country => {
+                if (selectedCategory === 'beginner') {
+                  return ['australia', 'canada', 'newzealand'].includes(country.id);
+                }
+                if (selectedCategory === 'english') {
+                  return ['australia', 'canada', 'newzealand', 'uk', 'ireland'].includes(country.id);
+                }
+                if (selectedCategory === 'no-quota') {
+                  return country.quota === '上限なし' || country.quota === '制限なし' || country.quota === '無制限' || country.quota === 'なし';
+                }
+                if (selectedCategory === 'spanish') {
+                  return ['spain', 'argentina', 'chile', 'uruguay'].includes(country.id);
+                }
+                return true;
+              })
+              .map((country) => (
             <div 
               className="country-card" 
               key={`${country.id}-${openAccordionCountryIds.includes(country.id)}`} 
@@ -482,6 +587,7 @@ function PageComponent() {
                       }
                     }}
                     className={`accordion-button ${openAccordionCountryIds.includes(country.id) ? 'active' : ''}`}
+                    aria-label={`${country.nameJa}のワーホリ詳細情報`}
                     style={{ 
                       width: '100%',
                       background: 'var(--main-blue)',
@@ -497,7 +603,7 @@ function PageComponent() {
                       boxShadow: '0 4px 16px rgba(30,78,140,0.2)'
                     }}
                   >
-                    詳細情報
+                    詳細をみる
                   </button>
 
                 </div>

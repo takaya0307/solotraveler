@@ -19,6 +19,18 @@ const trackEvent = (action: string, category: string, label?: string, value?: st
   }
 };
 
+// DOM要素を安全に削除するヘルパー関数
+const safeRemoveElement = (elementId: string) => {
+  try {
+    const element = document.getElementById(elementId);
+    if (element && element.parentNode) {
+      element.parentNode.removeChild(element);
+    }
+  } catch (error) {
+    console.warn(`Failed to remove element with id: ${elementId}`, error);
+  }
+};
+
 // 構造化データ（JSON-LD）
 const structuredData = {
   "@context": "https://schema.org",
@@ -321,14 +333,7 @@ function PageComponent() {
       robotsMeta.setAttribute('content', 'index, follow');
       
       // パンくずリストの構造化データを削除
-      try {
-        const existingBreadcrumb = document.getElementById('breadcrumb-structured-data');
-        if (existingBreadcrumb) {
-          existingBreadcrumb.remove();
-        }
-      } catch (error) {
-        console.warn('Breadcrumb removal failed:', error);
-      }
+      safeRemoveElement('breadcrumb-structured-data');
     }
   }, [selectedCountry]);
 
@@ -343,14 +348,7 @@ function PageComponent() {
       document.head.appendChild(script);
     } else if (selectedCountry) {
       // 国選択時は順位付きリストを削除
-      try {
-        const existingItemList = document.getElementById('itemlist-structured-data');
-        if (existingItemList) {
-          existingItemList.remove();
-        }
-      } catch (error) {
-        console.warn('Item list removal failed:', error);
-      }
+      safeRemoveElement('itemlist-structured-data');
     }
   }, [countries, selectedCountry]);
 

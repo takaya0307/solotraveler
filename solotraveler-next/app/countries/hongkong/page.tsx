@@ -19,7 +19,7 @@ export default function HongKongDetailPage() {
     }
   }, []);
 
-  const pageTitle = `${country.nameJa}ワーキングホリデーの魅力`;
+  const pageTitle = `${country.nameJa}ワーホリの魅力`;
   const pageDescription = "金融・文化・美食の国";
   
   const countryDescription = "香港は、世界有数の金融センター、豊かな文化、そして美食を持つ国です。香港島をはじめとする美しい都市、そして美しい自然を満喫できます。";

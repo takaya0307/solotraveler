@@ -7,7 +7,7 @@ import { generateCountryMetadata, countryData } from "../../components/CountryMe
 export default function NewZealandDetailPage() {
   const country = newzealandData.countries.find(c => c.id === "newzealand")!;
 
-  const pageTitle = `${country.nameJa}ワーキングホリデーの魅力`;
+  const pageTitle = `${country.nameJa}ワーホリの魅力`;
   const pageDescription = "大自然とフレンドリーな人々が魅力の南太平洋の国";
   
   const countryDescription = "ニュージーランドは、南太平洋に浮かぶ美しい島国。雄大な自然とフレンドリーな人々が魅力で、のんびりとした雰囲気が特徴です。フィヨルドや山々、美しい湖など、大自然を満喫できる環境が整っています。";

@@ -19,7 +19,7 @@ export default function ItalyDetailPage() {
     }
   }, []);
 
-  const pageTitle = `${country.nameJa}ワーキングホリデーの魅力`;
+  const pageTitle = `${country.nameJa}ワーホリの魅力`;
   const pageDescription = "芸術・美食・歴史が薫る地中海の国";
   
   const countryDescription = "イタリアは、世界最高峰の芸術、美食、歴史を持つ地中海の国です。ローマ、フィレンツェ、ベネチアなど、歴史的な都市が数多くあり、豊かな文化を体験できます。";

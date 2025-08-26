@@ -19,7 +19,7 @@ export default function LuxembourgDetailPage() {
     }
   }, []);
 
-  const pageTitle = `${country.nameJa}ワーキングホリデーの魅力`;
+  const pageTitle = `${country.nameJa}ワーホリの魅力`;
   const pageDescription = "金融・文化・自然の国";
   
   const countryDescription = "ルクセンブルクは、世界有数の金融センター、豊かな文化、そして美しい自然を持つ国です。ルクセンブルク市をはじめとする美しい都市、そして美しい自然を満喫できます。";

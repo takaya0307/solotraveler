@@ -19,7 +19,7 @@ export default function SpainDetailPage() {
     }
   }, []);
 
-  const pageTitle = `${country.nameJa}ワーキングホリデーの魅力`;
+  const pageTitle = `${country.nameJa}ワーホリの魅力`;
   const pageDescription = "情熱的な文化と美食、歴史が薫る国";
   
   const countryDescription = "スペインは、情熱的な文化、豊かな美食、深い歴史を持つ国です。フラメンコ、闘牛、タパス文化など、独特の文化を体験でき、地中海の温暖な気候で過ごしやすい環境です。";

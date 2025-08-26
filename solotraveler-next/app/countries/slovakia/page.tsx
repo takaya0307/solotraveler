@@ -19,7 +19,7 @@ export default function SlovakiaDetailPage() {
     }
   }, []);
 
-  const pageTitle = `${country.nameJa}ワーキングホリデーの魅力`;
+  const pageTitle = `${country.nameJa}ワーホリの魅力`;
   const pageDescription = "山・文化・歴史の国";
   
   const countryDescription = "スロバキアは、美しい山々、豊かな文化、そして深い歴史を持つ国です。ブラチスラバをはじめとする美しい都市、そして美しい自然を満喫できます。";

@@ -7,7 +7,7 @@ import { generateCountryMetadata, countryData } from "../../components/CountryMe
 export default function AustraliaDetailPage() {
   const country = australiaData.countries.find(c => c.id === "australia")!;
 
-  const pageTitle = `${country.nameJa}ワーキングホリデーの魅力`;
+  const pageTitle = `${country.nameJa}ワーホリの魅力`;
   const pageDescription = "温暖な気候とフレンドリーな人々が魅力の南半球の国";
   
   const countryDescription = "オーストラリアは、南半球に位置する広大な大陸国家。一年中温暖な気候で、美しいビーチや壮大な自然が魅力の国です。シドニー・ハーバーブリッジやオペラハウスなど、世界的に有名な観光スポットも多数あります。";
@@ -28,7 +28,7 @@ export default function AustraliaDetailPage() {
     {
       title: "アウトドア",
       description: "自然の中でハイキングやキャンプ",
-      imageUrl: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600&auto=format&fit=crop&q=60",
+      imageUrl: "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=600&auto=format&fit=crop&q=60",
       imageAlt: "オーストラリアのアウトドア"
     }
   ];

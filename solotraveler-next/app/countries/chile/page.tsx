@@ -19,7 +19,7 @@ export default function ChileDetailPage() {
     }
   }, []);
 
-  const pageTitle = `${country.nameJa}ワーキングホリデーの魅力`;
+  const pageTitle = `${country.nameJa}ワーホリの魅力`;
   const pageDescription = "ワイン・自然・文化の国";
   
   const countryDescription = "チリは、美しいワイン、豊かな自然、そして深い文化を持つ国です。サンティアゴをはじめとする美しい都市、そしてアンデス山脈やパタゴニアの自然を満喫できます。";

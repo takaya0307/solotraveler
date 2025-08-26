@@ -19,7 +19,7 @@ export default function TaiwanDetailPage() {
     }
   }, []);
 
-  const pageTitle = `${country.nameJa}ワーキングホリデーの魅力`;
+  const pageTitle = `${country.nameJa}ワーホリの魅力`;
   const pageDescription = "美食・文化・自然が豊かな国";
   
   const countryDescription = "台湾は、美食、文化、自然が豊かな国です。台北をはじめとする現代的な都市から、美しい山々や海岸線まで、多様な魅力を持つ国です。";

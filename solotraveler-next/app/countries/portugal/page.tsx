@@ -19,7 +19,7 @@ export default function PortugalDetailPage() {
     }
   }, []);
 
-  const pageTitle = `${country.nameJa}ワーキングホリデーの魅力`;
+  const pageTitle = `${country.nameJa}ワーホリの魅力`;
   const pageDescription = "歴史・文化・自然の国";
   
   const countryDescription = "ポルトガルは、豊かな歴史と文化、美しい自然を持つ国です。リスボンをはじめとする美しい都市、そして美しい海岸線を満喫できます。";

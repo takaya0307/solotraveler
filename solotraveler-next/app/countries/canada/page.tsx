@@ -7,7 +7,7 @@ import { generateCountryMetadata, countryData } from "../../components/CountryMe
 export default function CanadaDetailPage() {
   const country = canadaData.countries.find(c => c.id === "canada")!;
 
-  const pageTitle = `${country.nameJa}ワーキングホリデーの魅力`;
+  const pageTitle = `${country.nameJa}ワーホリの魅力`;
   const pageDescription = "自然と都市が調和した北米の魅力あふれる国";
   
   const countryDescription = "カナダは、広大な国土と豊かな自然、そして多文化社会が特徴の北米の国です。都市部では近代的な生活を送りながら、すぐ近くで大自然を満喫できる環境が整っています。";
@@ -28,7 +28,7 @@ export default function CanadaDetailPage() {
     {
       title: "四季の美しさ",
       description: "春夏秋冬それぞれの季節の魅力",
-      imageUrl: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600&auto=format&fit=crop&q=60",
+      imageUrl: "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=600&auto=format&fit=crop&q=60",
       imageAlt: "四季の美しさ"
     }
   ];

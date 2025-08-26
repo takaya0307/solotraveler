@@ -19,7 +19,7 @@ export default function CzechDetailPage() {
     }
   }, []);
 
-  const pageTitle = `${country.nameJa}ワーキングホリデーの魅力`;
+  const pageTitle = `${country.nameJa}ワーホリの魅力`;
   const pageDescription = "ビール・建築・文化の国";
   
   const countryDescription = "チェコは、世界最高のビール、美しい建築、豊かな文化を持つ国です。プラハをはじめとする歴史的な都市、そして美しい自然を満喫できます。";

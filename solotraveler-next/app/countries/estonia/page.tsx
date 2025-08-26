@@ -19,7 +19,7 @@ export default function EstoniaDetailPage() {
     }
   }, []);
 
-  const pageTitle = `${country.nameJa}ワーキングホリデーの魅力`;
+  const pageTitle = `${country.nameJa}ワーホリの魅力`;
   const pageDescription = "デジタル・文化・自然の国";
   
   const countryDescription = "エストニアは、デジタル化が進んだ先進国で、豊かな文化と美しい自然を持つ国です。タリンをはじめとする美しい都市、そして美しい自然を満喫できます。";

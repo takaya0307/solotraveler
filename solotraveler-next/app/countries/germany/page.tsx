@@ -7,7 +7,7 @@ import { generateCountryMetadata, countryData } from "../../components/CountryMe
 export default function GermanyDetailPage() {
   const country = germanyData.countries.find(c => c.id === "germany")!;
 
-  const pageTitle = `${country.nameJa}ワーキングホリデーの魅力`;
+  const pageTitle = `${country.nameJa}ワーホリの魅力`;
   const pageDescription = "技術・文化・歴史が融合するヨーロッパの中心地";
   
   const countryDescription = "ドイツは、高度な技術力と豊かな文化、深い歴史を持つヨーロッパの中心地です。自動車産業や製造業で知られ、効率的で質の高い生活を送ることができる国です。";

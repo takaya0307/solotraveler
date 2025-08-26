@@ -19,7 +19,7 @@ export default function SouthKoreaDetailPage() {
     }
   }, []);
 
-  const pageTitle = `${country.nameJa}ワーキングホリデーの魅力`;
+  const pageTitle = `${country.nameJa}ワーホリの魅力`;
   const pageDescription = "K-POP・K-ドラマ・美食の国";
   
   const countryDescription = "韓国は、K-POPやK-ドラマで世界的に注目されている国です。伝統文化と現代文化が融合し、美食も豊富で、アジアの中でも特に人気の高い国です。";

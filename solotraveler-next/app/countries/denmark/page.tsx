@@ -19,7 +19,7 @@ export default function DenmarkDetailPage() {
     }
   }, []);
 
-  const pageTitle = `${country.nameJa}ワーキングホリデーの魅力`;
+  const pageTitle = `${country.nameJa}ワーホリの魅力`;
   const pageDescription = "幸福・デザイン・自転車の国";
   
   const countryDescription = "デンマークは、世界で最も幸福な国の一つとして知られ、優れたデザイン文化と自転車文化を持つ国です。コペンハーゲンをはじめとする美しい都市、そして北欧の魅力を満喫できます。";

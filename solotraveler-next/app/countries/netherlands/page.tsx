@@ -19,7 +19,7 @@ export default function NetherlandsDetailPage() {
     }
   }, []);
 
-  const pageTitle = `${country.nameJa}ワーキングホリデーの魅力`;
+  const pageTitle = `${country.nameJa}ワーホリの魅力`;
   const pageDescription = "風車・チューリップ・自由の国";
   
   const countryDescription = "オランダは、風車、チューリップ、自由な文化で知られる国です。アムステルダムをはじめとする美しい都市、美しい田園風景、そして進歩的な社会制度が特徴です。";

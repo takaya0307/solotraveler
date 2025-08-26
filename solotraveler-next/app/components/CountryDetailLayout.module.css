@@ -1,19 +1,93 @@
 /* 国の詳細ページ共通スタイル */
 
+/* 記事コンテンツ */
+.article-content {
+  line-height: 1.8;
+  color: #374151;
+}
+
+.section-content {
+  font-size: 1rem;
+  line-height: 1.8;
+}
+
+.subsection-title {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #1f2937;
+  margin: 3rem 0 1.5rem 0;
+}
+
+.consultation-icon {
+  color: #FF6B35;
+}
+
+/* メインコンテナ */
+.country-main {
+  max-width: 1200px;
+  margin: 2.5em auto 2em auto;
+  padding: 2.5rem 2rem;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  min-height: 300px;
+  font-family: 'Noto Sans JP';
+  border: 1px solid #e5e7eb;
+}
+
+/* ヒーローセクション */
+.country-hero {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 16px;
+  padding: 4rem 2rem;
+  color: white;
+  text-align: center;
+  margin-bottom: 3rem;
+  position: relative;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+  min-height: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.country-hero-title {
+  font-size: 2rem;
+  font-weight: 800;
+  margin: 0 0 1rem 0;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+  letter-spacing: 0.02em;
+  line-height: 1.3;
+}
+
+.country-hero-description {
+  font-size: 1.2rem;
+  margin: 0;
+  opacity: 0.95;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.5);
+  font-weight: 400;
+  line-height: 1.5;
+  max-width: 600px;
+}
+
+/* 情報カードグリッド */
 .info-cards-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 2rem;
-  margin-bottom: 5rem;
+  display: grid !important;
+  grid-template-columns: repeat(2, 1fr) !important;
+  gap: 1rem !important;
+  margin-bottom: 3rem;
 }
 
 .info-card {
   background: #1E4E8C;
   color: white;
-  padding: 2.5rem 2rem;
-  border-radius: 16px;
+  padding: 1.5rem 1rem;
+  border-radius: 12px;
   text-align: center;
-  box-shadow: 0 8px 25px rgba(30, 78, 140, 0.3);
+  box-shadow: 0 4px 15px rgba(30, 78, 140, 0.3);
   border: none;
   position: relative;
   overflow: hidden;
@@ -21,78 +95,256 @@
 }
 
 .info-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 12px 35px rgba(30, 78, 140, 0.4);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(30, 78, 140, 0.4);
 }
 
 .info-card-icon {
   position: absolute;
-  top: -10px;
-  right: -10px;
-  width: 60px;
-  height: 60px;
+  top: -8px;
+  right: -8px;
+  width: 40px;
+  height: 40px;
   background: rgba(255,255,255,0.1);
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 24px;
+  font-size: 18px;
 }
 
 .info-card h3 {
-  margin: 0 0 1rem 0;
-  font-size: 1.1rem;
+  margin: 0 0 0.5rem 0;
+  font-size: 0.75rem;
   font-weight: 600;
   opacity: 0.9;
 }
 
 .info-card p {
   margin: 0;
-  font-size: 1.8rem;
+  font-size: 0.95rem;
   font-weight: 800;
 }
 
-.section-title {
-  font-size: 2.2rem;
+.info-card-quota {
+  margin: 0;
+}
+
+.info-card-quota-main {
+  margin: 0 0 0.2rem 0;
+  font-size: 0.95rem;
   font-weight: 800;
-  color: #1E4E8C;
-  margin: 0 0 3rem 0;
-  border-bottom: 3px solid #3A7DFF;
-  padding-bottom: 1.5rem;
+}
+
+.info-card-quota-sub {
+  margin: 0;
+  font-size: 0.65rem;
+  font-weight: 400;
+  opacity: 0.8;
+}
+
+/* タブレット以上での表示 */
+@media (min-width: 768px) {
+  .info-cards-grid {
+    grid-template-columns: repeat(4, 1fr) !important;
+    gap: 1.5rem !important;
+    margin-bottom: 4rem;
+  }
+  
+  .info-card {
+    padding: 2rem 1.5rem;
+    border-radius: 14px;
+  }
+  
+  .info-card-icon {
+    top: -10px;
+    right: -10px;
+    width: 50px;
+    height: 50px;
+    font-size: 20px;
+  }
+  
+  .info-card h3 {
+    font-size: 0.8rem;
+    margin-bottom: 0.8rem;
+  }
+  
+  .info-card p {
+    font-size: 1.1rem;
+  }
+  
+  .info-card-quota-main {
+    font-size: 1.1rem;
+  }
+  
+  .info-card-quota-sub {
+    font-size: 0.7rem;
+  }
+}
+
+/* デスクトップでの表示 */
+@media (min-width: 1024px) {
+  .info-cards-grid {
+    gap: 2rem !important;
+    margin-bottom: 5rem;
+  }
+  
+  .info-card {
+    padding: 2.5rem 2rem;
+    border-radius: 16px;
+  }
+  
+  .info-card-icon {
+    top: -10px;
+    right: -10px;
+    width: 60px;
+    height: 60px;
+    font-size: 24px;
+  }
+  
+  .info-card h3 {
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+  }
+  
+  .info-card p {
+    font-size: 1.4rem;
+  }
+  
+  .info-card-quota-main {
+    font-size: 1.4rem;
+  }
+  
+  .info-card-quota-sub {
+    font-size: 0.8rem;
+  }
+}
+
+/* セクション共通スタイル */
+.section {
+  margin-bottom: 5rem;
+  padding: 3rem;
+  border-radius: 16px;
+  border: 1px solid #E2E8F0;
+}
+
+.section-attractions {
+  background: #F0F4F8;
+}
+
+/* 国の特徴写真 */
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin: 2rem 0;
+}
+
+.feature-card {
+  height: 250px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 16px;
   position: relative;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  min-height: 250px;
 }
 
-.section-title-icon {
-  color: #FF6B35;
+.feature-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+}
+
+.feature-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(transparent, rgba(0,0,0,0.8));
+  color: white;
+  padding: 2rem 1.5rem 1.5rem 1.5rem;
+}
+
+.feature-title {
+  margin: 0 0 0.5rem 0;
+  font-size: 1.2rem;
+  font-weight: 700;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+}
+
+.feature-description {
+  margin: 0;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  opacity: 0.9;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.5);
+}
+
+/* 雰囲気カード */
+.atmosphere-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  margin: 2rem 0;
+}
+
+.atmosphere-card {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 12px;
+  border: 1px solid #E2E8F0;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.atmosphere-title {
+  margin: 0 0 1rem 0;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #1f2937;
+}
+
+.atmosphere-description {
+  margin: 0;
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: #6b7280;
+}
+
+/* 都市セクション */
+.section-cities {
+  background: #F8FAFC;
 }
 
 .city-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 2rem;
-  margin-bottom: 3rem;
+  margin: 2rem 0;
 }
 
 .city-card {
   background: white;
   border-radius: 16px;
   overflow: hidden;
-  box-shadow: 0 8px 25px rgba(0,0,0,0.1);
-  border: 1px solid #e5e7eb;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  cursor: pointer;
 }
 
 .city-card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 12px 35px rgba(0,0,0,0.15);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.15);
 }
 
 .city-image {
+  height: 180px;
   background-size: cover;
   background-position: center;
-  height: 200px;
+  background-repeat: no-repeat;
   position: relative;
+  min-height: 180px;
 }
 
 .city-overlay {
@@ -106,124 +358,245 @@
 
 .city-info {
   position: absolute;
-  bottom: 1rem;
-  left: 1rem;
-  color: white;
-}
-
-.city-name {
-  margin: 0 0 0.5rem 0;
-  font-size: 1.4rem;
-  font-weight: 500;
-  text-shadow: 0 2px 4px rgba(0,0,0,0.8);
-  color: white;
-}
-
-.city-description {
-  margin: 0;
-  color: #374151;
-  line-height: 1.6;
-  font-size: 1rem;
-  font-weight: 500;
+  bottom: 0;
+  left: 0;
+  right: 0;
   padding: 1.5rem;
 }
 
+.city-name {
+  margin: 0;
+  color: white;
+  font-size: 1.3rem;
+  font-weight: 700;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+}
+
+.city-description {
+  padding: 1.5rem;
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: #6b7280;
+}
+
+/* おすすめセクション */
+.section-recommended {
+  background: #F0F9FF;
+}
+
 .recommended-grid {
-  display: flex;
-  flex-direction: row;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 2rem;
-  width: 100%;
-  overflow-x: auto;
-  padding-bottom: 1rem;
+  margin: 2rem 0;
 }
 
 .recommended-card {
   padding: 2rem;
   border-radius: 16px;
-  transition: all 0.3s ease;
-  cursor: pointer;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  min-height: 240px;
-  width: 320px;
-  flex-shrink: 0;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
 }
 
 .recommended-card:hover {
-  transform: translateY(-5px);
+  transform: translateY(-3px);
 }
 
 .recommended-title {
+  margin: 0 0 1rem 0;
   font-size: 1.2rem;
   font-weight: 700;
-  margin: 0 0 12px 0;
-  line-height: 1.4;
-  white-space: nowrap;
 }
 
 .recommended-description {
   margin: 0;
-  color: #374151;
+  font-size: 0.9rem;
   line-height: 1.6;
-  font-size: 1rem;
 }
 
+/* 無料相談セクション */
 .consultation-section {
-  background: #F0F4F8;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
   padding: 4rem 3rem;
-  border-radius: 16px;
-  border: 1px solid #3A7DFF;
+  border-radius: 20px;
   text-align: center;
-  box-shadow: 0 8px 25px rgba(58, 125, 255, 0.2);
   position: relative;
   overflow: hidden;
+  margin: 4rem 0;
+}
+
+.consultation-decoration-1,
+.consultation-decoration-2 {
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.1);
+}
+
+.consultation-decoration-1 {
+  top: -100px;
+  left: -100px;
+}
+
+.consultation-decoration-2 {
+  bottom: -100px;
+  right: -100px;
+}
+
+.consultation-title {
+  margin: 0 0 1rem 0;
+  font-size: 2rem;
+  font-weight: 700;
+  position: relative;
+  z-index: 2;
+}
+
+.consultation-description {
+  margin: 0 0 2rem 0;
+  font-size: 1.1rem;
+  opacity: 0.9;
+  position: relative;
+  z-index: 2;
 }
 
 .consultation-button {
-  background: #FF6B35;
-  color: white;
+  background: white;
+  color: #667eea;
   border: none;
-  padding: 1.2rem 3rem;
+  padding: 1rem 2rem;
   border-radius: 50px;
   font-size: 1.1rem;
-  font-weight: 700;
+  font-weight: 600;
   cursor: pointer;
-  transition: all 0.3s ease;
-  box-shadow: 0 8px 25px rgba(255, 107, 53, 0.4);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
   position: relative;
-  z-index: 1;
-  min-width: 200px;
-  min-height: 50px;
+  z-index: 2;
 }
 
 .consultation-button:hover {
-  transform: translateY(-3px) scale(1.05);
-  box-shadow: 0 12px 35px rgba(255, 107, 53, 0.6);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.2);
 }
 
-/* レスポンシブデザイン */
+/* セクションタイトル */
+.section-title {
+  margin: 0 0 2rem 0;
+  font-size: 2rem;
+  font-weight: 700;
+  color: #1f2937;
+  text-align: center;
+}
+
+.section-title-icon,
+.section-title-icon-blue {
+  margin-right: 0.5rem;
+}
+
+.section-title-icon {
+  color: #f59e0b;
+}
+
+.section-title-icon-blue {
+  color: #3b82f6;
+}
+
+/* 説明テキスト */
+.description-text-large {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #4b5563;
+  margin-bottom: 2rem;
+}
+
+.description-text {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: #6b7280;
+  margin-bottom: 1.5rem;
+}
+
+/* 理由リスト */
+.reasons-list {
+  list-style: none;
+  padding: 0;
+  margin: 1.5rem 0;
+}
+
+.reasons-list li {
+  background: #f3f4f6;
+  padding: 1rem 1.5rem;
+  margin-bottom: 1rem;
+  border-radius: 8px;
+  border-left: 4px solid #3b82f6;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #374151;
+}
+
+/* レスポンシブ対応 */
 @media (max-width: 768px) {
-  .info-cards-grid {
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
+  .country-main {
+    padding: 2rem 1rem;
+    margin: 2em auto 1.5em auto;
   }
   
-  .city-grid {
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
+  .country-hero {
+    padding: 2.5rem 1.5rem;
+    min-height: 180px;
+    margin-bottom: 2rem;
   }
   
+  .country-hero-title {
+    font-size: 1.6rem;
+    margin: 0 0 0.8rem 0;
+  }
+  
+  .country-hero-description {
+    font-size: 1.1rem;
+    max-width: 100%;
+  }
+  
+  .section {
+    padding: 2rem 1.5rem;
+  }
+  
+  .features-grid,
+  .city-grid,
   .recommended-grid {
-    flex-direction: column;
-    gap: 1.5rem;
+    grid-template-columns: 1fr;
   }
   
-  .recommended-card {
-    width: 100%;
+  .consultation-section {
+    padding: 3rem 1.5rem;
+  }
+  
+  .consultation-title {
+    font-size: 1.6rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .country-hero {
+    padding: 2rem 1rem;
+    min-height: 160px;
+  }
+  
+  .country-hero-title {
+    font-size: 1.4rem;
+    margin: 0 0 0.6rem 0;
+  }
+  
+  .country-hero-description {
+    font-size: 1rem;
   }
   
   .section-title {
-    font-size: 1.8rem;
+    font-size: 1.6rem;
+  }
+  
+  .info-cards-grid {
+    grid-template-columns: 1fr;
   }
 } 

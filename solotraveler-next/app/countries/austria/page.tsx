@@ -19,7 +19,7 @@ export default function AustriaDetailPage() {
     }
   }, []);
 
-  const pageTitle = `${country.nameJa}ワーキングホリデーの魅力`;
+  const pageTitle = `${country.nameJa}ワーホリの魅力`;
   const pageDescription = "音楽・山・文化の国";
   
   const countryDescription = "オーストリアは、音楽の都ウィーンをはじめ、美しいアルプスの山々と豊かな文化を持つ国です。モーツァルトやシュトラウスの音楽、そして美しい自然を満喫できます。";

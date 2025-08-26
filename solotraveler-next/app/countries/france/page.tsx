@@ -7,7 +7,7 @@ import { generateCountryMetadata, countryData } from "../../components/CountryMe
 export default function FranceDetailPage() {
   const country = franceData.countries.find(c => c.id === "france")!;
 
-  const pageTitle = `${country.nameJa}ワーキングホリデーの魅力`;
+  const pageTitle = `${country.nameJa}ワーホリの魅力`;
   const pageDescription = "芸術・ファッション・美食の本場、ヨーロッパの中心地";
   
   const countryDescription = "フランスは、芸術、ファッション、美食の本場として知られるヨーロッパの中心地です。パリをはじめとする美しい都市、豊かな文化、そして世界最高峰の料理を楽しむことができます。";

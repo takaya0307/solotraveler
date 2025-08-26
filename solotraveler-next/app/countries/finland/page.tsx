@@ -19,7 +19,7 @@ export default function FinlandDetailPage() {
     }
   }, []);
 
-  const pageTitle = `${country.nameJa}ワーキングホリデーの魅力`;
+  const pageTitle = `${country.nameJa}ワーホリの魅力`;
   const pageDescription = "サンタ・オーロラ・森の国";
   
   const countryDescription = "フィンランドは、サンタクロースの故郷として知られ、美しい森とオーロラ、そして優れた教育制度を持つ国です。自然と調和した生活を送ることができる環境です。";

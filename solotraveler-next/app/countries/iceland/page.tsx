@@ -19,7 +19,7 @@ export default function IcelandDetailPage() {
     }
   }, []);
 
-  const pageTitle = `${country.nameJa}ワーキングホリデーの魅力`;
+  const pageTitle = `${country.nameJa}ワーホリの魅力`;
   const pageDescription = "オーロラ・火山・温泉の国";
   
   const countryDescription = "アイスランドは、美しいオーロラ、活発な火山、そして温泉を持つ国です。レイキャビクをはじめとする美しい都市、そして美しい自然を満喫できます。";

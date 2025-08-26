@@ -19,7 +19,7 @@ export default function HungaryDetailPage() {
     }
   }, []);
 
-  const pageTitle = `${country.nameJa}ワーキングホリデーの魅力`;
+  const pageTitle = `${country.nameJa}ワーホリの魅力`;
   const pageDescription = "温泉・文化・歴史の国";
   
   const countryDescription = "ハンガリーは、温泉、豊かな文化、深い歴史を持つ国です。ブダペストをはじめとする美しい都市、そして温泉文化を満喫できます。";

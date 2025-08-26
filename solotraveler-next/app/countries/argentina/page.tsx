@@ -20,7 +20,7 @@ export default function ArgentinaDetailPage() {
     }
   }, []);
 
-  const pageTitle = `${country.nameJa}ワーキングホリデーの魅力`;
+  const pageTitle = `${country.nameJa}ワーホリの魅力`;
   const pageDescription = "タンゴ・ワイン・自然の国";
   
   const countryDescription = "アルゼンチンは、情熱的なタンゴ、世界最高級のワイン、そして豊かな自然を持つ国です。ブエノスアイレスをはじめとする美しい都市、そしてパタゴニアの自然を満喫できます。";

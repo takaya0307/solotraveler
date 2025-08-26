@@ -19,7 +19,7 @@ export default function NorwayDetailPage() {
     }
   }, []);
 
-  const pageTitle = `${country.nameJa}ワーキングホリデーの魅力`;
+  const pageTitle = `${country.nameJa}ワーホリの魅力`;
   const pageDescription = "フィヨルド・オーロラ・自然の国";
   
   const countryDescription = "ノルウェーは、美しいフィヨルド、オーロラ、そして豊かな自然で知られる国です。世界最高の生活水準と美しい景観を満喫できる環境です。";

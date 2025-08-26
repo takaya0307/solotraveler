@@ -19,7 +19,7 @@ export default function LatviaDetailPage() {
     }
   }, []);
 
-  const pageTitle = `${country.nameJa}ワーキングホリデーの魅力`;
+  const pageTitle = `${country.nameJa}ワーホリの魅力`;
   const pageDescription = "バルト海・文化・歴史の国";
   
   const countryDescription = "ラトビアは、バルト海に面し、豊かな文化と深い歴史を持つ国です。リガをはじめとする美しい都市、そして美しい自然を満喫できます。";

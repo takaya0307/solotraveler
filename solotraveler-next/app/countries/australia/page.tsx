@@ -7,10 +7,10 @@ import { generateCountryMetadata, countryData } from "../../components/CountryMe
 export default function AustraliaDetailPage() {
   const country = australiaData.countries.find(c => c.id === "australia")!;
 
-  const pageTitle = `${country.nameJa}ワーホリの魅力`;
-  const pageDescription = "温暖な気候とフレンドリーな人々が魅力の南半球の国";
+  const pageTitle = `オーストラリア ワーホリ 完全ガイド | 魅力・人気都市・おすすめポイント`;
+  const pageDescription = "オーストラリア ワーホリの魅力・人気都市・おすすめポイントを徹底解説。温暖な気候、美しいビーチ、フレンドリーな人々が魅力の南半球の国で、英語学習と豊富な仕事環境を提供。";
   
-  const countryDescription = "オーストラリアは、南半球に位置する広大な大陸国家。一年中温暖な気候で、美しいビーチや壮大な自然が魅力の国です。シドニー・ハーバーブリッジやオペラハウスなど、世界的に有名な観光スポットも多数あります。";
+  const countryDescription = "オーストラリア ワーホリは、南半球に位置する広大な大陸国家での素晴らしい体験を提供します。一年中温暖な気候で、美しいビーチや壮大な自然が魅力の国です。シドニー・ハーバーブリッジやオペラハウスなど、世界的に有名な観光スポットも多数あり、オーストラリア ワーホリでしか味わえない特別な体験が待っています。";
   
   const countryFeatures = [
     {

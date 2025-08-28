@@ -155,22 +155,110 @@ export default function AboutWorkingHoliday() {
         {/* 滞在可能な国と期間 */}
         <section id="countries" className="wh-section">
           <h2 className="wh-section-title">
-            🌍 滞在可能な国と期間
+            🌍 ワーホリで行ける人気国と滞在期間
           </h2>
           
           <div className="wh-card">
-            <div className="wh-info-box">
-              <p><strong>主要な協定国：</strong></p>
-              <ul className="wh-list">
-                <li><strong>オーストラリア：</strong>1年間（延長可能）</li>
-                <li><strong>カナダ：</strong>1年間</li>
-                <li><strong>ニュージーランド：</strong>1年間</li>
-                <li><strong>イギリス：</strong>2年間</li>
-                <li><strong>アイルランド：</strong>1年間</li>
-                <li><strong>ドイツ：</strong>1年間</li>
-                <li><strong>フランス：</strong>1年間</li>
-                <li><strong>韓国：</strong>1年間</li>
-              </ul>
+            <div className="wh-countries-grid">
+              <div className="wh-country-card">
+                <div className="wh-country-info">
+                  <h3 className="wh-country-name">🇦🇺 オーストラリア</h3>
+                  <p className="wh-country-period">滞在期間：1年間（延長可能）</p>
+                  <p className="wh-country-desc">人気No.1のワーホリ先。温暖な気候と豊かな自然が魅力。</p>
+                </div>
+                <Link href="/countries/australia" className="wh-country-button">
+                  詳細を見る →
+                </Link>
+              </div>
+
+              <div className="wh-country-card">
+                <div className="wh-country-info">
+                  <h3 className="wh-country-name">🇨🇦 カナダ</h3>
+                  <p className="wh-country-period">滞在期間：1年間</p>
+                  <p className="wh-country-desc">広大な自然と多文化社会。英語・フランス語の両方を学べる。</p>
+                </div>
+                <Link href="/countries/canada" className="wh-country-button">
+                  詳細を見る →
+                </Link>
+              </div>
+
+              <div className="wh-country-card">
+                <div className="wh-country-info">
+                  <h3 className="wh-country-name">🇳🇿 ニュージーランド</h3>
+                  <p className="wh-country-period">滞在期間：1年間</p>
+                  <p className="wh-country-desc">美しい自然とアウトドアアクティビティが充実。</p>
+                </div>
+                <Link href="/countries/newzealand" className="wh-country-button">
+                  詳細を見る →
+                </Link>
+              </div>
+
+              <div className="wh-country-card">
+                <div className="wh-country-info">
+                  <h3 className="wh-country-name">🇬🇧 イギリス</h3>
+                  <p className="wh-country-period">滞在期間：2年間</p>
+                  <p className="wh-country-desc">歴史と文化の宝庫。最長2年間滞在可能。</p>
+                </div>
+                <Link href="/countries/uk" className="wh-country-button">
+                  詳細を見る →
+                </Link>
+              </div>
+
+              <div className="wh-country-card">
+                <div className="wh-country-info">
+                  <h3 className="wh-country-name">🇮🇪 アイルランド</h3>
+                  <p className="wh-country-period">滞在期間：1年間</p>
+                  <p className="wh-country-desc">親日国として知られる。英語学習に最適な環境。</p>
+                </div>
+                <Link href="/countries/ireland" className="wh-country-button">
+                  詳細を見る →
+                </Link>
+              </div>
+
+              <div className="wh-country-card">
+                <div className="wh-country-info">
+                  <h3 className="wh-country-name">🇩🇪 ドイツ</h3>
+                  <p className="wh-country-period">滞在期間：1年間</p>
+                  <p className="wh-country-desc">ヨーロッパの中心。歴史的建造物と現代文化が融合。</p>
+                </div>
+                <Link href="/countries/germany" className="wh-country-button">
+                  詳細を見る →
+                </Link>
+              </div>
+
+              <div className="wh-country-card">
+                <div className="wh-country-info">
+                  <h3 className="wh-country-name">🇫🇷 フランス</h3>
+                  <p className="wh-country-period">滞在期間：1年間</p>
+                  <p className="wh-country-desc">芸術と文化の都。パリを中心に豊かな体験が可能。</p>
+                </div>
+                <Link href="/countries/france" className="wh-country-button">
+                  詳細を見る →
+                </Link>
+              </div>
+
+              <div className="wh-country-card">
+                <div className="wh-country-info">
+                  <h3 className="wh-country-name">🇰🇷 韓国</h3>
+                  <p className="wh-country-period">滞在期間：1年間</p>
+                  <p className="wh-country-desc">アジアの隣国。K-POPや韓流文化を身近に体験。</p>
+                </div>
+                <Link href="/countries/southkorea" className="wh-country-button">
+                  詳細を見る →
+                </Link>
+              </div>
+
+              {/* 他の国も見るカード */}
+              <div className="wh-country-card wh-more-countries-card">
+                <div className="wh-country-info">
+                  <h3 className="wh-country-name">🌍 他の国も見る</h3>
+                  <p className="wh-country-period">全協定国をチェック</p>
+                  <p className="wh-country-desc">まだまだあります！全協定国の詳細情報をご覧いただけます。</p>
+                </div>
+                <Link href="/" className="wh-country-button wh-more-countries-button">
+                  全協定国を見る →
+                </Link>
+              </div>
             </div>
           </div>
         </section>

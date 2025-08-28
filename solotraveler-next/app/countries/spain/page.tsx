@@ -103,14 +103,7 @@ export default function SpainDetailPage() {
       bgColor: "#FEF3C7",
       icon: "🍷"
     },
-    {
-      title: "歴史好き",
-      description: "アルハンブラ宮殿やサグラダ・ファミリアなど、歴史的建造物を満喫したい人に最適。",
-      color: "#C2410C",
-      borderColor: "#F97316",
-      bgColor: "#FFF7ED",
-      icon: "🏛️"
-    }
+
   ];
 
   return (

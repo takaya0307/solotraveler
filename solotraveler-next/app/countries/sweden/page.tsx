@@ -91,14 +91,7 @@ export default function SwedenDetailPage() {
       bgColor: "#FEF3C7",
       icon: "🎨"
     },
-    {
-      title: "福祉に興味",
-      description: "高福祉社会の仕組みを学びたい人に最適。充実した社会保障制度を体験できます。",
-      color: "#C2410C",
-      borderColor: "#F97316",
-      bgColor: "#FFF7ED",
-      icon: "🏥"
-    }
+
   ];
 
   return (

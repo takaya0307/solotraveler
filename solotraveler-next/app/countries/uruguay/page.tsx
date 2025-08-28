@@ -103,14 +103,7 @@ export default function UruguayDetailPage() {
       bgColor: "#FEF3C7",
       icon: "🎭"
     },
-    {
-      title: "自然好き",
-      description: "美しい田園風景を満喫したい人に最適。",
-      color: "#C2410C",
-      borderColor: "#F97316",
-      bgColor: "#FFF7ED",
-      icon: "🌾"
-    }
+
   ];
 
   return (

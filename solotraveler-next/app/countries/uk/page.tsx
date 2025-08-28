@@ -91,14 +91,7 @@ export default function UKDetailPage() {
       bgColor: "#FEF3C7",
       icon: "🎓"
     },
-    {
-      title: "ヨーロッパ旅行",
-      description: "ヨーロッパ各国へのアクセスが便利で、旅行の拠点として最適です。",
-      color: "#C2410C",
-      borderColor: "#F97316",
-      bgColor: "#FFF7ED",
-      icon: "✈️"
-    }
+
   ];
 
   return (
@@ -113,6 +106,7 @@ export default function UKDetailPage() {
       englishLearningEnvironment={englishLearningEnvironment}
       outdoorLifeDescription={outdoorLifeDescription}
       recommendedFor={recommendedFor}
+      consultationLink="https://px.a8.net/svt/ejp?a8mat=45C1IF+AMTQR6+5S4I+BW8O2&a8ejpredirect=https%3A%2F%2Fwww.iss-ryugakulife.com%2Fcounseling"
     />
   );
 } 

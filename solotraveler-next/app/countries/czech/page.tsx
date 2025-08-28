@@ -103,14 +103,7 @@ export default function CzechDetailPage() {
       bgColor: "#FEF3C7",
       icon: "🏛️"
     },
-    {
-      title: "文化体験",
-      description: "伝統的なチェコ文化を体験したい人に最適。",
-      color: "#C2410C",
-      borderColor: "#F97316",
-      bgColor: "#FFF7ED",
-      icon: "🎭"
-    }
+
   ];
 
   return (

@@ -103,14 +103,7 @@ export default function TaiwanDetailPage() {
       bgColor: "#FEF3C7",
       icon: "🏔️"
     },
-    {
-      title: "アジア文化",
-      description: "アジアの文化や伝統を体験したい人に最適。台湾の伝統文化を満喫できます。",
-      color: "#C2410C",
-      borderColor: "#F97316",
-      bgColor: "#FFF7ED",
-      icon: "🏮"
-    }
+
   ];
 
   return (

@@ -103,14 +103,7 @@ export default function DenmarkDetailPage() {
       bgColor: "#FEF3C7",
       icon: "🚴"
     },
-    {
-      title: "幸福な生活",
-      description: "世界で最も幸福な国の生活を体験したい人に最適。",
-      color: "#C2410C",
-      borderColor: "#F97316",
-      bgColor: "#FFF7ED",
-      icon: "😊"
-    }
+
   ];
 
   return (

@@ -91,14 +91,7 @@ export default function IrelandDetailPage() {
       bgColor: "#FEF3C7",
       icon: "🎭"
     },
-    {
-      title: "自然好き",
-      description: "美しい自然を満喫したい人に最適。",
-      color: "#C2410C",
-      borderColor: "#F97316",
-      bgColor: "#FFF7ED",
-      icon: "🏔️"
-    }
+
   ];
 
   return (
@@ -113,6 +106,7 @@ export default function IrelandDetailPage() {
       englishLearningEnvironment={englishLearningEnvironment}
       outdoorLifeDescription={outdoorLifeDescription}
       recommendedFor={recommendedFor}
+      consultationLink="https://px.a8.net/svt/ejp?a8mat=45C1IF+AMTQR6+5S4I+BW8O2&a8ejpredirect=https%3A%2F%2Fwww.iss-ryugakulife.com%2Fcounseling"
     />
   );
 } 

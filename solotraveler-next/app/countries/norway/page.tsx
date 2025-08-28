@@ -103,14 +103,7 @@ export default function NorwayDetailPage() {
       bgColor: "#FEF3C7",
       icon: "✨"
     },
-    {
-      title: "北欧文化",
-      description: "北欧の伝統文化を体験したい人に最適。ノルウェーの伝統文化を満喫できます。",
-      color: "#C2410C",
-      borderColor: "#F97316",
-      bgColor: "#FFF7ED",
-      icon: "🏮"
-    }
+
   ];
 
   return (

@@ -103,14 +103,7 @@ export default function ItalyDetailPage() {
       bgColor: "#FEF3C7",
       icon: "🏛️"
     },
-    {
-      title: "イタリア語学習",
-      description: "イタリア語を本格的に学びたい人に最適。イタリア語圏で実践的な語学力を身につけられます。",
-      color: "#C2410C",
-      borderColor: "#F97316",
-      bgColor: "#FFF7ED",
-      icon: "🗣️"
-    }
+
   ];
 
   return (

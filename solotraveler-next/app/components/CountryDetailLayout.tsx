@@ -45,6 +45,7 @@ interface CountryDetailLayoutProps {
     bgColor: string;
     icon: string;
   }>;
+  consultationLink?: string;
 }
 
 export default function CountryDetailLayout({
@@ -57,7 +58,8 @@ export default function CountryDetailLayout({
   workingHolidayReasons,
   englishLearningEnvironment,
   outdoorLifeDescription,
-  recommendedFor
+  recommendedFor,
+  consultationLink
 }: CountryDetailLayoutProps) {
   const router = useRouter();
 
@@ -279,9 +281,27 @@ export default function CountryDetailLayout({
             <p className={styles["consultation-description"]}>
               ワーホリについて詳しく知りたい方、不安なことがある方はお気軽にご相談ください。
             </p>
-            <button className={styles["consultation-button"]}>
-              📞 無料相談を始める
-            </button>
+            {consultationLink ? (
+              <>
+                <a 
+                  href={consultationLink}
+                  rel="nofollow"
+                  className={styles["consultation-button"]}
+                >
+                  📞 無料相談を始める
+                </a>
+                <img 
+                  width="1" 
+                  height="1" 
+                  src="https://www10.a8.net/0.gif?a8mat=45C1IF+AMTQR6+5S4I+BW8O2" 
+                  alt=""
+                />
+              </>
+            ) : (
+              <button className={styles["consultation-button"]}>
+                📞 無料相談を始める
+              </button>
+            )}
           </section>
         </article>
       </main>

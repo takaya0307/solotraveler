@@ -91,14 +91,7 @@ export default function FranceDetailPage() {
       bgColor: "#FEF3C7",
       icon: "👗"
     },
-    {
-      title: "語学学習",
-      description: "フランス語を本格的に学びたい人に最適。フランス語圏で実践的な語学力を身につけられます。",
-      color: "#C2410C",
-      borderColor: "#F97316",
-      bgColor: "#FFF7ED",
-      icon: "🗣️"
-    }
+
   ];
 
   return (
@@ -113,6 +106,7 @@ export default function FranceDetailPage() {
       englishLearningEnvironment={englishLearningEnvironment}
       outdoorLifeDescription={outdoorLifeDescription}
       recommendedFor={recommendedFor}
+      consultationLink="https://px.a8.net/svt/ejp?a8mat=45C1IF+AMTQR6+5S4I+BW8O2&a8ejpredirect=https%3A%2F%2Fwww.iss-ryugakulife.com%2Fcounseling"
     />
   );
 } 

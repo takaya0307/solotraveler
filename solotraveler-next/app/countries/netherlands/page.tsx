@@ -103,14 +103,7 @@ export default function NetherlandsDetailPage() {
       bgColor: "#FEF3C7",
       icon: "🏛️"
     },
-    {
-      title: "自由な文化",
-      description: "進歩的で自由な社会制度を体験したい人に最適。",
-      color: "#C2410C",
-      borderColor: "#F97316",
-      bgColor: "#FFF7ED",
-      icon: "🕊️"
-    }
+
   ];
 
   return (

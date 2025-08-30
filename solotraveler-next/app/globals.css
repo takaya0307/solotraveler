@@ -43,6 +43,56 @@ html, body {
   box-sizing: border-box;
 }
 
+/* メインページの背景画像設定（ホームページのみ） */
+body.home-page {
+  background-image: url('https://images.unsplash.com/photo-1476900543704-4312b78632f8?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTN8fHRyYXZlbHxlbnwwfHwwfHx8MA%3D%3D');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  position: relative;
+}
+
+/* 白のオーバーレイ（ホームページのメインコンテンツのみ） */
+body.home-page main::before {
+  content: '';
+  position: absolute;
+  top: -2rem;
+  left: -2rem;
+  right: -2rem;
+  bottom: -2rem;
+  width: calc(100% + 4rem);
+  height: calc(100% + 4rem);
+  background-color: rgba(255, 255, 255, 0.6);
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* メインコンテンツの背景を半透明にして可読性を向上 */
+.App main {
+  position: relative;
+  z-index: 10;
+}
+
+/* カードの背景を少し透明にして背景画像との調和を図る */
+.country-card,
+.city-card {
+  backdrop-filter: blur(10px);
+  background-color: rgba(255, 255, 255, 0.95);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* カードの内容部分の背景も調整 */
+.card-content,
+.city-card-content {
+  background-color: rgba(255, 255, 255, 0.9);
+}
+
+/* アコーディオン展開部分の背景も調整 */
+.country-card .accordion-button + div {
+  background-color: rgba(245, 247, 250, 0.95) !important;
+}
+
 /* iOS Safari特有の修正 */
 @supports (-webkit-touch-callout: none) {
   html, body {
@@ -79,6 +129,8 @@ code {
   letter-spacing: 0.02em;
   font-family: 'Noto Sans JP', 'Helvetica Neue', Arial, sans-serif;
   text-shadow: 0 2px 4px rgba(30,78,140,0.1);
+  position: relative;
+  z-index: 10;
 }
 
 @media (max-width: 768px) {
@@ -96,6 +148,12 @@ code {
     padding: 0 0.75rem;
     line-height: 1.2;
   }
+}
+
+/* メイン説明文のスタイル */
+.main-description {
+  position: relative;
+  z-index: 10;
 }
 
 @media (max-width: 375px) {

@@ -128,6 +128,16 @@ function PageComponent() {
   const [selectedCountry, setSelectedCountry] = useState<WorkingHolidayCountry | null>(null);
   const searchParams = useSearchParams();
 
+  // メインページにhome-pageクラスを追加
+  useEffect(() => {
+    document.body.classList.add('home-page');
+    
+    // コンポーネントのアンマウント時にクラスを削除
+    return () => {
+      document.body.classList.remove('home-page');
+    };
+  }, []);
+
   const [openAccordionCountryIds, setOpenAccordionCountryIds] = useState<string[]>([]);
   const [openDropdown, setOpenDropdown] = useState<boolean>(false);
   const [selectedCategory, setSelectedCategory] = useState<string>('');
@@ -449,7 +459,7 @@ function PageComponent() {
   return (
     <div className="App">
       <Header />
-      <main>
+      <main className="home-page">
         <section aria-label="ワーキングホリデー協定国一覧">
           <h1 className="main-heading">ワーホリ対応国一覧・比較</h1>
                                   <p className="main-description">

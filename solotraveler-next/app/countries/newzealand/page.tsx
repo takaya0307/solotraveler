@@ -1,3 +1,5 @@
+"use client";
+
 import React, { useEffect } from "react";
 import CountryDetailLayout from "../../components/CountryDetailLayout";
 import newzealandData from "../../../db.json";

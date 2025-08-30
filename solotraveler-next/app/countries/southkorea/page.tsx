@@ -10,12 +10,12 @@ export default function SouthKoreaDetailPage() {
 
   // ページタイトルとメタディスクリプションの最適化
   useEffect(() => {
-    document.title = `ワーホリ 韓国比較｜費用・条件・おすすめエージェントを徹底比較`;
+    document.title = `韓国ワーホリ｜魅力を徹底解説`;
     
     // meta descriptionの更新
     const metaDescription = document.querySelector('meta[name="description"]');
     if (metaDescription) {
-      metaDescription.setAttribute('content', `韓国ワーホリの費用、条件、おすすめエージェントを徹底比較。K-POP・K-ドラマ・美食の国でワーホリ体験。`);
+      metaDescription.setAttribute('content', `韓国ワーホリの魅力を徹底解説。K-POP・K-ドラマ・美食の国でワーホリ体験。`);
     }
   }, []);
 

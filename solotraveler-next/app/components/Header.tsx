@@ -49,6 +49,15 @@ const Header: React.FC = () => {
           >
             ワーホリとは
           </Link>
+          <Link 
+            href="https://px.a8.net/svt/ejp?a8mat=45C1IF+AMTQR6+5S4I+BW8O2&a8ejpredirect=https%3A%2F%2Fwww.iss-ryugakulife.com%2Fcounseling" 
+            className={`${styles.navLink} ${styles.ctaButton}`}
+            aria-label="無料相談ページへ"
+            target="_blank"
+            rel="nofollow"
+          >
+            <span>無料で相談</span>
+          </Link>
         </nav>
 
         {/* ハンバーガーメニューボタン */}
@@ -82,6 +91,16 @@ const Header: React.FC = () => {
               aria-label="ワーホリについて詳しく知る"
             >
               ワーホリとは
+            </Link>
+            <Link 
+              href="https://px.a8.net/svt/ejp?a8mat=45C1IF+AMTQR6+5S4I+BW8O2&a8ejpredirect=https%3A%2F%2Fwww.iss-ryugakulife.com%2Fcounseling" 
+              className={`${styles.mobileNavLink} ${styles.mobileCtaButton}`}
+              onClick={closeMenu}
+              aria-label="無料相談ページへ"
+              target="_blank"
+              rel="nofollow"
+            >
+              <span>無料で相談</span>
             </Link>
           </nav>
         </div>

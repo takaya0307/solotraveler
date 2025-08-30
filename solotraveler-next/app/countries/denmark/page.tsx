@@ -10,12 +10,12 @@ export default function DenmarkDetailPage() {
 
   // ページタイトルとメタディスクリプションの最適化
   useEffect(() => {
-    document.title = `ワーホリ デンマーク比較｜費用・条件・おすすめエージェントを徹底比較`;
+    document.title = `デンマークワーホリ｜魅力を徹底解説`;
     
     // meta descriptionの更新
     const metaDescription = document.querySelector('meta[name="description"]');
     if (metaDescription) {
-      metaDescription.setAttribute('content', `デンマークワーホリの費用、条件、おすすめエージェントを徹底比較。幸福・デザイン・自転車の国でワーホリ体験。`);
+      metaDescription.setAttribute('content', `デンマークワーホリの魅力を徹底解説。幸福・デザイン・自転車の国でワーホリ体験。`);
     }
   }, []);
 
@@ -118,6 +118,7 @@ export default function DenmarkDetailPage() {
       englishLearningEnvironment={englishLearningEnvironment}
       outdoorLifeDescription={outdoorLifeDescription}
       recommendedFor={recommendedFor}
+      consultationLink="https://px.a8.net/svt/ejp?a8mat=45C1IF+AMTQR6+5S4I+BW8O2&a8ejpredirect=https%3A%2F%2Fwww.iss-ryugakulife.com%2Fcounseling"
     />
   );
 } 

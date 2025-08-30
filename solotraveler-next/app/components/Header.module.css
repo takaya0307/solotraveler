@@ -128,6 +128,114 @@
   transition: transform 0.1s ease;
 }
 
+/* CTAボタンスタイル（無料相談用） */
+.ctaButton {
+  background: linear-gradient(135deg, #f97316 0%, #ea580c 100%);
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 0.95rem;
+  padding: 0.875rem 1.75rem;
+  border-radius: 9999px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  border: none;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  letter-spacing: 0.025em;
+  white-space: nowrap;
+  box-shadow: 0 4px 12px rgba(249, 115, 22, 0.3);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ctaButton::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #ea580c 0%, #dc2626 100%);
+  transition: left 0.3s ease;
+  z-index: 1;
+}
+
+.ctaButton:hover::before {
+  left: 0;
+}
+
+.ctaButton:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 25px rgba(249, 115, 22, 0.4);
+}
+
+.ctaButton:active {
+  transform: scale(1.02);
+  transition: transform 0.1s ease;
+}
+
+.ctaButton span {
+  position: relative;
+  z-index: 2;
+}
+
+/* モバイルCTAボタンスタイル */
+.mobileCtaButton {
+  background: linear-gradient(135deg, #f97316 0%, #ea580c 100%);
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 1rem;
+  padding: 1rem 2rem;
+  border-radius: 9999px;
+  transition: all 0.3s ease;
+  border: none;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  letter-spacing: 0.025em;
+  white-space: nowrap;
+  box-shadow: 0 4px 12px rgba(249, 115, 22, 0.3);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  text-align: center;
+}
+
+.mobileCtaButton::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #ea580c 0%, #dc2626 100%);
+  transition: left 0.3s ease;
+  z-index: 1;
+}
+
+.mobileCtaButton:hover::before {
+  left: 0;
+}
+
+.mobileCtaButton:hover {
+  transform: scale(1.02);
+  box-shadow: 0 6px 20px rgba(249, 115, 22, 0.4);
+}
+
+.mobileCtaButton:active {
+  transform: scale(0.98);
+  transition: transform 0.1s ease;
+}
+
+.mobileCtaButton span {
+  position: relative;
+  z-index: 2;
+}
+
 /* ハンバーガーメニューボタン */
 .hamburgerButton {
   display: none;

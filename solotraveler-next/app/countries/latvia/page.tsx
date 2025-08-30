@@ -10,12 +10,12 @@ export default function LatviaDetailPage() {
 
   // ページタイトルとメタディスクリプションの最適化
   useEffect(() => {
-    document.title = `ワーホリ ラトビア比較｜費用・条件・おすすめエージェントを徹底比較`;
+    document.title = `ラトビアワーホリ｜魅力を徹底解説`;
     
     // meta descriptionの更新
     const metaDescription = document.querySelector('meta[name="description"]');
     if (metaDescription) {
-      metaDescription.setAttribute('content', `ラトビアワーホリの費用、条件、おすすめエージェントを徹底比較。バルト海・文化・歴史の国でワーホリ体験。`);
+      metaDescription.setAttribute('content', `ラトビアワーホリの魅力を徹底解説。バルト海・文化・歴史の国でワーホリ体験。`);
     }
   }, []);
 
@@ -118,6 +118,7 @@ export default function LatviaDetailPage() {
       englishLearningEnvironment={englishLearningEnvironment}
       outdoorLifeDescription={outdoorLifeDescription}
       recommendedFor={recommendedFor}
+      consultationLink="https://px.a8.net/svt/ejp?a8mat=45C1IF+AMTQR6+5S4I+BW8O2&a8ejpredirect=https%3A%2F%2Fwww.iss-ryugakulife.com%2Fcounseling"
     />
   );
 } 

@@ -10,19 +10,19 @@ export default function LuxembourgDetailPage() {
 
   // ページタイトルとメタディスクリプションの最適化
   useEffect(() => {
-    document.title = `ワーホリ ルクセンブルク比較｜費用・条件・おすすめエージェントを徹底比較`;
+    document.title = `ルクセンブルクワーホリ｜魅力を徹底解説`;
     
     // meta descriptionの更新
     const metaDescription = document.querySelector('meta[name="description"]');
     if (metaDescription) {
-      metaDescription.setAttribute('content', `ルクセンブルクワーホリの費用、条件、おすすめエージェントを徹底比較。金融・文化・自然の国でワーホリ体験。`);
+      metaDescription.setAttribute('content', `ルクセンブルクワーホリの魅力を徹底解説。金融・文化・自然の国でワーホリ体験。`);
     }
   }, []);
 
-  const pageTitle = `${country.nameJa}ワーホリの魅力`;
-  const pageDescription = "金融・文化・自然の国";
+  const pageTitle = `ルクセンブルクワーホリの魅力`;
+  const pageDescription = "ルクセンブルクワーホリで体験できる金融・文化・自然の国";
   
-  const countryDescription = "ルクセンブルクは、世界有数の金融センター、豊かな文化、そして美しい自然を持つ国です。ルクセンブルク市をはじめとする美しい都市、そして美しい自然を満喫できます。";
+  const countryDescription = "ルクセンブルクでは、世界有数の金融センター、豊かな文化、そして美しい自然を持つ国で生活できます。ルクセンブルク市をはじめとする美しい都市、そして美しい自然を満喫できるワーホリ体験が待っています。";
   
   const countryFeatures = [
     {
@@ -64,14 +64,14 @@ export default function LuxembourgDetailPage() {
   ];
   
   const workingHolidayReasons = [
-    "ルクセンブルク語学習環境：ルクセンブルク語圏で、本格的なルクセンブルク語を学べる",
+    "言語学習環境：本格的なルクセンブルク語を学べる",
     "豊富な文化体験：美術、音楽、歴史など豊富な文化施設",
     "ヨーロッパ旅行の拠点：他のヨーロッパ各国へのアクセスが便利",
     "自然体験：美しい森や田園風景でのアウトドアアクティビティ"
   ];
   
   const englishLearningEnvironment = [
-    "ルクセンブルク語学習：ルクセンブルク語圏で、本格的なルクセンブルク語を学べる環境",
+    "言語学習：本格的なルクセンブルク語を学べる環境",
     "充実した語学学校：語学学校も充実しており、ルクセンブルク語力を伸ばすのに最適",
     "多文化社会：様々な国の人々と交流でき、国際的な視点を身につけられる"
   ];
@@ -118,6 +118,19 @@ export default function LuxembourgDetailPage() {
       englishLearningEnvironment={englishLearningEnvironment}
       outdoorLifeDescription={outdoorLifeDescription}
       recommendedFor={recommendedFor}
+      consultationLink="https://px.a8.net/svt/ejp?a8mat=45C1IF+AMTQR6+5S4I+BW8O2&a8ejpredirect=https%3A%2F%2Fwww.iss-ryugakulife.com%2Fcounseling"
+      sectionTitles={{
+        attractions: "ルクセンブルクワーホリの魅力",
+        cities: "ルクセンブルクワーホリで生活できる主要都市",
+        recommended: "ルクセンブルクワーホリがおすすめの人",
+        consultation: "ルクセンブルクワーホリの無料相談はこちら"
+      }}
+      subsectionTitles={{
+        atmosphere: "ルクセンブルクワーホリで体験できる国の雰囲気",
+        workingHolidayReasons: "ルクセンブルクワーホリを選ぶ理由",
+        englishLearning: "ルクセンブルクワーホリでの語学学習環境",
+        outdoorLife: "ルクセンブルクワーホリで楽しめるアウトドアライフ"
+      }}
     />
   );
 } 

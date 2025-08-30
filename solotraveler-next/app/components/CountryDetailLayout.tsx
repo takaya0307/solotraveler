@@ -46,6 +46,19 @@ interface CountryDetailLayoutProps {
     icon: string;
   }>;
   consultationLink?: string;
+  // 国ごとの見出しカスタマイズ用
+  sectionTitles?: {
+    attractions?: string;
+    cities?: string;
+    recommended?: string;
+    consultation?: string;
+  };
+  subsectionTitles?: {
+    atmosphere?: string;
+    workingHolidayReasons?: string;
+    englishLearning?: string;
+    outdoorLife?: string;
+  };
 }
 
 export default function CountryDetailLayout({
@@ -59,7 +72,9 @@ export default function CountryDetailLayout({
   englishLearningEnvironment,
   outdoorLifeDescription,
   recommendedFor,
-  consultationLink
+  consultationLink,
+  sectionTitles,
+  subsectionTitles
 }: CountryDetailLayoutProps) {
   const router = useRouter();
 
@@ -132,7 +147,7 @@ export default function CountryDetailLayout({
           {/* 国の魅力セクション */}
           <section className={`${styles.section} ${styles["section-attractions"]}`}>
             <h2 className={styles["section-title"]}>
-              <span className={styles["section-title-icon"]}>🌟</span> {country.nameJa}の魅力
+              <span className={styles["section-title-icon"]}>🌟</span> {sectionTitles?.attractions || `${country.nameJa}の魅力`}
             </h2>
             
             <div className={styles["section-content"]}>
@@ -158,7 +173,7 @@ export default function CountryDetailLayout({
               </div>
               
               <h3 className={styles["subsection-title"]}>
-                🌍 その国の雰囲気
+                🌍 {subsectionTitles?.atmosphere || '国の雰囲気'}
               </h3>
               
               {/* 情報カード */}
@@ -176,7 +191,7 @@ export default function CountryDetailLayout({
               </div>
               
               <h3 className={styles["subsection-title"]}>
-                🎯 ワーホリを選ぶ理由
+                🎯 {subsectionTitles?.workingHolidayReasons || 'ワーホリを選ぶ理由'}
               </h3>
               <ul className={styles["reasons-list"]}>
                 {workingHolidayReasons.map((reason, index) => (
@@ -187,7 +202,7 @@ export default function CountryDetailLayout({
               </ul>
               
               <h3 className={styles["subsection-title"]}>
-                📚 英語学習の環境
+                📚 {subsectionTitles?.englishLearning || '語学学習の環境'}
               </h3>
               <ul className={styles["reasons-list"]}>
                 {englishLearningEnvironment.map((item, index) => (
@@ -198,7 +213,7 @@ export default function CountryDetailLayout({
               </ul>
               
               <h3 className={styles["subsection-title"]}>
-                🏃‍♂️ アウトドアライフ
+                🏃‍♂️ {subsectionTitles?.outdoorLife || 'アウトドアライフ'}
               </h3>
               <p className={styles["description-text"]}>
                 {outdoorLifeDescription}
@@ -209,7 +224,7 @@ export default function CountryDetailLayout({
           {/* 都市一覧セクション */}
           <section className={`${styles.section} ${styles["section-cities"]}`}>
             <h2 className={styles["section-title"]}>
-              <span className={styles["section-title-icon-blue"]}>🏙️</span> {country.nameJa}の主要都市
+              <span className={styles["section-title-icon-blue"]}>🏙️</span> {sectionTitles?.cities || `${country.nameJa}の主要都市`}
             </h2>
             
             <div className={styles["section-content"]}>
@@ -247,7 +262,7 @@ export default function CountryDetailLayout({
           {/* こんな人におすすめセクション */}
           <section className={`${styles.section} ${styles["section-recommended"]}`}>
             <h2 className={styles["section-title"]}>
-              <span className={styles["section-title-icon"]}>🎯</span> こんな人におすすめ
+              <span className={styles["section-title-icon"]}>🎯</span> {sectionTitles?.recommended || 'こんな人におすすめ'}
             </h2>
             
             <div className={styles["section-content"]}>
@@ -276,7 +291,7 @@ export default function CountryDetailLayout({
             <div className={styles["consultation-decoration-2"]} />
             
             <h2 className={styles["consultation-title"]}>
-              <span className={styles["consultation-icon"]}>💬</span> 無料相談はこちら
+              <span className={styles["consultation-icon"]}>💬</span> {sectionTitles?.consultation || '無料相談はこちら'}
             </h2>
             <p className={styles["consultation-description"]}>
               ワーホリについて詳しく知りたい方、不安なことがある方はお気軽にご相談ください。

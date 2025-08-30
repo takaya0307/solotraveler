@@ -7,7 +7,18 @@ import { generateCountryMetadata, countryData } from "../../components/CountryMe
 export default function AustraliaDetailPage() {
   const country = australiaData.countries.find(c => c.id === "australia")!;
 
-  const pageTitle = `オーストラリア ワーホリ 完全ガイド | 魅力・人気都市・おすすめポイント`;
+  // ページタイトルとメタディスクリプションの最適化
+  useEffect(() => {
+    document.title = `オーストラリアワーホリ｜魅力を徹底解説`;
+    
+    // meta descriptionの更新
+    const metaDescription = document.querySelector('meta[name="description"]');
+    if (metaDescription) {
+      metaDescription.setAttribute('content', `オーストラリアワーホリの魅力・人気都市・おすすめポイントを徹底解説。温暖な気候、美しいビーチ、フレンドリーな人々が魅力の南半球の国で、英語学習と豊富な仕事環境を提供。`);
+    }
+  }, []);
+
+  const pageTitle = `オーストラリア ワーホリの魅力`;
   const pageDescription = "オーストラリア ワーホリの魅力・人気都市・おすすめポイントを徹底解説。温暖な気候、美しいビーチ、フレンドリーな人々が魅力の南半球の国で、英語学習と豊富な仕事環境を提供。";
   
   const countryDescription = "オーストラリア ワーホリは、南半球に位置する広大な大陸国家での素晴らしい体験を提供します。一年中温暖な気候で、美しいビーチや壮大な自然が魅力の国です。シドニー・ハーバーブリッジやオペラハウスなど、世界的に有名な観光スポットも多数あり、オーストラリア ワーホリでしか味わえない特別な体験が待っています。";

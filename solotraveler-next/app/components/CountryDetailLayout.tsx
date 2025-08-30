@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useEffect } from "react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
 import Header from "./Header";
@@ -78,11 +78,21 @@ export default function CountryDetailLayout({
 }: CountryDetailLayoutProps) {
   const router = useRouter();
 
+  // 国詳細ページにcountry-detail-pageクラスを追加
+  useEffect(() => {
+    document.body.classList.add('country-detail-page');
+    
+    // コンポーネントのアンマウント時にクラスを削除
+    return () => {
+      document.body.classList.remove('country-detail-page');
+    };
+  }, []);
+
   return (
     <>
       <Header />
       
-      <main className={styles["country-main"]}>
+      <main className={`${styles["country-main"]} country-detail-container`}>
         
         {/* ヒーローセクション */}
         <div 

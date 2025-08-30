@@ -19,6 +19,16 @@ export default function AboutWorkingHoliday() {
   const router = useRouter();
   const [openFaq, setOpenFaq] = useState<number | null>(null);
 
+  // ワーホリページにwh-pageクラスを追加
+  useEffect(() => {
+    document.body.classList.add('wh-page');
+    
+    // コンポーネントのアンマウント時にクラスを削除
+    return () => {
+      document.body.classList.remove('wh-page');
+    };
+  }, []);
+
   // ページビュー計測
   useEffect(() => {
     trackEvent('view', 'ページ', 'ワーホリとは', 1);

@@ -53,6 +53,16 @@ body.home-page {
   position: relative;
 }
 
+/* ワーホリページの背景画像設定 */
+body.wh-page {
+  background-image: url('https://images.unsplash.com/photo-1527631746610-bca00a040d60?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mzl8fHRyYXZlbHxlbnwwfHwwfHx8MA%3D%3D');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  position: relative;
+}
+
 /* 白のオーバーレイ（ホームページのメインコンテンツのみ） */
 body.home-page main::before {
   content: '';
@@ -66,6 +76,56 @@ body.home-page main::before {
   background-color: rgba(255, 255, 255, 0.6);
   z-index: 0;
   pointer-events: none;
+}
+
+/* 白のオーバーレイ（ワーホリページ全体） */
+body.wh-page::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(255, 255, 255, 0.6);
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* ワーホリページのヘッダー以外の全ての部分にオーバーレイを適用 */
+body.wh-page .wh-page-container {
+  position: relative;
+}
+
+body.wh-page .wh-page-container > *:not(header) {
+  position: relative;
+  z-index: 10;
+}
+
+/* ワーホリページのコンテナにもオーバーレイ効果を適用 */
+body.wh-page .wh-page-container {
+  position: relative;
+  z-index: 10;
+}
+
+/* ワーホリページのカードにも背景画像との調和を図る */
+body.wh-page .wh-card,
+body.wh-page .wh-country-card,
+body.wh-page .wh-benefits-card,
+body.wh-page .wh-drawbacks-card,
+body.wh-page .wh-faq-item,
+body.wh-page .wh-summary-box,
+body.wh-page .wh-warning-box {
+  backdrop-filter: blur(10px);
+  background-color: rgba(255, 255, 255, 0.95);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* フッターノートをオーバーレイの前に表示 */
+body.wh-page .wh-footer-note {
+  position: relative;
+  z-index: 20;
 }
 
 /* メインコンテンツの背景を半透明にして可読性を向上 */

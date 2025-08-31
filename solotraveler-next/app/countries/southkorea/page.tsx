@@ -1,24 +1,11 @@
 "use client";
-import React, { useEffect } from "react";
-import CountryDetailLayout from "../../components/CountryDetailLayout";
-import { generateCountryMetadata, countryData } from "../../components/CountryMetadata";
+import React from "react";import CountryDetailLayout from "../../components/CountryDetailLayout";
 import southkoreaData from "../../../db.json";
-
 
 export default function SouthKoreaDetailPage() {
   const country = southkoreaData.countries.find(c => c.id === "southkorea")!;
 
   // ページタイトルとメタディスクリプションの最適化
-  useEffect(() => {
-    document.title = `韓国ワーホリ｜魅力を徹底解説`;
-    
-    // meta descriptionの更新
-    const metaDescription = document.querySelector('meta[name="description"]');
-    if (metaDescription) {
-      metaDescription.setAttribute('content', `韓国ワーホリの魅力を徹底解説。K-POP・K-ドラマ・美食の国でワーホリ体験。`);
-    }
-  }, []);
-
   const pageTitle = `${country.nameJa}ワーホリの魅力`;
   const pageDescription = "K-POP・K-ドラマ・美食の国";
   

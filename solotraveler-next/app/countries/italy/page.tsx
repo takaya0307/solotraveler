@@ -1,25 +1,12 @@
 "use client";
 
-import React, { useEffect } from "react";
-import CountryDetailLayout from "../../components/CountryDetailLayout";
-import { generateCountryMetadata, countryData } from "../../components/CountryMetadata";
+import React from "react";import CountryDetailLayout from "../../components/CountryDetailLayout";
 import italyData from "../../../db.json";
-
 
 export default function ItalyDetailPage() {
   const country = italyData.countries.find(c => c.id === "italy")!;
 
   // ページタイトルとメタディスクリプションの最適化
-  useEffect(() => {
-    document.title = `イタリアワーホリ｜魅力を徹底解説`;
-    
-    // meta descriptionの更新
-    const metaDescription = document.querySelector('meta[name="description"]');
-    if (metaDescription) {
-      metaDescription.setAttribute('content', `イタリアワーホリの魅力を徹底解説。芸術・美食・歴史が薫る地中海の国でワーホリ体験。`);
-    }
-  }, []);
-
   const pageTitle = `${country.nameJa}ワーホリの魅力`;
   const pageDescription = "芸術・美食・歴史が薫る地中海の国";
   

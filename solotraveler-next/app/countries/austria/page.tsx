@@ -1,24 +1,11 @@
 "use client";
-import React, { useEffect } from "react";
-import CountryDetailLayout from "../../components/CountryDetailLayout";
-import { generateCountryMetadata, countryData } from "../../components/CountryMetadata";
+import React from "react";import CountryDetailLayout from "../../components/CountryDetailLayout";
 import austriaData from "../../../db.json";
-
 
 export default function AustriaDetailPage() {
   const country = austriaData.countries.find(c => c.id === "austria")!;
 
   // ページタイトルとメタディスクリプションの最適化
-  useEffect(() => {
-    document.title = `オーストリアワーホリ｜魅力を徹底解説`;
-    
-    // meta descriptionの更新
-    const metaDescription = document.querySelector('meta[name="description"]');
-    if (metaDescription) {
-      metaDescription.setAttribute('content', `オーストリアワーホリの魅力を徹底解説。音楽・山・文化の国でワーホリ体験。`);
-    }
-  }, []);
-
   const pageTitle = `${country.nameJa}ワーホリの魅力`;
   const pageDescription = "音楽・山・文化の国";
   

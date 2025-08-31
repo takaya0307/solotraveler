@@ -1,24 +1,11 @@
 "use client";
-import React, { useEffect } from "react";
-import CountryDetailLayout from "../../components/CountryDetailLayout";
-import { generateCountryMetadata, countryData } from "../../components/CountryMetadata";
+import React from "react";import CountryDetailLayout from "../../components/CountryDetailLayout";
 import czechData from "../../../db.json";
-
 
 export default function CzechDetailPage() {
   const country = czechData.countries.find(c => c.id === "czech")!;
 
   // ページタイトルとメタディスクリプションの最適化
-  useEffect(() => {
-    document.title = `チェコワーホリ｜魅力を徹底解説`;
-    
-    // meta descriptionの更新
-    const metaDescription = document.querySelector('meta[name="description"]');
-    if (metaDescription) {
-      metaDescription.setAttribute('content', `チェコワーホリの魅力を徹底解説。ビール・建築・文化の国でワーホリ体験。`);
-    }
-  }, []);
-
   const pageTitle = `${country.nameJa}ワーホリの魅力`;
   const pageDescription = "ビール・建築・文化の国";
   

@@ -1,24 +1,11 @@
 "use client";
-import React, { useEffect } from "react";
-import CountryDetailLayout from "../../components/CountryDetailLayout";
-import { generateCountryMetadata, countryData } from "../../components/CountryMetadata";
+import React from "react";import CountryDetailLayout from "../../components/CountryDetailLayout";
 import icelandData from "../../../db.json";
-
 
 export default function IcelandDetailPage() {
   const country = icelandData.countries.find(c => c.id === "iceland")!;
 
   // ページタイトルとメタディスクリプションの最適化
-  useEffect(() => {
-    document.title = `アイスランドワーホリ｜魅力を徹底解説`;
-    
-    // meta descriptionの更新
-    const metaDescription = document.querySelector('meta[name="description"]');
-    if (metaDescription) {
-      metaDescription.setAttribute('content', `アイスランドワーホリの魅力を徹底解説。オーロラ・火山・温泉の国でワーホリ体験。`);
-    }
-  }, []);
-
   const pageTitle = `${country.nameJa}ワーホリの魅力`;
   const pageDescription = "オーロラ・火山・温泉の国";
   

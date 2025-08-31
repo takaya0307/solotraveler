@@ -12,6 +12,7 @@ interface CountryDetailLayoutProps {
     imageUrl: string;
     minWage: string;
     ageRange: string;
+    stayPeriod: string;
     quota: string;
     cities: Array<{
       id: string;
@@ -137,8 +138,21 @@ export default function CountryDetailLayout({
             </div>
             <h3>滞在期間</h3>
             <div className={styles["info-card-quota"]}>
-              <p className={styles["info-card-quota-main"]}>最大1年3ヶ月</p>
-              <p className={styles["info-card-quota-sub"]}>（条件あり）</p>
+              {country.stayPeriod.includes('（条件あり）') ? (
+                <>
+                  <p className={styles["info-card-quota-main"]}>
+                    {country.stayPeriod.replace('（条件あり）', '')}
+                  </p>
+                  <p style={{ 
+                    margin: 0, 
+                    fontSize: '0.65rem', 
+                    fontWeight: 400, 
+                    opacity: 0.8 
+                  }}>（条件あり）</p>
+                </>
+              ) : (
+                <p className={styles["info-card-quota-main"]}>{country.stayPeriod}</p>
+              )}
             </div>
           </div>
           

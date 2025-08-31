@@ -1,10 +1,7 @@
 "use client";
 
-import React, { useEffect } from "react";
-import CountryDetailLayout from "../../components/CountryDetailLayout";
-import { generateCountryMetadata, countryData } from "../../components/CountryMetadata";
+import React from "react";import CountryDetailLayout from "../../components/CountryDetailLayout";
 import swedenData from "../../../db.json";
-
 
 export default function SwedenDetailPage() {
   const country = swedenData.countries.find(c => c.id === "sweden")!;

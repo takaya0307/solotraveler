@@ -1,24 +1,11 @@
 "use client";
-import React, { useEffect } from "react";
-import CountryDetailLayout from "../../components/CountryDetailLayout";
-import { generateCountryMetadata, countryData } from "../../components/CountryMetadata";
+import React from "react";import CountryDetailLayout from "../../components/CountryDetailLayout";
 import lithuaniaData from "../../../db.json";
-
 
 export default function LithuaniaDetailPage() {
   const country = lithuaniaData.countries.find(c => c.id === "lithuania")!;
 
   // ページタイトルとメタディスクリプションの最適化
-  useEffect(() => {
-    document.title = `リトアニアワーホリ｜魅力を徹底解説`;
-    
-    // meta descriptionの更新
-    const metaDescription = document.querySelector('meta[name="description"]');
-    if (metaDescription) {
-      metaDescription.setAttribute('content', `リトアニアワーホリの魅力を徹底解説。バルト海・文化・歴史の国でワーホリ体験。`);
-    }
-  }, []);
-
   const pageTitle = `${country.nameJa}ワーホリの魅力`;
   const pageDescription = "バルト海・文化・歴史の国";
   

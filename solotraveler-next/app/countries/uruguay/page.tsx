@@ -1,23 +1,10 @@
 "use client";
-import React, { useEffect } from "react";
+import React from "react";
 import CountryDetailLayout from "../../components/CountryDetailLayout";
-import { generateCountryMetadata, countryData } from "../../components/CountryMetadata";
 import uruguayData from "../../../db.json";
-
 
 export default function UruguayDetailPage() {
   const country = uruguayData.countries.find(c => c.id === "uruguay")!;
-
-  // ページタイトルとメタディスクリプションの最適化
-  useEffect(() => {
-    document.title = `ウルグアイワーホリ｜魅力を徹底解説`;
-    
-    // meta descriptionの更新
-    const metaDescription = document.querySelector('meta[name="description"]');
-    if (metaDescription) {
-      metaDescription.setAttribute('content', `ウルグアイワーホリの魅力を徹底解説。ビーチ・文化・自然の国でワーホリ体験。`);
-    }
-  }, []);
 
   const pageTitle = `${country.nameJa}ワーホリの魅力`;
   const pageDescription = "ビーチ・文化・自然の国";

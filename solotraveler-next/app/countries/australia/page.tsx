@@ -1,24 +1,11 @@
 "use client";
 
-import React, { useEffect } from "react";
+import React from "react";
 import CountryDetailLayout from "../../components/CountryDetailLayout";
 import australiaData from "../../../db.json";
-import { generateCountryMetadata, countryData } from "../../components/CountryMetadata";
-
 
 export default function AustraliaDetailPage() {
   const country = australiaData.countries.find(c => c.id === "australia")!;
-
-  // ページタイトルとメタディスクリプションの最適化
-  useEffect(() => {
-    document.title = `オーストラリアワーホリ｜魅力を徹底解説`;
-    
-    // meta descriptionの更新
-    const metaDescription = document.querySelector('meta[name="description"]');
-    if (metaDescription) {
-      metaDescription.setAttribute('content', `オーストラリアワーホリの魅力・人気都市・おすすめポイントを徹底解説。温暖な気候、美しいビーチ、フレンドリーな人々が魅力の南半球の国で、英語学習と豊富な仕事環境を提供。`);
-    }
-  }, []);
 
   const pageTitle = `オーストラリア ワーホリの魅力`;
   const pageDescription = "オーストラリア ワーホリの魅力・人気都市・おすすめポイントを徹底解説。温暖な気候、美しいビーチ、フレンドリーな人々が魅力の南半球の国で、英語学習と豊富な仕事環境を提供。";

@@ -1,24 +1,11 @@
 "use client";
-import React, { useEffect } from "react";
-import CountryDetailLayout from "../../components/CountryDetailLayout";
-import { generateCountryMetadata, countryData } from "../../components/CountryMetadata";
+import React from "react";import CountryDetailLayout from "../../components/CountryDetailLayout";
 import luxembourgData from "../../../db.json";
-
 
 export default function LuxembourgDetailPage() {
   const country = luxembourgData.countries.find(c => c.id === "luxembourg")!;
 
   // ページタイトルとメタディスクリプションの最適化
-  useEffect(() => {
-    document.title = `ルクセンブルクワーホリ｜魅力を徹底解説`;
-    
-    // meta descriptionの更新
-    const metaDescription = document.querySelector('meta[name="description"]');
-    if (metaDescription) {
-      metaDescription.setAttribute('content', `ルクセンブルクワーホリの魅力を徹底解説。金融・文化・自然の国でワーホリ体験。`);
-    }
-  }, []);
-
   const pageTitle = `ルクセンブルクワーホリの魅力`;
   const pageDescription = "ルクセンブルクワーホリで体験できる金融・文化・自然の国";
   

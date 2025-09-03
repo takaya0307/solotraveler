@@ -6,6 +6,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useSearchParams, useRouter } from "next/navigation";
 import Script from "next/script";
+import RequestButton from "./components/RequestButton";
 import Header from "./components/Header";
 
 // GA4イベント計測用のヘルパー関数
@@ -656,7 +657,7 @@ function PageComponent() {
           </div>
         </section>
         </main>
-      <footer className="App-footer">
+      <RequestButton />      <footer className="App-footer">
         <div className="footer-content">
           <span>© 2025 ワーホリパス</span>
           <span style={{fontSize: '0.95em', color: '#aaa', marginLeft: '1.2em'}}>Powered by SoloTraveler</span>

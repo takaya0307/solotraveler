@@ -121,7 +121,19 @@ export default function CountryDetailLayout({
               💰
             </div>
             <h3>最低賃金</h3>
-            <p>{country.minWage}</p>
+            <p>
+              {country.minWage}
+              {country.id === 'uruguay' && (
+                <span style={{ fontSize: '0.8rem', color: '#fff', display: 'block', marginTop: '0.3rem' }}>
+                  （月給ベースで計算）
+                </span>
+              )}
+              {country.minWage && country.minWage.includes('(年齢により異なる)') && (
+                <span style={{ fontSize: '0.8rem', color: '#fff', display: 'block', marginTop: '0.3rem' }}>
+                  （年齢により異なる）
+                </span>
+              )}
+            </p>
           </div>
           
           <div className={styles["info-card"]}>

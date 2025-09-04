@@ -143,7 +143,71 @@ function PageComponent() {
   const [openDropdown, setOpenDropdown] = useState<boolean>(false);
   const [selectedCategory, setSelectedCategory] = useState<string>('');
 
-  // ドロップダウン選択時のハンドラー
+  // 通貨変換用の関数
+const getConvertedWage = (wage: string) => {
+  if (!wage) return '';
+  
+  // 「なし」の場合はそのまま返す
+  if (wage === 'なし') return 'なし';
+  
+  // 年齢により異なる注釈を除去
+  const cleanWage = wage.replace(' (年齢により異なる)', '');
+  
+  // 現在のレート（2024年1月時点の概算）
+  const exchangeRates: { [key: string]: number } = {
+    'A$': 95,   // オーストラリアドル
+    'CA$': 110, // カナダドル
+    'NZ$': 90,  // ニュージーランドドル
+    '€': 160,   // ユーロ
+    'EUR': 160, // ユーロ
+    '£': 185,   // 英ポンド
+    'USD': 148, // 米ドル
+    '$': 148,   // 米ドル（$記号）
+    'CAD': 110, // カナダドル
+    'NZD': 90,  // ニュージーランドドル
+    'KRW': 0.11, // 韓国ウォン
+    'TWD': 4.7, // 台湾ドル
+    'HK$': 19,  // 香港ドル
+    'HKD': 19,  // 香港ドル
+    'ARS': 0.15, // アルゼンチンペソ
+    'CLP': 0.16, // チリペソ
+    'UYU': 3.8, // ウルグアイペソ
+    'PLN': 37,  // ポーランドズロチ
+    'CZK': 6.5, // チェココルナ
+    'HUF': 0.4, // ハンガリーフォリント
+  };
+  
+  // 通貨記号と金額を抽出（より柔軟な正規表現）
+  const match = cleanWage.match(/([A-Z$€£]+)\s*(\d+(?:[.,]\d+)?)/);
+  if (!match) return cleanWage;
+  
+  const currency = match[1];
+  const amount = parseFloat(match[2].replace(',', ''));
+  const rate = exchangeRates[currency];
+  
+  if (!rate) return cleanWage;
+  
+  // 日本円に変換（100の位で四捨五入）
+  const jpyAmount = amount * rate;
+  const roundedAmount = Math.round(jpyAmount / 100) * 100;
+  
+  return `約${roundedAmount.toLocaleString()}円`;
+};
+
+const getOriginalCurrency = (wage: string) => {
+  if (!wage) return '';
+  
+  // 「なし」の場合は空文字を返す
+  if (wage === 'なし') return '';
+  
+  // 通貨記号と金額を抽出（より柔軟な正規表現）
+  const match = wage.match(/([A-Z$€£]+)\s*(\d+(?:[.,]\d+)?)/);
+  if (!match) return '';
+  
+  return `（${match[1]}${match[2]}）`;
+};
+
+// ドロップダウン選択時のハンドラー
   const handleDropdownSelect = (category: string) => {
     setOpenDropdown(false);
     setSelectedCategory(category);
@@ -564,9 +628,55 @@ function PageComponent() {
                   </div>
                 </div>
               <div className="card-content">
-                {/* 概要（summary）を表示。なければrecommendationや説明文を仮で表示 */}
-                <div className="country-summary">
-                  {country.summary || country.recommendation || 'ワーホリ協定国です。'}
+                {/* 主要数値情報をアイコン付きで表示 */}
+                <div className="country-info-grid">
+                  <div className="info-item">
+                    <div className="info-icon">💰</div>
+                    <div className="info-content">
+                      <div className="info-label">最低賃金</div>
+                              <div className="info-value">
+          <div className="wage-with-note">
+            <div className="wage-main">{getConvertedWage(country.minWage)}</div>
+            <div className="original-currency">{getOriginalCurrency(country.minWage)}</div>
+          </div>
+        </div>
+                    </div>
+                  </div>
+                  <div className="info-item">
+                    <div className="info-icon">🕒</div>
+                    <div className="info-content">
+                      <div className="info-label">滞在期間</div>
+                      <div className="info-value">
+                        {country.stayPeriod && country.stayPeriod.includes('（条件あり）') ? (
+                          <div className="period-with-note">
+                            <div className="period-main">{country.stayPeriod.replace('（条件あり）', '')}</div>
+                            <div className="condition-note">（条件あり）</div>
+                          </div>
+                        ) : country.stayPeriod && country.stayPeriod.includes('ビザ発給から') ? (
+                          <div className="period-with-note">
+                            <div className="period-main">{country.stayPeriod.replace('ビザ発給から', '')}</div>
+                            <div className="condition-note">（ビザ発給から）</div>
+                          </div>
+                        ) : (
+                          country.stayPeriod
+                        )}
+                      </div>
+                    </div>
+                  </div>
+                  <div className="info-item">
+                    <div className="info-icon">🎂</div>
+                    <div className="info-content">
+                      <div className="info-label">年齢制限</div>
+                      <div className="info-value">{country.ageRange}</div>
+                    </div>
+                  </div>
+                  <div className="info-item">
+                    <div className="info-icon">👥</div>
+                    <div className="info-content">
+                      <div className="info-label">定員</div>
+                      <div className="info-value">{country.quota}</div>
+                    </div>
+                  </div>
                 </div>
                 <div style={{ marginTop: '0.2em', marginBottom: '0.2em' }}>
                   <button

@@ -9,7 +9,7 @@ export default function UruguayDetailPage() {
   const pageTitle = `${country.nameJa}ワーホリの魅力`;
   const pageDescription = "ビーチ・文化・自然の国";
   
-  const countryDescription = "ウルグアイは、美しいビーチ、豊かな文化、そして美しい自然を持つ国です。モンテビデオをはじめとする美しい都市、そして大西洋の海岸線を満喫できます。";
+  const countryDescription = "ウルグアイは、美しいビーチ、豊かな文化、そして美しい自然を持つ国です。モンテビデオをはじめとする美しい都市、そして大西洋の海岸線を満喫できます。最低賃金は月給ベースで計算されています。";
   
   const countryFeatures = [
     {

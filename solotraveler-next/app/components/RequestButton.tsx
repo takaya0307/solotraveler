@@ -15,12 +15,11 @@ const RequestButton: React.FC = () => {
         <span className={styles.text}>資料請求</span>
       </a>
       <img 
-        border="0" 
         width="1" 
         height="1" 
         src="https://www10.a8.net/0.gif?a8mat=45C668+FNTINM+5IJI+BW8O2" 
         alt=""
-        style={{ display: 'none' }}
+        style={{ display: 'none', border: 'none' }}
       />
     </>
   );

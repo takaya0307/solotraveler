@@ -64,34 +64,6 @@ export default function TaiwanDetailPage() {
   ];
   
   const outdoorLifeDescription = "台湾には美しい山々、海岸線、国立公園など、様々な自然環境があります。ハイキング、スキー、ビーチリゾート、サイクリングなど、四季を通じて様々なアウトドアアクティビティが楽しめます。";
-  
-  const recommendedFor = [
-    {
-      title: "美食好き",
-      description: "小籠包、牛肉麺など台湾料理を楽しみたい人に最適。食の本場を体験できます。",
-      color: "#166534",
-      borderColor: "#22C55E",
-      bgColor: "#F0FDF4",
-      icon: "🥟"
-    },
-    {
-      title: "中国語学習",
-      description: "中国語を実用的に学びたい人に最適。中国語圏で実践的な語学力を身につけられます。",
-      color: "#1E40AF",
-      borderColor: "#3B82F6",
-      bgColor: "#EFF6FF",
-      icon: "🗣️"
-    },
-    {
-      title: "自然好き",
-      description: "美しい山々や海岸線を満喫したい人に最適。自然豊かな環境で過ごせます。",
-      color: "#92400E",
-      borderColor: "#F59E0B",
-      bgColor: "#FEF3C7",
-      icon: "🏔️"
-    },
-
-  ];
 
   return (
     <CountryDetailLayout
@@ -104,8 +76,7 @@ export default function TaiwanDetailPage() {
       workingHolidayReasons={workingHolidayReasons}
       englishLearningEnvironment={englishLearningEnvironment}
       outdoorLifeDescription={outdoorLifeDescription}
-      recommendedFor={recommendedFor}
       consultationLink="https://px.a8.net/svt/ejp?a8mat=45C1IF+AMTQR6+5S4I+BW8O2&a8ejpredirect=https%3A%2F%2Fwww.iss-ryugakulife.com%2Fcounseling"
     />
   );
-} 
+}  

@@ -63,34 +63,6 @@ export default function NewZealandDetailPage() {
   ];
   
   const outdoorLifeDescription = "フィヨルド、山々、美しい湖など、自然が豊富です。ハイキング、スキー、キャンプ、アドベンチャースポーツなど、四季を通じて様々なアウトドアアクティビティが楽しめます。";
-  
-  const recommendedFor = [
-    {
-      title: "アウトドア好き",
-      description: "雄大な自然が好きな人には最高の環境。ハイキング、スキー、キャンプ、アドベンチャースポーツなど、四季を通じて様々なアウトドアアクティビティが楽しめます。",
-      color: "#166534",
-      borderColor: "#22C55E",
-      bgColor: "#F0FDF4",
-      icon: "🏔️"
-    },
-    {
-      title: "英語を話したい",
-      description: "英語圏で、比較的聞き取りやすいニュージーランド英語。語学学校も充実しており、英語力を伸ばすのに最適です。",
-      color: "#1E40AF",
-      borderColor: "#3B82F6",
-      bgColor: "#EFF6FF",
-      icon: "🗣️"
-    },
-    {
-      title: "のんびりしたい",
-      description: "のんびりとした雰囲気が魅力。自然の中でリラックスした生活を送りたい人に最適です。ストレスフリーな環境で過ごせます。",
-      color: "#92400E",
-      borderColor: "#F59E0B",
-      bgColor: "#FEF3C7",
-      icon: "🌍"
-    },
-
-  ];
 
   return (
     <CountryDetailLayout
@@ -103,8 +75,7 @@ export default function NewZealandDetailPage() {
       workingHolidayReasons={workingHolidayReasons}
       englishLearningEnvironment={englishLearningEnvironment}
       outdoorLifeDescription={outdoorLifeDescription}
-      recommendedFor={recommendedFor}
       consultationLink="https://px.a8.net/svt/ejp?a8mat=45C1IF+AMTQR6+5S4I+BW8O2&a8ejpredirect=https%3A%2F%2Fwww.iss-ryugakulife.com%2Fcounseling"
     />
   );
-} 
+}  

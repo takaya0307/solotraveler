@@ -64,34 +64,6 @@ export default function LithuaniaDetailPage() {
   ];
   
   const outdoorLifeDescription = "リトアニアには美しい海岸線、森、湖など、様々な自然環境があります。ハイキング、スキー、キャンプ、釣り、ビーチリゾートなど、四季を通じて様々なアウトドアアクティビティが楽しめます。";
-  
-  const recommendedFor = [
-    {
-      title: "海好き",
-      description: "美しいバルト海を体験したい人に最適。海岸線を満喫できます。",
-      color: "#166534",
-      borderColor: "#22C55E",
-      bgColor: "#F0FDF4",
-      icon: "🌊"
-    },
-    {
-      title: "リトアニア語学習",
-      description: "リトアニア語を本格的に学びたい人に最適。リトアニア語圏で実践的な語学力を身につけられます。",
-      color: "#1E40AF",
-      borderColor: "#3B82F6",
-      bgColor: "#EFF6FF",
-      icon: "🗣️"
-    },
-    {
-      title: "文化体験",
-      description: "伝統的なリトアニア文化を体験したい人に最適。",
-      color: "#92400E",
-      borderColor: "#F59E0B",
-      bgColor: "#FEF3C7",
-      icon: "🎭"
-    },
-
-  ];
 
   return (
     <CountryDetailLayout
@@ -104,8 +76,7 @@ export default function LithuaniaDetailPage() {
       workingHolidayReasons={workingHolidayReasons}
       englishLearningEnvironment={englishLearningEnvironment}
       outdoorLifeDescription={outdoorLifeDescription}
-      recommendedFor={recommendedFor}
       consultationLink="https://px.a8.net/svt/ejp?a8mat=45C1IF+AMTQR6+5S4I+BW8O2&a8ejpredirect=https%3A%2F%2Fwww.iss-ryugakulife.com%2Fcounseling"
     />
   );
-} 
+}  

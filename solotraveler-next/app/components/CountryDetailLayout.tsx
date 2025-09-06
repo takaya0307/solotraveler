@@ -108,20 +108,11 @@ interface CountryDetailLayoutProps {
   workingHolidayReasons: string[];
   englishLearningEnvironment: string[];
   outdoorLifeDescription: string;
-  recommendedFor: Array<{
-    title: string;
-    description: string;
-    color: string;
-    borderColor: string;
-    bgColor: string;
-    icon: string;
-  }>;
   consultationLink?: string;
   // 国ごとの見出しカスタマイズ用
   sectionTitles?: {
     attractions?: string;
     cities?: string;
-    recommended?: string;
     consultation?: string;
   };
   subsectionTitles?: {
@@ -142,7 +133,6 @@ export default function CountryDetailLayout({
   workingHolidayReasons,
   englishLearningEnvironment,
   outdoorLifeDescription,
-  recommendedFor,
   consultationLink,
   sectionTitles,
   subsectionTitles
@@ -369,31 +359,6 @@ export default function CountryDetailLayout({
             </div>
           </section>
 
-          {/* こんな人におすすめセクション */}
-          <section className={`${styles.section} ${styles["section-recommended"]}`}>
-            <h2 className={styles["section-title"]}>
-              <span className={styles["section-title-icon"]}>🎯</span> {sectionTitles?.recommended || 'こんな人におすすめ'}
-            </h2>
-            
-            <div className={styles["section-content"]}>
-              <div className={styles["recommended-grid"]}>
-                {recommendedFor.map((item, index) => (
-                  <div key={index} className={styles["recommended-card"]} style={{
-                    background: item.bgColor,
-                    border: `2px solid ${item.borderColor}`,
-                    boxShadow: `0 8px 25px ${item.color}20`
-                  }}>
-                    <h3 className={styles["recommended-title"]} style={{ color: item.color }}>
-                      {item.icon} {item.title}
-                    </h3>
-                    <p className={styles["recommended-description"]}>
-                      {item.description}
-                    </p>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </section>
 
           {/* 無料相談セクション */}
           <section className={styles["consultation-section"]}>

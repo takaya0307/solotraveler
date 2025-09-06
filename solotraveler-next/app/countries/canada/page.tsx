@@ -65,33 +65,6 @@ export default function CanadaDetailPage() {
   
   const outdoorLifeDescription = "ロッキー山脈、美しい湖、広大な森林など、自然が豊富です。ハイキング、スキー、キャンプ、カヤックなど、四季を通じて様々なアウトドアアクティビティが楽しめます。";
   
-  const recommendedFor = [
-    {
-      title: "自然好き",
-      description: "都市部からすぐにアクセスできる大自然が魅力。四季折々の自然を満喫できます。",
-      color: "#166534",
-      borderColor: "#22C55E",
-      bgColor: "#F0FDF4",
-      icon: "🏔️"
-    },
-    {
-      title: "英語を学びたい",
-      description: "英語圏で、比較的聞き取りやすいカナダ英語。語学学校も充実しています。",
-      color: "#1E40AF",
-      borderColor: "#3B82F6",
-      bgColor: "#EFF6FF",
-      icon: "🗣️"
-    },
-    {
-      title: "多文化体験",
-      description: "様々な国の文化が融合した環境で、グローバルな視点を身につけられます。",
-      color: "#92400E",
-      borderColor: "#F59E0B",
-      bgColor: "#FEF3C7",
-      icon: "🌍"
-    },
-
-  ];
 
   return (
     <CountryDetailLayout
@@ -104,7 +77,6 @@ export default function CanadaDetailPage() {
       workingHolidayReasons={workingHolidayReasons}
       englishLearningEnvironment={englishLearningEnvironment}
       outdoorLifeDescription={outdoorLifeDescription}
-      recommendedFor={recommendedFor}
       consultationLink="https://px.a8.net/svt/ejp?a8mat=45C1IF+AMTQR6+5S4I+BW8O2&a8ejpredirect=https%3A%2F%2Fwww.iss-ryugakulife.com%2Fcounseling"
     />
   );

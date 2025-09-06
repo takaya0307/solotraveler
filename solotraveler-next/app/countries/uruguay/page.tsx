@@ -64,34 +64,6 @@ export default function UruguayDetailPage() {
   ];
   
   const outdoorLifeDescription = "ウルグアイには美しいビーチ、田園風景、国立公園など、様々な自然環境があります。ビーチリゾート、ハイキング、キャンプ、釣りなど、四季を通じて様々なアウトドアアクティビティが楽しめます。";
-  
-  const recommendedFor = [
-    {
-      title: "ビーチ好き",
-      description: "美しい大西洋のビーチを体験したい人に最適。",
-      color: "#166534",
-      borderColor: "#22C55E",
-      bgColor: "#F0FDF4",
-      icon: "🏖️"
-    },
-    {
-      title: "スペイン語学習",
-      description: "スペイン語を本格的に学びたい人に最適。スペイン語圏で実践的な語学力を身につけられます。",
-      color: "#1E40AF",
-      borderColor: "#3B82F6",
-      bgColor: "#EFF6FF",
-      icon: "🗣️"
-    },
-    {
-      title: "文化体験",
-      description: "伝統的なウルグアイ文化を体験したい人に最適。",
-      color: "#92400E",
-      borderColor: "#F59E0B",
-      bgColor: "#FEF3C7",
-      icon: "🎭"
-    },
-
-  ];
 
   return (
     <CountryDetailLayout
@@ -104,8 +76,7 @@ export default function UruguayDetailPage() {
       workingHolidayReasons={workingHolidayReasons}
       englishLearningEnvironment={englishLearningEnvironment}
       outdoorLifeDescription={outdoorLifeDescription}
-      recommendedFor={recommendedFor}
       consultationLink="https://px.a8.net/svt/ejp?a8mat=45C1IF+AMTQR6+5S4I+BW8O2&a8ejpredirect=https%3A%2F%2Fwww.iss-ryugakulife.com%2Fcounseling"
     />
   );
-} 
+}  

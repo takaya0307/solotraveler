@@ -64,34 +64,6 @@ export default function NorwayDetailPage() {
   ];
   
   const outdoorLifeDescription = "ノルウェーには美しいフィヨルド、山々、森、国立公園など、様々な自然環境があります。ハイキング、スキー、キャンプ、釣り、クルーズなど、四季を通じて様々なアウトドアアクティビティが楽しめます。";
-  
-  const recommendedFor = [
-    {
-      title: "自然好き",
-      description: "美しいフィヨルドや山々を満喫したい人に最適。自然豊かな環境で過ごせます。",
-      color: "#166534",
-      borderColor: "#22C55E",
-      bgColor: "#F0FDF4",
-      icon: "🏔️"
-    },
-    {
-      title: "ノルウェー語学習",
-      description: "ノルウェー語を本格的に学びたい人に最適。ノルウェー語圏で実践的な語学力を身につけられます。",
-      color: "#1E40AF",
-      borderColor: "#3B82F6",
-      bgColor: "#EFF6FF",
-      icon: "🗣️"
-    },
-    {
-      title: "オーロラ体験",
-      description: "美しい北極光を観測したい人に最適。オーロラの本場を体験できます。",
-      color: "#92400E",
-      borderColor: "#F59E0B",
-      bgColor: "#FEF3C7",
-      icon: "✨"
-    },
-
-  ];
 
   return (
     <CountryDetailLayout
@@ -104,8 +76,7 @@ export default function NorwayDetailPage() {
       workingHolidayReasons={workingHolidayReasons}
       englishLearningEnvironment={englishLearningEnvironment}
       outdoorLifeDescription={outdoorLifeDescription}
-      recommendedFor={recommendedFor}
       consultationLink="https://px.a8.net/svt/ejp?a8mat=45C1IF+AMTQR6+5S4I+BW8O2&a8ejpredirect=https%3A%2F%2Fwww.iss-ryugakulife.com%2Fcounseling"
     />
   );
-} 
+}  

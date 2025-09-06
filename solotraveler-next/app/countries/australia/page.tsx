@@ -16,19 +16,19 @@ export default function AustraliaDetailPage() {
     {
       title: "ビーチライフ",
       description: "美しいビーチでサーフィンや日光浴",
-      imageUrl: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600&auto=format&fit=crop&q=60",
+      imageUrl: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=600&auto=format&fit=crop&q=60",
       imageAlt: "オーストラリアのビーチ"
     },
     {
       title: "カフェ文化",
       description: "メルボルンのカフェでコーヒーを楽しむ",
-      imageUrl: "https://images.unsplash.com/photo-1551698618-1dfe5d97d256?w=600&auto=format&fit=crop&q=60",
+      imageUrl: "https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?w=600&auto=format&fit=crop&q=60",
       imageAlt: "オーストラリアのカフェ"
     },
     {
       title: "アウトドア",
       description: "自然の中でハイキングやキャンプ",
-      imageUrl: "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=600&auto=format&fit=crop&q=60",
+      imageUrl: "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=600&auto=format&fit=crop&q=60",
       imageAlt: "オーストラリアのアウトドア"
     }
   ];
@@ -66,32 +66,6 @@ export default function AustraliaDetailPage() {
   
   const outdoorLifeDescription = "ビーチやアウトドアアクティビティが豊富で、サーフィン、ダイビング、ハイキングなどが楽しめます。自然と都市のバランスが良く、アクティブな生活を送りたい人に最適です。";
   
-  const recommendedFor = [
-    {
-      title: "ビーチ好き",
-      description: "美しいビーチでサーフィンや日光浴を楽しみたい人に最適。一年中温暖な気候でビーチライフを満喫できます。",
-      color: "#166534",
-      borderColor: "#22C55E",
-      bgColor: "#F0FDF4",
-      icon: "🏖️"
-    },
-    {
-      title: "英語を学びたい",
-      description: "英語圏で、比較的聞き取りやすいオーストラリア英語。語学学校も充実しています。",
-      color: "#1E40AF",
-      borderColor: "#3B82F6",
-      bgColor: "#EFF6FF",
-      icon: "🗣️"
-    },
-    {
-      title: "アウトドア好き",
-      description: "自然の中でハイキングやキャンプを楽しみたい人に最適。美しい自然環境が整っています。",
-      color: "#92400E",
-      borderColor: "#F59E0B",
-      bgColor: "#FFFBEB",
-      icon: "🏕️"
-    }
-  ];
 
   return (
     <CountryDetailLayout
@@ -104,7 +78,6 @@ export default function AustraliaDetailPage() {
       workingHolidayReasons={workingHolidayReasons}
       englishLearningEnvironment={englishLearningEnvironment}
       outdoorLifeDescription={outdoorLifeDescription}
-      recommendedFor={recommendedFor}
       consultationLink="https://px.a8.net/svt/ejp?a8mat=45C1IF+AMTQR6+5S4I+BW8O2&a8ejpredirect=https%3A%2F%2Fwww.iss-ryugakulife.com%2Fcounseling"
     />
   );

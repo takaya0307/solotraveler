@@ -19,7 +19,13 @@ const RequestButton: React.FC = () => {
         height="1" 
         src="https://www10.a8.net/0.gif?a8mat=45C668+FNTINM+5IJI+BW8O2" 
         alt=""
-        style={{ display: 'none', border: 'none' }}
+        style={{ 
+          position: 'absolute',
+          left: '-9999px',
+          top: '-9999px',
+          border: 'none',
+          opacity: 0
+        }}
       />
     </>
   );

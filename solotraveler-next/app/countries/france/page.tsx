@@ -64,33 +64,6 @@ export default function FranceDetailPage() {
   
   const outdoorLifeDescription = "フランスには美しい田園地帯やアルプス山脈、地中海沿岸など、様々な自然環境があります。ハイキング、スキー、ビーチリゾートなど、四季を通じて様々なアウトドアアクティビティが楽しめます。";
   
-  const recommendedFor = [
-    {
-      title: "芸術文化好き",
-      description: "世界最高峰の美術館や文化施設で芸術に触れたい人に最適。ルーブル美術館やオルセー美術館など、一生に一度は訪れたい場所がたくさんあります。",
-      color: "#166534",
-      borderColor: "#22C55E",
-      bgColor: "#F0FDF4",
-      icon: "🎨"
-    },
-    {
-      title: "美食家",
-      description: "世界最高峰のレストランで本格的なフランス料理を楽しみたい人に最適。ワイン文化も豊富で、食の本場を体験できます。",
-      color: "#1E40AF",
-      borderColor: "#3B82F6",
-      bgColor: "#EFF6FF",
-      icon: "🍷"
-    },
-    {
-      title: "ファッション好き",
-      description: "パリコレクションなど世界のファッションの最前線を体験したい人に最適。ファッションの本場でトレンドを学べます。",
-      color: "#92400E",
-      borderColor: "#F59E0B",
-      bgColor: "#FEF3C7",
-      icon: "👗"
-    },
-
-  ];
 
   return (
     <CountryDetailLayout
@@ -103,7 +76,6 @@ export default function FranceDetailPage() {
       workingHolidayReasons={workingHolidayReasons}
       englishLearningEnvironment={englishLearningEnvironment}
       outdoorLifeDescription={outdoorLifeDescription}
-      recommendedFor={recommendedFor}
       consultationLink="https://px.a8.net/svt/ejp?a8mat=45C1IF+AMTQR6+5S4I+BW8O2&a8ejpredirect=https%3A%2F%2Fwww.iss-ryugakulife.com%2Fcounseling"
     />
   );

@@ -286,7 +286,7 @@ const getOriginalCurrency = (wage: string) => {
       
       // 現在のパスからクエリパラメータを除去したURLをcanonicalに設定
       const currentPath = window.location.pathname;
-      canonicalLink.setAttribute('href', `https://your-domain.com${currentPath}`);
+      canonicalLink.setAttribute('href', `https://workingholidaypass.jp${currentPath}`);
       
       // robotsメタタグでインデックスを許可（canonicalで正規化されるため）
       let robotsMeta = document.querySelector('meta[name="robots"]') as HTMLMetaElement;
@@ -351,7 +351,7 @@ const getOriginalCurrency = (wage: string) => {
         canonicalLink.rel = 'canonical';
         document.head.appendChild(canonicalLink);
       }
-      canonicalLink.setAttribute('href', `https://your-domain.com/countries/${selectedCountry.id}`);
+      canonicalLink.setAttribute('href', `https://workingholidaypass.jp/countries/${selectedCountry.id}`);
       
       // robotsメタタグの更新（都市一覧ページはインデックス対象）
       let robotsMeta = document.querySelector('meta[name="robots"]') as HTMLMetaElement;
@@ -396,7 +396,7 @@ const getOriginalCurrency = (wage: string) => {
         canonicalLink.rel = 'canonical';
         document.head.appendChild(canonicalLink);
       }
-      canonicalLink.setAttribute('href', 'https://your-domain.com/');
+      canonicalLink.setAttribute('href', 'https://workingholidaypass.jp/');
       
       // robotsメタタグをホームページ設定に戻す
       let robotsMeta = document.querySelector('meta[name="robots"]') as HTMLMetaElement;
@@ -727,8 +727,18 @@ const getOriginalCurrency = (wage: string) => {
                       cursor: 'pointer',
                       boxShadow: '0 4px 16px rgba(30,78,140,0.2)'
                     }}
+                    onMouseEnter={(e) => {
+                      e.currentTarget.style.background = '#1e4e8c';
+                      e.currentTarget.style.borderColor = '#1e4e8c';
+                      e.currentTarget.style.boxShadow = '0 6px 20px rgba(30,78,140,0.3)';
+                    }}
+                    onMouseLeave={(e) => {
+                      e.currentTarget.style.background = 'var(--main-blue)';
+                      e.currentTarget.style.borderColor = 'var(--main-blue)';
+                      e.currentTarget.style.boxShadow = '0 4px 16px rgba(30,78,140,0.2)';
+                    }}
                   >
-                    詳細をみる
+                    もっと詳しく知る 🔍
                   </button>
 
                 </div>

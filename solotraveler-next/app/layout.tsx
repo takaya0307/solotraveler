@@ -29,7 +29,6 @@ export const metadata: Metadata = {
   },
   metadataBase: new URL('https://workingholidaypass.jp'),
   alternates: {
-    canonical: '/',
     languages: {
       'ja-JP': '/',
     },

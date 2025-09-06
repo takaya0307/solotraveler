@@ -14,6 +14,7 @@ export type WorkingHolidayCountry = {
   nameJa: string;          // 国名（日本語）
   countryCode: string;     // 国コード（例: JP, AU）
   imageUrl: string;        // 国のイメージ画像
+  catchphrase?: string;    // キャッチコピー（追加）
   ageRange: string;        // 対象年齢
   stayPeriod: string;      // 滞在期間
   minWage: string;         // 最低賃金

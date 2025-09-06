@@ -1620,6 +1620,20 @@ img.modal-image {
   min-height: 0;
 }
 
+/* キャッチコピー */
+.catchphrase {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #4a5568;
+  text-align: center;
+  margin-bottom: 0.5rem;
+  padding: 0.5rem;
+  background: linear-gradient(135deg, #f7fafc 0%, #edf2f7 100%);
+  border-radius: 8px;
+  border-left: 4px solid #3182ce;
+  line-height: 1.4;
+}
+
 .country-summary {
   background: var(--neutral);
   border-radius: 12px;
@@ -1822,6 +1836,10 @@ img.modal-image {
     padding: 1.2rem 1.2rem 1.2rem 1.2rem; 
     gap: 0.8rem;
   }
+  .catchphrase {
+    font-size: 0.85rem;
+    padding: 0.4rem;
+  }
   .country-card {
     min-height: 320px;
   }
@@ -1838,6 +1856,10 @@ img.modal-image {
     padding: 1rem 1rem 1rem 1rem; 
     gap: 0.8rem;
   }
+  .catchphrase {
+    font-size: 0.8rem;
+    padding: 0.3rem;
+  }
   .country-card {
     min-height: 300px;
   }
@@ -1852,6 +1874,10 @@ img.modal-image {
   .card-content { 
     padding: 1rem 1rem 1rem 1rem; 
     gap: 0.8rem;
+  }
+  .catchphrase {
+    font-size: 0.75rem;
+    padding: 0.25rem;
   }
   .card-title { font-size: 1.1rem; }
   .card-title-overlay { padding: 1rem 1rem 1rem 1rem; }

@@ -5,6 +5,76 @@ import Link from "next/link";
 import Header from "./Header";
 import styles from "./CountryDetailLayout.module.css";
 
+// 通貨変換用の関数
+const getConvertedWage = (wage: string) => {
+  if (!wage) return '';
+  
+  // 「なし」の場合はそのまま返す
+  if (wage === 'なし') return 'なし';
+  
+  // 年齢により異なる注釈を除去
+  const cleanWage = wage.replace(' (年齢により異なる)', '');
+  
+  // 現在のレート（2024年1月時点の概算）
+  const exchangeRates: { [key: string]: number } = {
+    'A$': 95,   // オーストラリアドル
+    'CA$': 110, // カナダドル
+    'NZ$': 90,  // ニュージーランドドル
+    '€': 160,   // ユーロ
+    'EUR': 160, // ユーロ
+    '£': 185,   // 英ポンド
+    'USD': 148, // 米ドル
+    '$': 148,   // 米ドル（$記号）
+    'CAD': 110, // カナダドル
+    'NZD': 90,  // ニュージーランドドル
+    'KRW': 0.11, // 韓国ウォン
+    'TWD': 4.7, // 台湾ドル
+    'HK$': 19,  // 香港ドル
+    'HKD': 19,  // 香港ドル
+    'ARS': 0.15, // アルゼンチンペソ
+    'CLP': 0.16, // チリペソ
+    'UYU': 3.8, // ウルグアイペソ
+    'PLN': 37,  // ポーランドズロチ
+    'CZK': 6.5, // チェココルナ
+    'HUF': 0.4, // ハンガリーフォリント
+  };
+  
+  // 通貨記号と金額を抽出（より柔軟な正規表現）
+  const match = cleanWage.match(/([A-Z$€£]+)\s*(\d+(?:[.,]\d+)?)/);
+  if (!match) return cleanWage;
+  
+  const currency = match[1];
+  const amount = parseFloat(match[2].replace(',', ''));
+  const rate = exchangeRates[currency];
+  
+  if (!rate) return cleanWage;
+  
+  // 日本円に変換（100の位で四捨五入）
+  const jpyAmount = amount * rate;
+  const roundedAmount = Math.round(jpyAmount / 100) * 100;
+  
+  return `約${roundedAmount.toLocaleString()}円`;
+};
+
+const getOriginalCurrency = (wage: string) => {
+  if (!wage) return '';
+  
+  // 「なし」の場合は空文字を返す
+  if (wage === 'なし') return '';
+  
+  // 年齢により異なる注釈を除去
+  const cleanWage = wage.replace(' (年齢により異なる)', '');
+  
+  // 通貨記号と金額を抽出
+  const match = cleanWage.match(/([A-Z$€£]+)\s*(\d+(?:[.,]\d+)?)/);
+  if (!match) return '';
+  
+  const currency = match[1];
+  const amount = match[2];
+  
+  return `${currency}${amount}`;
+};
+
 interface CountryDetailLayoutProps {
   country: {
     id: string;
@@ -122,7 +192,11 @@ export default function CountryDetailLayout({
             </div>
             <h3>最低賃金</h3>
             <p>
-              {country.minWage}
+              {getConvertedWage(country.minWage)}
+              <br />
+              <span style={{ fontSize: '0.8rem', color: '#fff', opacity: 0.8 }}>
+                {getOriginalCurrency(country.minWage)}
+              </span>
               {country.id === 'uruguay' && (
                 <span style={{ fontSize: '0.8rem', color: '#fff', display: 'block', marginTop: '0.3rem' }}>
                   （月給ベースで計算）

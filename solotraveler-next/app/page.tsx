@@ -104,8 +104,8 @@ const generateItemListData = (countries: WorkingHolidayCountry[]) => {
         },
         {
           "@type": "PropertyValue",
-          "name": "対象年齢",
-          "value": country.ageRange
+          "name": "学べる言語",
+          "value": country.languages
         },
         {
           "@type": "PropertyValue",
@@ -670,10 +670,10 @@ const getOriginalCurrency = (wage: string) => {
                     </div>
                   </div>
                   <div className="info-item">
-                    <div className="info-icon">🎂</div>
+                    <div className="info-icon">🗣️</div>
                     <div className="info-content">
-                      <div className="info-label">年齢制限</div>
-                      <div className="info-value">{country.ageRange}</div>
+                      <div className="info-label">学べる言語</div>
+                      <div className="info-value">{country.languages}</div>
                     </div>
                   </div>
                   <div className="info-item">
@@ -761,9 +761,9 @@ const getOriginalCurrency = (wage: string) => {
                       <span style={{color: '#222'}}>{country.minWage}</span>
                     </div>
                     <div style={{display: 'flex', alignItems: 'center', gap: 10, fontSize: 16}}>
-                      <span style={{fontSize: 20}}>🎂</span>
-                      <span style={{fontWeight: 700, color: 'var(--main-blue)', minWidth: 80}}>対象年齢</span>
-                      <span style={{color: '#222'}}>{country.ageRange}</span>
+                      <span style={{fontSize: 20}}>🗣️</span>
+                      <span style={{fontWeight: 700, color: 'var(--main-blue)', minWidth: 80}}>学べる言語</span>
+                      <span style={{color: '#222'}}>{country.languages}</span>
                     </div>
                     <div style={{display: 'flex', alignItems: 'center', gap: 10, fontSize: 16}}>
                       <span style={{fontSize: 20}}>🕒</span>

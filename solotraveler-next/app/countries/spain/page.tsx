@@ -7,28 +7,28 @@ export default function SpainDetailPage() {
   const country = spainData.countries.find(c => c.id === "spain")!;
 
   // ページタイトルとメタディスクリプションの最適化
-  const pageTitle = `${country.nameJa}ワーホリの魅力`;
-  const pageDescription = "情熱的な文化と美食、歴史が薫る国";
+  const pageTitle = `${country.nameJa}ワーホリ`;
+  const pageDescription = "スペインは、情熱的な文化、豊かな美食、深い歴史を持つ国です。\nフラメンコ、闘牛、タパス文化など、独特の文化を体験でき、地中海の温暖な気候で過ごしやすい環境です。";
   
-  const countryDescription = "スペインは、情熱的な文化、豊かな美食、深い歴史を持つ国です。フラメンコ、闘牛、タパス文化など、独特の文化を体験でき、地中海の温暖な気候で過ごしやすい環境です。";
+  const countryDescription = "情熱的な文化と美食、歴史が薫る国";
   
   const countryFeatures = [
     {
       title: "情熱的な文化",
       description: "フラメンコと闘牛文化",
-      imageUrl: "https://images.unsplash.com/photo-1514890547357-a9ee288728e0?w=600&auto=format&fit=crop&q=60",
+      imageUrl: "https://images.unsplash.com/photo-1634156589964-c6da0fba0a05?w=1920&auto=format&fit=crop&q=80",
       imageAlt: "スペインの情熱的な文化"
     },
     {
       title: "美食の国",
       description: "タパスと地中海料理",
-      imageUrl: "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=600&auto=format&fit=crop&q=60",
+      imageUrl: "https://images.unsplash.com/photo-1621841957884-1210fe19d66d?w=1920&auto=format&fit=crop&q=80",
       imageAlt: "スペインの美食"
     },
     {
       title: "歴史的建造物",
       description: "アルハンブラ宮殿とサグラダ・ファミリア",
-      imageUrl: "https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?w=600&auto=format&fit=crop&q=60",
+      imageUrl: "https://images.unsplash.com/photo-1509840841025-9088ba78a826?w=1920&auto=format&fit=crop&q=80",
       imageAlt: "歴史的建造物"
     }
   ];
@@ -51,23 +51,10 @@ export default function SpainDetailPage() {
     }
   ];
   
-  const workingHolidayReasons = [
-    "スペイン語学習環境：スペイン語圏で、本格的なスペイン語を学べる",
-    "豊富な文化施設：世界クラスの美術館や博物館が数多くある",
-    "ヨーロッパ旅行の拠点：他のヨーロッパ各国へのアクセスが便利",
-    "文化体験：フラメンコや闘牛など独特の文化を体験できる環境"
-  ];
   
-  const englishLearningEnvironment = [
-    "スペイン語学習：スペイン語圏で、本格的なスペイン語を学べる環境",
-    "充実した語学学校：語学学校も充実しており、スペイン語力を伸ばすのに最適",
-    "多文化社会：様々な国の人々と交流でき、国際的な視点を身につけられる"
-  ];
   
-  const outdoorLifeDescription = "スペインには美しい海岸線、山々、田園風景など、様々な自然環境があります。ハイキング、スキー、ビーチリゾート、サイクリングなど、四季を通じて様々なアウトドアアクティビティが楽しめます。";
   
-
-  return (
+    return (
     <CountryDetailLayout
       country={country}
       pageTitle={pageTitle}
@@ -75,9 +62,6 @@ export default function SpainDetailPage() {
       countryDescription={countryDescription}
       countryFeatures={countryFeatures}
       countryAtmosphere={countryAtmosphere}
-      workingHolidayReasons={workingHolidayReasons}
-      englishLearningEnvironment={englishLearningEnvironment}
-      outdoorLifeDescription={outdoorLifeDescription}
       consultationLink="https://px.a8.net/svt/ejp?a8mat=45C1IF+AMTQR6+5S4I+BW8O2&a8ejpredirect=https%3A%2F%2Fwww.iss-ryugakulife.com%2Fcounseling"
     />
   );

@@ -6,28 +6,28 @@ export default function DenmarkDetailPage() {
   const country = denmarkData.countries.find(c => c.id === "denmark")!;
 
   // ページタイトルとメタディスクリプションの最適化
-  const pageTitle = `${country.nameJa}ワーホリの魅力`;
-  const pageDescription = "幸福・デザイン・自転車の国";
+  const pageTitle = `${country.nameJa}ワーホリ`;
+  const pageDescription = "デンマークは、世界で最も幸福な国の一つとして知られ、優れたデザイン文化と自転車文化を持つ国です。\nコペンハーゲンをはじめとする美しい都市、そして北欧の魅力を満喫できます。";
   
-  const countryDescription = "デンマークは、世界で最も幸福な国の一つとして知られ、優れたデザイン文化と自転車文化を持つ国です。コペンハーゲンをはじめとする美しい都市、そして北欧の魅力を満喫できます。";
+  const countryDescription = "幸福・デザイン・自転車の国";
   
   const countryFeatures = [
     {
       title: "幸福の国",
       description: "世界で最も幸福な国の一つ",
-      imageUrl: "https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?w=600&auto=format&fit=crop&q=60",
+      imageUrl: "https://images.unsplash.com/photo-1577346895253-445f05a6670d?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjR8fGRlbm1hcmt8ZW58MHx8MHx8fDA%3D",
       imageAlt: "デンマークの幸福"
     },
     {
       title: "デザイン文化",
       description: "北欧デザインの本場",
-      imageUrl: "https://images.unsplash.com/photo-1541961017774-22349e4a1262?w=600&auto=format&fit=crop&q=60",
+      imageUrl: "https://images.unsplash.com/photo-1513622470522-26c3c8a854bc?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8ZGVubWFya3xlbnwwfHwwfHx8MA%3D%3D",
       imageAlt: "デンマークのデザイン文化"
     },
     {
       title: "自転車文化",
       description: "自転車が生活の中心",
-      imageUrl: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600&auto=format&fit=crop&q=60",
+      imageUrl: "https://images.unsplash.com/photo-1561113500-8f4ad4f80a93?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fGRlbm1hcmt8ZW58MHx8MHx8fDA%3D",
       imageAlt: "デンマークの自転車文化"
     }
   ];
@@ -50,22 +50,10 @@ export default function DenmarkDetailPage() {
     }
   ];
   
-  const workingHolidayReasons = [
-    "デンマーク語学習環境：デンマーク語圏で、本格的なデンマーク語を学べる",
-    "豊富な文化体験：デザイン、アート、音楽など豊富な文化施設",
-    "北欧文化体験：北欧の伝統文化と現代的なライフスタイル",
-    "幸福な生活体験：世界で最も幸福な国の生活を体験できる環境"
-  ];
   
-  const englishLearningEnvironment = [
-    "デンマーク語学習：デンマーク語圏で、本格的なデンマーク語を学べる環境",
-    "充実した語学学校：語学学校も充実しており、デンマーク語力を伸ばすのに最適",
-    "多文化社会：様々な国の人々と交流でき、国際的な視点を身につけられる"
-  ];
   
-  const outdoorLifeDescription = "デンマークには美しい海岸線、森、国立公園など、様々な自然環境があります。サイクリング、ハイキング、ビーチリゾート、キャンプなど、四季を通じて様々なアウトドアアクティビティが楽しめます。";
-
-  return (
+  
+    return (
     <CountryDetailLayout
       country={country}
       pageTitle={pageTitle}
@@ -73,9 +61,6 @@ export default function DenmarkDetailPage() {
       countryDescription={countryDescription}
       countryFeatures={countryFeatures}
       countryAtmosphere={countryAtmosphere}
-      workingHolidayReasons={workingHolidayReasons}
-      englishLearningEnvironment={englishLearningEnvironment}
-      outdoorLifeDescription={outdoorLifeDescription}
       consultationLink="https://px.a8.net/svt/ejp?a8mat=45C1IF+AMTQR6+5S4I+BW8O2&a8ejpredirect=https%3A%2F%2Fwww.iss-ryugakulife.com%2Fcounseling"
     />
   );

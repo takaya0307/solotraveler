@@ -5,28 +5,28 @@ import polandData from "../../../db.json";
 export default function PolandDetailPage() {
   const country = polandData.countries.find(c => c.id === "poland")!;
 
-  const pageTitle = `${country.nameJa}ワーキングホリデーの魅力`;
-  const pageDescription = "歴史・文化・自然の国";
+  const pageTitle = `${country.nameJa}ワーキングホリデー`;
+  const pageDescription = "ポーランドは、豊かな歴史と文化、美しい自然を持つ国です。\nワルシャワやクラクフなどの歴史的な都市、そして美しい山々や森を満喫できます。";
   
-  const countryDescription = "ポーランドは、豊かな歴史と文化、美しい自然を持つ国です。ワルシャワやクラクフなどの歴史的な都市、そして美しい山々や森を満喫できます。";
+  const countryDescription = "歴史・文化・自然の国";
   
   const countryFeatures = [
     {
       title: "豊かな歴史",
       description: "中世から現代までの歴史的建造物",
-      imageUrl: "https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?w=600&auto=format&fit=crop&q=60",
+      imageUrl: "https://images.unsplash.com/photo-1495181941197-70a606546974?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTV8fHBvbGFuZHxlbnwwfHwwfHx8MA%3D%3D",
       imageAlt: "ポーランドの歴史"
     },
     {
       title: "美しい自然",
       description: "タトラ山脈と美しい森",
-      imageUrl: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600&auto=format&fit=crop&q=60",
+      imageUrl: "https://images.unsplash.com/photo-1508930993032-fbbaf4f2821a?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjZ8fHBvbGFuZHxlbnwwfHwwfHx8MA%3D%3D",
       imageAlt: "ポーランドの自然"
     },
     {
       title: "豊かな文化",
       description: "伝統的なポーランド文化",
-      imageUrl: "https://images.unsplash.com/photo-1541961017774-22349e4a1262?w=600&auto=format&fit=crop&q=60",
+      imageUrl: "https://images.unsplash.com/photo-1522689764216-4e6966e5e444?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8cG9sYW5kfGVufDB8fDB8fHww",
       imageAlt: "ポーランドの文化"
     }
   ];
@@ -49,22 +49,10 @@ export default function PolandDetailPage() {
     }
   ];
   
-  const workingHolidayReasons = [
-    "ポーランド語学習環境：ポーランド語圏で、本格的なポーランド語を学べる",
-    "豊富な文化体験：歴史、美術、音楽など豊富な文化施設",
-    "ヨーロッパ旅行の拠点：他のヨーロッパ各国へのアクセスが便利",
-    "自然体験：美しい山々や森でのアウトドアアクティビティ"
-  ];
   
-  const englishLearningEnvironment = [
-    "ポーランド語学習：ポーランド語圏で、本格的なポーランド語を学べる環境",
-    "充実した語学学校：語学学校も充実しており、ポーランド語力を伸ばすのに最適",
-    "多文化社会：様々な国の人々と交流でき、国際的な視点を身につけられる"
-  ];
   
-  const outdoorLifeDescription = "ポーランドには美しい山々、森、湖など、様々な自然環境があります。ハイキング、スキー、キャンプ、釣りなど、四季を通じて様々なアウトドアアクティビティが楽しめます。";
 
-  return (
+    return (
     <CountryDetailLayout
       country={country}
       pageTitle={pageTitle}
@@ -72,9 +60,6 @@ export default function PolandDetailPage() {
       countryDescription={countryDescription}
       countryFeatures={countryFeatures}
       countryAtmosphere={countryAtmosphere}
-      workingHolidayReasons={workingHolidayReasons}
-      englishLearningEnvironment={englishLearningEnvironment}
-      outdoorLifeDescription={outdoorLifeDescription}
       consultationLink="https://px.a8.net/svt/ejp?a8mat=45C1IF+AMTQR6+5S4I+BW8O2&a8ejpredirect=https%3A%2F%2Fwww.iss-ryugakulife.com%2Fcounseling"
     />
   );

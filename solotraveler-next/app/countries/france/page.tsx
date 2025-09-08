@@ -5,28 +5,28 @@ import franceData from "../../../db.json";
 export default function FranceDetailPage() {
   const country = franceData.countries.find(c => c.id === "france")!;
 
-  const pageTitle = `${country.nameJa}ワーホリの魅力`;
-  const pageDescription = "芸術・ファッション・美食の本場、ヨーロッパの中心地";
+  const pageTitle = `${country.nameJa}ワーホリ`;
+  const pageDescription = "フランスは、芸術、ファッション、美食の本場として知られるヨーロッパの中心地です。\nパリをはじめとする美しい都市、豊かな文化、そして世界最高峰の料理を楽しむことができます。";
   
-  const countryDescription = "フランスは、芸術、ファッション、美食の本場として知られるヨーロッパの中心地です。パリをはじめとする美しい都市、豊かな文化、そして世界最高峰の料理を楽しむことができます。";
+  const countryDescription = "芸術・ファッション・美食の本場、ヨーロッパの中心地";
   
   const countryFeatures = [
     {
       title: "芸術と文化",
       description: "ルーブル美術館やオルセー美術館など世界最高峰の美術館",
-      imageUrl: "https://images.unsplash.com/photo-1541961017774-22349e4a1262?w=600&auto=format&fit=crop&q=60",
+      imageUrl: "https://images.unsplash.com/photo-1752461046051-3b6c1d95d61c?w=1920&auto=format&fit=crop&q=80",
       imageAlt: "フランスの芸術と文化"
     },
     {
       title: "美食の国",
       description: "世界最高峰のレストランとワイン文化",
-      imageUrl: "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=600&auto=format&fit=crop&q=60",
+      imageUrl: "https://images.unsplash.com/photo-1724015736616-60f63aaf72b2?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjB8fEZyYW5jZSUyMGZvb2R8ZW58MHx8MHx8fDA%3D",
       imageAlt: "フランスの美食"
     },
     {
       title: "ファッション",
       description: "パリコレクションと世界のファッションの中心",
-      imageUrl: "https://images.unsplash.com/photo-1445205170230-053b83016050?w=600&auto=format&fit=crop&q=60",
+      imageUrl: "https://images.unsplash.com/photo-1445205170230-053b83016050?w=1920&auto=format&fit=crop&q=80",
       imageAlt: "フランスのファッション"
     }
   ];
@@ -49,23 +49,10 @@ export default function FranceDetailPage() {
     }
   ];
   
-  const workingHolidayReasons = [
-    "芸術文化体験：世界最高峰の美術館や文化施設で芸術に触れられる",
-    "語学学習：フランス語を学びながら、実践的な会話力を身につけられる",
-    "美食体験：世界最高峰のレストランで本格的なフランス料理を楽しめる",
-    "ファッション体験：パリコレクションなど世界のファッションの最前線を体験できる"
-  ];
   
-  const englishLearningEnvironment = [
-    "フランス語学習：フランス語圏で、本格的なフランス語を学べる環境",
-    "語学学校：フランス語学校も充実しており、語学力を伸ばすのに最適",
-    "多文化社会：様々な国の人々と交流でき、国際的な視点を身につけられる"
-  ];
   
-  const outdoorLifeDescription = "フランスには美しい田園地帯やアルプス山脈、地中海沿岸など、様々な自然環境があります。ハイキング、スキー、ビーチリゾートなど、四季を通じて様々なアウトドアアクティビティが楽しめます。";
   
-
-  return (
+    return (
     <CountryDetailLayout
       country={country}
       pageTitle={pageTitle}
@@ -73,9 +60,6 @@ export default function FranceDetailPage() {
       countryDescription={countryDescription}
       countryFeatures={countryFeatures}
       countryAtmosphere={countryAtmosphere}
-      workingHolidayReasons={workingHolidayReasons}
-      englishLearningEnvironment={englishLearningEnvironment}
-      outdoorLifeDescription={outdoorLifeDescription}
       consultationLink="https://px.a8.net/svt/ejp?a8mat=45C1IF+AMTQR6+5S4I+BW8O2&a8ejpredirect=https%3A%2F%2Fwww.iss-ryugakulife.com%2Fcounseling"
     />
   );

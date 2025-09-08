@@ -5,28 +5,28 @@ import germanyData from "../../../db.json";
 export default function GermanyDetailPage() {
   const country = germanyData.countries.find(c => c.id === "germany")!;
 
-  const pageTitle = `${country.nameJa}ワーホリの魅力`;
-  const pageDescription = "技術・文化・歴史が融合するヨーロッパの中心地";
+  const pageTitle = `${country.nameJa}ワーホリ`;
+  const pageDescription = "ドイツは、高度な技術力と豊かな文化、深い歴史を持つヨーロッパの中心地です。\n自動車産業や製造業で知られ、効率的で質の高い生活を送ることができる国です。";
   
-  const countryDescription = "ドイツは、高度な技術力と豊かな文化、深い歴史を持つヨーロッパの中心地です。自動車産業や製造業で知られ、効率的で質の高い生活を送ることができる国です。";
+  const countryDescription = "技術・文化・歴史が融合するヨーロッパの中心地";
   
   const countryFeatures = [
     {
       title: "技術力",
       description: "世界最高峰の自動車産業と製造業",
-      imageUrl: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=600&auto=format&fit=crop&q=60",
+      imageUrl: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=1920&auto=format&fit=crop&q=80",
       imageAlt: "ドイツの技術力"
     },
     {
       title: "文化と芸術",
       description: "豊かな音楽文化と美術館",
-      imageUrl: "https://images.unsplash.com/photo-1541961017774-22349e4a1262?w=600&auto=format&fit=crop&q=60",
+      imageUrl: "https://images.unsplash.com/photo-1560929585-ba3c24ec6c44?w=1920&auto=format&fit=crop&q=80",
       imageAlt: "ドイツの文化と芸術"
     },
     {
       title: "歴史的建造物",
       description: "中世の街並みと城",
-      imageUrl: "https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?w=600&auto=format&fit=crop&q=60",
+      imageUrl: "https://images.unsplash.com/photo-1485465053475-dd55ed3894b9?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MzN8fGdlcm1hbnl8ZW58MHx8MHx8fDA%3D",
       imageAlt: "歴史的建造物"
     }
   ];
@@ -49,23 +49,10 @@ export default function GermanyDetailPage() {
     }
   ];
   
-  const workingHolidayReasons = [
-    "ドイツ語学習環境：ドイツ語圏で、本格的なドイツ語を学べる",
-    "豊富な文化施設：世界クラスの美術館や博物館が数多くある",
-    "ヨーロッパ旅行の拠点：他のヨーロッパ各国へのアクセスが便利",
-    "技術体験：世界最高峰の技術と製造業を体験できる環境"
-  ];
   
-  const englishLearningEnvironment = [
-    "ドイツ語学習：ドイツ語圏で、本格的なドイツ語を学べる環境",
-    "充実した語学学校：語学学校も充実しており、ドイツ語力を伸ばすのに最適",
-    "多文化社会：様々な国の人々と交流でき、国際的な視点を身につけられる"
-  ];
   
-  const outdoorLifeDescription = "ドイツには美しい森や山々、湖など、様々な自然環境があります。ハイキング、スキー、サイクリング、キャンプなど、四季を通じて様々なアウトドアアクティビティが楽しめます。";
   
-
-  return (
+    return (
     <CountryDetailLayout
       country={country}
       pageTitle={pageTitle}
@@ -73,9 +60,6 @@ export default function GermanyDetailPage() {
       countryDescription={countryDescription}
       countryFeatures={countryFeatures}
       countryAtmosphere={countryAtmosphere}
-      workingHolidayReasons={workingHolidayReasons}
-      englishLearningEnvironment={englishLearningEnvironment}
-      outdoorLifeDescription={outdoorLifeDescription}
       consultationLink="https://px.a8.net/svt/ejp?a8mat=45C1IF+AMTQR6+5S4I+BW8O2&a8ejpredirect=https%3A%2F%2Fwww.iss-ryugakulife.com%2Fcounseling"
     />
   );

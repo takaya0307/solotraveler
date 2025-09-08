@@ -6,28 +6,28 @@ export default function IcelandDetailPage() {
   const country = icelandData.countries.find(c => c.id === "iceland")!;
 
   // ページタイトルとメタディスクリプションの最適化
-  const pageTitle = `${country.nameJa}ワーホリの魅力`;
-  const pageDescription = "オーロラ・火山・温泉の国";
+  const pageTitle = `${country.nameJa}ワーホリ`;
+  const pageDescription = "アイスランドは、美しいオーロラ、活発な火山、そして温泉を持つ国です。\nレイキャビクをはじめとする美しい都市、そして美しい自然を満喫できます。";
   
-  const countryDescription = "アイスランドは、美しいオーロラ、活発な火山、そして温泉を持つ国です。レイキャビクをはじめとする美しい都市、そして美しい自然を満喫できます。";
+  const countryDescription = "オーロラ・火山・温泉の国";
   
   const countryFeatures = [
     {
       title: "オーロラの国",
       description: "美しい北極光の観測",
-      imageUrl: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600&auto=format&fit=crop&q=60",
+      imageUrl: "https://images.unsplash.com/photo-1529963183134-61a90db47eaf?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fGljZWxhbmR8ZW58MHx8MHx8fDA%3D",
       imageAlt: "アイスランドのオーロラ"
     },
     {
       title: "火山の国",
       description: "活発な火山活動と地熱",
-      imageUrl: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600&auto=format&fit=crop&q=60",
+      imageUrl: "https://images.unsplash.com/photo-1547626740-02cb6aed9ef8?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NTV8fGljZWxhbmR8ZW58MHx8MHx8fDA%3D",
       imageAlt: "アイスランドの火山"
     },
     {
       title: "温泉の国",
       description: "豊富な温泉と地熱資源",
-      imageUrl: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600&auto=format&fit=crop&q=60",
+      imageUrl: "https://images.unsplash.com/photo-1456180520039-cf41fe5e719c?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NDB8fGljZWxhbmR8ZW58MHx8MHx8fDA%3D",
       imageAlt: "アイスランドの温泉"
     }
   ];
@@ -50,22 +50,10 @@ export default function IcelandDetailPage() {
     }
   ];
   
-  const workingHolidayReasons = [
-    "アイスランド語学習環境：アイスランド語圏で、本格的なアイスランド語を学べる",
-    "豊富な自然体験：オーロラ、火山、温泉など豊富な自然現象",
-    "北欧文化体験：北欧の伝統文化と現代的なライフスタイル",
-    "オーロラ体験：美しい北極光を観測できる環境"
-  ];
   
-  const englishLearningEnvironment = [
-    "アイスランド語学習：アイスランド語圏で、本格的なアイスランド語を学べる環境",
-    "充実した語学学校：語学学校も充実しており、アイスランド語力を伸ばすのに最適",
-    "多文化社会：様々な国の人々と交流でき、国際的な視点を身につけられる"
-  ];
   
-  const outdoorLifeDescription = "アイスランドには美しいオーロラ、火山、温泉、氷河など、様々な自然環境があります。オーロラ観測、温泉、ハイキング、スキーなど、四季を通じて様々なアウトドアアクティビティが楽しめます。";
 
-  return (
+    return (
     <CountryDetailLayout
       country={country}
       pageTitle={pageTitle}
@@ -73,9 +61,6 @@ export default function IcelandDetailPage() {
       countryDescription={countryDescription}
       countryFeatures={countryFeatures}
       countryAtmosphere={countryAtmosphere}
-      workingHolidayReasons={workingHolidayReasons}
-      englishLearningEnvironment={englishLearningEnvironment}
-      outdoorLifeDescription={outdoorLifeDescription}
       consultationLink="https://px.a8.net/svt/ejp?a8mat=45C1IF+AMTQR6+5S4I+BW8O2&a8ejpredirect=https%3A%2F%2Fwww.iss-ryugakulife.com%2Fcounseling"
     />
   );

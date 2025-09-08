@@ -5,28 +5,28 @@ import newzealandData from "../../../db.json";
 export default function NewZealandDetailPage() {
   const country = newzealandData.countries.find(c => c.id === "newzealand")!;
 
-  const pageTitle = `${country.nameJa}ワーホリの魅力`;
-  const pageDescription = "大自然とフレンドリーな人々が魅力の南太平洋の国";
+  const pageTitle = `${country.nameJa}ワーホリ`;
+  const pageDescription = "ニュージーランドは、南太平洋に浮かぶ美しい島国。\n雄大な自然とフレンドリーな人々が魅力で、のんびりとした雰囲気が特徴です。フィヨルドや山々、美しい湖など、大自然を満喫できる環境が整っています。";
   
-  const countryDescription = "ニュージーランドは、南太平洋に浮かぶ美しい島国。雄大な自然とフレンドリーな人々が魅力で、のんびりとした雰囲気が特徴です。フィヨルドや山々、美しい湖など、大自然を満喫できる環境が整っています。";
+  const countryDescription = "大自然とフレンドリーな人々が魅力の南太平洋の国";
   
   const countryFeatures = [
     {
       title: "大自然",
       description: "フィヨルドや山々でのアウトドア",
-      imageUrl: "https://images.unsplash.com/photo-1595125990323-885cec5217ff?w=600&auto=format&fit=crop&q=60",
+      imageUrl: "https://images.unsplash.com/photo-1595125990323-885cec5217ff?w=1920&auto=format&fit=crop&q=80",
       imageAlt: "ニュージーランドの大自然"
     },
     {
       title: "アドベンチャー",
       description: "バンジージャンプやスカイダイビング",
-      imageUrl: "https://images.unsplash.com/photo-1515253648320-6d70d901f0ac?w=600&auto=format&fit=crop&q=60",
+      imageUrl: "https://images.unsplash.com/photo-1515253648320-6d70d901f0ac?w=1920&auto=format&fit=crop&q=80",
       imageAlt: "アドベンチャースポーツ"
     },
     {
       title: "温泉文化",
       description: "地熱地帯での温泉体験",
-      imageUrl: "https://images.unsplash.com/photo-1680180730599-61216c165c96?w=600&auto=format&fit=crop&q=60",
+      imageUrl: "https://images.unsplash.com/photo-1680180730599-61216c165c96?w=1920&auto=format&fit=crop&q=80",
       imageAlt: "温泉文化"
     }
   ];
@@ -49,22 +49,10 @@ export default function NewZealandDetailPage() {
     }
   ];
   
-  const workingHolidayReasons = [
-    "英語学習環境：英語圏で、比較的聞き取りやすいニュージーランド英語",
-    "豊富な仕事：農業や観光業の仕事が豊富で、ワーホリビザでも比較的仕事を見つけやすい",
-    "高い賃金：最低賃金が高いため、生活費を稼ぎながら英語を学べる",
-    "自然体験：雄大な自然の中でアウトドアアクティビティが楽しめる"
-  ];
   
-  const englishLearningEnvironment = [
-    "聞き取りやすい英語：ニュージーランド英語は比較的聞き取りやすく、英語学習初心者にも適しています",
-    "充実した語学学校：語学学校も充実しており、英語力を伸ばすのに最適な環境です",
-    "多文化社会：様々な国の人々と交流でき、実践的な英語力を身につけることができます"
-  ];
   
-  const outdoorLifeDescription = "フィヨルド、山々、美しい湖など、自然が豊富です。ハイキング、スキー、キャンプ、アドベンチャースポーツなど、四季を通じて様々なアウトドアアクティビティが楽しめます。";
-
-  return (
+  
+    return (
     <CountryDetailLayout
       country={country}
       pageTitle={pageTitle}
@@ -72,9 +60,6 @@ export default function NewZealandDetailPage() {
       countryDescription={countryDescription}
       countryFeatures={countryFeatures}
       countryAtmosphere={countryAtmosphere}
-      workingHolidayReasons={workingHolidayReasons}
-      englishLearningEnvironment={englishLearningEnvironment}
-      outdoorLifeDescription={outdoorLifeDescription}
       consultationLink="https://px.a8.net/svt/ejp?a8mat=45C1IF+AMTQR6+5S4I+BW8O2&a8ejpredirect=https%3A%2F%2Fwww.iss-ryugakulife.com%2Fcounseling"
     />
   );

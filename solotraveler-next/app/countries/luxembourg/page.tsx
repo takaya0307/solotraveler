@@ -6,28 +6,28 @@ export default function LuxembourgDetailPage() {
   const country = luxembourgData.countries.find(c => c.id === "luxembourg")!;
 
   // ページタイトルとメタディスクリプションの最適化
-  const pageTitle = `ルクセンブルクワーホリの魅力`;
-  const pageDescription = "ルクセンブルクワーホリで体験できる金融・文化・自然の国";
+  const pageTitle = `ルクセンブルクワーホリ`;
+  const pageDescription = "ルクセンブルクでは、世界有数の金融センター、豊かな文化、そして美しい自然を持つ国で生活できます。\nルクセンブルク市をはじめとする美しい都市、そして美しい自然を満喫できるワーホリ体験が待っています。";
   
-  const countryDescription = "ルクセンブルクでは、世界有数の金融センター、豊かな文化、そして美しい自然を持つ国で生活できます。ルクセンブルク市をはじめとする美しい都市、そして美しい自然を満喫できるワーホリ体験が待っています。";
+  const countryDescription = "ルクセンブルクワーホリで体験できる金融・文化・自然の国";
   
   const countryFeatures = [
     {
       title: "金融の国",
       description: "世界有数の金融センター",
-      imageUrl: "https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?w=600&auto=format&fit=crop&q=60",
+      imageUrl: "https://images.unsplash.com/photo-1616778504617-11615e3ceff7?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTN8fEx1eGVtYm91cmd8ZW58MHx8MHx8fDA%3D",
       imageAlt: "ルクセンブルクの金融"
     },
     {
       title: "豊かな文化",
       description: "伝統的なルクセンブルク文化",
-      imageUrl: "https://images.unsplash.com/photo-1541961017774-22349e4a1262?w=600&auto=format&fit=crop&q=60",
+      imageUrl: "https://images.unsplash.com/photo-1543930379-9c68a7de2be8?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fEx1eGVtYm91cmd8ZW58MHx8MHx8fDA%3D",
       imageAlt: "ルクセンブルクの文化"
     },
     {
       title: "美しい自然",
       description: "森と美しい景観",
-      imageUrl: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600&auto=format&fit=crop&q=60",
+      imageUrl: "https://images.unsplash.com/photo-1593449044658-9b256082c8b6?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjF8fEx1eGVtYm91cmd8ZW58MHx8MHx8fDA%3D",
       imageAlt: "ルクセンブルクの自然"
     }
   ];
@@ -50,22 +50,10 @@ export default function LuxembourgDetailPage() {
     }
   ];
   
-  const workingHolidayReasons = [
-    "言語学習環境：本格的なルクセンブルク語を学べる",
-    "豊富な文化体験：美術、音楽、歴史など豊富な文化施設",
-    "ヨーロッパ旅行の拠点：他のヨーロッパ各国へのアクセスが便利",
-    "自然体験：美しい森や田園風景でのアウトドアアクティビティ"
-  ];
   
-  const englishLearningEnvironment = [
-    "言語学習：本格的なルクセンブルク語を学べる環境",
-    "充実した語学学校：語学学校も充実しており、ルクセンブルク語力を伸ばすのに最適",
-    "多文化社会：様々な国の人々と交流でき、国際的な視点を身につけられる"
-  ];
   
-  const outdoorLifeDescription = "ルクセンブルクには美しい森、田園風景、国立公園など、様々な自然環境があります。ハイキング、サイクリング、キャンプ、釣りなど、四季を通じて様々なアウトドアアクティビティが楽しめます。";
 
-  return (
+    return (
     <CountryDetailLayout
       country={country}
       pageTitle={pageTitle}
@@ -73,9 +61,6 @@ export default function LuxembourgDetailPage() {
       countryDescription={countryDescription}
       countryFeatures={countryFeatures}
       countryAtmosphere={countryAtmosphere}
-      workingHolidayReasons={workingHolidayReasons}
-      englishLearningEnvironment={englishLearningEnvironment}
-      outdoorLifeDescription={outdoorLifeDescription}
       consultationLink="https://px.a8.net/svt/ejp?a8mat=45C1IF+AMTQR6+5S4I+BW8O2&a8ejpredirect=https%3A%2F%2Fwww.iss-ryugakulife.com%2Fcounseling"
     />
   );

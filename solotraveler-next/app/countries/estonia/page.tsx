@@ -6,28 +6,28 @@ export default function EstoniaDetailPage() {
   const country = estoniaData.countries.find(c => c.id === "estonia")!;
 
   // ページタイトルとメタディスクリプションの最適化
-  const pageTitle = `${country.nameJa}ワーホリの魅力`;
-  const pageDescription = "デジタル・文化・自然の国";
+  const pageTitle = `${country.nameJa}ワーホリ`;
+  const pageDescription = "エストニアは、デジタル化が進んだ先進国で、豊かな文化と美しい自然を持つ国です。\nタリンをはじめとする美しい都市、そして美しい自然を満喫できます。";
   
-  const countryDescription = "エストニアは、デジタル化が進んだ先進国で、豊かな文化と美しい自然を持つ国です。タリンをはじめとする美しい都市、そして美しい自然を満喫できます。";
+  const countryDescription = "デジタル・文化・自然の国";
   
   const countryFeatures = [
     {
       title: "デジタル先進国",
       description: "世界最先端のデジタル技術",
-      imageUrl: "https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?w=600&auto=format&fit=crop&q=60",
+      imageUrl: "https://images.unsplash.com/photo-1560873564-8423716d9f2a?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8ZXN0b25pYXxlbnwwfHwwfHx8MA%3D%3D",
       imageAlt: "エストニアのデジタル技術"
     },
     {
       title: "豊かな文化",
       description: "伝統的なエストニア文化",
-      imageUrl: "https://images.unsplash.com/photo-1541961017774-22349e4a1262?w=600&auto=format&fit=crop&q=60",
+      imageUrl: "https://images.unsplash.com/photo-1597552945536-204b782f9777?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NTB8fGVzdG9uaWF8ZW58MHx8MHx8fDA%3D",
       imageAlt: "エストニアの文化"
     },
     {
       title: "美しい自然",
       description: "森と湖の美しい景観",
-      imageUrl: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600&auto=format&fit=crop&q=60",
+      imageUrl: "https://images.unsplash.com/photo-1628075838471-2acd4e11b722?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjN8fGVzdG9uaWF8ZW58MHx8MHx8fDA%3D",
       imageAlt: "エストニアの自然"
     }
   ];
@@ -50,22 +50,10 @@ export default function EstoniaDetailPage() {
     }
   ];
   
-  const workingHolidayReasons = [
-    "エストニア語学習環境：エストニア語圏で、本格的なエストニア語を学べる",
-    "豊富な文化体験：建築、美術、音楽など豊富な文化施設",
-    "ヨーロッパ旅行の拠点：他のヨーロッパ各国へのアクセスが便利",
-    "デジタル体験：世界最先端のデジタル技術を体験できる環境"
-  ];
   
-  const englishLearningEnvironment = [
-    "エストニア語学習：エストニア語圏で、本格的なエストニア語を学べる環境",
-    "充実した語学学校：語学学校も充実しており、エストニア語力を伸ばすのに最適",
-    "多文化社会：様々な国の人々と交流でき、国際的な視点を身につけられる"
-  ];
   
-  const outdoorLifeDescription = "エストニアには美しい森、湖、海岸線など、様々な自然環境があります。ハイキング、スキー、キャンプ、釣り、ビーチリゾートなど、四季を通じて様々なアウトドアアクティビティが楽しめます。";
 
-  return (
+    return (
     <CountryDetailLayout
       country={country}
       pageTitle={pageTitle}
@@ -73,9 +61,6 @@ export default function EstoniaDetailPage() {
       countryDescription={countryDescription}
       countryFeatures={countryFeatures}
       countryAtmosphere={countryAtmosphere}
-      workingHolidayReasons={workingHolidayReasons}
-      englishLearningEnvironment={englishLearningEnvironment}
-      outdoorLifeDescription={outdoorLifeDescription}
       consultationLink="https://px.a8.net/svt/ejp?a8mat=45C1IF+AMTQR6+5S4I+BW8O2&a8ejpredirect=https%3A%2F%2Fwww.iss-ryugakulife.com%2Fcounseling"
     />
   );

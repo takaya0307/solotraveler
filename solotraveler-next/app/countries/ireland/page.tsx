@@ -1,3 +1,4 @@
+
 "use client";
 
 import React from "react";import CountryDetailLayout from "../../components/CountryDetailLayout";
@@ -5,28 +6,28 @@ import irelandData from "../../../db.json";
 export default function IrelandDetailPage() {
   const country = irelandData.countries.find(c => c.id === "ireland")!;
 
-  const pageTitle = `${country.nameJa}ワーキングホリデーの魅力`;
-  const pageDescription = "緑・文化・歴史の国";
+  const pageTitle = `${country.nameJa}ワーキングホリデー`;
+  const pageDescription = "アイルランドは、美しい緑の風景、豊かな文化、そして深い歴史を持つ国です。\nダブリンをはじめとする美しい都市、そして美しい自然を満喫できます。";
   
-  const countryDescription = "アイルランドは、美しい緑の風景、豊かな文化、そして深い歴史を持つ国です。ダブリンをはじめとする美しい都市、そして美しい自然を満喫できます。";
+  const countryDescription = "緑・文化・歴史の国";
   
   const countryFeatures = [
     {
       title: "緑の国",
       description: "美しい緑の風景と自然",
-      imageUrl: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600&auto=format&fit=crop&q=60",
+      imageUrl: "https://images.unsplash.com/photo-1602354817989-b9664561ae84?w=1920&auto=format&fit=crop&q=80",
       imageAlt: "アイルランドの緑"
     },
     {
       title: "豊かな文化",
       description: "伝統的なアイルランド文化",
-      imageUrl: "https://images.unsplash.com/photo-1541961017774-22349e4a1262?w=600&auto=format&fit=crop&q=60",
+      imageUrl: "https://images.unsplash.com/photo-1623430948701-b6653fd917f1?w=1920&auto=format&fit=crop&q=80",
       imageAlt: "アイルランドの文化"
     },
     {
       title: "深い歴史",
       description: "ケルト文化と歴史的建造物",
-      imageUrl: "https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?w=600&auto=format&fit=crop&q=60",
+      imageUrl: "https://images.unsplash.com/photo-1572998124463-e2dbc434797a?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mzh8fGlyZWxhbmR8ZW58MHx8MHx8fDA%3D",
       imageAlt: "アイルランドの歴史"
     }
   ];
@@ -49,18 +50,18 @@ export default function IrelandDetailPage() {
     }
   ];
   
-  const workingHolidayReasons = [
-    "英語学習環境：英語圏で、正統な英語を学べる",
-    "豊富な文化体験：ケルト文化、音楽、文学など豊富な文化施設",
-    "ヨーロッパ旅行の拠点：他のヨーロッパ各国へのアクセスが便利",
-    "自然体験：美しい緑の風景でのアウトドアアクティビティ"
-  ];
   
-  const englishLearningEnvironment = [
-    "英語学習：英語圏で、正統な英語を学べる環境",
-    "充実した語学学校：語学学校も充実しており、英語力を伸ばすのに最適",
-    "多文化社会：様々な国の人々と交流でき、国際的な視点を身につけられる"
-  ];
   
-  const outdoorLifeDescription = "アイルランドには美しい緑の風景、海岸線、国立公園など、様々な自然環境があります。ハイキング、サイクリング、キャンプ、釣り、ゴルフなど、四季を通じて様々なアウトドアアクティビティが楽しめます。";
-  
+
+  return (
+    <CountryDetailLayout
+      country={country}
+      pageTitle={pageTitle}
+      pageDescription={pageDescription}
+      countryDescription={countryDescription}
+      countryFeatures={countryFeatures}
+      countryAtmosphere={countryAtmosphere}
+      consultationLink="https://px.a8.net/svt/ejp?a8mat=45C1IF+AMTQR6+5S4I+BW8O2&a8ejpredirect=https%3A%2F%2Fwww.iss-ryugakulife.com%2Fcounseling"
+    />
+  );
+}

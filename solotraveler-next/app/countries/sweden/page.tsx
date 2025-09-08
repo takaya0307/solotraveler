@@ -6,28 +6,28 @@ import swedenData from "../../../db.json";
 export default function SwedenDetailPage() {
   const country = swedenData.countries.find(c => c.id === "sweden")!;
 
-  const pageTitle = `${country.nameJa}ワーキングホリデーの魅力`;
-  const pageDescription = "福祉・自然・デザインの国";
+  const pageTitle = `${country.nameJa}ワーキングホリデー`;
+  const pageDescription = "スウェーデンは、高福祉国家として知られ、美しい自然と優れたデザイン文化を持つ国です。\nストックホルムをはじめとする美しい都市、広大な森や湖など、北欧の魅力を満喫できます。";
   
-  const countryDescription = "スウェーデンは、高福祉国家として知られ、美しい自然と優れたデザイン文化を持つ国です。ストックホルムをはじめとする美しい都市、広大な森や湖など、北欧の魅力を満喫できます。";
+  const countryDescription = "福祉・自然・デザインの国";
   
   const countryFeatures = [
     {
       title: "高福祉社会",
       description: "充実した社会保障制度",
-      imageUrl: "https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?w=600&auto=format&fit=crop&q=60",
+      imageUrl: "https://images.unsplash.com/photo-1600290601473-3b73e4c531c9?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NDR8fHN3ZWRlbnxlbnwwfHwwfHx8MA%3D%3D",
       imageAlt: "スウェーデンの高福祉社会"
     },
     {
       title: "美しい自然",
       description: "広大な森と美しい湖",
-      imageUrl: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600&auto=format&fit=crop&q=60",
+      imageUrl: "https://images.unsplash.com/photo-1633430300352-bcb3420c0ed5?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTZ8fHN3ZWRlbnxlbnwwfHwwfHx8MA%3D%3D",
       imageAlt: "スウェーデンの自然"
     },
     {
       title: "デザイン文化",
       description: "北欧デザインの本場",
-      imageUrl: "https://images.unsplash.com/photo-1541961017774-22349e4a1262?w=600&auto=format&fit=crop&q=60",
+      imageUrl: "https://images.unsplash.com/photo-1585066437551-230239e3131e?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8c3dlZGVuJUUzJTgwJTgwZnVuaXR1cmV8ZW58MHx8MHx8fDA%3D",
       imageAlt: "スウェーデンのデザイン文化"
     }
   ];
@@ -50,22 +50,10 @@ export default function SwedenDetailPage() {
     }
   ];
   
-  const workingHolidayReasons = [
-    "スウェーデン語学習環境：スウェーデン語圏で、本格的なスウェーデン語を学べる",
-    "豊富な自然体験：広大な森や美しい湖でのアウトドアアクティビティ",
-    "北欧文化体験：北欧の伝統文化と現代的なライフスタイル",
-    "デザイン体験：北欧デザインの本場でデザイン文化を学べる環境"
-  ];
   
-  const englishLearningEnvironment = [
-    "スウェーデン語学習：スウェーデン語圏で、本格的なスウェーデン語を学べる環境",
-    "充実した語学学校：語学学校も充実しており、スウェーデン語力を伸ばすのに最適",
-    "多文化社会：様々な国の人々と交流でき、国際的な視点を身につけられる"
-  ];
   
-  const outdoorLifeDescription = "スウェーデンには広大な森、美しい湖、国立公園など、様々な自然環境があります。ハイキング、スキー、キャンプ、釣りなど、四季を通じて様々なアウトドアアクティビティが楽しめます。";
-
-  return (
+  
+    return (
     <CountryDetailLayout
       country={country}
       pageTitle={pageTitle}
@@ -73,9 +61,6 @@ export default function SwedenDetailPage() {
       countryDescription={countryDescription}
       countryFeatures={countryFeatures}
       countryAtmosphere={countryAtmosphere}
-      workingHolidayReasons={workingHolidayReasons}
-      englishLearningEnvironment={englishLearningEnvironment}
-      outdoorLifeDescription={outdoorLifeDescription}
       consultationLink="https://px.a8.net/svt/ejp?a8mat=45C1IF+AMTQR6+5S4I+BW8O2&a8ejpredirect=https%3A%2F%2Fwww.iss-ryugakulife.com%2Fcounseling"
     />
   );

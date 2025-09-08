@@ -6,28 +6,28 @@ export default function HungaryDetailPage() {
   const country = hungaryData.countries.find(c => c.id === "hungary")!;
 
   // ページタイトルとメタディスクリプションの最適化
-  const pageTitle = `${country.nameJa}ワーホリの魅力`;
-  const pageDescription = "温泉・文化・歴史の国";
+  const pageTitle = `${country.nameJa}ワーホリ`;
+  const pageDescription = "ハンガリーは、温泉、豊かな文化、深い歴史を持つ国です。\nブダペストをはじめとする美しい都市、そして温泉文化を満喫できます。";
   
-  const countryDescription = "ハンガリーは、温泉、豊かな文化、深い歴史を持つ国です。ブダペストをはじめとする美しい都市、そして温泉文化を満喫できます。";
+  const countryDescription = "温泉・文化・歴史の国";
   
   const countryFeatures = [
     {
       title: "温泉の国",
       description: "世界有数の温泉と温泉文化",
-      imageUrl: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600&auto=format&fit=crop&q=60",
+      imageUrl: "https://images.unsplash.com/photo-1572983417754-78ae967b181e?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NzR8fGh1bmdhcnl8ZW58MHx8MHx8fDA%3D",
       imageAlt: "ハンガリーの温泉"
     },
     {
       title: "豊かな文化",
       description: "伝統的なハンガリー文化",
-      imageUrl: "https://images.unsplash.com/photo-1541961017774-22349e4a1262?w=600&auto=format&fit=crop&q=60",
+      imageUrl: "https://images.unsplash.com/photo-1613680084365-0c89e5be93e0?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8ODN8fGh1bmdhcnl8ZW58MHx8MHx8fDA%3D",
       imageAlt: "ハンガリーの文化"
     },
     {
       title: "美しい建築",
       description: "歴史的建造物と美しい街並み",
-      imageUrl: "https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?w=600&auto=format&fit=crop&q=60",
+      imageUrl: "https://images.unsplash.com/photo-1613680042115-cc541362bc41?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NTR8fGh1bmdhcnl8ZW58MHx8MHx8fDA%3D",
       imageAlt: "ハンガリーの建築"
     }
   ];
@@ -50,22 +50,10 @@ export default function HungaryDetailPage() {
     }
   ];
   
-  const workingHolidayReasons = [
-    "ハンガリー語学習環境：ハンガリー語圏で、本格的なハンガリー語を学べる",
-    "豊富な文化体験：温泉、美術、音楽など豊富な文化施設",
-    "ヨーロッパ旅行の拠点：他のヨーロッパ各国へのアクセスが便利",
-    "温泉体験：世界有数の温泉文化を体験できる環境"
-  ];
   
-  const englishLearningEnvironment = [
-    "ハンガリー語学習：ハンガリー語圏で、本格的なハンガリー語を学べる環境",
-    "充実した語学学校：語学学校も充実しており、ハンガリー語力を伸ばすのに最適",
-    "多文化社会：様々な国の人々と交流でき、国際的な視点を身につけられる"
-  ];
   
-  const outdoorLifeDescription = "ハンガリーには美しい山々、森、湖、温泉など、様々な自然環境があります。ハイキング、スキー、温泉、釣りなど、四季を通じて様々なアウトドアアクティビティが楽しめます。";
 
-  return (
+    return (
     <CountryDetailLayout
       country={country}
       pageTitle={pageTitle}
@@ -73,9 +61,6 @@ export default function HungaryDetailPage() {
       countryDescription={countryDescription}
       countryFeatures={countryFeatures}
       countryAtmosphere={countryAtmosphere}
-      workingHolidayReasons={workingHolidayReasons}
-      englishLearningEnvironment={englishLearningEnvironment}
-      outdoorLifeDescription={outdoorLifeDescription}
       consultationLink="https://px.a8.net/svt/ejp?a8mat=45C1IF+AMTQR6+5S4I+BW8O2&a8ejpredirect=https%3A%2F%2Fwww.iss-ryugakulife.com%2Fcounseling"
     />
   );

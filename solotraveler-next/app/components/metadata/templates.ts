@@ -6,10 +6,10 @@ export function generateBaseMetadata(config: CountryMetadataConfig): Metadata {
   const { countryInfo, customTitle, customDescription, customKeywords, articleSection, articleTags } = config;
   
   // タイトルの生成
-  const title = customTitle || `${countryInfo.nameJa}ワーホリ完全ガイド｜魅力・人気都市・おすすめポイントを徹底解説`;
+  const title = customTitle || `${countryInfo.nameJa}ワーホリ完全ガイド｜特徴・人気都市・おすすめポイントを徹底解説`;
   
   // ディスクリプションの生成（150-160文字）
-  const description = customDescription || `${countryInfo.nameJa}ワーホリの魅力・人気都市・おすすめポイントを徹底解説。${countryInfo.description}`;
+  const description = customDescription || `${countryInfo.nameJa}ワーホリの特徴・人気都市・おすすめポイントを徹底解説。${countryInfo.description}`;
   
   // キーワードの生成
   const baseKeywords = [

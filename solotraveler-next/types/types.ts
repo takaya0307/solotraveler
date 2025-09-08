@@ -19,6 +19,7 @@ export type WorkingHolidayCountry = {
   stayPeriod: string;      // 滞在期間
   minWage: string;         // 最低賃金
   quota: string;           // ワーホリ定員数
+  languages: string;       // 学べる言語（追加）
   bestTimeToVisit: string; // ベストシーズン
   cities: WorkingHolidayCity[]; // 都市リスト
   recommendation?: string; // 向いている人の特徴（追加）

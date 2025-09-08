@@ -5,6 +5,45 @@ import Link from "next/link";
 import Header from "./Header";
 import styles from "./CountryDetailLayout.module.css";
 
+// 国旗を取得する関数
+const getCountryFlag = (countryCode: string) => {
+  const flagMap: { [key: string]: string } = {
+    'AU': '🇦🇺', // オーストラリア
+    'CA': '🇨🇦', // カナダ
+    'FR': '🇫🇷', // フランス
+    'DE': '🇩🇪', // ドイツ
+    'ES': '🇪🇸', // スペイン
+    'IT': '🇮🇹', // イタリア
+    'GB': '🇬🇧', // イギリス
+    'NZ': '🇳🇿', // ニュージーランド
+    'IE': '🇮🇪', // アイルランド
+    'NL': '🇳🇱', // オランダ
+    'SE': '🇸🇪', // スウェーデン
+    'NO': '🇳🇴', // ノルウェー
+    'DK': '🇩🇰', // デンマーク
+    'PL': '🇵🇱', // ポーランド
+    'LU': '🇱🇺', // ルクセンブルク
+    'CZ': '🇨🇿', // チェコ
+    'KR': '🇰🇷', // 韓国
+    'EE': '🇪🇪', // エストニア
+    'LV': '🇱🇻', // ラトビア
+    'UY': '🇺🇾', // ウルグアイ
+    'SK': '🇸🇰', // スロバキア
+    'AR': '🇦🇷', // アルゼンチン
+    'TW': '🇹🇼', // 台湾
+    'PT': '🇵🇹', // ポルトガル
+    'LT': '🇱🇹', // リトアニア
+    'HU': '🇭🇺', // ハンガリー
+    'HK': '🇭🇰', // 香港
+    'AT': '🇦🇹', // オーストリア
+    'FI': '🇫🇮', // フィンランド
+    'CL': '🇨🇱', // チリ
+    'IS': '🇮🇸', // アイスランド
+  };
+  
+  return flagMap[countryCode] || '🏳️';
+};
+
 // 通貨変換用の関数
 const getConvertedWage = (wage: string) => {
   if (!wage) return '';
@@ -84,6 +123,8 @@ interface CountryDetailLayoutProps {
     ageRange: string;
     stayPeriod: string;
     quota: string;
+    languages: string;
+    countryCode: string;
     cities: Array<{
       id: string;
       nameJa: string;
@@ -105,21 +146,16 @@ interface CountryDetailLayoutProps {
     description: string;
     icon: string;
   }>;
-  workingHolidayReasons: string[];
-  englishLearningEnvironment: string[];
-  outdoorLifeDescription: string;
   consultationLink?: string;
   // 国ごとの見出しカスタマイズ用
   sectionTitles?: {
     attractions?: string;
     cities?: string;
+    recommended?: string;
     consultation?: string;
   };
   subsectionTitles?: {
     atmosphere?: string;
-    workingHolidayReasons?: string;
-    englishLearning?: string;
-    outdoorLife?: string;
   };
 }
 
@@ -130,9 +166,6 @@ export default function CountryDetailLayout({
   countryDescription,
   countryFeatures,
   countryAtmosphere,
-  workingHolidayReasons,
-  englishLearningEnvironment,
-  outdoorLifeDescription,
   consultationLink,
   sectionTitles,
   subsectionTitles
@@ -141,12 +174,16 @@ export default function CountryDetailLayout({
 
   // 国詳細ページにcountry-detail-pageクラスを追加
   useEffect(() => {
-    document.body.classList.add('country-detail-page');
-    
-    // コンポーネントのアンマウント時にクラスを削除
-    return () => {
-      document.body.classList.remove('country-detail-page');
-    };
+    if (typeof window !== 'undefined' && document && document.body) {
+      document.body.classList.add('country-detail-page');
+      
+      // コンポーネントのアンマウント時にクラスを削除
+      return () => {
+        if (document && document.body) {
+          document.body.classList.remove('country-detail-page');
+        }
+      };
+    }
   }, []);
 
   return (
@@ -155,22 +192,34 @@ export default function CountryDetailLayout({
       
       <main className={`${styles["country-main"]} country-detail-container`}>
         
-        {/* ヒーローセクション */}
+        {/* ヒーローセクション（画像のみ） */}
         <div 
           className={styles["country-hero"]}
           style={{
-            background: `linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('${country.imageUrl}')`,
+            background: `url('${country.imageUrl}')`,
             backgroundSize: 'cover',
             backgroundPosition: 'center',
             backgroundRepeat: 'no-repeat'
           }}
           title={`背景画像: ${country.imageUrl}`}
         >
-          <h1 className={styles["country-hero-title"]}>
+        </div>
+
+        {/* タイトルと説明文セクション */}
+        <div className={styles["title-description-section"]}>
+          <div className={styles["flag-container"]}>
+            {getCountryFlag(country.countryCode)}
+          </div>
+          <h1 className={styles["page-title"]}>
             {pageTitle}
           </h1>
-          <p className={styles["country-hero-description"]}>
-            {pageDescription}
+          <p className={styles["page-description"]}>
+            {pageDescription.split('\\n').map((line, index) => (
+              <React.Fragment key={index}>
+                {line}
+                {index < pageDescription.split('\\n').length - 1 && <br />}
+              </React.Fragment>
+            ))}
           </p>
         </div>
 
@@ -202,10 +251,10 @@ export default function CountryDetailLayout({
           
           <div className={styles["info-card"]}>
             <div className={styles["info-card-icon"]}>
-              👥
+              🗣️
             </div>
-            <h3>対象年齢</h3>
-            <p>{country.ageRange}</p>
+            <h3>学べる言語</h3>
+            <p>{country.languages}</p>
           </div>
           
           <div className={styles["info-card"]}>
@@ -244,17 +293,13 @@ export default function CountryDetailLayout({
         {/* 記事コンテンツ */}
         <article className={styles["article-content"]}>
           
-          {/* 国の魅力セクション */}
+          {/* 国の特徴セクション */}
           <section className={`${styles.section} ${styles["section-attractions"]}`}>
             <h2 className={styles["section-title"]}>
-              <span className={styles["section-title-icon"]}>🌟</span> {sectionTitles?.attractions || `${country.nameJa}の魅力`}
+              <span className={styles["section-title-icon"]}>🌟</span> {sectionTitles?.attractions || `${country.nameJa}の特徴`}
             </h2>
             
             <div className={styles["section-content"]}>
-              <p className={styles["description-text-large"]}>
-                {countryDescription}
-              </p>
-              
               {/* 国の特徴写真 */}
               <div className={styles["features-grid"]}>
                 {countryFeatures.map((feature, index) => (
@@ -290,34 +335,8 @@ export default function CountryDetailLayout({
                 ))}
               </div>
               
-              <h3 className={styles["subsection-title"]}>
-                🎯 {subsectionTitles?.workingHolidayReasons || 'ワーホリを選ぶ理由'}
-              </h3>
-              <ul className={styles["reasons-list"]}>
-                {workingHolidayReasons.map((reason, index) => (
-                  <li key={index}>
-                    {reason}
-                  </li>
-                ))}
-              </ul>
               
-              <h3 className={styles["subsection-title"]}>
-                📚 {subsectionTitles?.englishLearning || '語学学習の環境'}
-              </h3>
-              <ul className={styles["reasons-list"]}>
-                {englishLearningEnvironment.map((item, index) => (
-                  <li key={index}>
-                    {item}
-                  </li>
-                ))}
-              </ul>
               
-              <h3 className={styles["subsection-title"]}>
-                🏃‍♂️ {subsectionTitles?.outdoorLife || 'アウトドアライフ'}
-              </h3>
-              <p className={styles["description-text"]}>
-                {outdoorLifeDescription}
-              </p>
             </div>
           </section>
 
@@ -328,10 +347,6 @@ export default function CountryDetailLayout({
             </h2>
             
             <div className={styles["section-content"]}>
-              <p className={styles["description-text-large"]}>
-                {country.nameJa}には様々な魅力を持つ都市があります。それぞれの都市には独自の特徴があり、自分のライフスタイルや目的に合った都市を選ぶことができます。
-              </p>
-              
               {/* 都市カードグリッド */}
               <div className={styles["city-grid"]}>
                 {country.cities.map((city) => (

@@ -6,28 +6,28 @@ export default function NorwayDetailPage() {
   const country = norwayData.countries.find(c => c.id === "norway")!;
 
   // ページタイトルとメタディスクリプションの最適化
-  const pageTitle = `${country.nameJa}ワーホリの魅力`;
-  const pageDescription = "フィヨルド・オーロラ・自然の国";
+  const pageTitle = `${country.nameJa}ワーホリ`;
+  const pageDescription = "ノルウェーは、美しいフィヨルド、オーロラ、そして豊かな自然で知られる国です。\n世界最高の生活水準と美しい景観を満喫できる環境です。";
   
-  const countryDescription = "ノルウェーは、美しいフィヨルド、オーロラ、そして豊かな自然で知られる国です。世界最高の生活水準と美しい景観を満喫できる環境です。";
+  const countryDescription = "フィヨルド・オーロラ・自然の国";
   
   const countryFeatures = [
     {
       title: "フィヨルド",
       description: "世界で最も美しいフィヨルド",
-      imageUrl: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600&auto=format&fit=crop&q=60",
+      imageUrl: "https://images.unsplash.com/photo-1656490246727-a58085b306d2?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8bm9yd2F5JTIwZmpvcmRzfGVufDB8fDB8fHww",
       imageAlt: "ノルウェーのフィヨルド"
     },
     {
       title: "オーロラ",
       description: "美しい北極光の観測",
-      imageUrl: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600&auto=format&fit=crop&q=60",
+      imageUrl: "https://images.unsplash.com/photo-1610989432929-9769f3cf8006?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8bm9yd2F5JTIwYXVyb3JhfGVufDB8fDB8fHww",
       imageAlt: "ノルウェーのオーロラ"
     },
     {
       title: "自然豊か",
       description: "広大な森と美しい山々",
-      imageUrl: "https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?w=600&auto=format&fit=crop&q=60",
+      imageUrl: "https://images.unsplash.com/photo-1600256698889-61ff2cd73cd8?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTV8fG5vcndheXxlbnwwfHwwfHx8MA%3D%3D",
       imageAlt: "ノルウェーの自然"
     }
   ];
@@ -50,22 +50,10 @@ export default function NorwayDetailPage() {
     }
   ];
   
-  const workingHolidayReasons = [
-    "ノルウェー語学習環境：ノルウェー語圏で、本格的なノルウェー語を学べる",
-    "豊富な自然体験：フィヨルドや山々でのアウトドアアクティビティ",
-    "オーロラ体験：美しい北極光を観測できる環境",
-    "北欧文化体験：北欧の伝統文化と現代的なライフスタイル"
-  ];
   
-  const englishLearningEnvironment = [
-    "ノルウェー語学習：ノルウェー語圏で、本格的なノルウェー語を学べる環境",
-    "充実した語学学校：語学学校も充実しており、ノルウェー語力を伸ばすのに最適",
-    "多文化社会：様々な国の人々と交流でき、国際的な視点を身につけられる"
-  ];
   
-  const outdoorLifeDescription = "ノルウェーには美しいフィヨルド、山々、森、国立公園など、様々な自然環境があります。ハイキング、スキー、キャンプ、釣り、クルーズなど、四季を通じて様々なアウトドアアクティビティが楽しめます。";
-
-  return (
+  
+    return (
     <CountryDetailLayout
       country={country}
       pageTitle={pageTitle}
@@ -73,9 +61,6 @@ export default function NorwayDetailPage() {
       countryDescription={countryDescription}
       countryFeatures={countryFeatures}
       countryAtmosphere={countryAtmosphere}
-      workingHolidayReasons={workingHolidayReasons}
-      englishLearningEnvironment={englishLearningEnvironment}
-      outdoorLifeDescription={outdoorLifeDescription}
       consultationLink="https://px.a8.net/svt/ejp?a8mat=45C1IF+AMTQR6+5S4I+BW8O2&a8ejpredirect=https%3A%2F%2Fwww.iss-ryugakulife.com%2Fcounseling"
     />
   );

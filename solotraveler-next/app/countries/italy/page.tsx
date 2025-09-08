@@ -7,28 +7,28 @@ export default function ItalyDetailPage() {
   const country = italyData.countries.find(c => c.id === "italy")!;
 
   // ページタイトルとメタディスクリプションの最適化
-  const pageTitle = `${country.nameJa}ワーホリの魅力`;
-  const pageDescription = "芸術・美食・歴史が薫る地中海の国";
+  const pageTitle = `${country.nameJa}ワーホリ`;
+  const pageDescription = "イタリアは、世界最高峰の芸術、美食、歴史を持つ地中海の国です。\nローマ、フィレンツェ、ベネチアなど、歴史的な都市が数多くあり、豊かな文化を体験できます。";
   
-  const countryDescription = "イタリアは、世界最高峰の芸術、美食、歴史を持つ地中海の国です。ローマ、フィレンツェ、ベネチアなど、歴史的な都市が数多くあり、豊かな文化を体験できます。";
+  const countryDescription = "芸術・美食・歴史が薫る地中海の国";
   
   const countryFeatures = [
     {
       title: "芸術と文化",
       description: "ルネサンス芸術と世界遺産",
-      imageUrl: "https://images.unsplash.com/photo-1541961017774-22349e4a1262?w=600&auto=format&fit=crop&q=60",
+      imageUrl: "https://images.unsplash.com/photo-1529154166925-574a0236a4f4?w=1920&auto=format&fit=crop&q=80",
       imageAlt: "イタリアの芸術と文化"
     },
     {
       title: "美食の国",
       description: "世界最高峰のイタリア料理",
-      imageUrl: "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=600&auto=format&fit=crop&q=60",
+      imageUrl: "https://images.unsplash.com/photo-1447279506476-3faec8071eee?w=1920&auto=format&fit=crop&q=80",
       imageAlt: "イタリアの美食"
     },
     {
       title: "歴史的建造物",
       description: "古代ローマ遺跡と中世の街並み",
-      imageUrl: "https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?w=600&auto=format&fit=crop&q=60",
+      imageUrl: "https://images.unsplash.com/photo-1476362174823-3a23f4aa6d76?w=1920&auto=format&fit=crop&q=80",
       imageAlt: "歴史的建造物"
     }
   ];
@@ -51,22 +51,10 @@ export default function ItalyDetailPage() {
     }
   ];
   
-  const workingHolidayReasons = [
-    "イタリア語学習環境：イタリア語圏で、本格的なイタリア語を学べる",
-    "豊富な文化施設：世界クラスの美術館や博物館が数多くある",
-    "ヨーロッパ旅行の拠点：他のヨーロッパ各国へのアクセスが便利",
-    "美食体験：世界最高峰のイタリア料理を楽しめる環境"
-  ];
   
-  const englishLearningEnvironment = [
-    "イタリア語学習：イタリア語圏で、本格的なイタリア語を学べる環境",
-    "充実した語学学校：語学学校も充実しており、イタリア語力を伸ばすのに最適",
-    "多文化社会：様々な国の人々と交流でき、国際的な視点を身につけられる"
-  ];
   
-  const outdoorLifeDescription = "イタリアには美しい海岸線、山々、田園風景など、様々な自然環境があります。ハイキング、スキー、ビーチリゾート、サイクリングなど、四季を通じて様々なアウトドアアクティビティが楽しめます。";
-
-  return (
+  
+    return (
     <CountryDetailLayout
       country={country}
       pageTitle={pageTitle}
@@ -74,9 +62,6 @@ export default function ItalyDetailPage() {
       countryDescription={countryDescription}
       countryFeatures={countryFeatures}
       countryAtmosphere={countryAtmosphere}
-      workingHolidayReasons={workingHolidayReasons}
-      englishLearningEnvironment={englishLearningEnvironment}
-      outdoorLifeDescription={outdoorLifeDescription}
       consultationLink="https://px.a8.net/svt/ejp?a8mat=45C1IF+AMTQR6+5S4I+BW8O2&a8ejpredirect=https%3A%2F%2Fwww.iss-ryugakulife.com%2Fcounseling"
     />
   );

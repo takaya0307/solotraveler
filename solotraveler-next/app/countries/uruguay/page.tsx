@@ -6,28 +6,28 @@ import uruguayData from "../../../db.json";
 export default function UruguayDetailPage() {
   const country = uruguayData.countries.find(c => c.id === "uruguay")!;
 
-  const pageTitle = `${country.nameJa}ワーホリの魅力`;
-  const pageDescription = "ビーチ・文化・自然の国";
+  const pageTitle = `${country.nameJa}ワーホリ`;
+  const pageDescription = "ウルグアイは、美しいビーチ、豊かな文化、そして美しい自然を持つ国です。\nモンテビデオをはじめとする美しい都市、そして大西洋の海岸線を満喫できます。最低賃金は月給ベースで計算されています。";
   
-  const countryDescription = "ウルグアイは、美しいビーチ、豊かな文化、そして美しい自然を持つ国です。モンテビデオをはじめとする美しい都市、そして大西洋の海岸線を満喫できます。最低賃金は月給ベースで計算されています。";
+  const countryDescription = "ビーチ・文化・自然の国";
   
   const countryFeatures = [
     {
       title: "ビーチの国",
       description: "美しい大西洋の海岸線",
-      imageUrl: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600&auto=format&fit=crop&q=60",
+      imageUrl: "https://images.unsplash.com/photo-1616959313137-186688889054?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8VXJ1Z3VheXxlbnwwfHwwfHx8MA%3D%3D",
       imageAlt: "ウルグアイのビーチ"
     },
     {
       title: "豊かな文化",
       description: "伝統的なウルグアイ文化",
-      imageUrl: "https://images.unsplash.com/photo-1541961017774-22349e4a1262?w=600&auto=format&fit=crop&q=60",
+      imageUrl: "https://images.unsplash.com/photo-1742287622295-1669f3a84f9d?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NzN8fFVydWd1YXl8ZW58MHx8MHx8fDA%3D",
       imageAlt: "ウルグアイの文化"
     },
     {
       title: "美しい自然",
       description: "田園風景と美しい景観",
-      imageUrl: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600&auto=format&fit=crop&q=60",
+      imageUrl: "https://images.unsplash.com/photo-1624416254374-b471bfcaac81?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8VXJ1Z3VheXxlbnwwfHwwfHx8MA%3D%3D",
       imageAlt: "ウルグアイの自然"
     }
   ];
@@ -50,22 +50,10 @@ export default function UruguayDetailPage() {
     }
   ];
   
-  const workingHolidayReasons = [
-    "スペイン語学習環境：スペイン語圏で、本格的なスペイン語を学べる",
-    "豊富な文化体験：美術、音楽、文学など豊富な文化施設",
-    "南米旅行の拠点：他の南米各国へのアクセスが便利",
-    "自然体験：美しいビーチや田園風景でのアウトドアアクティビティ"
-  ];
   
-  const englishLearningEnvironment = [
-    "スペイン語学習：スペイン語圏で、本格的なスペイン語を学べる環境",
-    "充実した語学学校：語学学校も充実しており、スペイン語力を伸ばすのに最適",
-    "多文化社会：様々な国の人々と交流でき、国際的な視点を身につけられる"
-  ];
   
-  const outdoorLifeDescription = "ウルグアイには美しいビーチ、田園風景、国立公園など、様々な自然環境があります。ビーチリゾート、ハイキング、キャンプ、釣りなど、四季を通じて様々なアウトドアアクティビティが楽しめます。";
 
-  return (
+    return (
     <CountryDetailLayout
       country={country}
       pageTitle={pageTitle}
@@ -73,9 +61,6 @@ export default function UruguayDetailPage() {
       countryDescription={countryDescription}
       countryFeatures={countryFeatures}
       countryAtmosphere={countryAtmosphere}
-      workingHolidayReasons={workingHolidayReasons}
-      englishLearningEnvironment={englishLearningEnvironment}
-      outdoorLifeDescription={outdoorLifeDescription}
       consultationLink="https://px.a8.net/svt/ejp?a8mat=45C1IF+AMTQR6+5S4I+BW8O2&a8ejpredirect=https%3A%2F%2Fwww.iss-ryugakulife.com%2Fcounseling"
     />
   );

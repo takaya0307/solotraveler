@@ -50,8 +50,48 @@ export default function IrelandDetailPage() {
     }
   ];
   
+  const workingHolidayReasons = [
+    "英語を学べる環境が整っている",
+    "比較的安全で生活しやすい",
+    "豊かな文化と歴史を体験できる",
+    "美しい自然と緑の風景を楽しめる"
+  ];
   
+  const englishLearningEnvironment = [
+    "英語圏で本格的な英語学習が可能",
+    "アイルランド英語の独特なアクセントを学べる",
+    "語学学校が充実している",
+    "現地の人との交流で実践的な英語力を身につけられる"
+  ];
   
+  const outdoorLifeDescription = "アイルランドは「緑の島」と呼ばれるほど美しい自然に恵まれています。海岸沿いのドライブ、ハイキング、ゴルフなど、豊かな自然を満喫できるアクティビティが充実しています。";
+  
+  const recommendedFor = [
+    {
+      title: "英語学習者",
+      description: "本格的な英語学習をしたい方",
+      color: "#3B82F6",
+      borderColor: "#3B82F6",
+      bgColor: "#EFF6FF",
+      icon: "📚"
+    },
+    {
+      title: "自然愛好家",
+      description: "美しい自然を楽しみたい方",
+      color: "#10B981",
+      borderColor: "#10B981",
+      bgColor: "#ECFDF5",
+      icon: "🌿"
+    },
+    {
+      title: "文化体験者",
+      description: "豊かな文化と歴史を体験したい方",
+      color: "#8B5CF6",
+      borderColor: "#8B5CF6",
+      bgColor: "#F3E8FF",
+      icon: "🎭"
+    }
+  ];
 
   return (
     <CountryDetailLayout
@@ -61,6 +101,10 @@ export default function IrelandDetailPage() {
       countryDescription={countryDescription}
       countryFeatures={countryFeatures}
       countryAtmosphere={countryAtmosphere}
+      workingHolidayReasons={workingHolidayReasons}
+      englishLearningEnvironment={englishLearningEnvironment}
+      outdoorLifeDescription={outdoorLifeDescription}
+      recommendedFor={recommendedFor}
       consultationLink="https://px.a8.net/svt/ejp?a8mat=45C1IF+AMTQR6+5S4I+BW8O2&a8ejpredirect=https%3A%2F%2Fwww.iss-ryugakulife.com%2Fcounseling"
     />
   );

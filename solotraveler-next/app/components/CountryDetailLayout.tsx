@@ -146,6 +146,17 @@ interface CountryDetailLayoutProps {
     description: string;
     icon: string;
   }>;
+  workingHolidayReasons?: string[];
+  englishLearningEnvironment?: string[];
+  outdoorLifeDescription?: string;
+  recommendedFor?: Array<{
+    title: string;
+    description: string;
+    color: string;
+    borderColor: string;
+    bgColor: string;
+    icon: string;
+  }>;
   consultationLink?: string;
   // 国ごとの見出しカスタマイズ用
   sectionTitles?: {
@@ -166,6 +177,10 @@ export default function CountryDetailLayout({
   countryDescription,
   countryFeatures,
   countryAtmosphere,
+  workingHolidayReasons,
+  englishLearningEnvironment,
+  outdoorLifeDescription,
+  recommendedFor,
   consultationLink,
   sectionTitles,
   subsectionTitles

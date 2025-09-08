@@ -1,8 +1,9 @@
 "use client";
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
 import Header from "./Header";
+import CityDetailModal from "./CityDetailModal";
 import styles from "./CountryDetailLayout.module.css";
 
 // 国旗を取得する関数
@@ -186,6 +187,20 @@ export default function CountryDetailLayout({
   subsectionTitles
 }: CountryDetailLayoutProps) {
   const router = useRouter();
+  const [selectedCity, setSelectedCity] = useState<any>(null);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  // 都市カードをクリックした時の処理
+  const handleCityClick = (city: any) => {
+    setSelectedCity(city);
+    setIsModalOpen(true);
+  };
+
+  // モーダルを閉じる処理
+  const handleCloseModal = () => {
+    setIsModalOpen(false);
+    setSelectedCity(null);
+  };
 
   // 国詳細ページにcountry-detail-pageクラスを追加
   useEffect(() => {
@@ -365,7 +380,12 @@ export default function CountryDetailLayout({
               {/* 都市カードグリッド */}
               <div className={styles["city-grid"]}>
                 {country.cities.map((city) => (
-                  <div key={city.id} className={styles["city-card"]}>
+                  <div 
+                    key={city.id} 
+                    className={styles["city-card"]}
+                    onClick={() => handleCityClick(city)}
+                    style={{ cursor: 'pointer' }}
+                  >
                     <div className={styles["city-image"]} style={{
                       background: `url('${city.imageUrl}')`,
                       backgroundSize: 'cover',
@@ -378,10 +398,6 @@ export default function CountryDetailLayout({
                           {city.nameJa}
                         </h3>
                       </div>
-                    </div>
-                    
-                    <div className={styles["city-description"]}>
-                      {city.description}
                     </div>
                   </div>
                 ))}
@@ -425,6 +441,13 @@ export default function CountryDetailLayout({
           </section>
         </article>
       </main>
+
+      {/* 都市詳細モーダル */}
+      <CityDetailModal
+        city={selectedCity}
+        isOpen={isModalOpen}
+        onClose={handleCloseModal}
+      />
     </>
   );
 } 

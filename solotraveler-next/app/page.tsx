@@ -329,13 +329,13 @@ const getOriginalCurrency = (wage: string) => {
       // GA4: 国選択イベント
       trackEvent('view', 'ページ', `国選択_${selectedCountry.nameJa}`, 1);
       
-      const title = `${selectedCountry.nameJa}ワーホリ｜魅力、人気都市、最低賃金などを一覧比較`;
+      const title = `【2025年最新】${selectedCountry.nameJa}ワーホリ完全ガイド｜特徴・条件・人気都市`;
       document.title = title;
       
       // meta descriptionの更新
       const metaDescription = document.querySelector('meta[name="description"]');
       if (metaDescription) {
-        metaDescription.setAttribute('content', `${selectedCountry.nameJa}ワーホリの魅力、人気都市、最低賃金などを一覧比較。${selectedCountry.nameJa}でワーホリ体験ができる都市の詳細情報とおすすめポイントをご紹介。`);
+        metaDescription.setAttribute('content', `【2025年最新】${selectedCountry.nameJa}ワーホリの特徴・条件・人気都市を徹底解説。${selectedCountry.nameJa}でワーホリ体験ができる都市の詳細情報とおすすめポイントをご紹介。`);
       }
       
       // hreflangの更新（各国ページでも日本語指定を維持）
@@ -375,7 +375,7 @@ const getOriginalCurrency = (wage: string) => {
       // GA4: ホームページ表示イベント
       trackEvent('view', 'ページ', 'ホームページ', 1);
       
-      document.title = "ワーホリパス｜ワーホリで行ける国一覧・比較";
+      document.title = "【2025年最新】ワーホリで行ける国一覧｜31カ国完全比較・条件・人気都市を徹底解説";
       
       // meta descriptionを元に戻す
       const metaDescription = document.querySelector('meta[name="description"]');

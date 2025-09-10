@@ -6,7 +6,7 @@ export function generateBaseMetadata(config: CountryMetadataConfig): Metadata {
   const { countryInfo, customTitle, customDescription, customKeywords, articleSection, articleTags } = config;
   
   // タイトルの生成
-  const title = customTitle || `${countryInfo.nameJa}ワーホリ完全ガイド｜特徴・人気都市・おすすめポイントを徹底解説`;
+  const title = customTitle || `【2025年最新】${countryInfo.nameJa}ワーホリ完全ガイド｜特徴・条件・人気都市`;
   
   // ディスクリプションの生成（150-160文字）
   const description = customDescription || `${countryInfo.nameJa}ワーホリの特徴・人気都市・おすすめポイントを徹底解説。${countryInfo.description}`;
@@ -97,6 +97,42 @@ export function generateBaseMetadata(config: CountryMetadataConfig): Metadata {
       'article:section': section,
       'article:tag': tags,
     },
+  };
+}
+
+// 構造化データの生成
+export function generateCountryStructuredData(config: CountryMetadataConfig): any {
+  const { countryInfo } = config;
+  
+  return {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": `【2025年最新】${countryInfo.nameJa}ワーホリ完全ガイド｜特徴・条件・人気都市`,
+    "description": `${countryInfo.nameJa}ワーホリの特徴・人気都市・おすすめポイントを徹底解説。${countryInfo.description}`,
+    "author": {
+      "@type": "Organization",
+      "name": "ワーホリパス",
+      "url": "https://workingholidaypass.jp"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "ワーホリパス",
+      "url": "https://workingholidaypass.jp"
+    },
+    "datePublished": "2024-01-01T00:00:00.000Z",
+    "dateModified": new Date().toISOString(),
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": `https://workingholidaypass.jp/countries/${countryInfo.id}`
+    },
+    "about": {
+      "@type": "Place",
+      "name": countryInfo.nameJa,
+      "alternateName": countryInfo.nameEn
+    },
+    "keywords": `${countryInfo.nameJa}ワーホリ,${countryInfo.nameJa} ワーホリ,${countryInfo.nameEn} ワーホリ`,
+    "articleSection": `${countryInfo.nameJa}ワーホリ`,
+    "inLanguage": "ja-JP"
   };
 }
 

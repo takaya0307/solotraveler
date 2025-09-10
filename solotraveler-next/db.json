@@ -679,6 +679,30 @@
           "description": "オーストリア西部のアルプスの玄関口。ウィンタースポーツと自然が魅力の美しい街。ゴールデンルーフの美しい歴史的建造物、アルプス山脈の壮大な自然景観、そして豊富なスキーリゾートが魅力。オーストリアの自然と文化が融合した街並み、美しい山々の景観、そしてオーストリアのアウトドア文化を体験できる魅力的な街です。",
           "imageUrl": "https://images.unsplash.com/photo-1553537316-86354ef82879?w=1920&auto=format&fit=crop&q=80&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8SW5uc2JydWNrfGVufDB8fDB8fHww",
           "tips": ["ゴールデンルーフ", "アルプス山脈", "スキーリゾート"]
+        },
+        {
+          "id": "graz",
+          "name": "Graz",
+          "nameJa": "グラーツ",
+          "description": "学生と芸術が集う文化都市。オーストリア第2の都市で、シュタイアーマルク州の州都。旧市街は世界遺産に登録され、中世の面影を残す歴史的建造物と現代建築が調和した美しい街。6つの大学を擁する学術都市で、若者の活気にあふれています。ムーア川沿いの美しい景観と豊富な文化施設が魅力。",
+          "imageUrl": "https://images.unsplash.com/photo-1657053330062-9aac6fc58c97?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTV8fEdyYXp8ZW58MHx8MHx8fDA%3D",
+          "tips": ["旧市街散策", "グラーツ城", "学術都市の雰囲気"]
+        },
+        {
+          "id": "villach",
+          "name": "Villach",
+          "nameJa": "ビラッハ",
+          "description": "伝統祭と湖畔のリゾート地。ケルンテン州に位置し、ドラウ川沿いに広がる美しい街。スロベニアとイタリアの国境に近く、温泉地としても知られています。周囲には美しい湖や山々が広がり、毎年夏に開催される「ビラッハャー・キルターク」は、オーストリア最大級の民族祭りとして有名。自然と文化が調和した魅力的な街です。",
+          "imageUrl": "https://images.unsplash.com/photo-1611342340367-fe6be3005cbc?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8VmlsbGFjaHxlbnwwfHwwfHx8MA%3D%3D",
+          "tips": ["温泉", "湖の景観", "民族祭り"]
+        },
+        {
+          "id": "linz",
+          "name": "Linz",
+          "nameJa": "リンツ",
+          "description": "工業と現代アートの拠点。オーストリア第3の都市で、ドナウ川沿いに位置するオーバーエスターライヒ州の州都。かつては鉄鋼業で繁栄しましたが、近年は文化都市として注目されています。2009年には欧州文化首都に選ばれ、アルスエレクトロニカセンターやレントス現代美術館など、現代建築とアートの分野で世界をリードする存在です。",
+          "imageUrl": "https://images.unsplash.com/photo-1715343809252-0761f77f0285?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fExpbnp8ZW58MHx8MHx8fDA%3D",
+          "tips": ["アルスエレクトロニカセンター", "ドナウ川沿い散策", "現代美術館"]
         }
       ],
       "recommendation": "オーストリアは音楽と芸術、歴史的な街並みが魅力。ウィーンをはじめとする都市でヨーロッパ文化を深く体験できます。治安も良く、英語も通じやすい環境。クラシックやカフェ文化を楽しみたい方にぴったりです。"

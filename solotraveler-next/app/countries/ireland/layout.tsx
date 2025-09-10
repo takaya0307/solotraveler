@@ -1,5 +1,6 @@
 import { Metadata } from "next";
-import { generateIrelandMetadata } from "../../components/metadata";
+import { generateIrelandMetadata, generateIrelandStructuredData } from "../../components/metadata";
+import Script from "next/script";
 
 // メタデータの生成
 export async function generateMetadata(): Promise<Metadata> {
@@ -11,5 +12,18 @@ export default function IrelandLayout({
 }: {
   children: React.ReactNode;
 }) {
-  return <>{children}</>;
+  const structuredData = generateIrelandStructuredData();
+
+  return (
+    <>
+      {children}
+      <Script
+        id="ireland-structured-data"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(structuredData),
+        }}
+      />
+    </>
+  );
 } 

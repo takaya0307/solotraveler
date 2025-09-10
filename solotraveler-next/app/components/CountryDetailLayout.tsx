@@ -222,6 +222,27 @@ export default function CountryDetailLayout({
       
       <main className={`${styles["country-main"]} country-detail-container`}>
         
+        {/* パンくずリスト */}
+        <nav aria-label="パンくずリスト" className={styles["breadcrumb"]}>
+          <ol className={styles["breadcrumb-list"]}>
+            <li className={styles["breadcrumb-item"]}>
+              <Link href="/" className={styles["breadcrumb-link"]}>
+                ホーム
+              </Link>
+            </li>
+            <li className={styles["breadcrumb-separator"]}>›</li>
+            <li className={styles["breadcrumb-item"]}>
+              <Link href="/about-workingholiday" className={styles["breadcrumb-link"]}>
+                ワーホリとは
+              </Link>
+            </li>
+            <li className={styles["breadcrumb-separator"]}>›</li>
+            <li className={styles["breadcrumb-item"]} aria-current="page">
+              {country.nameJa}
+            </li>
+          </ol>
+        </nav>
+        
         {/* ヒーローセクション（画像のみ） */}
         <div 
           className={styles["country-hero"]}
@@ -424,7 +445,7 @@ export default function CountryDetailLayout({
                   rel="nofollow"
                   className={styles["consultation-button"]}
                 >
-                  📞 無料相談を始める
+                  <span>📞 無料相談を始める</span>
                 </a>
                 <img 
                   width="1" 
@@ -435,7 +456,7 @@ export default function CountryDetailLayout({
               </>
             ) : (
               <button className={styles["consultation-button"]}>
-                📞 無料相談を始める
+                <span>📞 無料相談を始める</span>
               </button>
             )}
           </section>

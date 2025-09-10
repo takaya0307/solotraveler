@@ -3422,7 +3422,7 @@ img.modal-image {
   padding: 0 24px;
   font-family: 'Noto Sans JP', 'M PLUS Rounded 1c', sans-serif;
   line-height: 1.6;
-  color: #1E4E8C;
+  color: black;
 }
 
 /* ナビゲーション */
@@ -3459,7 +3459,7 @@ img.modal-image {
   background: #F5F7FA;
   border: 1px solid #1E4E8C;
   border-radius: 20px;
-  color: #1E4E8C;
+  color: black;
   text-decoration: none;
   font-size: 0.9rem;
   font-weight: 600;
@@ -3475,14 +3475,15 @@ img.modal-image {
 }
 
 .wh-hero-section {
-  background: #1E4E8C;
-  color: white;
+  background: white;
+  color: black;
   padding: 4rem 2rem;
   text-align: center;
-  margin-bottom: 4rem;
-  border-radius: 20px;
+  margin-bottom: 0;
+  border-radius: 16px 16px 0 0;
   position: relative;
   overflow: hidden;
+  border-bottom: 1px solid #e5eaf3;
 }
 
 .wh-hero-section::before {
@@ -3492,8 +3493,9 @@ img.modal-image {
   left: 0;
   right: 0;
   bottom: 0;
-  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="1" fill="white" opacity="0.1"/><circle cx="75" cy="75" r="1" fill="white" opacity="0.1"/><circle cx="50" cy="10" r="0.5" fill="white" opacity="0.1"/><circle cx="10" cy="60" r="0.5" fill="white" opacity="0.1"/><circle cx="90" cy="40" r="0.5" fill="white" opacity="0.1"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="1" fill="black" opacity="0.05"/><circle cx="75" cy="75" r="1" fill="black" opacity="0.05"/><circle cx="50" cy="10" r="0.5" fill="black" opacity="0.05"/><circle cx="10" cy="60" r="0.5" fill="black" opacity="0.05"/><circle cx="90" cy="40" r="0.5" fill="black" opacity="0.05"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
   opacity: 0.3;
+  border-radius: 16px 16px 0 0;
 }
 
 .wh-hero-content {
@@ -3501,17 +3503,36 @@ img.modal-image {
   z-index: 2;
 }
 
+/* ヒーロー画像セクション（白い背景内） */
+.wh-hero-image-section {
+  margin-bottom: 2rem;
+  display: flex;
+  justify-content: center;
+}
+
+.wh-hero-main-image {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+  border-radius: 16px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
+}
+
+
 .wh-hero-title {
-  font-size: 3.2rem;
+  font-size: 2rem;
   font-weight: 800;
   line-height: 1.2;
-  margin-bottom: 1.5rem;
+  margin-top: 4rem;
+  margin-bottom: 4rem;
   text-shadow: 0 2px 4px rgba(0,0,0,0.1);
   font-family: 'Kiwi Maru', 'Noto Sans JP', sans-serif;
 }
 
 .wh-hero-description {
-  font-size: 1.25rem;
+  font-size: 1rem;
   margin-bottom: 2rem;
   opacity: 0.95;
   line-height: 1.6;
@@ -3532,9 +3553,9 @@ img.modal-image {
 }
 
 .wh-hero-feature {
-  background: rgba(255, 255, 255, 0.1);
+  background: #f8f9fa;
   backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  border: 1px solid #e9ecef;
   border-radius: 12px;
   padding: 1.5rem;
   text-align: center;
@@ -3559,13 +3580,14 @@ img.modal-image {
 }
 
 .wh-section {
-  margin-bottom: 5rem;
+  margin-bottom: 0;
   padding: 3rem 2rem;
-  border-radius: 16px;
+  border-radius: 0;
   background: white;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.08);
-  border: 1px solid #e5eaf3;
+  box-shadow: none;
+  border: none;
   position: relative;
+  border-bottom: 1px solid #e5eaf3;
 }
 
 .wh-section::before {
@@ -3576,19 +3598,35 @@ img.modal-image {
   right: 0;
   height: 4px;
   background: #2BBFA0;
-  border-radius: 16px 16px 0 0;
+  border-radius: 0;
 }
 
 .wh-section-alt {
-  background: #F5F7FA;
-  border: 1px solid #F5F7FA;
+  background: white;
+  border: none;
+}
+
+/* 最初のセクション */
+.wh-section:first-of-type {
+  border-radius: 16px 16px 0 0;
+}
+
+.wh-section:first-of-type::before {
+  border-radius: 16px 16px 0 0;
+}
+
+/* 最後のセクション */
+.wh-section:last-of-type {
+  border-radius: 0 0 16px 16px;
+  border-bottom: none;
 }
 
 .wh-section-title {
-  font-size: 2.4rem;
+  font-size: 2rem;
   font-weight: 800;
-  color: #1E4E8C;
-  margin-bottom: 2.5rem;
+  color: black;
+  margin-top: 3rem;
+  margin-bottom: 3rem;
   text-align: center;
   position: relative;
   font-family: 'Kiwi Maru', 'Noto Sans JP', sans-serif;
@@ -3613,7 +3651,7 @@ img.modal-image {
 .wh-subsection-title {
   font-size: 1.8rem;
   font-weight: 700;
-  color: #1E4E8C;
+  color: black;
   margin-bottom: 1.5rem;
   display: flex;
   align-items: center;
@@ -3625,7 +3663,7 @@ img.modal-image {
 .wh-content {
   font-size: 1.1rem;
   line-height: 1.8;
-  color: #1E4E8C;
+  color: black;
   margin-bottom: 1.5rem;
 }
 
@@ -3634,8 +3672,64 @@ img.modal-image {
 }
 
 .wh-content strong {
-  color: #1E4E8C;
+  color: black;
   font-weight: 700;
+}
+
+/* ワーホリの目的セクション用スタイル */
+.wh-purpose-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.wh-purpose-item {
+  text-align: center;
+  padding: 1.5rem;
+  background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+  border-radius: 12px;
+  border: 1px solid #e2e8f0;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.wh-purpose-item:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+}
+
+.wh-purpose-icon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  display: block;
+}
+
+.wh-purpose-title {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #1e293b;
+  margin-bottom: 0.8rem;
+}
+
+.wh-purpose-desc {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #64748b;
+  margin: 0;
+}
+
+.wh-purpose-summary {
+  background: #f0f9ff;
+  padding: 1.5rem;
+  border-radius: 8px;
+  border-left: 4px solid #0ea5e9;
+}
+
+.wh-purpose-summary p {
+  margin: 0;
+  font-size: 1rem;
+  line-height: 1.7;
+  color: #1e293b;
 }
 
 .wh-card {
@@ -3759,7 +3853,7 @@ img.modal-image {
   cursor: pointer;
   font-weight: 600;
   font-size: 1.1rem;
-  color: #1E4E8C;
+  color: black;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -3779,7 +3873,7 @@ img.modal-image {
   padding: 1.5rem;
   font-size: 1rem;
   line-height: 1.7;
-  color: #1E4E8C;
+  color: black;
   display: none;
 }
 
@@ -3860,7 +3954,7 @@ img.modal-image {
 
 .wh-footer-note {
   font-size: 0.9rem;
-  color: #1E4E8C;
+  color: black;
   text-align: center;
   margin-top: 2rem;
   padding: 1rem;
@@ -3877,11 +3971,11 @@ img.modal-image {
   }
   
   .wh-hero-title {
-    font-size: 2.8rem;
+    font-size: 1.6rem;
   }
   
   .wh-section-title {
-    font-size: 2rem;
+    font-size: 1.6rem;
   }
   
   .wh-card-grid {
@@ -3919,11 +4013,11 @@ img.modal-image {
   
   .wh-hero-section {
     padding: 3rem 1.5rem;
-    margin-bottom: 2rem;
+    margin-bottom: 0;
   }
   
   .wh-hero-title {
-    font-size: 2.2rem;
+    font-size: 1.6rem;
   }
   
   .wh-hero-description {
@@ -3935,13 +4029,23 @@ img.modal-image {
     gap: 1rem;
   }
   
+  .wh-purpose-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  
+  .wh-hero-main-image {
+    height: 300px;
+  }
+  
+  
   .wh-section {
     padding: 2rem 1.5rem;
-    margin-bottom: 3rem;
+    margin-bottom: 0;
   }
   
   .wh-section-title {
-    font-size: 1.8rem;
+    font-size: 1.4rem;
     flex-direction: column;
     gap: 0.5rem;
   }
@@ -4013,10 +4117,11 @@ img.modal-image {
   
   .wh-hero-section {
     padding: 2rem 1rem;
+    margin-bottom: 0;
   }
   
   .wh-hero-title {
-    font-size: 1.6rem;
+    font-size: 1.2rem;
   }
   
   .wh-hero-description {
@@ -4025,10 +4130,11 @@ img.modal-image {
   
   .wh-section {
     padding: 1.5rem 1rem;
+    margin-bottom: 0;
   }
   
   .wh-section-title {
-    font-size: 1.4rem;
+    font-size: 1.2rem;
   }
   
   .wh-subsection-title {
@@ -4105,10 +4211,11 @@ img.modal-image {
   
   .wh-hero-section {
     padding: 1.5rem 0.75rem;
+    margin-bottom: 0;
   }
   
   .wh-hero-title {
-    font-size: 1.4rem;
+    font-size: 1.1rem;
   }
   
   .wh-hero-description {
@@ -4117,11 +4224,11 @@ img.modal-image {
   
   .wh-section {
     padding: 1.25rem 0.75rem;
-    margin-bottom: 2rem;
+    margin-bottom: 0;
   }
   
   .wh-section-title {
-    font-size: 1.3rem;
+    font-size: 1.1rem;
     margin-bottom: 2rem;
   }
   
@@ -4160,6 +4267,11 @@ img.modal-image {
   .wh-hero-features {
     gap: 0.75rem;
   }
+  
+  .wh-hero-main-image {
+    height: 250px;
+  }
+  
   
   .wh-hero-feature {
     padding: 1.25rem;
@@ -4594,7 +4706,7 @@ img.modal-image {
 
 /* ワーホリページの国別リンクスタイル */
 .wh-country-link {
-  color: #1E4E8C;
+  color: black;
   text-decoration: none;
   font-weight: 600;
   transition: all 0.2s ease;
@@ -4868,7 +4980,7 @@ img.modal-image {
 .wh-country-name {
   font-size: 1.3rem;
   font-weight: 700;
-  color: #1E4E8C;
+  color: black;
   margin-bottom: 0.5rem;
   display: flex;
   align-items: center;
@@ -4961,7 +5073,7 @@ img.modal-image {
 }
 
 .wh-more-countries-card .wh-country-name {
-  color: #1E4E8C;
+  color: black;
   font-size: 1.3rem;
 }
 

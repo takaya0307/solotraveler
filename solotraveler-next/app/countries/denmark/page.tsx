@@ -15,19 +15,19 @@ export default function DenmarkDetailPage() {
     {
       title: "幸福の国",
       description: "世界で最も幸福な国の一つ",
-      imageUrl: "https://images.unsplash.com/photo-1577346895253-445f05a6670d?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjR8fGRlbm1hcmt8ZW58MHx8MHx8fDA%3D",
+      imageUrl: "https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?w=1920&auto=format&fit=crop&q=80",
       imageAlt: "デンマークの幸福"
     },
     {
       title: "デザイン文化",
       description: "北欧デザインの本場",
-      imageUrl: "https://images.unsplash.com/photo-1513622470522-26c3c8a854bc?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8ZGVubWFya3xlbnwwfHwwfHx8MA%3D%3D",
+      imageUrl: "https://images.unsplash.com/photo-1541961017774-22349e4a1262?w=1920&auto=format&fit=crop&q=80",
       imageAlt: "デンマークのデザイン文化"
     },
     {
       title: "自転車文化",
       description: "自転車が生活の中心",
-      imageUrl: "https://images.unsplash.com/photo-1561113500-8f4ad4f80a93?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fGRlbm1hcmt8ZW58MHx8MHx8fDA%3D",
+      imageUrl: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1920&auto=format&fit=crop&q=80",
       imageAlt: "デンマークの自転車文化"
     }
   ];

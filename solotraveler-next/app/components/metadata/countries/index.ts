@@ -3,7 +3,7 @@ export { generateAustraliaMetadata } from './australia';
 export { generateCanadaMetadata } from './canada';
 export { generateNewZealandMetadata } from './newzealand';
 export { generateUKMetadata } from './uk';
-export { generateIrelandMetadata } from './ireland';
+export { generateIrelandMetadata, generateIrelandStructuredData } from './ireland';
 export { generateFranceMetadata } from './france';
 export { generateGermanyMetadata } from './germany';
 export { generateSpainMetadata } from './spain';

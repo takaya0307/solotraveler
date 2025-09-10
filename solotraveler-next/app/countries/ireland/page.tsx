@@ -15,19 +15,19 @@ export default function IrelandDetailPage() {
     {
       title: "緑の国",
       description: "美しい緑の風景と自然",
-      imageUrl: "https://images.unsplash.com/photo-1602354817989-b9664561ae84?w=1920&auto=format&fit=crop&q=80",
+      imageUrl: "https://images.unsplash.com/photo-1602354817989-b9664561ae84?w=1920&auto=format&fit=crop&q=95&crop=top",
       imageAlt: "アイルランドの緑"
     },
     {
       title: "豊かな文化",
       description: "伝統的なアイルランド文化",
-      imageUrl: "https://images.unsplash.com/photo-1623430948701-b6653fd917f1?w=1920&auto=format&fit=crop&q=80",
+      imageUrl: "https://images.unsplash.com/photo-1623430948701-b6653fd917f1?w=1920&auto=format&fit=crop&q=95&crop=top",
       imageAlt: "アイルランドの文化"
     },
     {
       title: "深い歴史",
       description: "ケルト文化と歴史的建造物",
-      imageUrl: "https://images.unsplash.com/photo-1572998124463-e2dbc434797a?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mzh8fGlyZWxhbmR8ZW58MHx8MHx8fDA%3D",
+      imageUrl: "https://images.unsplash.com/photo-1572998124463-e2dbc434797a?w=1920&auto=format&fit=crop&q=95&crop=top&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mzh8fGlyZWxhbmR8ZW58MHx8MHx8fDA%3D",
       imageAlt: "アイルランドの歴史"
     }
   ];

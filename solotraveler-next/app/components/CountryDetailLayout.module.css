@@ -1,5 +1,47 @@
 /* 国の詳細ページ共通スタイル */
 
+/* パンくずリスト */
+.breadcrumb {
+  margin-bottom: 1.5rem;
+  padding: 0.75rem 0;
+}
+
+.breadcrumb-list {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  font-size: 0.875rem;
+  color: #6b7280;
+}
+
+.breadcrumb-item {
+  display: flex;
+  align-items: center;
+}
+
+.breadcrumb-link {
+  color: #3b82f6;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.breadcrumb-link:hover {
+  color: #1d4ed8;
+  text-decoration: underline;
+}
+
+.breadcrumb-separator {
+  margin: 0 0.5rem;
+  color: #9ca3af;
+}
+
+.breadcrumb-item[aria-current="page"] {
+  color: #374151;
+  font-weight: 500;
+}
+
 /* 記事コンテンツ */
 .article-content {
   line-height: 1.8;
@@ -484,22 +526,56 @@
 }
 
 .consultation-button {
-  background: white;
-  color: #667eea;
-  border: none;
-  padding: 1rem 2rem;
-  border-radius: 50px;
+  background: linear-gradient(135deg, #f97316 0%, #ea580c 100%);
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 700;
   font-size: 1.1rem;
-  font-weight: 600;
+  padding: 1rem 2rem;
+  border-radius: 9999px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  border: none;
   cursor: pointer;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
   position: relative;
+  overflow: hidden;
+  letter-spacing: 0.025em;
+  white-space: nowrap;
+  box-shadow: 0 4px 12px rgba(249, 115, 22, 0.3);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   z-index: 2;
 }
 
+.consultation-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #ea580c 0%, #dc2626 100%);
+  transition: left 0.3s ease;
+  z-index: 1;
+}
+
+.consultation-button:hover::before {
+  left: 0;
+}
+
 .consultation-button:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+  transform: scale(1.05);
+  box-shadow: 0 8px 25px rgba(249, 115, 22, 0.4);
+}
+
+.consultation-button:active {
+  transform: scale(1.02);
+  transition: transform 0.1s ease;
+}
+
+.consultation-button span {
+  position: relative;
+  z-index: 2;
 }
 
 /* セクションタイトル */

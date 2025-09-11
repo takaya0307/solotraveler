@@ -1,5 +1,5 @@
-"use client";
-import React from "react";import CountryDetailLayout from "../../components/CountryDetailLayout";
+import React from "react";
+import CountryDetailLayout from "../../components/CountryDetailLayout";
 import netherlandsData from "../../../db.json";
 
 export default function NetherlandsDetailPage() {
@@ -49,11 +49,8 @@ export default function NetherlandsDetailPage() {
       icon: "😊"
     }
   ];
-  
-  
-  
-  
-    return (
+
+  return (
     <CountryDetailLayout
       country={country}
       pageTitle={pageTitle}

@@ -1,7 +1,6 @@
 
-"use client";
-
-import React from "react";import CountryDetailLayout from "../../components/CountryDetailLayout";
+import React from "react";
+import CountryDetailLayout from "../../components/CountryDetailLayout";
 import irelandData from "../../../db.json";
 export default function IrelandDetailPage() {
   const country = irelandData.countries.find(c => c.id === "ireland")!;

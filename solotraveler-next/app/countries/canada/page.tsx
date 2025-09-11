@@ -1,8 +1,7 @@
-"use client";
-
 import React from "react";
 import CountryDetailLayout from "../../components/CountryDetailLayout";
 import canadaData from "../../../db.json";
+
 export default function CanadaDetailPage() {
   const country = canadaData.countries.find(c => c.id === "canada")!;
 
@@ -49,8 +48,7 @@ export default function CanadaDetailPage() {
       icon: "😊"
     }
   ];
-  
-  
+
   return (
     <CountryDetailLayout
       country={country}

@@ -2,7 +2,7 @@ User-agent: *
 Allow: /
 
 # サイトマップの場所
-Sitemap: https://workingholidaypass.jp/sitemap.xml
+Sitemap: https://solotraveler-next.vercel.app/sitemap.xml
 
 # 画像のクロールを許可
 Allow: /*.png

@@ -1,5 +1,3 @@
-"use client";
-
 import React from "react";
 import CountryDetailLayout from "../../components/CountryDetailLayout";
 import australiaData from "../../../db.json";
@@ -50,11 +48,8 @@ export default function AustraliaDetailPage() {
       icon: "😊"
     }
   ];
-  
-  
-  
-  
-    return (
+
+  return (
     <CountryDetailLayout
       country={country}
       pageTitle={pageTitle}

@@ -1,7 +1,7 @@
-"use client";
-
-import React from "react";import CountryDetailLayout from "../../components/CountryDetailLayout";
+import React from "react";
+import CountryDetailLayout from "../../components/CountryDetailLayout";
 import newzealandData from "../../../db.json";
+
 export default function NewZealandDetailPage() {
   const country = newzealandData.countries.find(c => c.id === "newzealand")!;
 
@@ -48,11 +48,8 @@ export default function NewZealandDetailPage() {
       icon: "😊"
     }
   ];
-  
-  
-  
-  
-    return (
+
+  return (
     <CountryDetailLayout
       country={country}
       pageTitle={pageTitle}

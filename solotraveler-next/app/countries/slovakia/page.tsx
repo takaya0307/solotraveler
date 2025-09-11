@@ -1,5 +1,5 @@
-"use client";
-import React from "react";import CountryDetailLayout from "../../components/CountryDetailLayout";
+import React from "react";
+import CountryDetailLayout from "../../components/CountryDetailLayout";
 import slovakiaData from "../../../db.json";
 
 export default function SlovakiaDetailPage() {

@@ -1,10 +1,10 @@
 import { Metadata } from "next";
 
 export function generateAboutWorkingHolidayMetadata(): Metadata {
-  const title = "【2025年最新】ワーホリとは？制度の仕組み・条件・メリット・申請方法を徹底解説";
+  const title = "【2025年最新】ワーホリとは？制度・人気国・費用・必要書類・FAQまとめ";
   
   // 150-160文字のディスクリプション
-  const description = "ワーホリ（ワーキングホリデー）とは何か？18〜30歳対象の制度の仕組み、参加条件、メリット・デメリット、申請方法、滞在可能な31カ国を詳しく解説。初心者向けにわかりやすく説明します。";
+  const description = "ワーホリ（ワーキングホリデー）とは？制度の仕組みから人気国、かかる費用、必要書類、よくある質問まで初心者向けにわかりやすく解説。これ1ページで基本情報を網羅！";
   
   // 体系化されたキーワード（重複排除済み）
   const keywords = [
@@ -45,7 +45,7 @@ export function generateAboutWorkingHolidayMetadata(): Metadata {
     creator: "ワーホリパス",
     publisher: "ワーホリパス",
     alternates: {
-      canonical: "https://workingholidaypass.jp/about-workingholiday",
+      canonical: "https://solotraveler-next.vercel.app/about-workingholiday",
       languages: {
         'ja-JP': '/about-workingholiday',
       },
@@ -53,7 +53,7 @@ export function generateAboutWorkingHolidayMetadata(): Metadata {
     openGraph: {
       title,
       description,
-      url: 'https://workingholidaypass.jp/about-workingholiday',
+      url: 'https://solotraveler-next.vercel.app/about-workingholiday',
       siteName: 'ワーホリパス',
       locale: 'ja_JP',
       type: 'article',
@@ -62,7 +62,7 @@ export function generateAboutWorkingHolidayMetadata(): Metadata {
           url: '/ogp.png',
           width: 1200,
           height: 630,
-          alt: '【2025年最新】ワーホリとは？制度の仕組み・条件・メリット・申請方法を徹底解説',
+          alt: '【2025年最新】ワーホリとは？制度・人気国・費用・必要書類・FAQまとめ',
         },
       ],
     },

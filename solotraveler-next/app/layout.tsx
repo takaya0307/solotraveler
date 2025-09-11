@@ -16,8 +16,8 @@ const dancingScript = Dancing_Script({
 });
 
 export const metadata: Metadata = {
-  title: "【2025年最新】ワーホリで行ける国一覧｜31カ国完全比較・条件・人気都市を徹底解説",
-  description: "オーストラリア、カナダ、ニュージーランドなど世界各国のワーホリ国・都市を徹底比較。人気都市、魅力の情報を網羅。あなたに合ったワーホリプランが見つかります。",
+  title: "【2025年最新】ワーホリ対応31カ国一覧｜条件・人気都市・協定国情報を徹底解説",
+  description: "オーストラリア・カナダ・ニュージーランドなど31カ国のワーホリ条件や人気都市を徹底解説。あなたに合った国を見つけるための情報をまとめました。",
   keywords: "ワーホリパス,ワーホリ費用,ワーホリ条件,ワーホリエージェント,ワーホリビザ,海外就労,海外生活,語学留学,国際交流,オーストラリアワーホリ,カナダワーホリ,ニュージーランドワーホリ,イギリスワーホリ,アイルランドワーホリ,フランスワーホリ,ドイツワーホリ,スペインワーホリ,イタリアワーホリ,ポルトガルワーホリ,オーストリアワーホリ,ノルウェーワーホリ,デンマークワーホリ,ポーランドワーホリ,チェコワーホリ,ハンガリーワーホリ,スロバキアワーホリ,アイスランドワーホリ,韓国ワーホリ,台湾ワーホリ,香港ワーホリ,アルゼンチンワーホリ,チリワーホリ,エストニアワーホリ,リトアニアワーホリ,オランダワーホリ,フィンランドワーホリ,ラトビアワーホリ,ウルグアイワーホリ,ルクセンブルクワーホリ,スウェーデンワーホリ",
   authors: [{ name: "ワーホリパス" }],
   creator: "ワーホリパス",
@@ -27,16 +27,16 @@ export const metadata: Metadata = {
     address: false,
     telephone: false,
   },
-  metadataBase: new URL('https://workingholidaypass.jp'),
+  metadataBase: new URL('https://solotraveler-next.vercel.app'),
   alternates: {
     languages: {
       'ja-JP': '/',
     },
   },
   openGraph: {
-    title: "【2025年最新】ワーホリで行ける国一覧｜31カ国完全比較・条件・人気都市を徹底解説",
-    description: "オーストラリア、カナダ、ニュージーランドなど世界各国のワーホリ国・都市を徹底比較。人気都市、魅力の情報を網羅。あなたに合ったワーホリプランが見つかります。",
-    url: 'https://workingholidaypass.jp', 
+    title: "【2025年最新】ワーホリ対応31カ国一覧｜条件・人気都市・協定国情報を徹底解説",
+    description: "オーストラリア・カナダ・ニュージーランドなど31カ国のワーホリ条件や人気都市を徹底解説。あなたに合った国を見つけるための情報をまとめました。",
+    url: 'https://solotraveler-next.vercel.app', 
     siteName: 'ワーホリパス',
     locale: 'ja_JP',
     type: 'website',
@@ -45,14 +45,14 @@ export const metadata: Metadata = {
         url: '/ogp.png',
         width: 1200,
         height: 630,
-        alt: '【2025年最新】ワーホリで行ける国一覧｜31カ国完全比較・条件・人気都市を徹底解説',
+        alt: '【2025年最新】ワーホリ対応31カ国一覧｜条件・人気都市・協定国情報を徹底解説',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: "【2025年最新】ワーホリで行ける国一覧｜31カ国完全比較・条件・人気都市を徹底解説",
-    description: "オーストラリア、カナダ、ニュージーランドなど世界各国のワーホリ国・都市を徹底比較。人気都市、魅力の情報を網羅。あなたに合ったワーホリプランが見つかります。",
+    title: "【2025年最新】ワーホリ対応31カ国一覧｜条件・人気都市・協定国情報を徹底解説",
+    description: "オーストラリア・カナダ・ニュージーランドなど31カ国のワーホリ条件や人気都市を徹底解説。あなたに合った国を見つけるための情報をまとめました。",
     images: ['/ogp.png'],
   },
   robots: {
@@ -119,8 +119,8 @@ export default function RootLayout({
         <link rel="icon" href="/favicon.png" />
         {/* 日本語サイト指定 */}
         <meta name="hreflang" content="ja-JP" />
-        <link rel="alternate" hrefLang="ja-JP" href="https://workingholidaypass.jp" />
-        <link rel="alternate" hrefLang="x-default" href="https://workingholidaypass.jp" />
+        <link rel="alternate" hrefLang="ja-JP" href="https://solotraveler-next.vercel.app" />
+        <link rel="alternate" hrefLang="x-default" href="https://solotraveler-next.vercel.app" />
       </head>
       <body
         className={`${inter.variable} ${dancingScript.variable} antialiased`}

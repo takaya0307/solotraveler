@@ -1,7 +1,7 @@
-"use client";
-
-import React from "react";import CountryDetailLayout from "../../components/CountryDetailLayout";
+import React from "react";
+import CountryDetailLayout from "../../components/CountryDetailLayout";
 import polandData from "../../../db.json";
+
 export default function PolandDetailPage() {
   const country = polandData.countries.find(c => c.id === "poland")!;
 
@@ -48,11 +48,8 @@ export default function PolandDetailPage() {
       icon: "😊"
     }
   ];
-  
-  
-  
 
-    return (
+  return (
     <CountryDetailLayout
       country={country}
       pageTitle={pageTitle}

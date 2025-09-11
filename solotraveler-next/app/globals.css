@@ -3754,6 +3754,114 @@ img.modal-image {
   margin-bottom: 2rem;
 }
 
+.wh-card-grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.wh-document-card,
+.wh-cost-card {
+  background: white;
+  border: 1px solid #e5eaf3;
+  border-radius: 12px;
+  padding: 1.5rem;
+  text-align: center;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  position: relative;
+  overflow: hidden;
+}
+
+.wh-document-card::before,
+.wh-cost-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 100%;
+  background: #2BBFA0;
+  transition: width 0.3s ease;
+}
+
+.wh-document-card:hover,
+.wh-cost-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+  border-color: #2BBFA0;
+}
+
+.wh-document-card:hover::before,
+.wh-cost-card:hover::before {
+  width: 8px;
+}
+
+.wh-document-icon,
+.wh-cost-icon {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  display: block;
+}
+
+.wh-document-title,
+.wh-cost-title {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: black;
+  margin-bottom: 0.75rem;
+}
+
+.wh-document-desc,
+.wh-cost-desc {
+  font-size: 0.9rem;
+  color: #666;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.wh-cost-amount {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #2BBFA0;
+  margin-bottom: 0.5rem;
+}
+
+/* レスポンシブ対応 */
+@media (max-width: 1024px) {
+  .wh-card-grid-3 {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.25rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .wh-card-grid-3 {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  
+  .wh-document-card,
+  .wh-cost-card {
+    padding: 1.25rem;
+  }
+  
+  .wh-document-title,
+  .wh-cost-title {
+    font-size: 1.1rem;
+  }
+  
+  .wh-document-desc,
+  .wh-cost-desc {
+    font-size: 0.85rem;
+  }
+  
+  .wh-cost-amount {
+    font-size: 1rem;
+  }
+}
+
 .wh-benefits-card {
   background: #F5F7FA;
   border: 1px solid #2BBFA0;
@@ -3841,6 +3949,9 @@ img.modal-image {
   overflow: hidden;
   box-shadow: 0 2px 8px rgba(0,0,0,0.04);
   transition: box-shadow 0.2s ease;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .wh-faq-item:hover {

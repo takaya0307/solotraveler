@@ -1,7 +1,7 @@
 import { MetadataRoute } from 'next'
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  const baseUrl = 'https://workingholidaypass.jp' // 実際のドメインに変更してください
+  const baseUrl = 'https://solotraveler-next.vercel.app' // 実際のドメインに変更してください
   
   // 最終更新日を動的に取得
   let lastModifiedData: {

@@ -8,5 +8,4 @@ export { getCountryInfo } from './templates';
 export { generateBaseMetadata } from './templates';
 
 // ページ別メタデータのエクスポート
-export { generateMainPageMetadata } from './mainPage';
 export { generateAboutWorkingHolidayMetadata } from './aboutWorkingHoliday'; 

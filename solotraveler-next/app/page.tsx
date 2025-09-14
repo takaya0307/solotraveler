@@ -375,7 +375,7 @@ const getOriginalCurrency = (wage: string) => {
       // GA4: ホームページ表示イベント
       trackEvent('view', 'ページ', 'ホームページ', 1);
       
-      document.title = "【2025年最新】ワーホリ対応31カ国一覧｜条件・人気都市・協定国情報を徹底解説";
+      document.title = "【2025年最新】ワーホリ対応31カ国一覧と人気都市";
       
       // meta descriptionを元に戻す
       const metaDescription = document.querySelector('meta[name="description"]');

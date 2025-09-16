@@ -47,7 +47,40 @@ const structuredData = {
   "publisher": {
     "@type": "Organization",
     "name": "ワーホリパス",
-    "url": "https://workingholidaypass.jp"
+    "url": "https://workingholidaypass.jp",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://workingholidaypass.jp/ogp.png"
+    }
+  },
+  "mainEntity": {
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "ワーホリとは何ですか？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "ワーキングホリデー（ワーホリ）は、18歳から30歳（一部の国では35歳まで）の日本人が、海外で働きながら旅行や文化体験ができる制度です。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "どの国でワーホリができますか？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "現在、31カ国でワーキングホリデー制度が利用できます。オーストラリア、カナダ、ニュージーランド、イギリス、アイルランド、フランス、ドイツ、スペイン、イタリアなどが人気です。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "ワーホリの費用はどのくらいかかりますか？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "国によって異なりますが、一般的に航空券代、ビザ申請費、生活費、保険料などで50万円から100万円程度の準備が必要です。"
+        }
+      }
+    ]
   }
 };
 
@@ -620,6 +653,7 @@ const getOriginalCurrency = (wage: string) => {
                           alt={`${country.nameJa}の国旗`}
                           width={20}
                           height={15}
+                          loading="lazy"
                           style={{ borderRadius: '2px', objectFit: 'cover', boxShadow: '0 1px 4px rgba(0,0,0,0.08)' }}
                         />
                       )}

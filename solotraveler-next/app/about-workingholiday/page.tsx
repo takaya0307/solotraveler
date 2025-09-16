@@ -191,25 +191,6 @@ export default function AboutWorkingHoliday() {
           </div>
         </section>
 
-        {/* よくある質問（FAQ） */}
-        <section id="faq" className="wh-section">
-          <h2 className="wh-section-title">
-            ❓ ワーホリFAQ
-          </h2>
-          
-          <div>
-            {faqData.map((faq, index) => (
-              <div key={index} className="wh-faq-item">
-                <div className="wh-faq-question">
-                  <span>{faq.question}</span>
-                </div>
-                <div className="wh-faq-answer">
-                  {faq.answer}
-                </div>
-              </div>
-            ))}
-          </div>
-        </section>
 
         {/* 必要書類 */}
         <section id="documents" className="wh-section wh-section-alt">

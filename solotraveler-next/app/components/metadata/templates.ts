@@ -6,7 +6,7 @@ export function generateBaseMetadata(config: CountryMetadataConfig): Metadata {
   const { countryInfo, customTitle, customDescription, customKeywords, articleSection, articleTags } = config;
   
   // タイトルの生成
-  const title = customTitle || `【2025年最新】${countryInfo.nameJa}ワーホリ完全ガイド｜特徴・条件・人気都市`;
+  const title = customTitle || `【2025年版】${countryInfo.nameJa}ワーホリ完全ガイド｜特徴と条件`;
   
   // ディスクリプションの生成（150-160文字）
   const description = customDescription || `${countryInfo.nameJa}ワーホリの特徴・人気都市・おすすめポイントを徹底解説。${countryInfo.description}`;
@@ -107,7 +107,7 @@ export function generateCountryStructuredData(config: CountryMetadataConfig): an
   return {
     "@context": "https://schema.org",
     "@type": "Article",
-    "headline": `【2025年最新】${countryInfo.nameJa}ワーホリ完全ガイド｜特徴・条件・人気都市`,
+    "headline": `【2025年版】${countryInfo.nameJa}ワーホリ完全ガイド｜特徴と条件`,
     "description": `${countryInfo.nameJa}ワーホリの特徴・人気都市・おすすめポイントを徹底解説。${countryInfo.description}`,
     "author": {
       "@type": "Organization",

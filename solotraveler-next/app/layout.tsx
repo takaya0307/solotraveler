@@ -18,7 +18,7 @@ const dancingScript = Dancing_Script({
 export const metadata: Metadata = {
   title: "【2025年最新】ワーホリ対応31カ国一覧と人気都市",
   description: "オーストラリア・カナダ・ニュージーランドなど31カ国のワーホリ条件や人気都市を徹底解説。あなたに合った国を見つけるための情報をまとめました。",
-  keywords: "ワーホリパス,ワーホリ費用,ワーホリ条件,ワーホリエージェント,ワーホリビザ,海外就労,海外生活,語学留学,国際交流,オーストラリアワーホリ,カナダワーホリ,ニュージーランドワーホリ,イギリスワーホリ,アイルランドワーホリ,フランスワーホリ,ドイツワーホリ,スペインワーホリ,イタリアワーホリ,ポルトガルワーホリ,オーストリアワーホリ,ノルウェーワーホリ,デンマークワーホリ,ポーランドワーホリ,チェコワーホリ,ハンガリーワーホリ,スロバキアワーホリ,アイスランドワーホリ,韓国ワーホリ,台湾ワーホリ,香港ワーホリ,アルゼンチンワーホリ,チリワーホリ,エストニアワーホリ,リトアニアワーホリ,オランダワーホリ,フィンランドワーホリ,ラトビアワーホリ,ウルグアイワーホリ,ルクセンブルクワーホリ,スウェーデンワーホリ",
+  keywords: "ワーホリパス,ワーホリ費用,ワーホリ条件,ワーホリエージェント,ワーホリビザ,海外就労,海外生活,語学留学,国際交流,ワーキングホリデー,ワーホリ2025,ワーホリ準備,ワーホリ体験談,ワーホリ成功,ワーホリ失敗,ワーホリ注意点,ワーホリメリット,ワーホリデメリット,ワーホリ年齢制限,ワーホリ期間,ワーホリ仕事,ワーホリ住居,ワーホリ保険,ワーホリ英語,ワーホリ語学,ワーホリ友達,ワーホリ恋愛,ワーホリ結婚,ワーホリ永住,オーストラリアワーホリ,カナダワーホリ,ニュージーランドワーホリ,イギリスワーホリ,アイルランドワーホリ,フランスワーホリ,ドイツワーホリ,スペインワーホリ,イタリアワーホリ,ポルトガルワーホリ,オーストリアワーホリ,ノルウェーワーホリ,デンマークワーホリ,ポーランドワーホリ,チェコワーホリ,ハンガリーワーホリ,スロバキアワーホリ,アイスランドワーホリ,韓国ワーホリ,台湾ワーホリ,香港ワーホリ,アルゼンチンワーホリ,チリワーホリ,エストニアワーホリ,リトアニアワーホリ,オランダワーホリ,フィンランドワーホリ,ラトビアワーホリ,ウルグアイワーホリ,ルクセンブルクワーホリ,スウェーデンワーホリ",
   authors: [{ name: "ワーホリパス" }],
   creator: "ワーホリパス",
   publisher: "ワーホリパス",
@@ -113,10 +113,90 @@ export default function RootLayout({
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
-            gtag('config', 'G-4K2MGYJY8L');
+            gtag('config', 'G-4K2MGYJY8L', {
+              page_title: document.title,
+              page_location: window.location.href,
+              custom_map: {
+                'custom_parameter_1': 'page_category'
+              }
+            });
+            
+            // Core Web Vitals の計測
+            function sendWebVitals() {
+              if (typeof window !== 'undefined' && window.gtag) {
+                function getCLS(onPerfEntry) {
+                  let clsValue = 0;
+                  let clsEntries = [];
+                  let sessionValue = 0;
+                  let sessionEntries = [];
+                  
+                  new PerformanceObserver((entryList) => {
+                    for (const entry of entryList.getEntries()) {
+                      if (!entry.hadRecentInput) {
+                        const firstSessionEntry = sessionEntries[0];
+                        const lastSessionEntry = sessionEntries[sessionEntries.length - 1];
+                        
+                        if (sessionValue && entry.startTime - lastSessionEntry.startTime < 1000 && entry.startTime - firstSessionEntry.startTime < 5000) {
+                          sessionValue += entry.value;
+                          sessionEntries.push(entry);
+                        } else {
+                          sessionValue = entry.value;
+                          sessionEntries = [entry];
+                        }
+                        
+                        if (sessionValue > clsValue) {
+                          clsValue = sessionValue;
+                          clsEntries = [...sessionEntries];
+                          onPerfEntry({ name: 'CLS', value: clsValue, entries: clsEntries });
+                        }
+                      }
+                    }
+                  }).observe({ type: 'layout-shift', buffered: true });
+                }
+                
+                function getFID(onPerfEntry) {
+                  new PerformanceObserver((entryList) => {
+                    for (const entry of entryList.getEntries()) {
+                      onPerfEntry({ name: 'FID', value: entry.processingStart - entry.startTime, entries: [entry] });
+                    }
+                  }).observe({ type: 'first-input', buffered: true });
+                }
+                
+                function getLCP(onPerfEntry) {
+                  new PerformanceObserver((entryList) => {
+                    const entries = entryList.getEntries();
+                    const lastEntry = entries[entries.length - 1];
+                    onPerfEntry({ name: 'LCP', value: lastEntry.startTime, entries: [lastEntry] });
+                  }).observe({ type: 'largest-contentful-paint', buffered: true });
+                }
+                
+                getCLS((metric) => gtag('event', metric.name, { value: Math.round(metric.value * 1000), event_category: 'Web Vitals' }));
+                getFID((metric) => gtag('event', metric.name, { value: Math.round(metric.value), event_category: 'Web Vitals' }));
+                getLCP((metric) => gtag('event', metric.name, { value: Math.round(metric.value), event_category: 'Web Vitals' }));
+              }
+            }
+            
+            // DOMContentLoaded後に実行
+            if (document.readyState === 'loading') {
+              document.addEventListener('DOMContentLoaded', sendWebVitals);
+            } else {
+              sendWebVitals();
+            }
           `}
         </Script>
         <link rel="icon" href="/favicon.png" />
+        
+        {/* 重要なリソースのプリロード */}
+        <link rel="preload" href="/ogp.png" as="image" type="image/png" />
+        <link rel="preload" href="https://flagcdn.com/w20/au.png" as="image" type="image/png" />
+        <link rel="preload" href="https://flagcdn.com/w20/ca.png" as="image" type="image/png" />
+        <link rel="preload" href="https://flagcdn.com/w20/nz.png" as="image" type="image/png" />
+        
+        {/* DNS プリフェッチ */}
+        <link rel="dns-prefetch" href="//flagcdn.com" />
+        <link rel="dns-prefetch" href="//images.unsplash.com" />
+        <link rel="dns-prefetch" href="//www.googletagmanager.com" />
+        
         {/* 日本語サイト指定 */}
         <meta name="hreflang" content="ja-JP" />
         <link rel="alternate" hrefLang="ja-JP" href="https://solotraveler-next.vercel.app" />

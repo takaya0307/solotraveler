@@ -20,9 +20,21 @@ const nextConfig = {
   compress: true,
   
   // パフォーマンス最適化
-  // experimental: {
-  //   optimizeCss: true,
-  // },
+  experimental: {
+    optimizeCss: true,
+    optimizePackageImports: ['@next/font'],
+  },
+  
+  // バンドル分析
+  webpack: (config, { isServer }) => {
+    if (!isServer) {
+      config.resolve.fallback = {
+        ...config.resolve.fallback,
+        fs: false,
+      };
+    }
+    return config;
+  },
   
   // ヘッダー設定
   async headers() {

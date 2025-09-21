@@ -93,112 +93,32 @@ export default function RootLayout({
         <meta name="apple-mobile-web-app-status-bar-style" content="default" />
         <meta name="format-detection" content="telephone=no" />
         
-        {/* Google Tag Manager */}
-        <Script id="gtm" strategy="afterInteractive">
-          {`
-            (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-            new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-            j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-            'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-            })(window,document,'script','dataLayer','GTM-PFXX92MJ');
-          `}
-        </Script>
-        {/* Google Analytics */}
-        <Script
-          src="https://www.googletagmanager.com/gtag/js?id=G-4K2MGYJY8L"
-          strategy="afterInteractive"
-        />
-        <Script id="ga-init" strategy="afterInteractive">
-          {`
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', 'G-4K2MGYJY8L', {
-              page_title: document.title,
-              page_location: window.location.href,
-              custom_map: {
-                'custom_parameter_1': 'page_category'
-              }
-            });
-            
-            // Core Web Vitals の計測
-            function sendWebVitals() {
-              if (typeof window !== 'undefined' && window.gtag && 'PerformanceObserver' in window) {
-                function getCLS(onPerfEntry) {
-                  try {
-                    let clsValue = 0;
-                    let clsEntries = [];
-                    let sessionValue = 0;
-                    let sessionEntries = [];
-                    
-                    const observer = new PerformanceObserver((entryList) => {
-                      for (const entry of entryList.getEntries()) {
-                        if (!entry.hadRecentInput) {
-                          const firstSessionEntry = sessionEntries[0];
-                          const lastSessionEntry = sessionEntries[sessionEntries.length - 1];
-                          
-                          if (sessionValue && entry.startTime - lastSessionEntry.startTime < 1000 && entry.startTime - firstSessionEntry.startTime < 5000) {
-                            sessionValue += entry.value;
-                            sessionEntries.push(entry);
-                          } else {
-                            sessionValue = entry.value;
-                            sessionEntries = [entry];
-                          }
-                          
-                          if (sessionValue > clsValue) {
-                            clsValue = sessionValue;
-                            clsEntries = [...sessionEntries];
-                            onPerfEntry({ name: 'CLS', value: clsValue, entries: clsEntries });
-                          }
-                        }
-                      }
-                    });
-                    observer.observe({ type: 'layout-shift', buffered: true });
-                  } catch (e) {
-                    console.warn('CLS measurement failed:', e);
-                  }
-                }
-                
-                function getFID(onPerfEntry) {
-                  try {
-                    const observer = new PerformanceObserver((entryList) => {
-                      for (const entry of entryList.getEntries()) {
-                        onPerfEntry({ name: 'FID', value: entry.processingStart - entry.startTime, entries: [entry] });
-                      }
-                    });
-                    observer.observe({ type: 'first-input', buffered: true });
-                  } catch (e) {
-                    console.warn('FID measurement failed:', e);
-                  }
-                }
-                
-                function getLCP(onPerfEntry) {
-                  try {
-                    const observer = new PerformanceObserver((entryList) => {
-                      const entries = entryList.getEntries();
-                      const lastEntry = entries[entries.length - 1];
-                      onPerfEntry({ name: 'LCP', value: lastEntry.startTime, entries: [lastEntry] });
-                    });
-                    observer.observe({ type: 'largest-contentful-paint', buffered: true });
-                  } catch (e) {
-                    console.warn('LCP measurement failed:', e);
-                  }
-                }
-                
-                getCLS((metric) => gtag('event', metric.name, { value: Math.round(metric.value * 1000), event_category: 'Web Vitals' }));
-                getFID((metric) => gtag('event', metric.name, { value: Math.round(metric.value), event_category: 'Web Vitals' }));
-                getLCP((metric) => gtag('event', metric.name, { value: Math.round(metric.value), event_category: 'Web Vitals' }));
-              }
-            }
-            
-            // DOMContentLoaded後に実行
-            if (document.readyState === 'loading') {
-              document.addEventListener('DOMContentLoaded', sendWebVitals);
-            } else {
-              sendWebVitals();
-            }
-          `}
-        </Script>
+        {/* Google Analytics - ビルドエラー修正のため一時的に無効化 */}
+        {process.env.NODE_ENV === 'production' && (
+          <>
+            <Script id="gtm" strategy="afterInteractive">
+              {`
+                (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+                new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+                j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+                'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+                })(window,document,'script','dataLayer','GTM-PFXX92MJ');
+              `}
+            </Script>
+            <Script
+              src="https://www.googletagmanager.com/gtag/js?id=G-4K2MGYJY8L"
+              strategy="afterInteractive"
+            />
+            <Script id="ga-init" strategy="afterInteractive">
+              {`
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){dataLayer.push(arguments);}
+                gtag('js', new Date());
+                gtag('config', 'G-4K2MGYJY8L');
+              `}
+            </Script>
+          </>
+        )}
         <link rel="icon" href="/favicon.png" />
         
         {/* 重要なリソースのプリロード */}

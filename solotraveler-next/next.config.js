@@ -1,9 +1,9 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  // Vercelでの動的レンダリングを有効化
-  output: 'standalone',
+  // 静的エクスポートを完全に無効化
+  output: undefined,
   
-  // プリレンダリングを無効化してVercelでの動的レンダリングを強制
+  // プリレンダリングを無効化
   trailingSlash: false,
   skipTrailingSlashRedirect: true,
   
@@ -28,7 +28,6 @@ const nextConfig = {
   
   // パフォーマンス最適化
   experimental: {
-    optimizeCss: true,
     optimizePackageImports: ['@next/font'],
   },
   
@@ -41,6 +40,11 @@ const nextConfig = {
       };
     }
     return config;
+  },
+  
+  // 静的エクスポートを完全に無効化
+  generateBuildId: async () => {
+    return 'build-' + Date.now();
   },
   
   // ヘッダー設定

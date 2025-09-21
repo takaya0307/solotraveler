@@ -9,10 +9,10 @@ const RequestButton: React.FC = () => {
     <>
       <a href="https://px.a8.net/svt/ejp?a8mat=45C668+FNTINM+5IJI+BW8O2&a8ejpredirect=https%3A%2F%2Fwww.wish.co.jp%2Fform%2Fbrochure-request%2Fform.html" rel="nofollow" target="_blank" 
         className={styles.requestButton}
-        aria-label="資料請求"
+        aria-label="無料で資料をもらう"
       >
         <span className={styles.icon}>📄</span>
-        <span className={styles.text}>資料請求</span>
+        <span className={styles.text}>無料で資料をもらう</span>
       </a>
       <img 
         width="1" 

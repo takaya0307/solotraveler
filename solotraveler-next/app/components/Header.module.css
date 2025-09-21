@@ -16,7 +16,7 @@
 
 .headerContainer {
   width: 100%;
-  padding: 1rem 3rem 1rem 4rem;
+  padding: 1rem 3rem 1rem 2rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -32,6 +32,8 @@
   position: relative;
   margin: 0;
   padding: 0;
+  display: flex;
+  align-items: center;
 }
 
 .logoContainer::after {
@@ -52,7 +54,8 @@
 }
 
 .logoLink {
-  display: block;
+  display: flex;
+  align-items: center;
   text-decoration: none;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
@@ -75,6 +78,35 @@
   margin: 0;
   padding: 0;
   display: block;
+}
+
+.logoTextContainer {
+  display: flex;
+  flex-direction: column;
+  margin-left: 0.75rem;
+  line-height: 1.2;
+}
+
+.logoText {
+  font-family: 'Hiragino Sans', 'ヒラギノ角ゴシック', 'Yu Gothic', '游ゴシック', 'Meiryo', 'メイリオ', 'MS PGothic', 'MS Pゴシック', sans-serif;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #1e4e8c;
+  letter-spacing: 0.02em;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  white-space: nowrap;
+  margin: 0;
+}
+
+.logoSubtext {
+  font-family: 'Hiragino Sans', 'ヒラギノ角ゴシック', 'Yu Gothic', '游ゴシック', 'Meiryo', 'メイリオ', 'MS PGothic', 'MS Pゴシック', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 400;
+  color: #6b7280;
+  letter-spacing: 0.01em;
+  white-space: nowrap;
+  margin: 0;
+  margin-top: 0.1rem;
 }
 
 /* デスクトップナビゲーション */
@@ -332,9 +364,27 @@
 
 .mobileNavLink:hover {
   color: #1e4e8c;
-  background: #f8fafc;
-  border-color: #e5e7eb;
-  padding-left: 2rem;
+}
+
+/* モバイル表示でのロゴテキスト調整 */
+@media (max-width: 768px) {
+  .logoTextContainer {
+    margin-left: 0.5rem;
+  }
+  
+  .logoText {
+    font-size: 1.2rem;
+    font-weight: 500;
+  }
+  
+  .logoSubtext {
+    font-size: 0.65rem;
+  }
+  
+  .logo {
+    max-height: 60px;
+    max-width: 150px;
+  }
 }
 
 .accentLine {

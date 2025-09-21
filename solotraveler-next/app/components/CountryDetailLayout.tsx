@@ -4,6 +4,7 @@ import { useRouter } from "next/navigation";
 import Link from "next/link";
 import Header from "./Header";
 import CityDetailModal from "./CityDetailModal";
+import RequestButton from "./RequestButton";
 import styles from "./CountryDetailLayout.module.css";
 
 // 国旗を取得する関数
@@ -433,10 +434,10 @@ export default function CountryDetailLayout({
             <div className={styles["consultation-decoration-2"]} />
             
             <h2 className={styles["consultation-title"]}>
-              <span className={styles["consultation-icon"]}>💬</span> {sectionTitles?.consultation || '無料相談はこちら'}
+              <span className={styles["consultation-icon"]}>💬</span> {sectionTitles?.consultation || 'まずは気軽に無料相談してみよう！'}
             </h2>
             <p className={styles["consultation-description"]}>
-              ワーホリについて詳しく知りたい方、不安なことがある方はお気軽にご相談ください。
+              ちょっとした質問でもOK！経験豊富なスタッフがあなたの疑問に丁寧に答えます。気軽にご相談ください。
             </p>
             {consultationLink ? (
               <>
@@ -445,7 +446,7 @@ export default function CountryDetailLayout({
                   rel="nofollow"
                   className={styles["consultation-button"]}
                 >
-                  <span>📞 無料相談を始める</span>
+                  <span>📞 今すぐ無料で相談する</span>
                 </a>
                 <img 
                   width="1" 
@@ -456,12 +457,15 @@ export default function CountryDetailLayout({
               </>
             ) : (
               <button className={styles["consultation-button"]}>
-                <span>📞 無料相談を始める</span>
+                <span>📞 今すぐ無料で相談する</span>
               </button>
             )}
           </section>
         </article>
       </main>
+
+      {/* 資料請求ボタン */}
+      <RequestButton />
 
       {/* 都市詳細モーダル */}
       <CityDetailModal

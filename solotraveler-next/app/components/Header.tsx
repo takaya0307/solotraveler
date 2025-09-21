@@ -30,6 +30,10 @@ const Header: React.FC = () => {
               priority
               quality={95}
             />
+            <div className={styles.logoTextContainer}>
+              <span className={styles.logoText}>ワーホリパス</span>
+              <span className={styles.logoSubtext}>ワーホリ対応国・人気都市一覧</span>
+            </div>
           </Link>
         </div>
         
@@ -52,11 +56,11 @@ const Header: React.FC = () => {
           <Link 
             href="https://px.a8.net/svt/ejp?a8mat=45C1IF+AMTQR6+5S4I+BW8O2&a8ejpredirect=https%3A%2F%2Fwww.iss-ryugakulife.com%2Fcounseling" 
             className={`${styles.navLink} ${styles.ctaButton}`}
-            aria-label="無料相談ページへ"
+            aria-label="ワーホリ無料相談ページへ"
             target="_blank"
             rel="nofollow"
           >
-            <span>無料で相談</span>
+            <span>ワーホリ無料相談</span>
           </Link>
         </nav>
 
@@ -96,11 +100,11 @@ const Header: React.FC = () => {
               href="https://px.a8.net/svt/ejp?a8mat=45C1IF+AMTQR6+5S4I+BW8O2&a8ejpredirect=https%3A%2F%2Fwww.iss-ryugakulife.com%2Fcounseling" 
               className={`${styles.mobileNavLink} ${styles.mobileCtaButton}`}
               onClick={closeMenu}
-              aria-label="無料相談ページへ"
+              aria-label="ワーホリ無料相談ページへ"
               target="_blank"
               rel="nofollow"
             >
-              <span>無料で相談</span>
+              <span>ワーホリ無料相談</span>
             </Link>
           </nav>
         </div>

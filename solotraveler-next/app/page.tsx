@@ -559,11 +559,7 @@ const getOriginalCurrency = (wage: string) => {
       <Header />
       <main className="home-page">
         <section aria-label="ワーキングホリデー協定国一覧">
-          <h1 className="main-heading">ワーホリ対応31カ国一覧【2025年版】</h1>
-                                  <p className="main-description">
-              条件や特徴を比べて自分に合った国を見つけよう<br />
-              オーストラリア・カナダ・ニュージーランドなど人気国から、ヨーロッパや南米の国まで比較できます。
-            </p>
+          <h1 className="main-heading">2025年最新ワーホリ対応国一覧</h1>
             
             <div className="dropdown-section">
               <div className="dropdown-container">

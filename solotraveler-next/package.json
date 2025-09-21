@@ -9,7 +9,8 @@
     "lint": "next lint",
     "analyze": "ANALYZE=true next build",
     "sitemap": "next build && node scripts/generate-sitemap.js",
-    "seo-check": "npm run build && npm run sitemap"
+    "seo-check": "npm run build && npm run sitemap",
+    "export": "next build && next export"
   },
   "dependencies": {
     "react": "^18",

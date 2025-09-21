@@ -123,51 +123,66 @@ export default function RootLayout({
             
             // Core Web Vitals の計測
             function sendWebVitals() {
-              if (typeof window !== 'undefined' && window.gtag) {
+              if (typeof window !== 'undefined' && window.gtag && 'PerformanceObserver' in window) {
                 function getCLS(onPerfEntry) {
-                  let clsValue = 0;
-                  let clsEntries = [];
-                  let sessionValue = 0;
-                  let sessionEntries = [];
-                  
-                  new PerformanceObserver((entryList) => {
-                    for (const entry of entryList.getEntries()) {
-                      if (!entry.hadRecentInput) {
-                        const firstSessionEntry = sessionEntries[0];
-                        const lastSessionEntry = sessionEntries[sessionEntries.length - 1];
-                        
-                        if (sessionValue && entry.startTime - lastSessionEntry.startTime < 1000 && entry.startTime - firstSessionEntry.startTime < 5000) {
-                          sessionValue += entry.value;
-                          sessionEntries.push(entry);
-                        } else {
-                          sessionValue = entry.value;
-                          sessionEntries = [entry];
-                        }
-                        
-                        if (sessionValue > clsValue) {
-                          clsValue = sessionValue;
-                          clsEntries = [...sessionEntries];
-                          onPerfEntry({ name: 'CLS', value: clsValue, entries: clsEntries });
+                  try {
+                    let clsValue = 0;
+                    let clsEntries = [];
+                    let sessionValue = 0;
+                    let sessionEntries = [];
+                    
+                    const observer = new PerformanceObserver((entryList) => {
+                      for (const entry of entryList.getEntries()) {
+                        if (!entry.hadRecentInput) {
+                          const firstSessionEntry = sessionEntries[0];
+                          const lastSessionEntry = sessionEntries[sessionEntries.length - 1];
+                          
+                          if (sessionValue && entry.startTime - lastSessionEntry.startTime < 1000 && entry.startTime - firstSessionEntry.startTime < 5000) {
+                            sessionValue += entry.value;
+                            sessionEntries.push(entry);
+                          } else {
+                            sessionValue = entry.value;
+                            sessionEntries = [entry];
+                          }
+                          
+                          if (sessionValue > clsValue) {
+                            clsValue = sessionValue;
+                            clsEntries = [...sessionEntries];
+                            onPerfEntry({ name: 'CLS', value: clsValue, entries: clsEntries });
+                          }
                         }
                       }
-                    }
-                  }).observe({ type: 'layout-shift', buffered: true });
+                    });
+                    observer.observe({ type: 'layout-shift', buffered: true });
+                  } catch (e) {
+                    console.warn('CLS measurement failed:', e);
+                  }
                 }
                 
                 function getFID(onPerfEntry) {
-                  new PerformanceObserver((entryList) => {
-                    for (const entry of entryList.getEntries()) {
-                      onPerfEntry({ name: 'FID', value: entry.processingStart - entry.startTime, entries: [entry] });
-                    }
-                  }).observe({ type: 'first-input', buffered: true });
+                  try {
+                    const observer = new PerformanceObserver((entryList) => {
+                      for (const entry of entryList.getEntries()) {
+                        onPerfEntry({ name: 'FID', value: entry.processingStart - entry.startTime, entries: [entry] });
+                      }
+                    });
+                    observer.observe({ type: 'first-input', buffered: true });
+                  } catch (e) {
+                    console.warn('FID measurement failed:', e);
+                  }
                 }
                 
                 function getLCP(onPerfEntry) {
-                  new PerformanceObserver((entryList) => {
-                    const entries = entryList.getEntries();
-                    const lastEntry = entries[entries.length - 1];
-                    onPerfEntry({ name: 'LCP', value: lastEntry.startTime, entries: [lastEntry] });
-                  }).observe({ type: 'largest-contentful-paint', buffered: true });
+                  try {
+                    const observer = new PerformanceObserver((entryList) => {
+                      const entries = entryList.getEntries();
+                      const lastEntry = entries[entries.length - 1];
+                      onPerfEntry({ name: 'LCP', value: lastEntry.startTime, entries: [lastEntry] });
+                    });
+                    observer.observe({ type: 'largest-contentful-paint', buffered: true });
+                  } catch (e) {
+                    console.warn('LCP measurement failed:', e);
+                  }
                 }
                 
                 getCLS((metric) => gtag('event', metric.name, { value: Math.round(metric.value * 1000), event_category: 'Web Vitals' }));

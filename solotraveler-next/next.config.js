@@ -1,5 +1,8 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  // 静的エクスポートを無効化（Vercelでの動的レンダリングを有効化）
+  output: undefined,
+  
   // 画像最適化
   images: {
     formats: ['image/webp', 'image/avif'],

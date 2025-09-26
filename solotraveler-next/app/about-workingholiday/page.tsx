@@ -324,8 +324,8 @@ export default function AboutWorkingHoliday() {
               "@context": "https://schema.org",
               "@type": "BreadcrumbList",
               "itemListElement": [
-                { "@type": "ListItem", "position": 1, "name": "ホーム", "item": "https://solotraveler-next.vercel.app/" },
-                { "@type": "ListItem", "position": 2, "name": "ワーホリとは", "item": "https://solotraveler-next.vercel.app/about-workingholiday" }
+                { "@type": "ListItem", "position": 1, "name": "ホーム", "item": "https://workingholidaypass.jp/" },
+                { "@type": "ListItem", "position": 2, "name": "ワーホリとは", "item": "https://workingholidaypass.jp/about-workingholiday" }
               ]
             })
           }}

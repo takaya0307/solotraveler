@@ -1,7 +1,7 @@
 import { NextResponse } from 'next/server';
 
 export async function GET() {
-  const baseUrl = 'https://solotraveler-next.vercel.app';
+  const baseUrl = 'https://workingholidaypass.jp';
   
   // 画像サイトマップの生成
   const imageSitemap = `<?xml version="1.0" encoding="UTF-8"?>

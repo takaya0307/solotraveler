@@ -45,7 +45,7 @@ export function generateAboutWorkingHolidayMetadata(): Metadata {
     creator: "ワーホリパス",
     publisher: "ワーホリパス",
     alternates: {
-      canonical: "https://solotraveler-next.vercel.app/about-workingholiday",
+      canonical: "https://workingholidaypass.jp/about-workingholiday",
       languages: {
         'ja-JP': '/about-workingholiday',
       },
@@ -53,7 +53,7 @@ export function generateAboutWorkingHolidayMetadata(): Metadata {
     openGraph: {
       title,
       description,
-      url: 'https://solotraveler-next.vercel.app/about-workingholiday',
+      url: 'https://workingholidaypass.jp/about-workingholiday',
       siteName: 'ワーホリパス',
       locale: 'ja_JP',
       type: 'article',

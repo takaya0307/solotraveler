@@ -27,7 +27,7 @@ export const metadata: Metadata = {
     address: false,
     telephone: false,
   },
-  metadataBase: new URL('https://solotraveler-next.vercel.app'),
+  metadataBase: new URL('https://workingholidaypass.jp'),
   alternates: {
     languages: {
       'ja-JP': '/',
@@ -36,7 +36,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "【2025年最新】ワーホリ対応31カ国一覧と人気都市",
     description: "オーストラリア・カナダ・ニュージーランドなど31カ国のワーホリ条件や人気都市を徹底解説。あなたに合った国を見つけるための情報をまとめました。",
-    url: 'https://solotraveler-next.vercel.app', 
+    url: 'https://workingholidaypass.jp', 
     siteName: 'ワーホリパス',
     locale: 'ja_JP',
     type: 'website',
@@ -134,8 +134,8 @@ export default function RootLayout({
         
         {/* 日本語サイト指定 */}
         <meta name="hreflang" content="ja-JP" />
-        <link rel="alternate" hrefLang="ja-JP" href="https://solotraveler-next.vercel.app" />
-        <link rel="alternate" hrefLang="x-default" href="https://solotraveler-next.vercel.app" />
+        <link rel="alternate" hrefLang="ja-JP" href="https://workingholidaypass.jp" />
+        <link rel="alternate" hrefLang="x-default" href="https://workingholidaypass.jp" />
       </head>
       <body
         className={`${inter.variable} ${dancingScript.variable} antialiased`}

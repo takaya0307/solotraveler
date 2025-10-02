@@ -73,6 +73,28 @@ export default function SpainDetailPage() {
     }
   ];
 
+  const jobInfo = {
+    popularJobs: [
+      "バル・レストラン（ウェイター、キッチン、バーテンダー）",
+      "ホテル・宿泊施設（フロント、ハウスキーピング、ベルボーイ）",
+      "観光業（ツアーガイド、博物館スタッフ）",
+      "小売業（ショップスタッフ、レジ係）",
+      "語学学校（英語教師、アシスタント）",
+      "日本語教師（プライベートレッスン、語学スクール）",
+      "清掃業（オフィス清掃、ハウスクリーニング）",
+      "農業・畜産業（季節労働）"
+    ],
+    jobSearchMethods: [
+      "Indeed Spain（スペイン最大級の求人サイト）",
+      "InfoJobs（スペインの主要求人サイト）",
+      "直接バル・レストラン訪問",
+      "ホテル・宿泊施設の直接訪問",
+      "友人・知人からの紹介"
+    ],
+    averageWage: "平均時給は€8-12（約1,280-1,920円）。マドリードやバルセロナなどの都市部では時給が高く、€10-15程度。観光シーズンには観光業での求人が多くなります。",
+    specialNotes: "スペイン語ができると仕事の選択肢が大幅に広がります。バルでの仕事はスペイン特有の文化体験ができる人気の職種です。シエスタ（昼休み）の文化があるため、勤務時間の調整が必要な場合があります。"
+  };
+
   return (
     <CountryDetailLayout
       country={country}
@@ -82,6 +104,7 @@ export default function SpainDetailPage() {
       countryFeatures={countryFeatures}
       countryAtmosphere={countryAtmosphere}
       countryHighlights={countryHighlights}
+      jobInfo={jobInfo}
       consultationLink="https://px.a8.net/svt/ejp?a8mat=45C1IF+AMTQR6+5S4I+BW8O2&a8ejpredirect=https%3A%2F%2Fwww.iss-ryugakulife.com%2Fcounseling"
     />
   );

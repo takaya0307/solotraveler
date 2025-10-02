@@ -10,9 +10,9 @@ export function generateCanadaMetadata(): Metadata {
 
   return generateBaseMetadata({
     countryInfo,
-    // カスタム設定があればここで指定
-    customKeywords: ['アウトドア', 'メープルシロップ', '多文化社会'],
+    // カスタム設定（3-5個に絞る）
+    customKeywords: ['カナダ ワーホリ 準備', 'カナダ ワーホリ 費用'],
     articleSection: 'カナダワーホリ',
-    articleTags: ['カナダ', 'ワーホリ', '英語学習', 'フランス語学習', '自然']
+    articleTags: ['カナダ', 'ワーホリ', '海外就労']
   });
 } 

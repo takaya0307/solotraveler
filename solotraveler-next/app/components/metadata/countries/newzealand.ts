@@ -10,9 +10,9 @@ export function generateNewZealandMetadata(): Metadata {
 
   return generateBaseMetadata({
     countryInfo,
-    // カスタム設定があればここで指定
-    customKeywords: ['ハイキング', 'マオリ文化', 'アドベンチャー'],
+    // カスタム設定（3-5個に絞る）
+    customKeywords: ['ニュージーランド ワーホリ 準備', 'ニュージーランド ワーホリ 費用'],
     articleSection: 'ニュージーランドワーホリ',
-    articleTags: ['ニュージーランド', 'ワーホリ', '英語学習', '自然', 'アドベンチャー']
+    articleTags: ['ニュージーランド', 'ワーホリ', '海外就労']
   });
 } 

@@ -10,9 +10,9 @@ export function generateAustraliaMetadata(): Metadata {
 
   return generateBaseMetadata({
     countryInfo,
-    // カスタム設定があればここで指定
-    customKeywords: ['サーフィン', 'カフェ文化', 'アウトドアライフ'],
+    // カスタム設定（3-5個に絞る）
+    customKeywords: ['オーストラリア ワーホリ 準備', 'オーストラリア ワーホリ 費用'],
     articleSection: 'オーストラリアワーホリ',
-    articleTags: ['オーストラリア', 'ワーホリ', '英語学習', 'ビーチライフ']
+    articleTags: ['オーストラリア', 'ワーホリ', '海外就労']
   });
 } 

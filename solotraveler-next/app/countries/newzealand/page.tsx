@@ -72,6 +72,29 @@ export default function NewZealandDetailPage() {
     }
   ];
 
+  const jobInfo = {
+    popularJobs: [
+      "キウイフルーツ農場（収穫、パッキング、加工）",
+      "ワイナリー（収穫、醸造、テイスティングルーム）",
+      "カフェ・レストラン（ウェイター、キッチン、バリスタ）",
+      "ホテル・宿泊施設（フロント、ハウスキーピング）",
+      "観光業（ツアーガイド、アクティビティスタッフ）",
+      "小売業（ショップスタッフ、レジ係）",
+      "日本語教師（プライベートレッスン、語学スクール）",
+      "清掃業（オフィス清掃、ハウスクリーニング）"
+    ],
+    jobSearchMethods: [
+      "Indeed（ニュージーランド最大級の求人サイト）",
+      "Seek NZ（ニュージーランド最大級の求人サイト）",
+      "Trade Me Jobs（現地人気の求人サイト）",
+      "直接農場・ワイナリー訪問",
+      "カフェ・レストランの直接訪問",
+      "友人・知人からの紹介"
+    ],
+    averageWage: "平均時給はNZ$18-22（約1,620-1,980円）。農業やワイナリーでは時給が高く、NZ$20-25程度。観光地やクイーンズタウンなどの人気エリアでは時給が高めです。",
+    specialNotes: "キウイフルーツの収穫シーズン（3-6月）は特に求人が多く、ファームでの仕事は現地の生活を体験する良い機会です。ワイナリーでの仕事も人気で、ワインの知識も身につけられます。のんびりした環境で働きたい人におすすめです。"
+  };
+
   return (
     <CountryDetailLayout
       country={country}
@@ -81,6 +104,7 @@ export default function NewZealandDetailPage() {
       countryFeatures={countryFeatures}
       countryAtmosphere={countryAtmosphere}
       countryHighlights={countryHighlights}
+      jobInfo={jobInfo}
       consultationLink="https://px.a8.net/svt/ejp?a8mat=45C1IF+AMTQR6+5S4I+BW8O2&a8ejpredirect=https%3A%2F%2Fwww.iss-ryugakulife.com%2Fcounseling"
     />
   );

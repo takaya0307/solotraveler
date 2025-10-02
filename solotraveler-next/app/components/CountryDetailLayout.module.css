@@ -840,4 +840,84 @@
     padding: 2rem;
     margin-bottom: 3rem;
   }
+}
+
+/* ワーホリでの仕事セクション */
+.section-jobs {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 2.5rem;
+  margin: 2rem 0;
+}
+
+.job-content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.job-list {
+  margin: 1rem 0 2rem 0;
+}
+
+.job-item {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 0.75rem;
+  padding: 0.5rem 0;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #000000;
+}
+
+.job-bullet {
+  color: #000000;
+  font-weight: bold;
+  margin-right: 0.75rem;
+  margin-top: 0.1rem;
+  flex-shrink: 0;
+}
+
+.job-wage {
+  font-size: 1rem;
+  font-weight: 400;
+  color: #000000;
+  background: #f8f9fa;
+  padding: 1rem 1.5rem;
+  border-radius: 8px;
+  border-left: 4px solid #6b7280;
+  margin: 1rem 0 2rem 0;
+  line-height: 1.6;
+}
+
+.job-notes {
+  background: #f8f9fa;
+  padding: 1rem 1.5rem;
+  border-radius: 8px;
+  border-left: 4px solid #6b7280;
+  margin: 1rem 0;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #000000;
+}
+
+/* レスポンシブ対応 - 仕事セクション */
+@media (max-width: 767px) {
+  .section-jobs {
+    padding: 1.5rem;
+    margin: 1.5rem 0;
+  }
+  
+  .job-item {
+    font-size: 0.9rem;
+  }
+  
+  .job-wage {
+    font-size: 1rem;
+    padding: 0.75rem 1rem;
+  }
+  
+  .job-notes {
+    padding: 0.75rem 1rem;
+    font-size: 0.9rem;
+  }
 } 

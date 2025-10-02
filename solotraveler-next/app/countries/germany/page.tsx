@@ -72,6 +72,28 @@ export default function GermanyDetailPage() {
     }
   ];
 
+  const jobInfo = {
+    popularJobs: [
+      "レストラン・カフェ（ウェイター、キッチン、バリスタ）",
+      "ホテル・宿泊施設（フロント、ハウスキーピング）",
+      "小売業（ショップスタッフ、レジ係、倉庫作業）",
+      "オフィスワーク（データ入力、アシスタント）",
+      "語学学校（英語教師、アシスタント）",
+      "日本語教師（プライベートレッスン、語学スクール）",
+      "清掃業（オフィス清掃、ハウスクリーニング）",
+      "製造業（工場作業、品質管理）"
+    ],
+    jobSearchMethods: [
+      "Indeed Germany（ドイツ最大級の求人サイト）",
+      "StepStone（ドイツの主要求人サイト）",
+      "直接レストラン・カフェ訪問",
+      "ホテル・宿泊施設の直接訪問",
+      "友人・知人からの紹介"
+    ],
+    averageWage: "平均時給は€10-15（約1,600-2,400円）。ミュンヘンやフランクフルトなどの都市部では時給が高く、€12-18程度。製造業や技術系の仕事ではさらに高時給が期待できます。",
+    specialNotes: "ドイツ語ができると仕事の選択肢が大幅に広がります。ドイツ人は時間に厳格で、効率的な働き方を重視する文化があります。製造業での仕事は、ドイツの高い技術力に触れる良い機会です。"
+  };
+
   return (
     <CountryDetailLayout
       country={country}
@@ -81,6 +103,7 @@ export default function GermanyDetailPage() {
       countryFeatures={countryFeatures}
       countryAtmosphere={countryAtmosphere}
       countryHighlights={countryHighlights}
+      jobInfo={jobInfo}
       consultationLink="https://px.a8.net/svt/ejp?a8mat=45C1IF+AMTQR6+5S4I+BW8O2&a8ejpredirect=https%3A%2F%2Fwww.iss-ryugakulife.com%2Fcounseling"
     />
   );

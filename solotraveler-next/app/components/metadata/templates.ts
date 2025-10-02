@@ -11,28 +11,15 @@ export function generateBaseMetadata(config: CountryMetadataConfig): Metadata {
   // ディスクリプションの生成（150-160文字）
   const description = customDescription || `${countryInfo.nameJa}ワーホリの特徴・人気都市・おすすめポイントを徹底解説。${countryInfo.description}`;
   
-  // キーワードの生成
+  // キーワードの生成（3-5個に絞る）
   const baseKeywords = [
-    // メインキーワード
+    // メインキーワード（必須）
     `${countryInfo.nameJa}ワーホリ`,
     `${countryInfo.nameJa} ワーホリ`,
-    `${countryInfo.nameEn} ワーホリ`,
-    // 地域・都市
-    ...countryInfo.cities.map(city => `${city}ワーホリ`),
-    // 特徴・魅力
-    ...countryInfo.features,
-    // ワーホリ関連
-    "ワーホリ費用",
-    "ワーホリ条件",
-    "ワーホリエージェント",
-    "ワーホリビザ",
-    "海外就労",
-    "海外生活",
-    // 実用的なキーワード
-    "語学留学",
-    "国際交流",
-    ...countryInfo.languages.map(lang => `${lang}学習`),
-    ...countryInfo.culture
+    // 実用的なキーワード（2-3個）
+    `${countryInfo.nameJa} ワーホリ 準備`,
+    `${countryInfo.nameJa} ワーホリ 費用`,
+    "海外就労"
   ];
   
   // カスタムキーワードがあれば追加

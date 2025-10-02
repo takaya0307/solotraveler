@@ -115,6 +115,28 @@ export default function IrelandDetailPage() {
     }
   ];
 
+  const jobInfo = {
+    popularJobs: [
+      "パブ（バーテンダー、ウェイター、キッチン）",
+      "レストラン・カフェ（ウェイター、キッチン、バリスタ）",
+      "ホテル・宿泊施設（フロント、ハウスキーピング）",
+      "小売業（ショップスタッフ、レジ係）",
+      "観光業（ツアーガイド、博物館スタッフ）",
+      "日本語教師（プライベートレッスン、語学スクール）",
+      "清掃業（オフィス清掃、ハウスクリーニング）",
+      "農業・畜産業（季節労働）"
+    ],
+    jobSearchMethods: [
+      "Indeed Ireland（アイルランド最大級の求人サイト）",
+      "IrishJobs.ie（アイルランドの主要求人サイト）",
+      "直接パブ・レストラン訪問",
+      "ホテル・宿泊施設の直接訪問",
+      "友人・知人からの紹介"
+    ],
+    averageWage: "平均時給は€10-15（約1,600-2,400円）。ダブリンなどの都市部では時給が高く、€12-18程度。パブやレストランではチップも期待でき、実質的な収入がさらに高くなります。",
+    specialNotes: "パブでの仕事はアイルランド特有の文化体験ができる人気の職種です。特にアイリッシュパブでの仕事は、現地の音楽や文化に触れる良い機会です。ダブリンなどの都市部では競争が激しいため、地方都市も検討すると良いでしょう。"
+  };
+
   return (
     <CountryDetailLayout
       country={country}
@@ -128,6 +150,7 @@ export default function IrelandDetailPage() {
       englishLearningEnvironment={englishLearningEnvironment}
       outdoorLifeDescription={outdoorLifeDescription}
       recommendedFor={recommendedFor}
+      jobInfo={jobInfo}
       consultationLink="https://px.a8.net/svt/ejp?a8mat=45C1IF+AMTQR6+5S4I+BW8O2&a8ejpredirect=https%3A%2F%2Fwww.iss-ryugakulife.com%2Fcounseling"
     />
   );

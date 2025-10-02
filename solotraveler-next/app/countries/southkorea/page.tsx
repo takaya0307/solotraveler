@@ -73,6 +73,28 @@ export default function SouthKoreaDetailPage() {
     }
   ];
 
+  const jobInfo = {
+    popularJobs: [
+      "韓国料理店・カフェ（ウェイター、キッチン、バリスタ）",
+      "ホテル・宿泊施設（フロント、ハウスキーピング）",
+      "小売業（ショップスタッフ、レジ係）",
+      "語学学校（日本語教師、アシスタント）",
+      "コールセンター（日本語対応）",
+      "観光業（ツアーガイド、観光案内）",
+      "清掃業（オフィス清掃、ハウスクリーニング）",
+      "美容・エステ業（受付、アシスタント）"
+    ],
+    jobSearchMethods: [
+      "Indeed Korea（韓国最大級の求人サイト）",
+      "JobKorea（韓国の主要求人サイト）",
+      "直接韓国料理店・カフェ訪問",
+      "ホテル・宿泊施設の直接訪問",
+      "友人・知人からの紹介"
+    ],
+    averageWage: "平均時給は₩8,000-12,000（約900-1,350円）。ソウルなどの都市部では時給が高く、₩10,000-15,000程度。語学学校での日本語教師は時給が高い場合もあります。",
+    specialNotes: "韓国語ができると仕事の選択肢が大幅に広がります。日本語ができるとコールセンターや語学学校での仕事が有利です。韓国は年齢や上下関係を重視する文化があるため、職場での礼儀に注意が必要です。"
+  };
+
   return (
     <CountryDetailLayout
       country={country}
@@ -82,6 +104,7 @@ export default function SouthKoreaDetailPage() {
       countryFeatures={countryFeatures}
       countryAtmosphere={countryAtmosphere}
       countryHighlights={countryHighlights}
+      jobInfo={jobInfo}
       consultationLink="https://px.a8.net/svt/ejp?a8mat=45C1IF+AMTQR6+5S4I+BW8O2&a8ejpredirect=https%3A%2F%2Fwww.iss-ryugakulife.com%2Fcounseling"
     />
   );

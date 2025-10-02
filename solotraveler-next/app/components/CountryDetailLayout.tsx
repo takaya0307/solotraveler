@@ -165,6 +165,12 @@ interface CountryDetailLayoutProps {
     bgColor: string;
     icon: string;
   }>;
+  jobInfo?: {
+    popularJobs: string[];
+    jobSearchMethods: string[];
+    averageWage: string;
+    specialNotes: string;
+  };
   consultationLink?: string;
   // 国ごとの見出しカスタマイズ用
   sectionTitles?: {
@@ -191,6 +197,7 @@ export default function CountryDetailLayout({
   englishLearningEnvironment,
   outdoorLifeDescription,
   recommendedFor,
+  jobInfo,
   consultationLink,
   sectionTitles,
   subsectionTitles
@@ -463,6 +470,57 @@ export default function CountryDetailLayout({
               </div>
             </div>
           </section>
+
+          {/* ワーホリでの仕事セクション */}
+          {jobInfo && (
+            <section className={`${styles.section} ${styles["section-jobs"]}`}>
+              <h2 className={styles["section-title"]}>
+                <span className={styles["section-title-icon-green"]}>💼</span> ワーホリでの仕事
+              </h2>
+              
+              <div className={styles["section-content"]}>
+                <div className={styles["job-content"]}>
+                  <h3 className={styles["subsection-title"]}>
+                    🏢 {country.nameJa}で人気の仕事
+                  </h3>
+                  <div className={styles["job-list"]}>
+                    {jobInfo.popularJobs.map((job, index) => (
+                      <div key={index} className={styles["job-item"]}>
+                        <span className={styles["job-bullet"]}>•</span>
+                        {job}
+                      </div>
+                    ))}
+                  </div>
+
+                  <h3 className={styles["subsection-title"]}>
+                    🔍 仕事の探し方
+                  </h3>
+                  <div className={styles["job-list"]}>
+                    {jobInfo.jobSearchMethods.map((method, index) => (
+                      <div key={index} className={styles["job-item"]}>
+                        <span className={styles["job-bullet"]}>•</span>
+                        {method}
+                      </div>
+                    ))}
+                  </div>
+
+                  <h3 className={styles["subsection-title"]}>
+                    💰 平均的な給与
+                  </h3>
+                  <p className={styles["job-wage"]}>{jobInfo.averageWage}</p>
+
+                  {jobInfo.specialNotes && (
+                    <>
+                      <h3 className={styles["subsection-title"]}>
+                        ⚠️ その他の注意点
+                      </h3>
+                      <p className={styles["job-notes"]}>{jobInfo.specialNotes}</p>
+                    </>
+                  )}
+                </div>
+              </div>
+            </section>
+          )}
 
 
           {/* 無料相談セクション */}

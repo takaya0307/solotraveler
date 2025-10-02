@@ -72,6 +72,27 @@ export default function CanadaDetailPage() {
     }
   ];
 
+  const jobInfo = {
+    popularJobs: [
+      "スキーリゾート（リフトオペレーター、レストラン、ホテル）",
+      "カフェ・レストラン（ウェイター、キッチン、バリスタ）",
+      "小売業（ショップスタッフ、レジ係、倉庫作業）",
+      "ホテル・宿泊施設（フロント、ハウスキーピング）",
+      "メープルシロップ農場（収穫、加工、販売）",
+      "日本語教師（プライベートレッスン、語学スクール）",
+      "清掃業（オフィス清掃、ハウスクリーニング）",
+      "農業・畜産業（季節労働）"
+    ],
+    jobSearchMethods: [
+      "Indeed Canada（カナダ最大級の求人サイト）",
+      "直接店舗訪問（レストラン、カフェ、ショップ）",
+      "スキーリゾートの公式サイト",
+      "友人・知人からの紹介"
+    ],
+    averageWage: "平均時給はCA$15-20（約1,650-2,200円）。スキーリゾートや観光地では時給が高く、CA$18-25程度。チップ文化もあるため、サービス業では実質的な収入がさらに高くなります。",
+    specialNotes: "冬季のスキーリゾートでの仕事は人気が高く、シーズン前（9-11月）に応募するのが一般的。ケベック州ではフランス語ができると仕事の選択肢が大幅に広がります。季節によって仕事内容が変わるため、事前にリサーチすることが重要です。"
+  };
+
   return (
     <CountryDetailLayout
       country={country}
@@ -81,6 +102,7 @@ export default function CanadaDetailPage() {
       countryFeatures={countryFeatures}
       countryAtmosphere={countryAtmosphere}
       countryHighlights={countryHighlights}
+      jobInfo={jobInfo}
       consultationLink="https://px.a8.net/svt/ejp?a8mat=45C1IF+AMTQR6+5S4I+BW8O2&a8ejpredirect=https%3A%2F%2Fwww.iss-ryugakulife.com%2Fcounseling"
     />
   );

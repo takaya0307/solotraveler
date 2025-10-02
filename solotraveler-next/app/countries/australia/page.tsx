@@ -72,6 +72,27 @@ export default function AustraliaDetailPage() {
     }
   ];
 
+  const jobInfo = {
+    popularJobs: [
+      "カフェ・レストラン（ウェイター、キッチン、バリスタ）",
+      "ファームジョブ（果物摘み、野菜収穫、畜産）",
+      "ホテル・宿泊施設（フロント、ハウスキーピング、ベルボーイ）",
+      "小売業（ショップスタッフ、レジ係、倉庫作業）",
+      "清掃業（オフィス清掃、ハウスクリーニング）",
+      "日本語教師（プライベートレッスン、語学スクール）",
+      "サーフショップ（レンタル、販売スタッフ）"
+    ],
+    jobSearchMethods: [
+      "Indeed（オーストラリア最大級の求人サイト）",
+      "Gumtree（現地最大級の求人サイト）",
+      "Seek（オーストラリアの主要求人サイト）",
+      "直接店舗訪問（レストラン、カフェ、ショップ）",
+      "友人・知人からの紹介"
+    ],
+    averageWage: "平均時給はA$25-30（約2,400-2,850円）。ファームジョブは時給が高い場合も多く、A$30-35程度。カフェやレストランでは最低賃金で安定した収入が期待できます。",
+    specialNotes: "ファームジョブは2年目以降のビザ延長条件にもなるため人気です。季節によって仕事内容が変わるので、事前にリサーチすることが重要。都市部では競争が激しいため、地方での仕事も検討すると良いでしょう。"
+  };
+
   return (
     <CountryDetailLayout
       country={country}
@@ -81,6 +102,7 @@ export default function AustraliaDetailPage() {
       countryFeatures={countryFeatures}
       countryAtmosphere={countryAtmosphere}
       countryHighlights={countryHighlights}
+      jobInfo={jobInfo}
       consultationLink="https://px.a8.net/svt/ejp?a8mat=45C1IF+AMTQR6+5S4I+BW8O2&a8ejpredirect=https%3A%2F%2Fwww.iss-ryugakulife.com%2Fcounseling"
     />
   );

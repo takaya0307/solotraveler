@@ -72,6 +72,28 @@ export default function UKDetailPage() {
     }
   ];
 
+  const jobInfo = {
+    popularJobs: [
+      "パブ（バーテンダー、ウェイター、キッチン）",
+      "レストラン・カフェ（ウェイター、キッチン、バリスタ）",
+      "ホテル・宿泊施設（フロント、ハウスキーピング、ベルボーイ）",
+      "小売業（ショップスタッフ、レジ係、倉庫作業）",
+      "観光業（ツアーガイド、博物館スタッフ）",
+      "日本語教師（プライベートレッスン、語学スクール）",
+      "清掃業（オフィス清掃、ハウスクリーニング）",
+      "オフィスワーク（データ入力、アシスタント）"
+    ],
+    jobSearchMethods: [
+      "Indeed UK（イギリス最大級の求人サイト）",
+      "Reed.co.uk（イギリスの主要求人サイト）",
+      "直接パブ・レストラン訪問",
+      "ホテル・宿泊施設の直接訪問",
+      "友人・知人からの紹介"
+    ],
+    averageWage: "平均時給は£8-12（約1,480-2,220円）。ロンドンなどの都市部では時給が高く、£10-15程度。パブやレストランではチップも期待でき、実質的な収入がさらに高くなります。",
+    specialNotes: "パブでの仕事はイギリス特有の文化体験ができる人気の職種です。ロンドンなどの都市部では競争が激しいため、地方都市も検討すると良いでしょう。観光シーズン（夏期）には観光業での求人が多くなります。"
+  };
+
   return (
     <CountryDetailLayout
       country={country}
@@ -81,6 +103,7 @@ export default function UKDetailPage() {
       countryFeatures={countryFeatures}
       countryAtmosphere={countryAtmosphere}
       countryHighlights={countryHighlights}
+      jobInfo={jobInfo}
       consultationLink="https://px.a8.net/svt/ejp?a8mat=45C1IF+AMTQR6+5S4I+BW8O2&a8ejpredirect=https%3A%2F%2Fwww.iss-ryugakulife.com%2Fcounseling"
     />
   );

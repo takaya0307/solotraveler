@@ -49,6 +49,29 @@ export default function FranceDetailPage() {
     }
   ];
 
+  const countryHighlights = [
+    {
+      title: "フランス語の本場で学ぶ",
+      description: "正統なフランス語と文化を同時に習得。パリの語学学校で、正しい発音と表現を学びながら、フランスの生活文化も体験できます。",
+      icon: "🗣️"
+    },
+    {
+      title: "芸術と文化の宝庫",
+      description: "ルーブル美術館など世界最高峰の美術館。モナリザやミロのヴィーナスなど、世界の名作を間近で鑑賞できます。",
+      icon: "🎨"
+    },
+    {
+      title: "美食とワイン文化",
+      description: "世界最高峰の料理とワインを堪能。ミシュラン星付きレストランで本場のフランス料理を味わい、ブルゴーニュやボルドーのワインを楽しめます。",
+      icon: "🍷"
+    },
+    {
+      title: "ヨーロッパ旅行の拠点",
+      description: "EU諸国へのアクセスが便利。TGVでベルギーやスイスへ、飛行機でヨーロッパ各国へ簡単に旅行できます。",
+      icon: "✈️"
+    }
+  ];
+
   return (
     <CountryDetailLayout
       country={country}
@@ -57,6 +80,7 @@ export default function FranceDetailPage() {
       countryDescription={countryDescription}
       countryFeatures={countryFeatures}
       countryAtmosphere={countryAtmosphere}
+      countryHighlights={countryHighlights}
       consultationLink="https://px.a8.net/svt/ejp?a8mat=45C1IF+AMTQR6+5S4I+BW8O2&a8ejpredirect=https%3A%2F%2Fwww.iss-ryugakulife.com%2Fcounseling"
     />
   );

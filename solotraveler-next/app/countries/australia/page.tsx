@@ -49,6 +49,29 @@ export default function AustraliaDetailPage() {
     }
   ];
 
+  const countryHighlights = [
+    {
+      title: "3年間の長期滞在が可能",
+      description: "2年目以降は条件付きで延長可能な制度。農業や地方での就労により、最長3年間の滞在が可能で、より深い経験ができます。",
+      icon: "⏰"
+    },
+    {
+      title: "豊富な仕事の機会",
+      description: "農業、観光、ホスピタリティ業界で多くの求人。特にファームジョブは延長の条件にもなり、収入も得られます。",
+      icon: "💼"
+    },
+    {
+      title: "温暖な気候で一年中アクティブ",
+      description: "ビーチライフやアウトドア活動を楽しめる。サーフィン、ハイキング、キャンプなど、豊富なアクティビティが一年中楽しめます。",
+      icon: "🏖️"
+    },
+    {
+      title: "英語学習に最適な環境",
+      description: "多様なアクセントで実践的な英語力向上。オーストラリア英語の独特な表現やスラングも学べる環境です。",
+      icon: "🗣️"
+    }
+  ];
+
   return (
     <CountryDetailLayout
       country={country}
@@ -57,6 +80,7 @@ export default function AustraliaDetailPage() {
       countryDescription={countryDescription}
       countryFeatures={countryFeatures}
       countryAtmosphere={countryAtmosphere}
+      countryHighlights={countryHighlights}
       consultationLink="https://px.a8.net/svt/ejp?a8mat=45C1IF+AMTQR6+5S4I+BW8O2&a8ejpredirect=https%3A%2F%2Fwww.iss-ryugakulife.com%2Fcounseling"
     />
   );

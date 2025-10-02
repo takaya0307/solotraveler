@@ -49,11 +49,31 @@ export default function PortugalDetailPage() {
       icon: "😊"
     }
   ];
-  
-  
-  
 
-    return (
+  const countryHighlights = [
+    {
+      title: "ポルトガル語の本場で学ぶ",
+      description: "ラテン系言語とポルトガル文化を習得。リスボンの語学学校で、ポルトガル語を学びながら、ブラジルやアフリカ諸国でも通用する国際的な言語を身につけられます。",
+      icon: "🗣️"
+    },
+    {
+      title: "大航海時代の歴史",
+      description: "世界史に大きな影響を与えた歴史文化。ベレンの塔やジェロニモス修道院、ポルトガル発見記念碑など、大航海時代の栄光を物語る歴史的建造物を巡りながら歴史を学べます。",
+      icon: "⛵"
+    },
+    {
+      title: "美しい海岸線",
+      description: "大西洋に面した美しいビーチと海岸。アルガルヴェ地方の美しいビーチ、ポルトの海岸線、アゾレス諸島など、大西洋の美しい海岸線を満喫できます。",
+      icon: "🏖️"
+    },
+    {
+      title: "温暖な地中海気候",
+      description: "一年を通じて過ごしやすい環境。春は花が咲き乱れ、夏はビーチで日光浴、秋はワイン収穫、冬は温暖で、四季を通じて豊富なアクティビティが楽しめます。",
+      icon: "☀️"
+    }
+  ];
+
+  return (
     <CountryDetailLayout
       country={country}
       pageTitle={pageTitle}
@@ -61,6 +81,7 @@ export default function PortugalDetailPage() {
       countryDescription={countryDescription}
       countryFeatures={countryFeatures}
       countryAtmosphere={countryAtmosphere}
+      countryHighlights={countryHighlights}
       consultationLink="https://px.a8.net/svt/ejp?a8mat=45C1IF+AMTQR6+5S4I+BW8O2&a8ejpredirect=https%3A%2F%2Fwww.iss-ryugakulife.com%2Fcounseling"
     />
   );

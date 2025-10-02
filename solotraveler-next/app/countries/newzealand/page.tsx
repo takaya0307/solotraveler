@@ -49,6 +49,29 @@ export default function NewZealandDetailPage() {
     }
   ];
 
+  const countryHighlights = [
+    {
+      title: "世界最安全な国の一つ",
+      description: "治安が良く、日本人にとって安心して生活できる環境。犯罪率が低く、夜間の外出も比較的安全です。",
+      icon: "🛡️"
+    },
+    {
+      title: "壮大な自然とアドベンチャー",
+      description: "フィヨルド、山々、湖でのアウトドア体験。ミルフォード・サウンドやクック山など、世界有数の自然美を満喫できます。",
+      icon: "⛰️"
+    },
+    {
+      title: "農業とホスピタリティの仕事",
+      description: "キウイフルーツ農場や観光業での就労機会。特にワイナリーやファームでの仕事は、自然と触れ合いながら収入を得られます。",
+      icon: "🚜"
+    },
+    {
+      title: "のんびりとした生活スタイル",
+      description: "ストレスフリーでワークライフバランス重視。自然を愛する文化で、リラックスした生活を送ることができます。",
+      icon: "😌"
+    }
+  ];
+
   return (
     <CountryDetailLayout
       country={country}
@@ -57,6 +80,7 @@ export default function NewZealandDetailPage() {
       countryDescription={countryDescription}
       countryFeatures={countryFeatures}
       countryAtmosphere={countryAtmosphere}
+      countryHighlights={countryHighlights}
       consultationLink="https://px.a8.net/svt/ejp?a8mat=45C1IF+AMTQR6+5S4I+BW8O2&a8ejpredirect=https%3A%2F%2Fwww.iss-ryugakulife.com%2Fcounseling"
     />
   );

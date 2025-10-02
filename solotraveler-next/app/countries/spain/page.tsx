@@ -50,6 +50,29 @@ export default function SpainDetailPage() {
     }
   ];
 
+  const countryHighlights = [
+    {
+      title: "スペイン語の本場で学ぶ",
+      description: "世界で2番目に話者数の多い言語を習得。マドリードやバルセロナの語学学校で、実用的なスペイン語を学びながら、ラテンアメリカ諸国でも通用する国際的な言語を身につけられます。",
+      icon: "🗣️"
+    },
+    {
+      title: "情熱的なフラメンコ文化",
+      description: "本場のフラメンコと闘牛文化を体験。セビリアのフラメンコショーで情熱的なダンスを鑑賞し、スペインの深い文化と歴史を肌で感じることができます。",
+      icon: "💃"
+    },
+    {
+      title: "タパスと地中海料理",
+      description: "豊かな食文化とワインを楽しむ。バルでタパスを食べながら地元の人と交流し、リオハのワインやパエリア、ガスパチョなど本場の料理を堪能できます。",
+      icon: "🍷"
+    },
+    {
+      title: "温暖な地中海気候",
+      description: "一年を通じて過ごしやすい環境。コスタ・デル・ソルでのビーチライフ、シエラ・ネバダでのスキー、春のセマナ・サンタ祭りなど、四季を通じて多彩な体験ができます。",
+      icon: "☀️"
+    }
+  ];
+
   return (
     <CountryDetailLayout
       country={country}
@@ -58,6 +81,7 @@ export default function SpainDetailPage() {
       countryDescription={countryDescription}
       countryFeatures={countryFeatures}
       countryAtmosphere={countryAtmosphere}
+      countryHighlights={countryHighlights}
       consultationLink="https://px.a8.net/svt/ejp?a8mat=45C1IF+AMTQR6+5S4I+BW8O2&a8ejpredirect=https%3A%2F%2Fwww.iss-ryugakulife.com%2Fcounseling"
     />
   );

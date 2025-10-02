@@ -49,11 +49,31 @@ export default function FinlandDetailPage() {
       icon: "😊"
     }
   ];
-  
-  
-  
 
-    return (
+  const countryHighlights = [
+    {
+      title: "フィンランド語と英語",
+      description: "北欧の言語と国際的な英語環境。ヘルシンキの語学学校で、フィンランド語を学びながら、高い英語力を持つフィンランド人との交流で実用的な英語も身につけられます。",
+      icon: "🗣️"
+    },
+    {
+      title: "オーロラと白夜",
+      description: "美しい北極光と白夜を体験。ラップランドでのオーロラ観測、夏の白夜でのハイキングなど、フィンランドならではの自然現象を心ゆくまで楽しめます。",
+      icon: "🌌"
+    },
+    {
+      title: "サンタクロースの故郷",
+      description: "サンタクロースの故郷ロヴァニエミで、サンタクロース村を訪れ、クリスマスの魔法を体験。一年中クリスマスの雰囲気を楽しめます。",
+      icon: "🎅"
+    },
+    {
+      title: "森と湖の自然",
+      description: "広大な森と美しい湖でのアウトドア。サウナ文化、ベリー摘み、フィッシング、ハイキングなど、豊かな自然環境でのリラックスした生活を満喫できます。",
+      icon: "🌲"
+    }
+  ];
+
+  return (
     <CountryDetailLayout
       country={country}
       pageTitle={pageTitle}
@@ -61,6 +81,7 @@ export default function FinlandDetailPage() {
       countryDescription={countryDescription}
       countryFeatures={countryFeatures}
       countryAtmosphere={countryAtmosphere}
+      countryHighlights={countryHighlights}
       consultationLink="https://px.a8.net/svt/ejp?a8mat=45C1IF+AMTQR6+5S4I+BW8O2&a8ejpredirect=https%3A%2F%2Fwww.iss-ryugakulife.com%2Fcounseling"
     />
   );

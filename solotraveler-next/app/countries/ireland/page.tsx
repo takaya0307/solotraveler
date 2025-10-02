@@ -92,6 +92,29 @@ export default function IrelandDetailPage() {
     }
   ];
 
+  const countryHighlights = [
+    {
+      title: "アイルランド英語を学ぶ",
+      description: "独特のアクセントと表現を習得。ダブリンの語学学校で、アイルランド英語の特徴的な発音や表現を学びながら、アイルランド人のユーモアと文化も体験できます。",
+      icon: "🗣️"
+    },
+    {
+      title: "緑の島の自然体験",
+      description: "美しい海岸線と田園風景を満喫。モハーの断崖やキルケニー城、エメラルドグリーンの草原でのドライブなど、アイルランドの美しい自然を心ゆくまで楽しめます。",
+      icon: "🌿"
+    },
+    {
+      title: "ケルト文化と歴史",
+      description: "豊かな伝統文化と歴史的建造物。ケルト十字架や古代遺跡、伝統音楽のセッション、アイリッシュパブでの文化交流など、深い歴史と文化に触れることができます。",
+      icon: "🏰"
+    },
+    {
+      title: "EU諸国へのアクセス",
+      description: "ヨーロッパ旅行の拠点として便利。格安航空会社を利用してイギリス、フランス、イタリアなどヨーロッパ各国へ簡単に旅行でき、EU内の移動も自由です。",
+      icon: "✈️"
+    }
+  ];
+
   return (
     <CountryDetailLayout
       country={country}
@@ -100,6 +123,7 @@ export default function IrelandDetailPage() {
       countryDescription={countryDescription}
       countryFeatures={countryFeatures}
       countryAtmosphere={countryAtmosphere}
+      countryHighlights={countryHighlights}
       workingHolidayReasons={workingHolidayReasons}
       englishLearningEnvironment={englishLearningEnvironment}
       outdoorLifeDescription={outdoorLifeDescription}

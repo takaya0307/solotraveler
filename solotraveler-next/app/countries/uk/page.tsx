@@ -48,11 +48,31 @@ export default function UKDetailPage() {
       icon: "😊"
     }
   ];
-  
-  
-  
-  
-    return (
+
+  const countryHighlights = [
+    {
+      title: "ヨーロッパの玄関口",
+      description: "EU諸国への旅行が簡単で、ヨーロッパ観光の拠点。ユーロスターでフランスへ、飛行機でヨーロッパ各国へ簡単にアクセスできます。",
+      icon: "🌍"
+    },
+    {
+      title: "歴史と文化の宝庫",
+      description: "世界遺産や博物館で豊かな文化体験。大英博物館、タワーブリッジ、バッキンガム宮殿など、歴史的建造物が数多くあります。",
+      icon: "🏛️"
+    },
+    {
+      title: "英語の本場で学ぶ",
+      description: "クイーンズイングリッシュで正統な英語を習得。オックスフォードやケンブリッジの大学町で、最高レベルの英語教育を受けることができます。",
+      icon: "👑"
+    },
+    {
+      title: "多彩な都市体験",
+      description: "ロンドンの都会から田園風景まで多様な環境。コッツウォルズの美しい田園地帯から、エディンバラの歴史的街並みまで楽しめます。",
+      icon: "🏙️"
+    }
+  ];
+
+  return (
     <CountryDetailLayout
       country={country}
       pageTitle={pageTitle}
@@ -60,6 +80,7 @@ export default function UKDetailPage() {
       countryDescription={countryDescription}
       countryFeatures={countryFeatures}
       countryAtmosphere={countryAtmosphere}
+      countryHighlights={countryHighlights}
       consultationLink="https://px.a8.net/svt/ejp?a8mat=45C1IF+AMTQR6+5S4I+BW8O2&a8ejpredirect=https%3A%2F%2Fwww.iss-ryugakulife.com%2Fcounseling"
     />
   );

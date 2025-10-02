@@ -50,6 +50,29 @@ export default function NetherlandsDetailPage() {
     }
   ];
 
+  const countryHighlights = [
+    {
+      title: "英語とオランダ語の環境",
+      description: "国際的な環境で両言語を習得。アムステルダムの語学学校で、オランダ語を学びながら、国際都市として発達した環境で実用的な英語も身につけられます。",
+      icon: "🗣️"
+    },
+    {
+      title: "サイクリング文化",
+      description: "自転車中心の生活で健康的なライフスタイル。専用レーンが完備された自転車道で、安全にサイクリングを楽しみながら、オランダ人の環境意識も学べます。",
+      icon: "🚴"
+    },
+    {
+      title: "風車とチューリップ",
+      description: "世界的に有名な観光スポットを体験。キンデルダイクの風車群やキューケンホフのチューリップ畑、アムステルダムの運河クルーズなど、オランダの象徴的な風景を満喫できます。",
+      icon: "🌷"
+    },
+    {
+      title: "進歩的な社会制度",
+      description: "自由で多様性を尊重する社会。同性婚の合法化、大麻の合法化、安楽死制度など、世界でも最も進歩的な社会制度を体験し、多様性を尊重する文化を学べます。",
+      icon: "🌈"
+    }
+  ];
+
   return (
     <CountryDetailLayout
       country={country}
@@ -58,6 +81,7 @@ export default function NetherlandsDetailPage() {
       countryDescription={countryDescription}
       countryFeatures={countryFeatures}
       countryAtmosphere={countryAtmosphere}
+      countryHighlights={countryHighlights}
       consultationLink="https://px.a8.net/svt/ejp?a8mat=45C1IF+AMTQR6+5S4I+BW8O2&a8ejpredirect=https%3A%2F%2Fwww.iss-ryugakulife.com%2Fcounseling"
     />
   );

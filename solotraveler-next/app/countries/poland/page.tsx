@@ -49,6 +49,29 @@ export default function PolandDetailPage() {
     }
   ];
 
+  const countryHighlights = [
+    {
+      title: "ポーランド語の本場で学ぶ",
+      description: "スラブ系言語とポーランド文化を習得。ワルシャワやクラクフの語学学校で、ポーランド語を学びながら、ポーランドの深い歴史と文化も同時に体験できます。",
+      icon: "🗣️"
+    },
+    {
+      title: "豊かな歴史と文化",
+      description: "中世から現代までの歴史的建造物を体験。クラクフの旧市街、アウシュヴィッツ記念館、ワルシャワの旧市街復元など、世界遺産や歴史的建造物を巡りながら歴史を学べます。",
+      icon: "🏰"
+    },
+    {
+      title: "美しい自然とアウトドア",
+      description: "タトラ山脈でのハイキングやスキー。ザコパネでのスキー、タトラ国立公園でのハイキング、マズーリ地方の湖でのボート遊びなど、豊かな自然を満喫できます。",
+      icon: "⛰️"
+    },
+    {
+      title: "EU諸国へのアクセス",
+      description: "中央ヨーロッパの拠点として便利。ドイツ、チェコ、スロバキアなど周辺諸国へのアクセスが良く、ヨーロッパ旅行の拠点として最適です。",
+      icon: "✈️"
+    }
+  ];
+
   return (
     <CountryDetailLayout
       country={country}
@@ -57,6 +80,7 @@ export default function PolandDetailPage() {
       countryDescription={countryDescription}
       countryFeatures={countryFeatures}
       countryAtmosphere={countryAtmosphere}
+      countryHighlights={countryHighlights}
       consultationLink="https://px.a8.net/svt/ejp?a8mat=45C1IF+AMTQR6+5S4I+BW8O2&a8ejpredirect=https%3A%2F%2Fwww.iss-ryugakulife.com%2Fcounseling"
     />
   );

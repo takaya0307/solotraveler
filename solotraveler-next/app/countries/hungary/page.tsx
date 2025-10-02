@@ -49,11 +49,31 @@ export default function HungaryDetailPage() {
       icon: "😊"
     }
   ];
-  
-  
-  
 
-    return (
+  const countryHighlights = [
+    {
+      title: "ハンガリー語の本場で学ぶ",
+      description: "独特な言語とハンガリー文化を習得。ブダペストの語学学校で、ヨーロッパで唯一のフィン・ウゴル語族の言語を学びながら、ハンガリーの深い文化も体験できます。",
+      icon: "🗣️"
+    },
+    {
+      title: "世界有数の温泉文化",
+      description: "世界有数の温泉と温泉文化。セーチェーニ温泉、ゲッレールト温泉など、美しい温泉施設でリラックスしながら、ハンガリーの温泉文化を体験できます。",
+      icon: "♨️"
+    },
+    {
+      title: "ドナウ川と美しい建築",
+      description: "ドナウ川沿いの美しい建築を体験。ブダペストの国会議事堂、漁夫の砦、鎖橋など、ドナウ川を望む美しい建築物を巡りながら歴史を学べます。",
+      icon: "🏛️"
+    },
+    {
+      title: "中央ヨーロッパの拠点",
+      description: "周辺諸国へのアクセスが便利。オーストリア、スロバキア、ルーマニアなど周辺諸国へのアクセスが良く、ヨーロッパ旅行の拠点として最適です。",
+      icon: "✈️"
+    }
+  ];
+
+  return (
     <CountryDetailLayout
       country={country}
       pageTitle={pageTitle}
@@ -61,6 +81,7 @@ export default function HungaryDetailPage() {
       countryDescription={countryDescription}
       countryFeatures={countryFeatures}
       countryAtmosphere={countryAtmosphere}
+      countryHighlights={countryHighlights}
       consultationLink="https://px.a8.net/svt/ejp?a8mat=45C1IF+AMTQR6+5S4I+BW8O2&a8ejpredirect=https%3A%2F%2Fwww.iss-ryugakulife.com%2Fcounseling"
     />
   );

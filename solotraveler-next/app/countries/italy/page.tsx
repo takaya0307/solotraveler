@@ -50,11 +50,31 @@ export default function ItalyDetailPage() {
       icon: "😊"
     }
   ];
-  
-  
-  
-  
-    return (
+
+  const countryHighlights = [
+    {
+      title: "イタリア語の本場で学ぶ",
+      description: "美しいイタリア語と文化を同時に習得。フィレンツェやローマの語学学校で、音楽のように美しいイタリア語を学びながら、イタリア人の情熱的な文化も体験できます。",
+      icon: "🗣️"
+    },
+    {
+      title: "ルネサンス芸術の宝庫",
+      description: "世界最高峰の芸術作品に触れる機会。ウフィツィ美術館でボッティチェッリの「春」を、システィーナ礼拝堂でミケランジェロの天井画を間近で鑑賞できます。",
+      icon: "🎨"
+    },
+    {
+      title: "美食とワイン文化",
+      description: "本場のイタリア料理とワインを堪能。各地域の特産品を活かした料理、トスカーナのワイン、本場のパスタやピザを味わいながら、イタリアの食文化を深く学べます。",
+      icon: "🍝"
+    },
+    {
+      title: "地中海の温暖な気候",
+      description: "一年を通じて過ごしやすい環境。春は花が咲き乱れ、夏はビーチで日光浴、秋は葡萄狩り、冬はスキーと、四季を通じて豊富なアクティビティが楽しめます。",
+      icon: "☀️"
+    }
+  ];
+
+  return (
     <CountryDetailLayout
       country={country}
       pageTitle={pageTitle}
@@ -62,6 +82,7 @@ export default function ItalyDetailPage() {
       countryDescription={countryDescription}
       countryFeatures={countryFeatures}
       countryAtmosphere={countryAtmosphere}
+      countryHighlights={countryHighlights}
       consultationLink="https://px.a8.net/svt/ejp?a8mat=45C1IF+AMTQR6+5S4I+BW8O2&a8ejpredirect=https%3A%2F%2Fwww.iss-ryugakulife.com%2Fcounseling"
     />
   );

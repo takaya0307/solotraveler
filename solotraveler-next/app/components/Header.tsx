@@ -1,12 +1,59 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import styles from './Header.module.css';
 
+// 国データをエリアごとにグループ化
+const countryGroups = {
+  'オセアニア': [
+    { id: 'australia', nameJa: 'オーストラリア' },
+    { id: 'newzealand', nameJa: 'ニュージーランド' }
+  ],
+  '北米': [
+    { id: 'canada', nameJa: 'カナダ' }
+  ],
+  'ヨーロッパ': [
+    { id: 'uk', nameJa: 'イギリス' },
+    { id: 'ireland', nameJa: 'アイルランド' },
+    { id: 'france', nameJa: 'フランス' },
+    { id: 'germany', nameJa: 'ドイツ' },
+    { id: 'spain', nameJa: 'スペイン' },
+    { id: 'italy', nameJa: 'イタリア' },
+    { id: 'portugal', nameJa: 'ポルトガル' },
+    { id: 'austria', nameJa: 'オーストリア' },
+    { id: 'norway', nameJa: 'ノルウェー' },
+    { id: 'denmark', nameJa: 'デンマーク' },
+    { id: 'poland', nameJa: 'ポーランド' },
+    { id: 'czech', nameJa: 'チェコ' },
+    { id: 'slovakia', nameJa: 'スロバキア' },
+    { id: 'hungary', nameJa: 'ハンガリー' },
+    { id: 'estonia', nameJa: 'エストニア' },
+    { id: 'latvia', nameJa: 'ラトビア' },
+    { id: 'lithuania', nameJa: 'リトアニア' },
+    { id: 'finland', nameJa: 'フィンランド' },
+    { id: 'sweden', nameJa: 'スウェーデン' },
+    { id: 'iceland', nameJa: 'アイスランド' },
+    { id: 'luxembourg', nameJa: 'ルクセンブルク' },
+    { id: 'netherlands', nameJa: 'オランダ' }
+  ],
+  'アジア': [
+    { id: 'southkorea', nameJa: '韓国' },
+    { id: 'taiwan', nameJa: '台湾' },
+    { id: 'hongkong', nameJa: '香港' }
+  ],
+  '南米': [
+    { id: 'argentina', nameJa: 'アルゼンチン' },
+    { id: 'chile', nameJa: 'チリ' },
+    { id: 'uruguay', nameJa: 'ウルグアイ' }
+  ]
+};
+
 const Header: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isCountryDropdownOpen, setIsCountryDropdownOpen] = useState(false);
+  const [hoverTimeout, setHoverTimeout] = useState<NodeJS.Timeout | null>(null);
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -15,6 +62,38 @@ const Header: React.FC = () => {
   const closeMenu = () => {
     setIsMenuOpen(false);
   };
+
+  const toggleCountryDropdown = () => {
+    setIsCountryDropdownOpen(!isCountryDropdownOpen);
+  };
+
+  const closeCountryDropdown = () => {
+    setIsCountryDropdownOpen(false);
+  };
+
+  const handleMouseEnter = () => {
+    if (hoverTimeout) {
+      clearTimeout(hoverTimeout);
+      setHoverTimeout(null);
+    }
+    setIsCountryDropdownOpen(true);
+  };
+
+  const handleMouseLeave = () => {
+    const timeout = setTimeout(() => {
+      setIsCountryDropdownOpen(false);
+    }, 150); // 150msの遅延
+    setHoverTimeout(timeout);
+  };
+
+  // クリーンアップ
+  useEffect(() => {
+    return () => {
+      if (hoverTimeout) {
+        clearTimeout(hoverTimeout);
+      }
+    };
+  }, [hoverTimeout]);
 
   return (
     <header className={styles.header} role="banner">
@@ -46,6 +125,41 @@ const Header: React.FC = () => {
           >
             ホーム
           </Link>
+          <div 
+            className={styles.dropdownContainer}
+            onMouseEnter={handleMouseEnter}
+            onMouseLeave={handleMouseLeave}
+          >
+            <button 
+              className={styles.navLink}
+              aria-label="国を選ぶ"
+              aria-expanded={isCountryDropdownOpen}
+            >
+              国を選ぶ
+            </button>
+            {isCountryDropdownOpen && (
+              <div className={styles.dropdownMenu}>
+                {Object.entries(countryGroups).map(([region, countries]) => (
+                  <div key={region} className={`${styles.dropdownSection} ${region === 'ヨーロッパ' ? styles.europeSection : ''}`}>
+                    <h3 className={styles.dropdownSectionTitle}>{region}</h3>
+                    <ul className={styles.dropdownList}>
+                      {countries.map((country) => (
+                        <li key={country.id}>
+                          <Link 
+                            href={`/countries/${country.id}`}
+                            className={styles.dropdownLink}
+                            onClick={closeCountryDropdown}
+                          >
+                            {country.nameJa}
+                          </Link>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                ))}
+              </div>
+            )}
+          </div>
           <Link 
             href="/about-workingholiday" 
             className={styles.navLink}
@@ -88,6 +202,41 @@ const Header: React.FC = () => {
             >
               ホーム
             </Link>
+            <div className={styles.mobileDropdownContainer}>
+              <button 
+                className={styles.mobileNavLink}
+                onClick={toggleCountryDropdown}
+                aria-label="国を選ぶ"
+                aria-expanded={isCountryDropdownOpen}
+              >
+                国を選ぶ
+              </button>
+              {isCountryDropdownOpen && (
+                <div className={styles.mobileDropdownMenu}>
+                  {Object.entries(countryGroups).map(([region, countries]) => (
+                    <div key={region} className={`${styles.mobileDropdownSection} ${region === 'ヨーロッパ' ? styles.mobileEuropeSection : ''}`}>
+                      <h3 className={styles.mobileDropdownSectionTitle}>{region}</h3>
+                      <ul className={styles.mobileDropdownList}>
+                        {countries.map((country) => (
+                          <li key={country.id}>
+                            <Link 
+                              href={`/countries/${country.id}`}
+                              className={styles.mobileDropdownLink}
+                              onClick={() => {
+                                closeMenu();
+                                closeCountryDropdown();
+                              }}
+                            >
+                              {country.nameJa}
+                            </Link>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  ))}
+                </div>
+              )}
+            </div>
             <Link 
               href="/about-workingholiday" 
               className={styles.mobileNavLink}

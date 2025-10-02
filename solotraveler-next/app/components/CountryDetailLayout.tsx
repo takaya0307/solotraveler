@@ -148,6 +148,12 @@ interface CountryDetailLayoutProps {
     description: string;
     icon: string;
   }>;
+  countryHighlights?: Array<{
+    title: string;
+    description: string;
+    icon: string;
+    highlightColor?: string;
+  }>;
   workingHolidayReasons?: string[];
   englishLearningEnvironment?: string[];
   outdoorLifeDescription?: string;
@@ -163,6 +169,7 @@ interface CountryDetailLayoutProps {
   // 国ごとの見出しカスタマイズ用
   sectionTitles?: {
     attractions?: string;
+    highlights?: string;
     cities?: string;
     recommended?: string;
     consultation?: string;
@@ -179,6 +186,7 @@ export default function CountryDetailLayout({
   countryDescription,
   countryFeatures,
   countryAtmosphere,
+  countryHighlights,
   workingHolidayReasons,
   englishLearningEnvironment,
   outdoorLifeDescription,
@@ -391,6 +399,35 @@ export default function CountryDetailLayout({
               
             </div>
           </section>
+
+          {/* その国でできることセクション */}
+          {countryHighlights && countryHighlights.length > 0 && (
+            <section className={`${styles.section} ${styles["section-highlights"]}`}>
+              <h2 className={styles["section-title"]}>
+                <span className={styles["section-title-icon-green"]}>✨</span> {sectionTitles?.highlights || `${country.nameJa}でできること`}
+              </h2>
+              
+              <div className={styles["section-content"]}>
+                <div className={styles["highlights-grid"]}>
+                  {countryHighlights.map((highlight, index) => (
+                    <div key={index} className={styles["highlight-card"]}>
+                      <div className={styles["highlight-icon"]}>
+                        {highlight.icon}
+                      </div>
+                      <div className={styles["highlight-content"]}>
+                        <h3 className={styles["highlight-title"]}>
+                          {highlight.title}
+                        </h3>
+                        <p className={styles["highlight-description"]}>
+                          {highlight.description}
+                        </p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </section>
+          )}
 
           {/* 都市一覧セクション */}
           <section className={`${styles.section} ${styles["section-cities"]}`}>

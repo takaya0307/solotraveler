@@ -49,11 +49,31 @@ export default function NorwayDetailPage() {
       icon: "😊"
     }
   ];
-  
-  
-  
-  
-    return (
+
+  const countryHighlights = [
+    {
+      title: "ノルウェー語と英語",
+      description: "北欧の言語と国際的な英語環境。オスロの語学学校で、ノルウェー語を学びながら、高い英語力を持つノルウェー人との交流で実用的な英語も身につけられます。",
+      icon: "🗣️"
+    },
+    {
+      title: "世界最高の生活水準",
+      description: "高い生活水準と充実した社会保障。世界一の生活水準を誇る国で、充実した社会保障制度や働き方改革を体験し、質の高い生活スタイルを学べます。",
+      icon: "💰"
+    },
+    {
+      title: "フィヨルドとオーロラ",
+      description: "世界で最も美しい自然現象を体験。ソグネ・フィヨルドやハードランゲル・フィヨルド、冬のオーロラ観測など、世界有数の自然美を心ゆくまで楽しめます。",
+      icon: "🌌"
+    },
+    {
+      title: "アウトドア文化",
+      description: "ハイキング、スキーなど豊富なアクティビティ。夏は山歩きやフィヨルドクルーズ、冬はスキーやスノーボードなど、四季を通じて豊富なアウトドアアクティビティが楽しめます。",
+      icon: "⛷️"
+    }
+  ];
+
+  return (
     <CountryDetailLayout
       country={country}
       pageTitle={pageTitle}
@@ -61,6 +81,7 @@ export default function NorwayDetailPage() {
       countryDescription={countryDescription}
       countryFeatures={countryFeatures}
       countryAtmosphere={countryAtmosphere}
+      countryHighlights={countryHighlights}
       consultationLink="https://px.a8.net/svt/ejp?a8mat=45C1IF+AMTQR6+5S4I+BW8O2&a8ejpredirect=https%3A%2F%2Fwww.iss-ryugakulife.com%2Fcounseling"
     />
   );

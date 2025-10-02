@@ -49,6 +49,29 @@ export default function GermanyDetailPage() {
     }
   ];
 
+  const countryHighlights = [
+    {
+      title: "ドイツ語の本場で学ぶ",
+      description: "正統なドイツ語とビジネス文化を習得。ベルリンやミュンヘンの語学学校で、実用的なドイツ語を学びながら、ドイツのビジネス文化も体験できます。",
+      icon: "🗣️"
+    },
+    {
+      title: "高い技術力と製造業",
+      description: "自動車産業など最先端技術に触れる機会。BMWやメルセデスの工場見学、テクノロジー企業でのインターンシップなどが可能です。",
+      icon: "🚗"
+    },
+    {
+      title: "豊かな音楽と芸術文化",
+      description: "クラシック音楽の本場で文化体験。ベートーベンやバッハの故郷で、世界最高峰のオーケストラやオペラを楽しめます。",
+      icon: "🎼"
+    },
+    {
+      title: "ヨーロッパの中心地",
+      description: "EU諸国への旅行やビジネス機会。高速鉄道ICEでフランスやオーストリアへ、飛行機でヨーロッパ各国へ簡単にアクセスできます。",
+      icon: "🌍"
+    }
+  ];
+
   return (
     <CountryDetailLayout
       country={country}
@@ -57,6 +80,7 @@ export default function GermanyDetailPage() {
       countryDescription={countryDescription}
       countryFeatures={countryFeatures}
       countryAtmosphere={countryAtmosphere}
+      countryHighlights={countryHighlights}
       consultationLink="https://px.a8.net/svt/ejp?a8mat=45C1IF+AMTQR6+5S4I+BW8O2&a8ejpredirect=https%3A%2F%2Fwww.iss-ryugakulife.com%2Fcounseling"
     />
   );

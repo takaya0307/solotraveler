@@ -49,6 +49,29 @@ export default function CanadaDetailPage() {
     }
   ];
 
+  const countryHighlights = [
+    {
+      title: "就学期間は最長6ヵ月",
+      description: "勉強と仕事をバランスよく経験できる環境。語学学校での英語・フランス語学習と、アルバイトでの実践的な経験を両立できます。",
+      icon: "📚"
+    },
+    {
+      title: "英語とフランス語の両方を学べる",
+      description: "バイリンガル環境で語学力を大幅に向上。ケベック州ではフランス語、その他の州では英語が主要言語で、1つの国で2つの言語を学べます。",
+      icon: "🗣️"
+    },
+    {
+      title: "豊かな自然と都市生活の両立",
+      description: "世界遺産や国立公園へのアクセスも良好。バンクーバーやトロントの都市部にいながら、週末にはロッキー山脈やナイアガラの滝を楽しめます。",
+      icon: "🏔️"
+    },
+    {
+      title: "再チャレンジ可能な制度",
+      description: "2回目のワーホリビザ申請も可能。1回目の経験を活かして、より深い経験や新しい挑戦ができる制度です。",
+      icon: "🔄"
+    }
+  ];
+
   return (
     <CountryDetailLayout
       country={country}
@@ -57,6 +80,7 @@ export default function CanadaDetailPage() {
       countryDescription={countryDescription}
       countryFeatures={countryFeatures}
       countryAtmosphere={countryAtmosphere}
+      countryHighlights={countryHighlights}
       consultationLink="https://px.a8.net/svt/ejp?a8mat=45C1IF+AMTQR6+5S4I+BW8O2&a8ejpredirect=https%3A%2F%2Fwww.iss-ryugakulife.com%2Fcounseling"
     />
   );

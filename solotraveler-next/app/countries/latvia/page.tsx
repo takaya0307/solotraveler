@@ -49,11 +49,31 @@ export default function LatviaDetailPage() {
       icon: "😊"
     }
   ];
-  
-  
-  
 
-    return (
+  const countryHighlights = [
+    {
+      title: "ラトビア語と英語",
+      description: "バルト系言語と国際的な英語環境。リガの語学学校で、ラトビア語を学びながら、高い英語力を持つラトビア人との交流で実用的な英語も身につけられます。",
+      icon: "🗣️"
+    },
+    {
+      title: "アールヌーヴォー建築",
+      description: "美しいアールヌーヴォー建築を体験。リガ歴史地区の世界遺産、アールヌーヴォー建築の傑作を巡りながら、建築と芸術の文化を学べます。",
+      icon: "🏛️"
+    },
+    {
+      title: "バルト海の海岸線",
+      description: "バルト海に面した美しい海岸線を体験。ユールマラのビーチ、リガ湾、バルト海の海岸線など、美しい海の景色を楽しめます。",
+      icon: "🌊"
+    },
+    {
+      title: "バルト三国の中心",
+      description: "バルト三国の中心に位置する便利な立地。エストニア、リトアニアなど周辺諸国へのアクセスが良く、バルト地域旅行の拠点として最適です。",
+      icon: "✈️"
+    }
+  ];
+
+  return (
     <CountryDetailLayout
       country={country}
       pageTitle={pageTitle}
@@ -61,6 +81,7 @@ export default function LatviaDetailPage() {
       countryDescription={countryDescription}
       countryFeatures={countryFeatures}
       countryAtmosphere={countryAtmosphere}
+      countryHighlights={countryHighlights}
       consultationLink="https://px.a8.net/svt/ejp?a8mat=45C1IF+AMTQR6+5S4I+BW8O2&a8ejpredirect=https%3A%2F%2Fwww.iss-ryugakulife.com%2Fcounseling"
     />
   );

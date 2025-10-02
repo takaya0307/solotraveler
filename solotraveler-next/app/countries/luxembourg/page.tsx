@@ -49,11 +49,31 @@ export default function LuxembourgDetailPage() {
       icon: "😊"
     }
   ];
-  
-  
-  
 
-    return (
+  const countryHighlights = [
+    {
+      title: "多言語環境",
+      description: "ルクセンブルク語、フランス語、ドイツ語、英語の多言語環境。EUの機関が集まる国際都市で、多様な言語を学びながら、国際的な環境で働く経験ができます。",
+      icon: "🗣️"
+    },
+    {
+      title: "EUの金融ハブ",
+      description: "世界有数の金融センターでビジネス体験。EU機関や国際金融機関が集まる環境で、金融業界での経験を積みながら、国際的なビジネス文化を学べます。",
+      icon: "💼"
+    },
+    {
+      title: "美しい自然と歴史",
+      description: "森と美しい景観、歴史的建造物。ルクセンブルク城、ミュラーサル地区、モーゼル川沿いのワイナリーなど、コンパクトな国ながら豊富な観光スポットを楽しめます。",
+      icon: "🏰"
+    },
+    {
+      title: "ヨーロッパの中心",
+      description: "ヨーロッパの中心に位置する便利な立地。フランス、ドイツ、ベルギーなど周辺諸国へのアクセスが良く、ヨーロッパ旅行の拠点として最適です。",
+      icon: "✈️"
+    }
+  ];
+
+  return (
     <CountryDetailLayout
       country={country}
       pageTitle={pageTitle}
@@ -61,6 +81,7 @@ export default function LuxembourgDetailPage() {
       countryDescription={countryDescription}
       countryFeatures={countryFeatures}
       countryAtmosphere={countryAtmosphere}
+      countryHighlights={countryHighlights}
       consultationLink="https://px.a8.net/svt/ejp?a8mat=45C1IF+AMTQR6+5S4I+BW8O2&a8ejpredirect=https%3A%2F%2Fwww.iss-ryugakulife.com%2Fcounseling"
     />
   );

@@ -49,11 +49,31 @@ export default function SouthKoreaDetailPage() {
       icon: "😊"
     }
   ];
-  
-  
-  
 
-    return (
+  const countryHighlights = [
+    {
+      title: "韓国語の本場で学ぶ",
+      description: "K-POPやK-ドラマで親しんだ言語を実際に習得。ソウルの語学学校で、ハングルを正しく学びながら、韓国の文化も深く理解できます。",
+      icon: "🗣️"
+    },
+    {
+      title: "K-POP・K-ドラマ文化",
+      description: "世界的ブームの韓流文化を本場で体験。BTSやBLACKPINKのライブ、韓国ドラマの撮影地巡りなど、韓流文化を満喫できます。",
+      icon: "🎵"
+    },
+    {
+      title: "豊富な韓国料理",
+      description: "キムチ、ビビンバなど本場の韓国料理を堪能。本場の韓国料理店で、日本では味わえない本格的な味と、多様な韓国料理を楽しめます。",
+      icon: "🍜"
+    },
+    {
+      title: "アジアの玄関口",
+      description: "日本から近く、アジア各国への旅行も便利。中国、台湾、東南アジア各国へのアクセスが良く、アジア旅行の拠点として最適です。",
+      icon: "✈️"
+    }
+  ];
+
+  return (
     <CountryDetailLayout
       country={country}
       pageTitle={pageTitle}
@@ -61,6 +81,7 @@ export default function SouthKoreaDetailPage() {
       countryDescription={countryDescription}
       countryFeatures={countryFeatures}
       countryAtmosphere={countryAtmosphere}
+      countryHighlights={countryHighlights}
       consultationLink="https://px.a8.net/svt/ejp?a8mat=45C1IF+AMTQR6+5S4I+BW8O2&a8ejpredirect=https%3A%2F%2Fwww.iss-ryugakulife.com%2Fcounseling"
     />
   );

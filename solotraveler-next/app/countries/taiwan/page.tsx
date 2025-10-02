@@ -49,11 +49,31 @@ export default function TaiwanDetailPage() {
       icon: "😊"
     }
   ];
-  
-  
-  
 
-    return (
+  const countryHighlights = [
+    {
+      title: "中国語の本場で学ぶ",
+      description: "繁体字中国語と台湾文化を同時に習得。台北の語学学校で、実用的な中国語を学びながら、台湾の歴史と文化も深く理解できます。",
+      icon: "🗣️"
+    },
+    {
+      title: "豊富な台湾料理",
+      description: "小籠包、牛肉麺など本場の台湾料理を堪能。夜市での屋台料理から高級レストランまで、台湾の多様な食文化を満喫できます。",
+      icon: "🥟"
+    },
+    {
+      title: "美しい自然環境",
+      description: "山々と海岸線でのアウトドア体験。阿里山や日月潭、太平洋に面した美しい海岸線など、台湾の豊かな自然を楽しめます。",
+      icon: "🏔️"
+    },
+    {
+      title: "日本から最も近い海外",
+      description: "アクセス良好で気軽にワーホリ体験。飛行機で約3時間、ビザなしで90日間滞在可能で、初めての海外生活に最適です。",
+      icon: "✈️"
+    }
+  ];
+
+  return (
     <CountryDetailLayout
       country={country}
       pageTitle={pageTitle}
@@ -61,6 +81,7 @@ export default function TaiwanDetailPage() {
       countryDescription={countryDescription}
       countryFeatures={countryFeatures}
       countryAtmosphere={countryAtmosphere}
+      countryHighlights={countryHighlights}
       consultationLink="https://px.a8.net/svt/ejp?a8mat=45C1IF+AMTQR6+5S4I+BW8O2&a8ejpredirect=https%3A%2F%2Fwww.iss-ryugakulife.com%2Fcounseling"
     />
   );

@@ -49,11 +49,31 @@ export default function EstoniaDetailPage() {
       icon: "😊"
     }
   ];
-  
-  
-  
 
-    return (
+  const countryHighlights = [
+    {
+      title: "エストニア語と英語",
+      description: "フィン・ウゴル語族の言語と国際的な英語環境。タリンの語学学校で、エストニア語を学びながら、高い英語力を持つエストニア人との交流で実用的な英語も身につけられます。",
+      icon: "🗣️"
+    },
+    {
+      title: "デジタル先進国",
+      description: "世界最先端のデジタル技術を体験。e-レジデンシー、デジタル政府、ITスタートアップの本場で、最新のテクノロジーとデジタル文化を学べます。",
+      icon: "💻"
+    },
+    {
+      title: "バルト海の自然",
+      description: "バルト海沿岸の美しい自然を体験。タリンの旧市街、ラヘマー国立公園、バルト海の海岸線など、美しい自然と歴史を楽しめます。",
+      icon: "🌊"
+    },
+    {
+      title: "バルト三国の拠点",
+      description: "バルト三国へのアクセスが便利。ラトビア、リトアニアなど周辺諸国へのアクセスが良く、バルト地域旅行の拠点として最適です。",
+      icon: "✈️"
+    }
+  ];
+
+  return (
     <CountryDetailLayout
       country={country}
       pageTitle={pageTitle}
@@ -61,6 +81,7 @@ export default function EstoniaDetailPage() {
       countryDescription={countryDescription}
       countryFeatures={countryFeatures}
       countryAtmosphere={countryAtmosphere}
+      countryHighlights={countryHighlights}
       consultationLink="https://px.a8.net/svt/ejp?a8mat=45C1IF+AMTQR6+5S4I+BW8O2&a8ejpredirect=https%3A%2F%2Fwww.iss-ryugakulife.com%2Fcounseling"
     />
   );

@@ -49,11 +49,31 @@ export default function SlovakiaDetailPage() {
       icon: "😊"
     }
   ];
-  
-  
-  
 
-    return (
+  const countryHighlights = [
+    {
+      title: "スロバキア語の本場で学ぶ",
+      description: "スラブ系言語とスロバキア文化を習得。ブラチスラバの語学学校で、スロバキア語を学びながら、スロバキアの深い文化と歴史も体験できます。",
+      icon: "🗣️"
+    },
+    {
+      title: "タトラ山脈の美しい自然",
+      description: "タトラ山脈でのハイキングやスキー。ハイタトラスでのハイキング、スロバキア・パラダイス国立公園、スキーリゾートなど、豊かな自然を満喫できます。",
+      icon: "⛰️"
+    },
+    {
+      title: "中世の歴史的建造物",
+      description: "中世の歴史的建造物を体験。ブラチスラバ城、スピシュ城、バルデヨフの世界遺産など、中世の歴史と建築文化を学べます。",
+      icon: "🏰"
+    },
+    {
+      title: "中央ヨーロッパの拠点",
+      description: "中央ヨーロッパの拠点として便利。オーストリア、チェコ、ポーランドなど周辺諸国へのアクセスが良く、ヨーロッパ旅行の拠点として最適です。",
+      icon: "✈️"
+    }
+  ];
+
+  return (
     <CountryDetailLayout
       country={country}
       pageTitle={pageTitle}
@@ -61,6 +81,7 @@ export default function SlovakiaDetailPage() {
       countryDescription={countryDescription}
       countryFeatures={countryFeatures}
       countryAtmosphere={countryAtmosphere}
+      countryHighlights={countryHighlights}
       consultationLink="https://px.a8.net/svt/ejp?a8mat=45C1IF+AMTQR6+5S4I+BW8O2&a8ejpredirect=https%3A%2F%2Fwww.iss-ryugakulife.com%2Fcounseling"
     />
   );

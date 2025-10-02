@@ -50,11 +50,31 @@ export default function ArgentinaDetailPage() {
       icon: "😊"
     }
   ];
-  
-  
-  
 
-    return (
+  const countryHighlights = [
+    {
+      title: "スペイン語の本場で学ぶ",
+      description: "南米のスペイン語と文化を習得。ブエノスアイレスの語学学校で、アルゼンチン独特のスペイン語（リオプラテンセ・スペイン語）を学びながら、南米の文化も深く体験できます。",
+      icon: "🗣️"
+    },
+    {
+      title: "情熱的なタンゴ文化",
+      description: "本場ブエノスアイレスでタンゴを体験。サン・テルモ地区のタンゴショーで情熱的なダンスを鑑賞し、タンゴ教室で実際に踊りを学ぶこともできます。",
+      icon: "💃"
+    },
+    {
+      title: "世界最高級のワイン",
+      description: "マルベックなどアルゼンチンワインを堪能。メンドサのワイナリーでテイスティングを楽しみ、世界最高品質のマルベックワインとアルゼンチン料理のペアリングを体験できます。",
+      icon: "🍷"
+    },
+    {
+      title: "壮大なパタゴニア自然",
+      description: "世界有数の自然美を体験。ペリート・モレノ氷河、フィッツロイ山、ウシュアイアの世界最南端の街など、地球最後の秘境と言われるパタゴニアの自然を心ゆくまで楽しめます。",
+      icon: "🏔️"
+    }
+  ];
+
+  return (
     <CountryDetailLayout
       country={country}
       pageTitle={pageTitle}
@@ -62,6 +82,7 @@ export default function ArgentinaDetailPage() {
       countryDescription={countryDescription}
       countryFeatures={countryFeatures}
       countryAtmosphere={countryAtmosphere}
+      countryHighlights={countryHighlights}
       consultationLink="https://px.a8.net/svt/ejp?a8mat=45C1IF+AMTQR6+5S4I+BW8O2&a8ejpredirect=https%3A%2F%2Fwww.iss-ryugakulife.com%2Fcounseling"
     />
   );

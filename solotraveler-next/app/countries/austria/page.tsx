@@ -49,11 +49,31 @@ export default function AustriaDetailPage() {
       icon: "😊"
     }
   ];
-  
-  
-  
 
-    return (
+  const countryHighlights = [
+    {
+      title: "ドイツ語の本場で学ぶ",
+      description: "正統なドイツ語とオーストリア文化を習得。ウィーンの語学学校で、オーストリア独特のドイツ語を学びながら、音楽と文化の都の雰囲気を体験できます。",
+      icon: "🗣️"
+    },
+    {
+      title: "音楽の都ウィーン",
+      description: "ウィーン・フィルハーモニーと音楽文化。国立オペラ座でのオペラ鑑賞、ウィーン少年合唱団のコンサート、モーツァルトやシュトラウスの音楽を本場で体験できます。",
+      icon: "🎼"
+    },
+    {
+      title: "アルプスの美しい山々",
+      description: "美しい山々とスキーリゾート。チロル地方でのスキー、ハイキング、美しい湖でのリラックスなど、アルプスの自然を満喫できます。",
+      icon: "⛰️"
+    },
+    {
+      title: "中央ヨーロッパの拠点",
+      description: "周辺諸国へのアクセスが便利。ドイツ、チェコ、スロバキア、ハンガリーなど周辺諸国へのアクセスが良く、ヨーロッパ旅行の拠点として最適です。",
+      icon: "✈️"
+    }
+  ];
+
+  return (
     <CountryDetailLayout
       country={country}
       pageTitle={pageTitle}
@@ -61,6 +81,7 @@ export default function AustriaDetailPage() {
       countryDescription={countryDescription}
       countryFeatures={countryFeatures}
       countryAtmosphere={countryAtmosphere}
+      countryHighlights={countryHighlights}
       consultationLink="https://px.a8.net/svt/ejp?a8mat=45C1IF+AMTQR6+5S4I+BW8O2&a8ejpredirect=https%3A%2F%2Fwww.iss-ryugakulife.com%2Fcounseling"
     />
   );

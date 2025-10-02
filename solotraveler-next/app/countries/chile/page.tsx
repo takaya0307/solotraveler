@@ -49,11 +49,31 @@ export default function ChileDetailPage() {
       icon: "😊"
     }
   ];
-  
-  
-  
 
-    return (
+  const countryHighlights = [
+    {
+      title: "スペイン語の本場で学ぶ",
+      description: "南米のスペイン語とチリ文化を習得。サンティアゴの語学学校で、チリ独特のスペイン語を学びながら、南米の文化も深く体験できます。",
+      icon: "🗣️"
+    },
+    {
+      title: "世界最高級のワイン",
+      description: "世界最高級のチリワインを堪能。カサブランカ、マイポ、コルチャグアなどのワイナリーで、カルメネールやソーヴィニヨン・ブランなど本場のワインを味わえます。",
+      icon: "🍷"
+    },
+    {
+      title: "アンデス山脈とパタゴニア",
+      description: "アンデス山脈とパタゴニアの自然を体験。アタカマ砂漠、トーレス・デル・パイネ国立公園、イースター島など、世界有数の自然美を満喫できます。",
+      icon: "🏔️"
+    },
+    {
+      title: "南米の玄関口",
+      description: "南米諸国へのアクセスが便利。ペルー、ボリビア、アルゼンチンなど周辺諸国へのアクセスが良く、南米旅行の拠点として最適です。",
+      icon: "✈️"
+    }
+  ];
+
+  return (
     <CountryDetailLayout
       country={country}
       pageTitle={pageTitle}
@@ -61,6 +81,7 @@ export default function ChileDetailPage() {
       countryDescription={countryDescription}
       countryFeatures={countryFeatures}
       countryAtmosphere={countryAtmosphere}
+      countryHighlights={countryHighlights}
       consultationLink="https://px.a8.net/svt/ejp?a8mat=45C1IF+AMTQR6+5S4I+BW8O2&a8ejpredirect=https%3A%2F%2Fwww.iss-ryugakulife.com%2Fcounseling"
     />
   );

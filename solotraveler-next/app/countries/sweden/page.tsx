@@ -49,11 +49,31 @@ export default function SwedenDetailPage() {
       icon: "😊"
     }
   ];
-  
-  
-  
-  
-    return (
+
+  const countryHighlights = [
+    {
+      title: "スウェーデン語と英語",
+      description: "北欧の言語と国際的な英語環境。ストックホルムの語学学校で、スウェーデン語を学びながら、高い英語力を持つスウェーデン人との交流で実用的な英語も身につけられます。",
+      icon: "🗣️"
+    },
+    {
+      title: "北欧デザイン文化",
+      description: "ミニマルで機能的なデザインを体験。IKEAやH&Mの発祥地で、北欧デザインの本質を学び、機能性と美しさを兼ね備えた生活スタイルを体験できます。",
+      icon: "🎨"
+    },
+    {
+      title: "高福祉社会",
+      description: "充実した社会保障制度を体験。無料の医療制度、充実した教育制度、働き方改革など、世界最高レベルの福祉制度を体験し、ワークライフバランスの重要性を学べます。",
+      icon: "🏥"
+    },
+    {
+      title: "自然とアウトドア",
+      description: "森と湖でのリラックスした生活。夏は白夜でのハイキング、冬はオーロラ観測、四季を通じてスキーやアイスホッケーなど、豊かな自然環境でのアウトドアライフを満喫できます。",
+      icon: "🌲"
+    }
+  ];
+
+  return (
     <CountryDetailLayout
       country={country}
       pageTitle={pageTitle}
@@ -61,6 +81,7 @@ export default function SwedenDetailPage() {
       countryDescription={countryDescription}
       countryFeatures={countryFeatures}
       countryAtmosphere={countryAtmosphere}
+      countryHighlights={countryHighlights}
       consultationLink="https://px.a8.net/svt/ejp?a8mat=45C1IF+AMTQR6+5S4I+BW8O2&a8ejpredirect=https%3A%2F%2Fwww.iss-ryugakulife.com%2Fcounseling"
     />
   );

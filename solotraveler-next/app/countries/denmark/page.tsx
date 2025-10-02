@@ -49,11 +49,31 @@ export default function DenmarkDetailPage() {
       icon: "😊"
     }
   ];
-  
-  
-  
-  
-    return (
+
+  const countryHighlights = [
+    {
+      title: "デンマーク語と英語",
+      description: "北欧の言語と国際的な英語環境。コペンハーゲンの語学学校で、デンマーク語を学びながら、高い英語力を持つデンマーク人との交流で実用的な英語も身につけられます。",
+      icon: "🗣️"
+    },
+    {
+      title: "世界最高の幸福度",
+      description: "世界で最も幸福な国の一つ。ヒュッゲ（居心地の良さ）の文化、充実した社会保障制度、ワークライフバランスを体験し、幸せな生活スタイルを学べます。",
+      icon: "😊"
+    },
+    {
+      title: "北欧デザインの本場",
+      description: "ミニマルで機能的なデザインを体験。レゴの発祥地で、機能性と美しさを兼ね備えた北欧デザインの本質を学び、シンプルで質の高い生活スタイルを体験できます。",
+      icon: "🎨"
+    },
+    {
+      title: "自転車中心の生活",
+      description: "自転車が生活の中心。専用レーンが完備された自転車道で、安全にサイクリングを楽しみながら、環境に優しい生活スタイルを体験できます。",
+      icon: "🚴"
+    }
+  ];
+
+  return (
     <CountryDetailLayout
       country={country}
       pageTitle={pageTitle}
@@ -61,6 +81,7 @@ export default function DenmarkDetailPage() {
       countryDescription={countryDescription}
       countryFeatures={countryFeatures}
       countryAtmosphere={countryAtmosphere}
+      countryHighlights={countryHighlights}
       consultationLink="https://px.a8.net/svt/ejp?a8mat=45C1IF+AMTQR6+5S4I+BW8O2&a8ejpredirect=https%3A%2F%2Fwww.iss-ryugakulife.com%2Fcounseling"
     />
   );

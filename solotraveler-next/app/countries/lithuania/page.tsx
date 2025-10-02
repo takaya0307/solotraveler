@@ -49,11 +49,31 @@ export default function LithuaniaDetailPage() {
       icon: "😊"
     }
   ];
-  
-  
-  
 
-    return (
+  const countryHighlights = [
+    {
+      title: "リトアニア語と英語",
+      description: "バルト系言語と国際的な英語環境。ヴィリニュスの語学学校で、リトアニア語を学びながら、高い英語力を持つリトアニア人との交流で実用的な英語も身につけられます。",
+      icon: "🗣️"
+    },
+    {
+      title: "美しい歴史的街並み",
+      description: "歴史的建造物と美しい街並みを体験。ヴィリニュス旧市街の世界遺産、トラカイ城、十字架の丘など、深い歴史と文化を学べます。",
+      icon: "🏰"
+    },
+    {
+      title: "バルト海の自然",
+      description: "バルト海に面した美しい自然を体験。クルシュー砂州の世界遺産、ネムナス川、バルト海の海岸線など、美しい自然を楽しめます。",
+      icon: "🌊"
+    },
+    {
+      title: "バルト三国の最南端",
+      description: "バルト三国の最南端に位置する立地。ポーランド、ベラルーシなど周辺諸国へのアクセスが良く、東ヨーロッパ旅行の拠点として最適です。",
+      icon: "✈️"
+    }
+  ];
+
+  return (
     <CountryDetailLayout
       country={country}
       pageTitle={pageTitle}
@@ -61,6 +81,7 @@ export default function LithuaniaDetailPage() {
       countryDescription={countryDescription}
       countryFeatures={countryFeatures}
       countryAtmosphere={countryAtmosphere}
+      countryHighlights={countryHighlights}
       consultationLink="https://px.a8.net/svt/ejp?a8mat=45C1IF+AMTQR6+5S4I+BW8O2&a8ejpredirect=https%3A%2F%2Fwww.iss-ryugakulife.com%2Fcounseling"
     />
   );

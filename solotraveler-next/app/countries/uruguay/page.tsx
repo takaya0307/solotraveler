@@ -49,11 +49,31 @@ export default function UruguayDetailPage() {
       icon: "😊"
     }
   ];
-  
-  
-  
 
-    return (
+  const countryHighlights = [
+    {
+      title: "スペイン語の本場で学ぶ",
+      description: "南米のスペイン語とウルグアイ文化を習得。モンテビデオの語学学校で、ウルグアイ独特のスペイン語を学びながら、南米の文化も深く体験できます。",
+      icon: "🗣️"
+    },
+    {
+      title: "大西洋の美しいビーチ",
+      description: "大西洋に面した美しい海岸線を満喫。プンタ・デル・エステ、コロニア・デル・サクラメント、モンテビデオのビーチなど、大西洋の美しい海岸線を楽しめます。",
+      icon: "🏖️"
+    },
+    {
+      title: "タンゴと音楽文化",
+      description: "タンゴと音楽文化を体験。アルゼンチンと同様にタンゴの文化が根付いており、本場のタンゴショーや音楽イベントを楽しめます。",
+      icon: "🎵"
+    },
+    {
+      title: "南米の隠れた名所",
+      description: "南米の隠れた名所として注目。アルゼンチンやブラジルに比べて観光客が少なく、落ち着いた環境で南米の文化を体験できます。",
+      icon: "🌟"
+    }
+  ];
+
+  return (
     <CountryDetailLayout
       country={country}
       pageTitle={pageTitle}
@@ -61,6 +81,7 @@ export default function UruguayDetailPage() {
       countryDescription={countryDescription}
       countryFeatures={countryFeatures}
       countryAtmosphere={countryAtmosphere}
+      countryHighlights={countryHighlights}
       consultationLink="https://px.a8.net/svt/ejp?a8mat=45C1IF+AMTQR6+5S4I+BW8O2&a8ejpredirect=https%3A%2F%2Fwww.iss-ryugakulife.com%2Fcounseling"
     />
   );

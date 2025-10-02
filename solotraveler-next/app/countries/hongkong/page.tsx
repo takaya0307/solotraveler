@@ -49,11 +49,31 @@ export default function HongKongDetailPage() {
       icon: "😊"
     }
   ];
-  
-  
-  
 
-    return (
+  const countryHighlights = [
+    {
+      title: "英語と中国語のバイリンガル環境",
+      description: "国際的な環境で両言語を習得",
+      icon: "🗣️"
+    },
+    {
+      title: "アジアの金融ハブ",
+      description: "世界有数の金融センターでビジネス体験",
+      icon: "💼"
+    },
+    {
+      title: "東洋と西洋の文化融合",
+      description: "独特の文化と美食を体験",
+      icon: "🌏"
+    },
+    {
+      title: "アジア旅行の拠点",
+      description: "中国本土や東南アジアへのアクセス良好",
+      icon: "✈️"
+    }
+  ];
+
+  return (
     <CountryDetailLayout
       country={country}
       pageTitle={pageTitle}
@@ -61,6 +81,7 @@ export default function HongKongDetailPage() {
       countryDescription={countryDescription}
       countryFeatures={countryFeatures}
       countryAtmosphere={countryAtmosphere}
+      countryHighlights={countryHighlights}
       consultationLink="https://px.a8.net/svt/ejp?a8mat=45C1IF+AMTQR6+5S4I+BW8O2&a8ejpredirect=https%3A%2F%2Fwww.iss-ryugakulife.com%2Fcounseling"
     />
   );

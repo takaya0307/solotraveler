@@ -920,4 +920,134 @@
     padding: 0.75rem 1rem;
     font-size: 0.9rem;
   }
+}
+
+/* 体験談セクション */
+.section-testimonials {
+  background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+  border-radius: 16px;
+  padding: 2rem;
+  margin: 2rem 0;
+}
+
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.testimonial-card {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  transition: all 0.3s ease;
+  overflow: hidden;
+}
+
+.testimonial-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+.testimonial-link {
+  display: block;
+  padding: 1.5rem;
+  text-decoration: none;
+  color: inherit;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.testimonial-link:hover {
+  color: inherit;
+  text-decoration: none;
+}
+
+.testimonial-link::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(59, 130, 246, 0.05) 0%, rgba(147, 51, 234, 0.05) 100%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.testimonial-link:hover::after {
+  opacity: 1;
+}
+
+.testimonial-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #1e293b;
+  margin: 0 0 0.75rem 0;
+  line-height: 1.4;
+  position: relative;
+  z-index: 1;
+}
+
+.testimonial-description {
+  font-size: 0.95rem;
+  color: #64748b;
+  margin: 0 0 1rem 0;
+  line-height: 1.6;
+  position: relative;
+  z-index: 1;
+}
+
+.testimonial-link-text {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #3b82f6;
+  background: linear-gradient(135deg, #dbeafe 0%, #e0e7ff 100%);
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  border: 2px solid #3b82f6;
+  transition: all 0.3s ease;
+  position: relative;
+  z-index: 1;
+}
+
+.testimonial-link:hover .testimonial-link-text {
+  background: linear-gradient(135deg, #3b82f6 0%, #6366f1 100%);
+  color: white;
+  transform: scale(1.05);
+}
+
+.testimonial-link:hover .testimonial-link-text::after {
+  content: ' ↗';
+  font-size: 0.8rem;
+}
+
+/* レスポンシブ対応 - 体験談セクション */
+@media (max-width: 767px) {
+  .section-testimonials {
+    padding: 1.5rem;
+    margin: 1.5rem 0;
+  }
+  
+  .testimonial-link {
+    padding: 1.25rem;
+  }
+  
+  .testimonial-title {
+    font-size: 1.1rem;
+  }
+  
+  .testimonial-description {
+    font-size: 0.9rem;
+  }
+  
+  .testimonial-link-text {
+    font-size: 0.85rem;
+    padding: 0.4rem 0.8rem;
+  }
 } 

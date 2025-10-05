@@ -73,6 +73,29 @@ export default function LuxembourgDetailPage() {
     }
   ];
 
+  // 体験談セクション（noteの記事へのリンク）
+  const testimonials: Array<{
+    title: string;
+    url: string;
+    description: string;
+  }> = [
+    {
+      title: "ルクセンブルクでワーホリしています🇱🇺| はじめてのnote",
+      url: "https://note.com/matolux/n/nf03d4c9d83e0",
+      description: "実際にルクセンブルクでワーホリをしているあとさんの体験談。2024年6月に始まったばかりのルクセンブルクワーホリの現状や選んだ理由、現地での生活について詳しく書かれています。"
+    },
+    {
+      title: "ルクセンブルクワーホリ🇱🇺 準備編① | ワーキングホリデービザ申請ガイド",
+      url: "https://note.com/matolux/n/n64eeaf2493b8",
+      description: "ルクセンブルクワーホリのビザ申請方法をあとさんが詳しく解説。必要書類12個の準備から申請手続きまで、実際に申請した体験談を基にした完全ガイドです。"
+    },
+    {
+      title: "ルクセンブルクワーホリ🇱🇺準備編②| 犯罪経歴証明書の取得方法",
+      url: "https://note.com/matolux/n/ndbcda0e2564c",
+      description: "ルクセンブルクワーホリの必要書類の1つである犯罪経歴証明書の取得方法を詳しく解説。大使館への依頼から警察署での申請まで、実際の手順を体験談と共に紹介しています。"
+    }
+  ];
+
   return (
     <CountryDetailLayout
       country={country}
@@ -82,6 +105,7 @@ export default function LuxembourgDetailPage() {
       countryFeatures={countryFeatures}
       countryAtmosphere={countryAtmosphere}
       countryHighlights={countryHighlights}
+      testimonials={testimonials}
       consultationLink="https://px.a8.net/svt/ejp?a8mat=45C1IF+AMTQR6+5S4I+BW8O2&a8ejpredirect=https%3A%2F%2Fwww.iss-ryugakulife.com%2Fcounseling"
     />
   );

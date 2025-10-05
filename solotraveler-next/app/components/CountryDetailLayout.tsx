@@ -172,6 +172,11 @@ interface CountryDetailLayoutProps {
     specialNotes: string;
   };
   consultationLink?: string;
+  testimonials?: Array<{
+    title: string;
+    url: string;
+    description: string;
+  }>;
   // 国ごとの見出しカスタマイズ用
   sectionTitles?: {
     attractions?: string;
@@ -199,6 +204,7 @@ export default function CountryDetailLayout({
   recommendedFor,
   jobInfo,
   consultationLink,
+  testimonials,
   sectionTitles,
   subsectionTitles
 }: CountryDetailLayoutProps) {
@@ -470,6 +476,38 @@ export default function CountryDetailLayout({
               </div>
             </div>
           </section>
+
+          {/* 体験談セクション */}
+          {testimonials && testimonials.length > 0 && (
+            <section className={`${styles.section} ${styles["section-testimonials"]}`}>
+              <h2 className={styles["section-title"]}>
+                <span className={styles["section-title-icon-green"]}>💬</span> {country.nameJa}ワーホリ体験談・ガイド
+              </h2>
+              
+              <div className={styles["section-content"]}>
+                <div className={styles["testimonials-grid"]}>
+                  {testimonials.map((testimonial, index) => (
+                    <div key={index} className={styles["testimonial-card"]}>
+                      <a 
+                        href={testimonial.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className={styles["testimonial-link"]}
+                      >
+                        <h4 className={styles["testimonial-title"]}>{testimonial.title}</h4>
+                        <p className={styles["testimonial-description"]}>
+                          {testimonial.description}
+                        </p>
+                        <div className={styles["testimonial-link-text"]}>
+                          📖 記事を読む
+                        </div>
+                      </a>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </section>
+          )}
 
           {/* ワーホリでの仕事セクション */}
           {jobInfo && (

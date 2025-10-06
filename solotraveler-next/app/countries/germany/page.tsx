@@ -94,6 +94,29 @@ export default function GermanyDetailPage() {
     specialNotes: "ドイツ語ができると仕事の選択肢が大幅に広がります。ドイツ人は時間に厳格で、効率的な働き方を重視する文化があります。製造業での仕事は、ドイツの高い技術力に触れる良い機会です。"
   };
 
+  // 体験談セクション（noteの記事へのリンク）
+  const testimonials: Array<{
+    title: string;
+    url: string;
+    description: string;
+  }> = [
+    {
+      title: "ワーホリにおすすめの国はどこ？ドイツワーホリという新たな選択肢！",
+      url: "https://note.com/kskngm39/n/n13b341a63992",
+      description: "ばたごん夫婦さんがドイツワーホリを選んだ理由と体験談。オーストラリアやカナダとの比較、ドイツワーホリの魅力と課題について詳しく解説されています。検索数の少なさの理由や、ドイツでの生活のリアルな情報が満載です。"
+    },
+    {
+      title: "なぜドイツでは家が見つからない？家探しが大変な理由",
+      url: "https://note.com/kskngm39/n/n92b61886fb1f",
+      description: "ドイツでの家探しの実情を詳しく解説。住宅不足の理由、競争の激しさ、必要な書類など、実際に家探しを経験したばたごん夫婦さんのリアルな体験談。Wunderflatsを使った家探しのコツや役立つサイトの紹介も含まれています。"
+    },
+    {
+      title: "ドイツワーホリ2025年最新情報！リアルな生活情報！",
+      url: "https://note.com/kskngm39/n/nff358dd2d62d",
+      description: "2025年のドイツワーホリの最新情報をまとめた記事。ビザ情報、生活費・物価、仕事探しのトレンド、人気都市など、これから渡航を考えている人向けの実用的な情報が満載。ばたごん夫婦さんのリアルな体験談と最新のデータに基づいた情報です。"
+    }
+  ];
+
   return (
     <CountryDetailLayout
       country={country}
@@ -104,6 +127,7 @@ export default function GermanyDetailPage() {
       countryAtmosphere={countryAtmosphere}
       countryHighlights={countryHighlights}
       jobInfo={jobInfo}
+      testimonials={testimonials}
       consultationLink="https://px.a8.net/svt/ejp?a8mat=45C1IF+AMTQR6+5S4I+BW8O2&a8ejpredirect=https%3A%2F%2Fwww.iss-ryugakulife.com%2Fcounseling"
     />
   );

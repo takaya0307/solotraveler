@@ -481,7 +481,7 @@ export default function CountryDetailLayout({
           {testimonials && testimonials.length > 0 && (
             <section className={`${styles.section} ${styles["section-testimonials"]}`}>
               <h2 className={styles["section-title"]}>
-                <span className={styles["section-title-icon-green"]}>💬</span> {country.nameJa}ワーホリ体験談・ガイド
+                <span className={styles["section-title-icon-green"]}>💬</span> {country.nameJa}ワーホリ体験談
               </h2>
               
               <div className={styles["section-content"]}>

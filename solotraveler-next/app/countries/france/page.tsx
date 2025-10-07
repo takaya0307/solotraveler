@@ -94,6 +94,29 @@ export default function FranceDetailPage() {
     specialNotes: "フランス語ができると仕事の選択肢が大幅に広がります。ワイナリーでの仕事はフランス特有の文化体験ができる人気の職種です。フランス人は仕事とプライベートのバランスを重視する文化があります。"
   };
 
+  // 体験談セクション（noteの記事へのリンク）
+  const testimonials: Array<{
+    title: string;
+    url: string;
+    description: string;
+  }> = [
+    {
+      title: "【フランスワーホリ #6】パリでのお仕事/シェアハウスにお引越し",
+      url: "https://note.com/yukiaoshima/n/n18c0c16d05c2",
+      description: "yukiさんのフランスワーホリ体験談。パリの日本食レストランでのお仕事の感想、シェアハウスへの引っ越し、フランスでの生活のリアルな情報が満載。フランス語の上達や同僚との関係、生活用品の調達など、実際の生活の様子が詳しく紹介されています。"
+    },
+    {
+      title: "【フランスワーホリ #3】引っ越し準備&諸々の手続き",
+      url: "https://note.com/yukiaoshima/n/n678937b0b753",
+      description: "yukiさんのフランスワーホリ出発前の準備記録。仮住まいの選び方、荷物の準備、海外転居届などの手続きについて詳しく解説。Airbnbやホステルの選び方、スーツケースとバックパックの準備、日本の手続き（海外転居届、確定申告、銀行口座など）の実用的な情報が満載です。"
+    },
+    {
+      title: "【フランスワーホリ #7】1ヶ月目の振り返り",
+      url: "https://note.com/yukiaoshima/n/n7caf5e9159f4",
+      description: "yukiさんのフランスワーホリ1ヶ月目の振り返り記録。ホテル生活からシェアハウス生活への移行、仕事のスタート、ランスでのサッカー観戦、クリスマスマーケット体験など、フランスでの生活の充実ぶりが詳しく紹介されています。住まい探しや仕事探しのコツ、現地での生活リズムの作り方なども参考になります。"
+    }
+  ];
+
   return (
     <CountryDetailLayout
       country={country}
@@ -104,6 +127,7 @@ export default function FranceDetailPage() {
       countryAtmosphere={countryAtmosphere}
       countryHighlights={countryHighlights}
       jobInfo={jobInfo}
+      testimonials={testimonials}
       consultationLink="https://px.a8.net/svt/ejp?a8mat=45C1IF+AMTQR6+5S4I+BW8O2&a8ejpredirect=https%3A%2F%2Fwww.iss-ryugakulife.com%2Fcounseling"
     />
   );

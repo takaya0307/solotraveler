@@ -93,6 +93,29 @@ export default function AustraliaDetailPage() {
     specialNotes: "ファームジョブは2年目以降のビザ延長条件にもなるため人気です。季節によって仕事内容が変わるので、事前にリサーチすることが重要。都市部では競争が激しいため、地方での仕事も検討すると良いでしょう。"
   };
 
+  // 体験談セクション（noteの記事へのリンク）
+  const testimonials: Array<{
+    title: string;
+    url: string;
+    description: string;
+  }> = [
+    {
+      title: "【オーストラリアワーホリ】初めてのシェアハウス探し",
+      url: "https://note.com/sannie_abroad/n/n3d41bea49950",
+      description: "Sannieさんのオーストラリアワーホリ体験談。2年間で7回の引っ越しを経験した著者が、初めてのシェアハウス探しについて詳しく解説。flatmateサイトの使い方、内覧の現実、詐欺への注意点、条件の決め方など、実際の家探しで役立つ実用的な情報が満載です。"
+    },
+    {
+      title: "【ワーホリ語学学校】4ヶ月もいらなかった。やめた理由と本当に必要な人の特徴",
+      url: "https://note.com/sannie_abroad/n/ne2b6f07f72d4",
+      description: "Sannieさんの語学学校体験談。4ヶ月契約したが2ヶ月でフェードアウトした理由を詳しく解説。授業スタイルの違い、クラスの雰囲気、コース変更の体験、オンライン英会話との比較など、語学学校に通うべきかどうかの判断に役立つ実体験が満載です。"
+    },
+    {
+      title: "【ワーホリ仕事探し】3ヶ月かかってやっと採用！カフェの夢は断念…？",
+      url: "https://note.com/sannie_abroad/n/n33a4b80e3b1b",
+      description: "Sannieさんのオーストラリアワーホリでの仕事探し体験談。メルボルンでバリスタを目指したが3ヶ月かかってやっと採用された経緯を詳しく解説。カフェでの面接の現実、ラテアートの重要性、仕事探しのコツなど、実際の就職活動で役立つ情報が満載です。"
+    }
+  ];
+
   return (
     <CountryDetailLayout
       country={country}
@@ -103,6 +126,7 @@ export default function AustraliaDetailPage() {
       countryAtmosphere={countryAtmosphere}
       countryHighlights={countryHighlights}
       jobInfo={jobInfo}
+      testimonials={testimonials}
       consultationLink="https://px.a8.net/svt/ejp?a8mat=45C1IF+AMTQR6+5S4I+BW8O2&a8ejpredirect=https%3A%2F%2Fwww.iss-ryugakulife.com%2Fcounseling"
     />
   );

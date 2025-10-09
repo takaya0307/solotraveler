@@ -73,6 +73,29 @@ export default function EstoniaDetailPage() {
     }
   ];
 
+  // 体験談セクション（noteの記事へのリンク）
+  const testimonials: Array<{
+    title: string;
+    url: string;
+    description: string;
+  }> = [
+    {
+      title: "【エストニア】海外就職の仕事探し【ワーホリ】",
+      url: "https://note.com/takubeen/n/n491129fb63ed",
+      description: "たくびーんさんのエストニアワーホリ体験談。20代で会社員を辞め、2023年4月からワーキングホリデービザでエストニア移住を開始。エストニアでの仕事探しについて、CV.ee、work in Estonia、Cvkeskus.eeなどの求人サイト、LinkedIn、Facebookグループ、現地人の紹介など、具体的な方法を詳しく解説。日本からリモートで仕事を受注する方法や、CVとカバーレターの準備についても触れており、エストニアでの就職活動に役立つ実用的な情報が満載です。"
+    },
+    {
+      title: "【海外留学】ワーホリ費用の試算方法と無料の便利ツール：スプレッドシート【エストニア】",
+      url: "https://note.com/takubeen/n/n8c73c2f1fc52",
+      description: "たくびーんさんによるワーホリ・海外留学費用の試算方法についての解説。「ざっくり100万円」という目安をもとに、国や滞在期間、現地での就労有無によって変わる費用を具体的に試算する方法を紹介。Googleスプレッドシートの「年間予算」テンプレートを活用し、支出・収入を月ごとに入力して費用感を把握する実用的な方法を詳しく解説。渡航先での就労や、実際に現地でワーホリ経験した人から情報を得る重要性についても触れています。"
+    },
+    {
+      title: "【エストニア】ワーキングホリデービザ取得方法を解説！【ワーホリ】",
+      url: "https://note.com/takubeen/n/nd7245c6eb977",
+      description: "たくびーんさんによるエストニアのワーキングホリデービザ取得方法の詳細ガイド。滞在費用の確保、必要書類の準備、駐日エストニア大使館での面談、ビザ発行までの流れを実体験をもとに解説。ビザ申請書の具体的な入力方法や、パスポート、航空券、滞在先の証明書、証明写真、海外旅行保険の証明書、銀行の残高証明書、エストニアでの計画書など、必要書類について詳しく紹介しています。"
+    }
+  ];
+
   return (
     <CountryDetailLayout
       country={country}
@@ -82,6 +105,7 @@ export default function EstoniaDetailPage() {
       countryFeatures={countryFeatures}
       countryAtmosphere={countryAtmosphere}
       countryHighlights={countryHighlights}
+      testimonials={testimonials}
       consultationLink="https://px.a8.net/svt/ejp?a8mat=45C1IF+AMTQR6+5S4I+BW8O2&a8ejpredirect=https%3A%2F%2Fwww.iss-ryugakulife.com%2Fcounseling"
     />
   );

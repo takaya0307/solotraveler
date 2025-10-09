@@ -93,6 +93,29 @@ export default function CanadaDetailPage() {
     specialNotes: "冬季のスキーリゾートでの仕事は人気が高く、シーズン前（9-11月）に応募するのが一般的。ケベック州ではフランス語ができると仕事の選択肢が大幅に広がります。季節によって仕事内容が変わるため、事前にリサーチすることが重要です。"
   };
 
+  // 体験談セクション（noteの記事へのリンク）
+  const testimonials: Array<{
+    title: string;
+    url: string;
+    description: string;
+  }> = [
+    {
+      title: "ワーホリ仕事探しの現実。観光業への憧れと計画の挫折🤯🇨🇦",
+      url: "https://note.com/101misakitoronto/n/n49ced42bd3e5",
+      description: "Misakiさんのカナダ・トロントでのワーホリ体験談。新卒でSEとして働いた後、2025年7月からトロントでワーホリをスタート。語学学校を1ヶ月半通った後、スタバで未経験からバリスタとして働き始めた経験を綴っています。当初は観光業でのキャリアを計画していたものの、実際に現地でツアーに参加して感じた観光業の現実と、計画が変わっていく過程をリアルに描いた体験談です。"
+    },
+    {
+      title: "日本での社会人経験2年の私が感じた、カナダの働きやすさ🇨🇦",
+      url: "https://note.com/101misakitoronto/n/ne34664632a23",
+      description: "Misakiさんがトロントのスタバで働く中で感じたカナダの職場環境について。多国籍国家ならではの特別扱いされない働き方、程よいテキトーさ、新人に優しくフレンドリーな職場環境の魅力を詳しく解説。日本での社会人経験と比較しながら、カナダの働きやすさをリアルに綴った体験談です。忙しい時でも質問しやすい環境や、ミスをしても励ましてくれる同僚たちとの関係性など、実際の職場の雰囲気が伝わる内容です。"
+    },
+    {
+      title: "ホームシックになった？！トロントワーホリ感じるカルチャーショック",
+      url: "https://note.com/101misakitoronto/n/naeedfb7259e7",
+      description: "Misakiさんがカナダ・トロントで感じたカルチャーショックとホームシックについて正直に綴った体験談。ポジティブな面だけでなく、現地生活で直面するネガティブな側面も包み隠さず紹介。渡航前後の心境の変化や、実際に生活してみて感じた文化の違い、ホームシックへの対処法など、ワーホリのリアルな一面を知ることができる貴重な記事です。"
+    }
+  ];
+
   return (
     <CountryDetailLayout
       country={country}
@@ -103,6 +126,7 @@ export default function CanadaDetailPage() {
       countryAtmosphere={countryAtmosphere}
       countryHighlights={countryHighlights}
       jobInfo={jobInfo}
+      testimonials={testimonials}
       consultationLink="https://px.a8.net/svt/ejp?a8mat=45C1IF+AMTQR6+5S4I+BW8O2&a8ejpredirect=https%3A%2F%2Fwww.iss-ryugakulife.com%2Fcounseling"
     />
   );

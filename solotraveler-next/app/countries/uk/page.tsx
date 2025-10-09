@@ -94,6 +94,29 @@ export default function UKDetailPage() {
     specialNotes: "パブでの仕事はイギリス特有の文化体験ができる人気の職種です。ロンドンなどの都市部では競争が激しいため、地方都市も検討すると良いでしょう。観光シーズン（夏期）には観光業での求人が多くなります。"
   };
 
+  // 体験談セクション（noteの記事へのリンク）
+  const testimonials: Array<{
+    title: string;
+    url: string;
+    description: string;
+  }> = [
+    {
+      title: "初めてのワーホリ生活、始まりました🇬🇧 不安だらけのスタート",
+      url: "https://note.com/ponpon_day_uk/n/nbe17940f8a7f",
+      description: "ポンちゃんさんのイギリスワーホリ体験談。2025年春、英語力ゼロからイギリスでワーホリをスタート。渡英直後の不安とワクワクの気持ちをリアルに綴った体験談。家も仕事も決まっていない状態からのスタートで感じた正直な気持ちや、日本で働いていた会社への感謝、そしてこれからの新しい挑戦への決意が伝わる内容です。「とにかく楽しむ」という心を決めて、不安をワクワクに変えていく姿勢が印象的な記事です。"
+    },
+    {
+      title: "🇬🇧英語CV作りに挑戦！仕事探しの第一歩｜私のイギリス生活1ヶ月記念",
+      url: "https://note.com/ponpon_day_uk/n/n114e66d5ad0b",
+      description: "ポンちゃんさんのイギリス渡英1ヶ月後のCV（履歴書）作成体験談。英語でCVを書くのは初めてで、フォーマットも何を書けばいいのかもわからない状態からのスタート。無料ツールを試行錯誤した末、最終的にCanvaを使ってCVを完成させた過程をリアルに綴っています。仕事が見つからない不安で押しつぶされそうになりながらも、姉夫婦のサポートを受けて一歩踏み出した経験や、実際にCVに記載した内容についても具体的に紹介。イギリスでの仕事探しの現実が伝わる体験談です。"
+    },
+    {
+      title: "イギリスワーホリ｜３ヶ月目に感じた成長と気づき",
+      url: "https://note.com/ponpon_day_uk/n/n168c935abd05",
+      description: "ポンちゃんさんのイギリス渡英3ヶ月目の深い内省と成長を綴った体験談。働き始めて2ヶ月、生活には慣れてきたものの「英語がわからない環境に慣れてしまった」ことへの違和感と向き合う内容。ワーホリに来た本来の目的を見失いかけた自分に気づき、過去の挫折や「人のために頑張る」ことから「自分のために成長する」ことへの意識の変化が描かれています。目標を持つことの怖さ、自分自身と向き合う大切さ、そして「まずは自分を高める」という決意まで、ワーホリ生活の中での心の成長がリアルに伝わる深い体験談です。"
+    }
+  ];
+
   return (
     <CountryDetailLayout
       country={country}
@@ -104,6 +127,7 @@ export default function UKDetailPage() {
       countryAtmosphere={countryAtmosphere}
       countryHighlights={countryHighlights}
       jobInfo={jobInfo}
+      testimonials={testimonials}
       consultationLink="https://px.a8.net/svt/ejp?a8mat=45C1IF+AMTQR6+5S4I+BW8O2&a8ejpredirect=https%3A%2F%2Fwww.iss-ryugakulife.com%2Fcounseling"
     />
   );

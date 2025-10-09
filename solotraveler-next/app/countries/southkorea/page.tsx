@@ -95,6 +95,29 @@ export default function SouthKoreaDetailPage() {
     specialNotes: "韓国語ができると仕事の選択肢が大幅に広がります。日本語ができるとコールセンターや語学学校での仕事が有利です。韓国は年齢や上下関係を重視する文化があるため、職場での礼儀に注意が必要です。"
   };
 
+  // 体験談セクション（noteの記事へのリンク）
+  const testimonials: Array<{
+    title: string;
+    url: string;
+    description: string;
+  }> = [
+    {
+      title: "【 韓国ワーホリ 】 大手美容クリニックを辞めて、28歳で決断したきっかけと理由",
+      url: "https://note.com/sevenwld/n/n7e1e9dca9f38",
+      description: "ななぴさんが28歳で大手美容クリニックを退職し、韓国ワーキングホリデーを決意した経緯を綴った体験談。BTSとの出会いをきっかけに韓国語の勉強を始め、留学経験もTOPIK資格もない状態から、「今行かなきゃ絶対に後悔する」と決断したリアルな想いが詰まっています。海外生活への憧れ、語学への情熱、そして人生を変える大きな決断に至るまでのストーリーです。"
+    },
+    {
+      title: "【 韓国ワーホリ 】 ビザ申請完全ガイド｜28歳でも通った理由書・活動計画書・申請書の実例と書き方",
+      url: "https://note.com/sevenwld/n/n3f1c3253474f",
+      description: "ななぴさんが28歳・留学経験なし・TOPIK未取得という状況から韓国ワーホリビザを取得した実体験に基づく完全ガイド。26歳以上の申請に必須となる理由書、そして査証発給申請書・活動計画書の実例と具体的な書き方を詳細に解説。「26歳を超えて申請する時のコツ」「文化体験・観光メインで書く鉄則」など、実践的なアドバイスが満載で、これから申請する方にとって非常に参考になる内容です。"
+    },
+    {
+      title: "【 韓国ワーホリ 】リアルなお金事情｜かかった費用・銀行開設・海外送金まとめ",
+      url: "https://note.com/sevenwld/n/n07f8f2ee2958",
+      description: "ななぴさんが韓国ワーホリで実際にかかった費用を公開した体験談。渡航前の準備費用から到着後の初期費用（保証金・家賃・家具家電購入など）まで、リアルな金額を詳細に紹介。さらに韓国での銀行口座開設の流れ、Wiseを使った海外送金の方法、必要な貯金額の目安（100〜150万円）など、ワーホリ準備に欠かせないお金の情報が満載の実用的なガイドです。"
+    }
+  ];
+
   return (
     <CountryDetailLayout
       country={country}
@@ -105,6 +128,7 @@ export default function SouthKoreaDetailPage() {
       countryAtmosphere={countryAtmosphere}
       countryHighlights={countryHighlights}
       jobInfo={jobInfo}
+      testimonials={testimonials}
       consultationLink="https://px.a8.net/svt/ejp?a8mat=45C1IF+AMTQR6+5S4I+BW8O2&a8ejpredirect=https%3A%2F%2Fwww.iss-ryugakulife.com%2Fcounseling"
     />
   );

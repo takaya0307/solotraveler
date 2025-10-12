@@ -73,6 +73,29 @@ export default function NetherlandsDetailPage() {
     }
   ];
 
+  // 体験談セクション（noteの記事へのリンク）
+  const testimonials: Array<{
+    title: string;
+    url: string;
+    description: string;
+  }> = [
+    {
+      title: "【オランダワーホリ🇳🇱】自己紹介と行く目的",
+      url: "https://note.com/yasai_san/n/nad417a594f94",
+      description: "itsukiさんが新卒2年目でオランダワーホリを決意した経緯を綴った体験談。23歳で社会人2年目にして会社を辞め、2024年7月からオランダでワーホリをスタート。食べることと旅行が大好きで、大学4年生の時に行ったヨーロッパ周遊旅行での経験が忘れられず、海外移住を決意。新卒という早期のタイミングでワーホリを決断した理由や、不安と葛藤を乗り越えて自分のやりたいことに挑戦する決意について正直に綴られています。"
+    },
+    {
+      title: "【オランダワーホリ】１年間の振り返りと今後の進路",
+      url: "https://note.com/yasai_san/n/nf8213958623e",
+      description: "itsukiさんがオランダワーホリ9ヶ月目に書いた振り返り記事。初めての海外一人暮らし、語学学校、10か国15都市への旅行、バイト探しでの苦労など、リアルな体験を綴っています。英語学習や仕事探しで悩んだ時期もありながら、オンライン相談を通じて「誰かの役に立ちたい」という目的を見つけ、当初の帰国予定を変更してオランダに残ることを決意。SNS発信やフリーランスとしての道を模索する姿が描かれた、ワーホリのリアルな葛藤と成長の記録です。"
+    },
+    {
+      title: "【2025年度向け】オランダワーホリビザを3週間で取得した方法、体験談",
+      url: "https://note.com/yasai_san/n/nbb676adf6602",
+      description: "itsukiさんがエージェントを使わず自力でオランダワーホリビザを約3週間で取得した方法を詳しく解説。オランダワーホリは2020年から始まったばかりで情報が少なく、年間先着200人という枠や90日以内の渡航・申請という独特な制約があります。この記事では、渡航前の日本での事前申請と渡航後のオランダでの本申請の流れ、書類の集め方、実際の申請書類の記入例、失敗談を含むリアルな体験談が網羅されています。これからオランダワーホリを目指す方にとって必読の実践的ガイドです。"
+    }
+  ];
+
   return (
     <CountryDetailLayout
       country={country}
@@ -82,6 +105,7 @@ export default function NetherlandsDetailPage() {
       countryFeatures={countryFeatures}
       countryAtmosphere={countryAtmosphere}
       countryHighlights={countryHighlights}
+      testimonials={testimonials}
       consultationLink="https://px.a8.net/svt/ejp?a8mat=45C1IF+AMTQR6+5S4I+BW8O2&a8ejpredirect=https%3A%2F%2Fwww.iss-ryugakulife.com%2Fcounseling"
     />
   );

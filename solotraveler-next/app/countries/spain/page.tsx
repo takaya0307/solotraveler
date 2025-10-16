@@ -95,6 +95,29 @@ export default function SpainDetailPage() {
     specialNotes: "スペイン語ができると仕事の選択肢が大幅に広がります。バルでの仕事はスペイン特有の文化体験ができる人気の職種です。シエスタ（昼休み）の文化があるため、勤務時間の調整が必要な場合があります。"
   };
 
+  // 体験談セクション（noteの記事へのリンク）
+  const testimonials: Array<{
+    title: string;
+    url: string;
+    description: string;
+  }> = [
+    {
+      title: "英語もスペイン語も話せないわたしのスペインワーホリ",
+      url: "https://note.com/ayako1995/n/n041155a635b1",
+      description: "ayakoさんが29歳で結婚した夫の提案でスペインワーホリに挑戦した体験談。英語もスペイン語もロクに話せない状態で、海外にほとんど興味がなかった「箱入り娘」が、2024年12月からマドリードでワーホリをスタート。日本が大好きで海外に目を向けたことがなかった自分が、言語の壁を抱えながらも「太陽と情熱の国」スペインに挑む奮闘記。ワーホリを検討している方や言語に不安がある方にとって、安心材料となる等身大の体験を綴っています。"
+    },
+    {
+      title: "はじめてのヨーロッパ暮らし〜ルームシェア編〜",
+      url: "https://note.com/ayako1995/n/n00ae6af38252",
+      description: "ayakoさんがマドリードで半年以上経験したルームシェア（ピソ）生活のリアルな体験談。4部屋のアパートの一室を夫婦で月720ユーロ（水道・ガス・電気・Wi-Fi込）で借り、ベネズエラ、アルゼンチン、ペルー、ベルギーなど様々な国籍のルームメイトと生活。消耗品の管理、文化の違い、共用スペースの使い方、恋愛トラブルなど、ルームシェアならではの出来事を正直に綴っています。言語が話せなくても愛想よく振る舞うこと、お菓子を配って友好関係を築くことなど、実践的なアドバイスも満載です。"
+    },
+    {
+      title: "アラサー夫婦でスペインワーホリを選んだ理由",
+      url: "https://note.com/ayako1995/n/nf1b07485b099",
+      description: "ayakoさんがアラサー夫婦でスペインワーホリを決めた経緯を綴った体験談。きっかけは夫のサンティアゴ・デ・コンポステーラ巡礼の経験。28歳で初めて「ワーホリ」という言葉を聞き、海外にまったく興味がなかった自分は最初全く乗り気ではありませんでした。年齢、キャリア、お金など「失うこと」への恐怖から約半年間も行きたくないアピールを続けましたが、夫のあの手この手の説得により承諾。挑戦することへの恐怖や不安を乗り越え、新婚旅行として1年間のスペイン生活を決断するまでの正直な心境が描かれています。"
+    }
+  ];
+
   return (
     <CountryDetailLayout
       country={country}
@@ -105,6 +128,7 @@ export default function SpainDetailPage() {
       countryAtmosphere={countryAtmosphere}
       countryHighlights={countryHighlights}
       jobInfo={jobInfo}
+      testimonials={testimonials}
       consultationLink="https://px.a8.net/svt/ejp?a8mat=45C1IF+AMTQR6+5S4I+BW8O2&a8ejpredirect=https%3A%2F%2Fwww.iss-ryugakulife.com%2Fcounseling"
     />
   );

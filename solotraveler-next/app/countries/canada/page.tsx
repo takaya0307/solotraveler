@@ -8,7 +8,7 @@ export default function CanadaDetailPage() {
   const pageTitle = `${country.nameJa}ワーホリ`;
   const pageDescription = "カナダは、広大な国土と豊かな自然、そして多文化社会が特徴の北米の国です。\n都市部では近代的な生活を送りながら、すぐ近くで大自然を満喫できる環境が整っています。";
   
-  const countryDescription = "自然と都市が調和した北米の魅力あふれる国";
+  const countryDescription = "カナダワーホリの体験談・年齢制限・人気都市・おすすめポイントを見やすくまとめています。自然と都市が調和した北米の魅力あふれる国で、英語・フランス語の両方を学べます。";
   
   const countryFeatures = [
     {
@@ -46,6 +46,24 @@ export default function CanadaDetailPage() {
       title: "人々の性格",
       description: "カナダ人は親切でフレンドリーな性格の人が多く、多文化社会を尊重する文化があります。",
       icon: "😊"
+    }
+  ];
+
+  const ageRequirements = [
+    {
+      title: "年齢制限",
+      description: "18歳から30歳までが対象。申請時点で30歳を超えていないことが条件です。",
+      icon: "🎂"
+    },
+    {
+      title: "年齢上限ギリギリの注意点",
+      description: "29歳で申請する場合は、ビザ発行までに30歳を超えないよう注意が必要です。カナダ政府の判断により31歳まで認められる場合もあります。",
+      icon: "⚠️"
+    },
+    {
+      title: "年齢制限を超えた場合",
+      description: "30歳を超えた場合は、学生ビザや就労ビザなど他のビザを検討しましょう。",
+      icon: "🔄"
     }
   ];
 
@@ -124,6 +142,7 @@ export default function CanadaDetailPage() {
       countryDescription={countryDescription}
       countryFeatures={countryFeatures}
       countryAtmosphere={countryAtmosphere}
+      ageRequirements={ageRequirements}
       countryHighlights={countryHighlights}
       jobInfo={jobInfo}
       testimonials={testimonials}

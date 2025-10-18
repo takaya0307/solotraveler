@@ -74,6 +74,8 @@ export default function ItalyDetailPage() {
     }
   ];
 
+  const specialNote = "イタリアのワーキングホリデー制度は、2022年に日本とイタリアの間で協定が署名されましたが、現時点（2025年10月）でまだ正式には開始されておらず、申請もできません。具体的な開始時期は未定で、発効に必要な法的な手続きがイタリア側で完了していないことが理由です。制度が開始された場合、18歳から30歳までの人が対象となり、入国から1年間の滞在と、その期間中に合計6か月未満の就労が認められる見込みです。";
+
   return (
     <CountryDetailLayout
       country={country}
@@ -83,6 +85,7 @@ export default function ItalyDetailPage() {
       countryFeatures={countryFeatures}
       countryAtmosphere={countryAtmosphere}
       countryHighlights={countryHighlights}
+      specialNote={specialNote}
       consultationLink="https://px.a8.net/svt/ejp?a8mat=45C1IF+AMTQR6+5S4I+BW8O2&a8ejpredirect=https%3A%2F%2Fwww.iss-ryugakulife.com%2Fcounseling"
     />
   );

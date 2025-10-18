@@ -8,7 +8,7 @@ export default function UKDetailPage() {
   const pageTitle = `${country.nameJa}ワーホリ`;
   const pageDescription = "イギリスは、豊かな歴史と文化を持つヨーロッパの中心地です。\nロンドンをはじめとする歴史的な都市、美しい田園風景、そして世界最高峰の教育機関が集まる国です。";
   
-  const countryDescription = "歴史と文化が息づくヨーロッパの中心地";
+  const countryDescription = "イギリスワーホリの体験談・年齢制限・人気都市・おすすめポイントを見やすくまとめています。豊かな歴史と文化が息づくヨーロッパの中心地で、英語学習に最適な環境です。";
   
   const countryFeatures = [
     {

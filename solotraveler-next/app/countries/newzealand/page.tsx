@@ -6,9 +6,9 @@ export default function NewZealandDetailPage() {
   const country = newzealandData.countries.find(c => c.id === "newzealand")!;
 
   const pageTitle = `${country.nameJa}ワーホリ`;
-  const pageDescription = "ニュージーランドは、南太平洋に浮かぶ美しい島国。\n雄大な自然とフレンドリーな人々が魅力で、のんびりとした雰囲気が特徴です。フィヨルドや山々、美しい湖など、大自然を満喫できる環境が整っています。";
+  const pageDescription = "ニュージーランドワーホリは南太平洋に浮かぶ美しい島国での素晴らしい体験を提供します。\n世界で最も安全な国の一つで、キウイフルーツ農場やワイナリーでの就労機会が豊富。雄大な自然とフレンドリーな人々が魅力で、のんびりとした雰囲気が特徴です。フィヨルドや山々、美しい湖など、大自然を満喫できる環境が整っています";
   
-  const countryDescription = "大自然とフレンドリーな人々が魅力の南太平洋の国";
+  const countryDescription = "ニュージーランドワーホリの年齢制限・人気都市・おすすめポイントを見やすくまとめています。大自然とフレンドリーな人々が魅力の南太平洋の国で、安全でリラックスした環境でのワーホリ体験ができます。";
   
   const countryFeatures = [
     {
@@ -46,6 +46,24 @@ export default function NewZealandDetailPage() {
       title: "人々の性格",
       description: "ニュージーランド人は親切でフレンドリーな性格の人が多いです。のんびりとした雰囲気で、自然を愛する人が多いです。",
       icon: "😊"
+    }
+  ];
+
+  const ageRequirements = [
+    {
+      title: "年齢制限",
+      description: "18歳から30歳までが対象。申請時点で30歳を超えていないことが条件です。",
+      icon: "🎂"
+    },
+    {
+      title: "年齢上限ギリギリの注意点",
+      description: "30歳の誕生日を迎える前にビザ申請を完了する必要があります。ビザ取得後、31歳になってからの渡航も可能です。",
+      icon: "⚠️"
+    },
+    {
+      title: "年齢制限を超えた場合",
+      description: "30歳を超えた場合は、学生ビザや就労ビザなど他のビザを検討しましょう。",
+      icon: "🔄"
     }
   ];
 
@@ -103,6 +121,7 @@ export default function NewZealandDetailPage() {
       countryDescription={countryDescription}
       countryFeatures={countryFeatures}
       countryAtmosphere={countryAtmosphere}
+      ageRequirements={ageRequirements}
       countryHighlights={countryHighlights}
       jobInfo={jobInfo}
       consultationLink="https://px.a8.net/svt/ejp?a8mat=45C1IF+AMTQR6+5S4I+BW8O2&a8ejpredirect=https%3A%2F%2Fwww.iss-ryugakulife.com%2Fcounseling"

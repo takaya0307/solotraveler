@@ -148,6 +148,11 @@ interface CountryDetailLayoutProps {
     description: string;
     icon: string;
   }>;
+  ageRequirements?: Array<{
+    title: string;
+    description: string;
+    icon: string;
+  }>;
   countryHighlights?: Array<{
     title: string;
     description: string;
@@ -172,6 +177,7 @@ interface CountryDetailLayoutProps {
     specialNotes: string;
   };
   consultationLink?: string;
+  specialNote?: string;
   testimonials?: Array<{
     title: string;
     url: string;
@@ -197,6 +203,7 @@ export default function CountryDetailLayout({
   countryDescription,
   countryFeatures,
   countryAtmosphere,
+  ageRequirements,
   countryHighlights,
   workingHolidayReasons,
   englishLearningEnvironment,
@@ -204,6 +211,7 @@ export default function CountryDetailLayout({
   recommendedFor,
   jobInfo,
   consultationLink,
+  specialNote,
   testimonials,
   sectionTitles,
   subsectionTitles
@@ -295,6 +303,16 @@ export default function CountryDetailLayout({
             ))}
           </p>
         </div>
+
+        {/* 特別な注釈 */}
+        {specialNote && (
+          <div className={styles["special-note"]}>
+            <div className={styles["special-note-content"]}>
+              <h3 className={styles["special-note-title"]}>⚠️ 重要なお知らせ</h3>
+              <p className={styles["special-note-text"]}>{specialNote}</p>
+            </div>
+          </div>
+        )}
 
         {/* 滞在情報カード */}
         <div className={styles["info-cards-grid"]}>
@@ -408,7 +426,27 @@ export default function CountryDetailLayout({
                 ))}
               </div>
               
-              
+              {/* 年齢制限セクション */}
+              {ageRequirements && ageRequirements.length > 0 && (
+                <>
+                  <h3 className={styles["subsection-title"]}>
+                    🎂 年齢制限について
+                  </h3>
+                  
+                  <div className={styles["atmosphere-grid"]}>
+                    {ageRequirements.map((item, index) => (
+                      <div key={index} className={styles["atmosphere-card"]}>
+                        <h4 className={styles["atmosphere-title"]}>
+                          {item.icon} {item.title}
+                        </h4>
+                        <p className={styles["atmosphere-description"]}>
+                          {item.description}
+                        </p>
+                      </div>
+                    ))}
+                  </div>
+                </>
+              )}
               
             </div>
           </section>

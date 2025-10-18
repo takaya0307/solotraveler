@@ -124,6 +124,58 @@
   margin: 0 auto;
 }
 
+/* 特別な注釈 */
+.special-note {
+  margin: 2rem 0;
+  padding: 0 1rem;
+}
+
+.special-note-content {
+  background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+  border: 2px solid #f59e0b;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 12px rgba(245, 158, 11, 0.2);
+}
+
+.special-note-title {
+  margin: 0 0 1rem 0;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #92400e;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.special-note-text {
+  margin: 0;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #92400e;
+  font-weight: 500;
+}
+
+/* レスポンシブ対応 - 特別な注釈 */
+@media (max-width: 768px) {
+  .special-note {
+    margin: 1.5rem 0;
+    padding: 0 0.5rem;
+  }
+  
+  .special-note-content {
+    padding: 1.25rem;
+  }
+  
+  .special-note-title {
+    font-size: 1rem;
+  }
+  
+  .special-note-text {
+    font-size: 0.9rem;
+  }
+}
+
 /* 情報カードグリッド */
 .info-cards-grid {
   display: grid !important;

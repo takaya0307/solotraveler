@@ -8,7 +8,7 @@ export default function IrelandDetailPage() {
   const pageTitle = `${country.nameJa}ワーキングホリデー`;
   const pageDescription = "アイルランドは、美しい緑の風景、豊かな文化、そして深い歴史を持つ国です。\nダブリンをはじめとする美しい都市、そして美しい自然を満喫できます。";
   
-  const countryDescription = "緑・文化・歴史の国";
+  const countryDescription = "アイルランドワーホリの年齢制限・人気都市・おすすめポイントを徹底解説。緑豊かな自然と豊かな文化・歴史が魅力の国で、ダブリンを中心とした都市部での就労機会が豊富。英語学習に最適な環境で、フレンドリーな人々との交流を楽しめる。";
   
   const countryFeatures = [
     {
@@ -92,6 +92,24 @@ export default function IrelandDetailPage() {
     }
   ];
 
+  const ageRequirements = [
+    {
+      title: "年齢制限",
+      description: "18歳から30歳までが対象。申請時点で30歳を超えていないことが条件です。",
+      icon: "🎂"
+    },
+    {
+      title: "年齢上限ギリギリの注意点",
+      description: "30歳のうちにビザを取得すれば、31歳になってからの入国も可能です。29歳で申請する場合は、ビザ発行までに30歳を超えないよう注意が必要です。",
+      icon: "⚠️"
+    },
+    {
+      title: "年齢制限を超えた場合",
+      description: "30歳を超えた場合は、学生ビザや就労ビザなど他のビザを検討しましょう。",
+      icon: "🔄"
+    }
+  ];
+
   const countryHighlights = [
     {
       title: "アイルランド英語を学ぶ",
@@ -145,6 +163,7 @@ export default function IrelandDetailPage() {
       countryDescription={countryDescription}
       countryFeatures={countryFeatures}
       countryAtmosphere={countryAtmosphere}
+      ageRequirements={ageRequirements}
       countryHighlights={countryHighlights}
       workingHolidayReasons={workingHolidayReasons}
       englishLearningEnvironment={englishLearningEnvironment}

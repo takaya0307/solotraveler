@@ -6,9 +6,9 @@ export default function AustraliaDetailPage() {
   const country = australiaData.countries.find(c => c.id === "australia")!;
 
   const pageTitle = `オーストラリア ワーホリ`;
-  const pageDescription = "オーストラリア ワーホリは、南半球に位置する広大な大陸国家での素晴らしい体験を提供します。\n一年中温暖な気候で、美しいビーチや壮大な自然が魅力の国です。シドニー・ハーバーブリッジやオペラハウスなど、世界的に有名な観光スポットも多数あり、オーストラリア ワーホリでしか味わえない特別な体験が待っています。";
+  const pageDescription = "オーストラリアワーホリは、南半球に位置する広大な大陸国家での素晴らしい体験を提供します。\n一年中温暖な気候で、美しいビーチや壮大な自然が魅力の国です。シドニー・ハーバーブリッジやオペラハウスなど、世界的に有名な観光スポットも多数あり、オーストラリア ワーホリでしか味わえない特別な体験が待っています。";
   
-  const countryDescription = "オーストラリア ワーホリ・人気都市・おすすめポイントを徹底解説。温暖な気候、美しいビーチ、フレンドリーな人々が魅力の南半球の国で、英語学習と豊富な仕事環境を提供。";
+  const countryDescription = "オーストラリアワーホリの体験談・年齢制限・人気都市・おすすめポイントを見やすくまとめています。温暖な気候、美しいビーチ、フレンドリーな人々が魅力の南半球の国で、仕事をしながら英語を勉強しませんか？";
   
   const countryFeatures = [
     {
@@ -46,6 +46,24 @@ export default function AustraliaDetailPage() {
       title: "人々の性格",
       description: "オーストラリア人はフレンドリーで親しみやすい性格の人が多いです。カジュアルな文化で、すぐに友達を作りやすい環境です。",
       icon: "😊"
+    }
+  ];
+
+  const ageRequirements = [
+    {
+      title: "年齢制限",
+      description: "18歳から30歳までが対象。申請時点で30歳を超えていないことが条件です。",
+      icon: "🎂"
+    },
+    {
+      title: "年齢上限ギリギリの注意点",
+      description: "30歳のうちにビザを取得すれば、31歳になってからの入国も可能です。29歳で申請する場合は、ビザ発行までに30歳を超えないよう注意が必要です。",
+      icon: "⚠️"
+    },
+    {
+      title: "年齢制限を超えた場合",
+      description: "30歳を超えた場合は、学生ビザや就労ビザなど他のビザを検討しましょう。",
+      icon: "🔄"
     }
   ];
 
@@ -124,6 +142,7 @@ export default function AustraliaDetailPage() {
       countryDescription={countryDescription}
       countryFeatures={countryFeatures}
       countryAtmosphere={countryAtmosphere}
+      ageRequirements={ageRequirements}
       countryHighlights={countryHighlights}
       jobInfo={jobInfo}
       testimonials={testimonials}

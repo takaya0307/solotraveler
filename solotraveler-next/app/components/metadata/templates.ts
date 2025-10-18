@@ -9,17 +9,14 @@ export function generateBaseMetadata(config: CountryMetadataConfig): Metadata {
   const title = customTitle || `【2025年版】${countryInfo.nameJa}ワーホリ完全ガイド｜特徴と条件`;
   
   // ディスクリプションの生成（150-160文字）
-  const description = customDescription || `${countryInfo.nameJa}ワーホリの特徴・人気都市・おすすめポイントを徹底解説。${countryInfo.description}`;
+  const description = customDescription || `${countryInfo.nameJa}でのワーキングホリデー体験について詳しく紹介。${countryInfo.description}`;
   
-  // キーワードの生成（3-5個に絞る）
+  // キーワードの生成（3個に絞る）
   const baseKeywords = [
     // メインキーワード（必須）
     `${countryInfo.nameJa}ワーホリ`,
-    `${countryInfo.nameJa} ワーホリ`,
-    // 実用的なキーワード（2-3個）
-    `${countryInfo.nameJa} ワーホリ 準備`,
-    `${countryInfo.nameJa} ワーホリ 費用`,
-    "海外就労"
+    `${countryInfo.nameJa}ワーキングホリデー`,
+    `${countryInfo.nameJa}ワーホリ仕事`
   ];
   
   // カスタムキーワードがあれば追加
@@ -87,7 +84,7 @@ export function generateBaseMetadata(config: CountryMetadataConfig): Metadata {
   };
 }
 
-// 構造化データの生成
+// 構造化データの生成（1つに統一）
 export function generateCountryStructuredData(config: CountryMetadataConfig): any {
   const { countryInfo } = config;
   
@@ -95,16 +92,24 @@ export function generateCountryStructuredData(config: CountryMetadataConfig): an
     "@context": "https://schema.org",
     "@type": "Article",
     "headline": `【2025年版】${countryInfo.nameJa}ワーホリ完全ガイド｜特徴と条件`,
-    "description": `${countryInfo.nameJa}ワーホリの特徴・人気都市・おすすめポイントを徹底解説。${countryInfo.description}`,
+    "description": `${countryInfo.nameJa}でのワーキングホリデー体験について詳しく紹介。${countryInfo.description}`,
     "author": {
       "@type": "Organization",
       "name": "ワーホリパス",
-      "url": "https://workingholidaypass.jp"
+      "url": "https://workingholidaypass.jp",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://workingholidaypass.jp/ogp.png"
+      }
     },
     "publisher": {
       "@type": "Organization",
       "name": "ワーホリパス",
-      "url": "https://workingholidaypass.jp"
+      "url": "https://workingholidaypass.jp",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://workingholidaypass.jp/ogp.png"
+      }
     },
     "datePublished": "2024-01-01T00:00:00.000Z",
     "dateModified": new Date().toISOString(),
@@ -117,9 +122,32 @@ export function generateCountryStructuredData(config: CountryMetadataConfig): an
       "name": countryInfo.nameJa,
       "alternateName": countryInfo.nameEn
     },
-    "keywords": `${countryInfo.nameJa}ワーホリ,${countryInfo.nameJa} ワーホリ,${countryInfo.nameEn} ワーホリ`,
+    "keywords": `${countryInfo.nameJa}ワーホリ,${countryInfo.nameJa}ワーキングホリデー,${countryInfo.nameJa}ワーホリ仕事`,
     "articleSection": `${countryInfo.nameJa}ワーホリ`,
-    "inLanguage": "ja-JP"
+    "inLanguage": "ja-JP",
+    "breadcrumb": {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "ホーム",
+          "item": "https://workingholidaypass.jp"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "ワーホリとは",
+          "item": "https://workingholidaypass.jp/about-workingholiday"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": countryInfo.nameJa,
+          "item": `https://workingholidaypass.jp/countries/${countryInfo.id}`
+        }
+      ]
+    }
   };
 }
 

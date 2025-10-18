@@ -1,9 +1,9 @@
 "use client";
 import React, { useState, useEffect } from "react";
-import { WorkingHolidayCountry, WorkingHolidayCity } from "../types/types";
+import { WorkingHolidayCountry, WorkingHolidayCity } from "../../types/types";
 import Image from "next/image";
 import Link from "next/link";
-import { useSearchParams, useRouter } from "next/navigation";
+import { useRouter } from "next/navigation";
 import RequestButton from "./RequestButton";
 import Header from "./Header";
 
@@ -99,12 +99,12 @@ const getOriginalCurrency = (wage: string) => {
 
 interface HomePageClientProps {
   countries: WorkingHolidayCountry[];
+  countryId?: string | null;
 }
 
-export default function HomePageClient({ countries }: HomePageClientProps) {
+export default function HomePageClient({ countries, countryId }: HomePageClientProps) {
   const router = useRouter();
   const [selectedCountry, setSelectedCountry] = useState<WorkingHolidayCountry | null>(null);
-  const searchParams = useSearchParams();
 
   // メインページにhome-pageクラスを追加
   useEffect(() => {
@@ -146,14 +146,13 @@ export default function HomePageClient({ countries }: HomePageClientProps) {
     };
   }, [openDropdown]);
 
-  // countryIdクエリがあれば自動選択
+  // countryIdがあれば自動選択
   useEffect(() => {
-    const cid = searchParams.get("countryId");
-    if (cid) {
-      const found = countries.find((c: any) => c.id === cid);
+    if (countryId) {
+      const found = countries.find((c: any) => c.id === countryId);
       if (found) setSelectedCountry(found);
     }
-  }, [searchParams, countries]);
+  }, [countryId, countries]);
 
   // スクロール位置の復元
   useEffect(() => {

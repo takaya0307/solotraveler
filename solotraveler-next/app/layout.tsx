@@ -18,7 +18,7 @@ const dancingScript = Dancing_Script({
 export const metadata: Metadata = {
   title: "【2025年最新】ワーホリ対応31カ国一覧と人気都市",
   description: "31カ国のワーキングホリデー制度を比較。オーストラリア、カナダ、ニュージーランドなど人気国の条件や都市情報を詳しく紹介しています。",
-  keywords: "ワーホリ,ワーキングホリデー,海外移住",
+  keywords: "ワーホリ国,ワーホリ,海外移住",
   authors: [{ name: "ワーホリパス" }],
   creator: "ワーホリパス",
   publisher: "ワーホリパス",

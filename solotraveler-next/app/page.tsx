@@ -142,7 +142,11 @@ async function getCountriesData(): Promise<WorkingHolidayCountry[]> {
 }
 
 // サーバーサイドコンポーネント
-export default async function Home() {
+export default async function Home({
+  searchParams,
+}: {
+  searchParams: { countryId?: string };
+}) {
   // サーバーサイドでデータを取得
   const countries = await getCountriesData();
   
@@ -151,7 +155,9 @@ export default async function Home() {
 
   return (
     <>
-      <HomePageClient countries={countries} />
+      <Suspense fallback={<div>Loading...</div>}>
+        <HomePageClient countries={countries} countryId={searchParams.countryId} />
+      </Suspense>
       <Script id="main-structured-data" type="application/ld+json">
         {JSON.stringify(structuredData)}
       </Script>

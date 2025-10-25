@@ -51,6 +51,12 @@ export default function SwedenDetailPage() {
     }
   ];
 
+  const englishProficiency = {
+    level: "非常に高い",
+    score: 90,
+    description: "スウェーデンは英語がとても通じる国です。多くの人が流暢に英語を話し、カフェやお店、役所などでも英語で問題なくコミュニケーションが取れます。英語が母語ではありませんが、ほぼ英語圏に近い感覚で生活できます。"
+  };
+
   const countryHighlights = [
     {
       title: "スウェーデン語と英語",
@@ -105,6 +111,7 @@ export default function SwedenDetailPage() {
       countryDescription={countryDescription}
       countryFeatures={countryFeatures}
       countryAtmosphere={countryAtmosphere}
+      englishProficiency={englishProficiency}
       countryHighlights={countryHighlights}
       testimonials={testimonials}
       consultationLink="https://px.a8.net/svt/ejp?a8mat=45C1IF+AMTQR6+5S4I+BW8O2&a8ejpredirect=https%3A%2F%2Fwww.iss-ryugakulife.com%2Fcounseling"

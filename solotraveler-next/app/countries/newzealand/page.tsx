@@ -14,19 +14,19 @@ export default function NewZealandDetailPage() {
     {
       title: "大自然",
       description: "フィヨルドや山々でのアウトドア",
-      imageUrl: "https://images.unsplash.com/photo-1595125990323-885cec5217ff?w=1920&auto=format&fit=crop&q=80",
+      imageUrl: "https://images.unsplash.com/photo-1595125990323-885cec5217ff?w=1920&auto=format&fit=crop&q=60",
       imageAlt: "ニュージーランドの大自然"
     },
     {
       title: "アドベンチャー",
       description: "バンジージャンプやスカイダイビング",
-      imageUrl: "https://images.unsplash.com/photo-1515253648320-6d70d901f0ac?w=1920&auto=format&fit=crop&q=80",
+      imageUrl: "https://images.unsplash.com/photo-1515253648320-6d70d901f0ac?w=1920&auto=format&fit=crop&q=60",
       imageAlt: "アドベンチャースポーツ"
     },
     {
       title: "温泉文化",
       description: "地熱地帯での温泉体験",
-      imageUrl: "https://images.unsplash.com/photo-1680180730599-61216c165c96?w=1920&auto=format&fit=crop&q=80",
+      imageUrl: "https://images.unsplash.com/photo-1680180730599-61216c165c96?w=1920&auto=format&fit=crop&q=60",
       imageAlt: "温泉文化"
     }
   ];
@@ -66,6 +66,12 @@ export default function NewZealandDetailPage() {
       icon: "🔄"
     }
   ];
+
+  const englishProficiency = {
+    level: "ネイティブ",
+    score: 100,
+    description: "英語が母語で、生活や仕事、教育などすべて英語が基本。"
+  };
 
   const countryHighlights = [
     {
@@ -122,6 +128,7 @@ export default function NewZealandDetailPage() {
       countryFeatures={countryFeatures}
       countryAtmosphere={countryAtmosphere}
       ageRequirements={ageRequirements}
+      englishProficiency={englishProficiency}
       countryHighlights={countryHighlights}
       jobInfo={jobInfo}
       consultationLink="https://px.a8.net/svt/ejp?a8mat=45C1IF+AMTQR6+5S4I+BW8O2&a8ejpredirect=https%3A%2F%2Fwww.iss-ryugakulife.com%2Fcounseling"

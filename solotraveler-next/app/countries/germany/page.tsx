@@ -14,13 +14,13 @@ export default function GermanyDetailPage() {
     {
       title: "技術力",
       description: "世界最高峰の自動車産業と製造業",
-      imageUrl: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=1920&auto=format&fit=crop&q=80",
+      imageUrl: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=1920&auto=format&fit=crop&q=60",
       imageAlt: "ドイツの技術力"
     },
     {
       title: "文化と芸術",
       description: "豊かな音楽文化と美術館",
-      imageUrl: "https://images.unsplash.com/photo-1560929585-ba3c24ec6c44?w=1920&auto=format&fit=crop&q=80",
+      imageUrl: "https://images.unsplash.com/photo-1560929585-ba3c24ec6c44?w=1920&auto=format&fit=crop&q=60",
       imageAlt: "ドイツの文化と芸術"
     },
     {
@@ -48,6 +48,12 @@ export default function GermanyDetailPage() {
       icon: "😊"
     }
   ];
+
+  const englishProficiency = {
+    level: "高い",
+    score: 70,
+    description: "若い世代や都市部では英語を話せる人が多く、生活でも困ることはほとんどありません。\n\nただし、地方や年配の人との会話ではドイツ語が必要になる場面もあります。"
+  };
 
   const countryHighlights = [
     {
@@ -125,6 +131,7 @@ export default function GermanyDetailPage() {
       countryDescription={countryDescription}
       countryFeatures={countryFeatures}
       countryAtmosphere={countryAtmosphere}
+      englishProficiency={englishProficiency}
       countryHighlights={countryHighlights}
       jobInfo={jobInfo}
       testimonials={testimonials}

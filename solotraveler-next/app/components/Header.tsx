@@ -161,11 +161,11 @@ const Header: React.FC = () => {
             )}
           </div>
           <Link 
-            href="/about-workingholiday" 
+            href="/articles" 
             className={styles.navLink}
-            aria-label="ワーホリについて詳しく知る"
+            aria-label="記事一覧を見る"
           >
-            ワーホリとは
+            記事一覧
           </Link>
           <Link 
             href="https://px.a8.net/svt/ejp?a8mat=45C1IF+AMTQR6+5S4I+BW8O2&a8ejpredirect=https%3A%2F%2Fwww.iss-ryugakulife.com%2Fcounseling" 
@@ -238,12 +238,12 @@ const Header: React.FC = () => {
               )}
             </div>
             <Link 
-              href="/about-workingholiday" 
+              href="/articles" 
               className={styles.mobileNavLink}
               onClick={closeMenu}
-              aria-label="ワーホリについて詳しく知る"
+              aria-label="記事一覧を見る"
             >
-              ワーホリとは
+              記事一覧
             </Link>
             <Link 
               href="https://px.a8.net/svt/ejp?a8mat=45C1IF+AMTQR6+5S4I+BW8O2&a8ejpredirect=https%3A%2F%2Fwww.iss-ryugakulife.com%2Fcounseling" 

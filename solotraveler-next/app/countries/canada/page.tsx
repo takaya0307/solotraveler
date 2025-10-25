@@ -14,13 +14,13 @@ export default function CanadaDetailPage() {
     {
       title: "自然と都市の調和",
       description: "都市部からすぐに大自然へアクセス可能",
-      imageUrl: "https://images.unsplash.com/photo-1519832979-6fa011b87667?w=1920&auto=format&fit=crop&q=80",
+      imageUrl: "https://images.unsplash.com/photo-1519832979-6fa011b87667?w=1920&auto=format&fit=crop&q=60",
       imageAlt: "カナダの自然と都市"
     },
     {
       title: "多文化社会",
       description: "様々な国の文化が融合した環境",
-      imageUrl: "https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=1920&auto=format&fit=crop&q=80",
+      imageUrl: "https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=1920&auto=format&fit=crop&q=60",
       imageAlt: "多文化社会"
     },
     {
@@ -66,6 +66,12 @@ export default function CanadaDetailPage() {
       icon: "🔄"
     }
   ];
+
+  const englishProficiency = {
+    level: "ネイティブ",
+    score: 100,
+    description: "英語が母語で、生活や仕事、教育などすべて英語が基本。"
+  };
 
   const countryHighlights = [
     {
@@ -143,6 +149,7 @@ export default function CanadaDetailPage() {
       countryFeatures={countryFeatures}
       countryAtmosphere={countryAtmosphere}
       ageRequirements={ageRequirements}
+      englishProficiency={englishProficiency}
       countryHighlights={countryHighlights}
       jobInfo={jobInfo}
       testimonials={testimonials}

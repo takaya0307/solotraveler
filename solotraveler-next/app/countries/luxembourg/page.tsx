@@ -50,6 +50,12 @@ export default function LuxembourgDetailPage() {
     }
   ];
 
+  const englishProficiency = {
+    level: "高い",
+    score: 70,
+    description: "若い世代や都市部では英語を話せる人が多く、生活でも困ることはほとんどありません。\n\nただし、地方や年配の人との会話ではルクセンブルク語が必要になる場面もあります。"
+  };
+
   const countryHighlights = [
     {
       title: "多言語環境",
@@ -104,6 +110,7 @@ export default function LuxembourgDetailPage() {
       countryDescription={countryDescription}
       countryFeatures={countryFeatures}
       countryAtmosphere={countryAtmosphere}
+      englishProficiency={englishProficiency}
       countryHighlights={countryHighlights}
       testimonials={testimonials}
       consultationLink="https://px.a8.net/svt/ejp?a8mat=45C1IF+AMTQR6+5S4I+BW8O2&a8ejpredirect=https%3A%2F%2Fwww.iss-ryugakulife.com%2Fcounseling"

@@ -15,19 +15,19 @@ export default function DenmarkDetailPage() {
     {
       title: "幸福の国",
       description: "世界で最も幸福な国の一つ",
-      imageUrl: "https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?w=1920&auto=format&fit=crop&q=80",
+      imageUrl: "https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?w=1920&auto=format&fit=crop&q=60",
       imageAlt: "デンマークの幸福"
     },
     {
       title: "デザイン文化",
       description: "北欧デザインの本場",
-      imageUrl: "https://images.unsplash.com/photo-1541961017774-22349e4a1262?w=1920&auto=format&fit=crop&q=80",
+      imageUrl: "https://images.unsplash.com/photo-1541961017774-22349e4a1262?w=1920&auto=format&fit=crop&q=60",
       imageAlt: "デンマークのデザイン文化"
     },
     {
       title: "自転車文化",
       description: "自転車が生活の中心",
-      imageUrl: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1920&auto=format&fit=crop&q=80",
+      imageUrl: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1920&auto=format&fit=crop&q=60",
       imageAlt: "デンマークの自転車文化"
     }
   ];
@@ -49,6 +49,12 @@ export default function DenmarkDetailPage() {
       icon: "😊"
     }
   ];
+
+  const englishProficiency = {
+    level: "非常に高い",
+    score: 90,
+    description: "多くの人が流暢に英語を話し、問題なくコミュニケーションが取れます。母語ではありませんが、ほぼ英語圏に近い感覚で生活できます。"
+  };
 
   const countryHighlights = [
     {
@@ -81,6 +87,7 @@ export default function DenmarkDetailPage() {
       countryDescription={countryDescription}
       countryFeatures={countryFeatures}
       countryAtmosphere={countryAtmosphere}
+      englishProficiency={englishProficiency}
       countryHighlights={countryHighlights}
       consultationLink="https://px.a8.net/svt/ejp?a8mat=45C1IF+AMTQR6+5S4I+BW8O2&a8ejpredirect=https%3A%2F%2Fwww.iss-ryugakulife.com%2Fcounseling"
     />

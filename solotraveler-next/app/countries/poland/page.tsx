@@ -49,6 +49,12 @@ export default function PolandDetailPage() {
     }
   ];
 
+  const englishProficiency = {
+    level: "高い",
+    score: 70,
+    description: "若い世代や都市部では英語を話せる人が多く、生活でも困ることはほとんどありません。\n\nただし、地方や年配の人との会話ではポーランド語が必要になる場面もあります。"
+  };
+
   const countryHighlights = [
     {
       title: "ポーランド語の本場で学ぶ",
@@ -80,6 +86,7 @@ export default function PolandDetailPage() {
       countryDescription={countryDescription}
       countryFeatures={countryFeatures}
       countryAtmosphere={countryAtmosphere}
+      englishProficiency={englishProficiency}
       countryHighlights={countryHighlights}
       consultationLink="https://px.a8.net/svt/ejp?a8mat=45C1IF+AMTQR6+5S4I+BW8O2&a8ejpredirect=https%3A%2F%2Fwww.iss-ryugakulife.com%2Fcounseling"
     />

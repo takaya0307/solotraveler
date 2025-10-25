@@ -110,6 +110,12 @@ export default function IrelandDetailPage() {
     }
   ];
 
+  const englishProficiency = {
+    level: "ネイティブ",
+    score: 100,
+    description: "英語が母語で、生活や仕事、教育などすべて英語が基本。"
+  };
+
   const countryHighlights = [
     {
       title: "アイルランド英語を学ぶ",
@@ -164,6 +170,7 @@ export default function IrelandDetailPage() {
       countryFeatures={countryFeatures}
       countryAtmosphere={countryAtmosphere}
       ageRequirements={ageRequirements}
+      englishProficiency={englishProficiency}
       countryHighlights={countryHighlights}
       workingHolidayReasons={workingHolidayReasons}
       englishLearningEnvironment={englishLearningEnvironment}

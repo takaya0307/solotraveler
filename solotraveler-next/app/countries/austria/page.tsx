@@ -50,6 +50,12 @@ export default function AustriaDetailPage() {
     }
   ];
 
+  const englishProficiency = {
+    level: "非常に高い",
+    score: 90,
+    description: "多くの人が流暢に英語を話し、問題なくコミュニケーションが取れます。母語ではありませんが、ほぼ英語圏に近い感覚で生活できます。"
+  };
+
   const countryHighlights = [
     {
       title: "ドイツ語の本場で学ぶ",
@@ -81,6 +87,7 @@ export default function AustriaDetailPage() {
       countryDescription={countryDescription}
       countryFeatures={countryFeatures}
       countryAtmosphere={countryAtmosphere}
+      englishProficiency={englishProficiency}
       countryHighlights={countryHighlights}
       consultationLink="https://px.a8.net/svt/ejp?a8mat=45C1IF+AMTQR6+5S4I+BW8O2&a8ejpredirect=https%3A%2F%2Fwww.iss-ryugakulife.com%2Fcounseling"
     />

@@ -50,6 +50,12 @@ export default function SouthKoreaDetailPage() {
     }
   ];
 
+  const englishProficiency = {
+    level: "中程度",
+    score: 50,
+    description: "韓国では都市部や若い世代を中心に英語が通じますが、全体的には英語力はそれほど高くありません。\n\n観光地では英語でやり取りできますが、日常生活では韓国語が基本です。\n\nワーホリで滞在する場合は、簡単な韓国語を覚えておくと生活がぐっと楽になります。"
+  };
+
   const countryHighlights = [
     {
       title: "韓国語の本場で学ぶ",
@@ -126,6 +132,7 @@ export default function SouthKoreaDetailPage() {
       countryDescription={countryDescription}
       countryFeatures={countryFeatures}
       countryAtmosphere={countryAtmosphere}
+      englishProficiency={englishProficiency}
       countryHighlights={countryHighlights}
       jobInfo={jobInfo}
       testimonials={testimonials}

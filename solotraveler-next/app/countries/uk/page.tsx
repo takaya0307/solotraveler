@@ -20,13 +20,13 @@ export default function UKDetailPage() {
     {
       title: "教育の質",
       description: "オックスフォード、ケンブリッジなど世界最高峰の大学",
-      imageUrl: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=1920&auto=format&fit=crop&q=80",
+      imageUrl: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=1920&auto=format&fit=crop&q=60",
       imageAlt: "イギリスの教育"
     },
     {
       title: "多文化社会",
       description: "様々な国の文化が融合した国際的な環境",
-      imageUrl: "https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=1920&auto=format&fit=crop&q=80",
+      imageUrl: "https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=1920&auto=format&fit=crop&q=60",
       imageAlt: "多文化社会"
     }
   ];
@@ -48,6 +48,12 @@ export default function UKDetailPage() {
       icon: "😊"
     }
   ];
+
+  const englishProficiency = {
+    level: "ネイティブ",
+    score: 100,
+    description: "英語が母語で、生活や仕事、教育などすべて英語が基本。"
+  };
 
   const countryHighlights = [
     {
@@ -125,6 +131,7 @@ export default function UKDetailPage() {
       countryDescription={countryDescription}
       countryFeatures={countryFeatures}
       countryAtmosphere={countryAtmosphere}
+      englishProficiency={englishProficiency}
       countryHighlights={countryHighlights}
       jobInfo={jobInfo}
       testimonials={testimonials}

@@ -14,7 +14,7 @@ export default function FranceDetailPage() {
     {
       title: "芸術と文化",
       description: "ルーブル美術館やオルセー美術館など世界最高峰の美術館",
-      imageUrl: "https://images.unsplash.com/photo-1752461046051-3b6c1d95d61c?w=1920&auto=format&fit=crop&q=80",
+      imageUrl: "https://images.unsplash.com/photo-1752461046051-3b6c1d95d61c?w=1920&auto=format&fit=crop&q=60",
       imageAlt: "フランスの芸術と文化"
     },
     {
@@ -26,7 +26,7 @@ export default function FranceDetailPage() {
     {
       title: "ファッション",
       description: "パリコレクションと世界のファッションの中心",
-      imageUrl: "https://images.unsplash.com/photo-1445205170230-053b83016050?w=1920&auto=format&fit=crop&q=80",
+      imageUrl: "https://images.unsplash.com/photo-1445205170230-053b83016050?w=1920&auto=format&fit=crop&q=60",
       imageAlt: "フランスのファッション"
     }
   ];
@@ -48,6 +48,12 @@ export default function FranceDetailPage() {
       icon: "😊"
     }
   ];
+
+  const englishProficiency = {
+    level: "中程度",
+    score: 50,
+    description: "フランスでは都市部や若い世代を中心に英語が通じますが、全体的には英語力はそれほど高くありません。\n\n観光地では英語でやり取りできますが、日常生活ではフランス語が基本です。\n\nワーホリで滞在する場合は、簡単なフランス語を覚えておくと生活がぐっと楽になります。"
+  };
 
   const countryHighlights = [
     {
@@ -125,6 +131,7 @@ export default function FranceDetailPage() {
       countryDescription={countryDescription}
       countryFeatures={countryFeatures}
       countryAtmosphere={countryAtmosphere}
+      englishProficiency={englishProficiency}
       countryHighlights={countryHighlights}
       jobInfo={jobInfo}
       testimonials={testimonials}

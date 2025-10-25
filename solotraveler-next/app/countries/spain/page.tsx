@@ -15,19 +15,19 @@ export default function SpainDetailPage() {
     {
       title: "情熱的な文化",
       description: "フラメンコと闘牛文化",
-      imageUrl: "https://images.unsplash.com/photo-1634156589964-c6da0fba0a05?w=1920&auto=format&fit=crop&q=80",
+      imageUrl: "https://images.unsplash.com/photo-1634156589964-c6da0fba0a05?w=1920&auto=format&fit=crop&q=60",
       imageAlt: "スペインの情熱的な文化"
     },
     {
       title: "美食の国",
       description: "タパスと地中海料理",
-      imageUrl: "https://images.unsplash.com/photo-1621841957884-1210fe19d66d?w=1920&auto=format&fit=crop&q=80",
+      imageUrl: "https://images.unsplash.com/photo-1621841957884-1210fe19d66d?w=1920&auto=format&fit=crop&q=60",
       imageAlt: "スペインの美食"
     },
     {
       title: "歴史的建造物",
       description: "アルハンブラ宮殿とサグラダ・ファミリア",
-      imageUrl: "https://images.unsplash.com/photo-1509840841025-9088ba78a826?w=1920&auto=format&fit=crop&q=80",
+      imageUrl: "https://images.unsplash.com/photo-1509840841025-9088ba78a826?w=1920&auto=format&fit=crop&q=60",
       imageAlt: "歴史的建造物"
     }
   ];
@@ -49,6 +49,12 @@ export default function SpainDetailPage() {
       icon: "😊"
     }
   ];
+
+  const englishProficiency = {
+    level: "中程度",
+    score: 50,
+    description: "スペインでは都市部や若い世代を中心に英語が通じますが、全体的には英語力はそれほど高くありません。\n\n観光地では英語でやり取りできますが、日常生活ではスペイン語が基本です。\n\nワーホリで滞在する場合は、簡単なスペイン語を覚えておくと生活がぐっと楽になります。"
+  };
 
   const countryHighlights = [
     {
@@ -126,6 +132,7 @@ export default function SpainDetailPage() {
       countryDescription={countryDescription}
       countryFeatures={countryFeatures}
       countryAtmosphere={countryAtmosphere}
+      englishProficiency={englishProficiency}
       countryHighlights={countryHighlights}
       jobInfo={jobInfo}
       testimonials={testimonials}

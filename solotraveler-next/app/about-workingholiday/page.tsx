@@ -39,55 +39,55 @@ export default function AboutWorkingHoliday() {
     <>
       <Header />
       
-      {/* サーバーサイドレンダリングされたコンテンツ */}
-      <div className="wh-page-container" style={{ marginTop: '2rem' }}>
-        {/* ヒーローセクション */}
-        <section className="wh-hero-section">
-          <div className="wh-hero-content">
-            {/* ヒーロー画像 */}
-            <div className="wh-hero-image-section">
-              <img 
-                src="https://images.unsplash.com/photo-1517400508447-f8dd518b86db?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8QWlycG9ydHxlbnwwfHwwfHx8MA%3D%3D" 
-                alt="空港の様子" 
-                className="wh-hero-main-image"
-              />
-            </div>
-            <h1 className="wh-hero-title">
-              ワーホリとは？初心者向け完全ガイド【2025年最新】
-            </h1>
-            <p className="wh-hero-description">
-              ワーホリとは、18〜30歳（国により35歳）を中心とした若者が、協定国に最長1〜2年滞在し、休暇を主目的に就労・就学も体験できる特別なビザ制度です。
-            </p>
-            
-            {/* ファーストビュー強化 */}
-            <div className="wh-hero-features">
-              <div className="wh-hero-feature">
-                <span className="wh-hero-feature-icon">🌍</span>
-                <div className="wh-hero-feature-title">18〜30歳対象</div>
-                <div className="wh-hero-feature-desc">若者限定の特別ビザ</div>
-              </div>
-              <div className="wh-hero-feature">
-                <span className="wh-hero-feature-icon">💼</span>
-                <div className="wh-hero-feature-title">就労・就学可能</div>
-                <div className="wh-hero-feature-desc">働きながら学べる</div>
-              </div>
-              <div className="wh-hero-feature">
-                <span className="wh-hero-feature-icon">🗓️</span>
-                <div className="wh-hero-feature-title">1〜2年間滞在</div>
-                <div className="wh-hero-feature-desc">じっくり体験できる</div>
-              </div>
-            </div>
-          </div>
-        </section>
+      {/* 記事コンテンツ */}
+      <div className="article-container">
+        {/* 記事ヘッダー */}
+        <header className="article-header">
+          <h1 className="article-title">
+            ワーホリとは？初心者向け完全ガイド
+          </h1>
+          <p className="article-excerpt">
+            ワーホリとは、18〜30歳（国により35歳）を中心とした若者が、協定国に最長1〜2年滞在し、休暇を主目的に就労・就学も体験できる特別なビザ制度です。この記事では、ワーホリの基本情報から申請方法、人気国まで詳しく解説します。
+          </p>
+        </header>
 
-        {/* 滞在可能な国と期間 */}
-        <section id="countries" className="wh-section">
-          <h2 className="wh-section-title">
-            🌍 ワーホリで行ける人気国と滞在期間
-          </h2>
+        {/* 記事本文 */}
+        <main className="article-content">
+          {/* 目次 */}
+          <nav className="article-toc">
+            <h3 className="toc-title">目次</h3>
+            <ul className="toc-list">
+              <li><a href="#what-is-wh">ワーホリとは何か</a></li>
+              <li><a href="#countries">人気国と滞在期間</a></li>
+              <li><a href="#documents">必要書類</a></li>
+              <li><a href="#costs">費用の目安</a></li>
+              <li><a href="#faq">よくある質問</a></li>
+            </ul>
+          </nav>
+
+          {/* ワーホリとは何か */}
+          <section id="what-is-wh" className="article-section">
+            <h2 className="section-title">ワーホリとは何か</h2>
+            <div className="article-text">
+              <p>
+                ワーホリ（ワーキングホリデー）は、18歳から30歳（一部の国では35歳まで）の若者を対象とした特別なビザ制度です。休暇を主目的としながら、現地での就労や就学も体験できる、まさに「働きながら学ぶ」ことができる制度です。
+              </p>
+              <p>
+                この制度の最大の特徴は、単なる観光旅行とは異なり、現地の生活に深く関わることができる点です。語学学習、文化交流、就労体験を通じて、その国の文化や社会を肌で感じることができます。
+              </p>
+            </div>
+          </section>
+
+          {/* 滞在可能な国と期間 */}
+          <section id="countries" className="article-section">
+            <h2 className="section-title">🌍 ワーホリで行ける人気国と滞在期間</h2>
+            <div className="article-text">
+              <p>
+                日本は現在、多くの国とワーキングホリデー協定を結んでいます。各国によって滞在期間や年齢制限が異なるため、自分の希望に合った国を選ぶことが重要です。以下に人気の高い国々を紹介します。
+              </p>
+            </div>
           
-          <div className="wh-card">
-            <div className="wh-countries-grid">
+            <div className="countries-grid">
               <div className="wh-country-card">
                 <div className="wh-country-info">
                   <h3 className="wh-country-name">🇦🇺 オーストラリア</h3>
@@ -188,22 +188,23 @@ export default function AboutWorkingHoliday() {
                 </a>
               </div>
             </div>
-          </div>
-        </section>
+          </section>
 
-
-        {/* 必要書類 */}
-        <section id="documents" className="wh-section wh-section-alt">
-          <h2 className="wh-section-title">
-            📋 ワーホリ申請に必要な書類一覧
-          </h2>
-          
-          <div className="wh-card-grid wh-card-grid-3">
-            <div className="wh-document-card">
-              <div className="wh-document-icon">📄</div>
-              <h3 className="wh-document-title">パスポート</h3>
-              <p className="wh-document-desc">有効期限が滞在期間+6ヶ月以上必要</p>
+          {/* 必要書類 */}
+          <section id="documents" className="article-section">
+            <h2 className="section-title">📋 ワーホリ申請に必要な書類一覧</h2>
+            <div className="article-text">
+              <p>
+                ワーホリビザの申請には、各国共通の基本書類と、国によって異なる追加書類が必要です。申請前に必ず最新の情報を確認し、余裕を持って準備を始めましょう。
+              </p>
             </div>
+          
+            <div className="documents-grid">
+              <div className="wh-document-card">
+                <div className="wh-document-icon">📄</div>
+                <h3 className="wh-document-title">パスポート</h3>
+                <p className="wh-document-desc">有効期限が滞在期間+6ヶ月以上必要</p>
+              </div>
             
             <div className="wh-document-card">
               <div className="wh-document-icon">📸</div>
@@ -237,19 +238,22 @@ export default function AboutWorkingHoliday() {
           </div>
         </section>
 
-        {/* 費用の目安 */}
-        <section id="costs" className="wh-section">
-          <h2 className="wh-section-title">
-            💰 ワーホリにかかる費用の目安と内訳
-          </h2>
-          
-          <div className="wh-card-grid wh-card-grid-3">
-            <div className="wh-cost-card">
-              <div className="wh-cost-icon">🛂</div>
-              <h3 className="wh-cost-title">ビザ申請料</h3>
-              <p className="wh-cost-amount">3,000〜15,000円</p>
-              <p className="wh-cost-desc">国により異なる</p>
+          {/* 費用の目安 */}
+          <section id="costs" className="article-section">
+            <h2 className="section-title">💰 ワーホリにかかる費用の目安と内訳</h2>
+            <div className="article-text">
+              <p>
+                ワーホリには多額の費用がかかります。事前にしっかりと資金計画を立てることで、現地での生活を安心して送ることができます。以下に主要な費用項目をまとめました。
+              </p>
             </div>
+          
+            <div className="costs-grid">
+              <div className="wh-cost-card">
+                <div className="wh-cost-icon">🛂</div>
+                <h3 className="wh-cost-title">ビザ申請料</h3>
+                <p className="wh-cost-amount">3,000〜15,000円</p>
+                <p className="wh-cost-desc">国により異なる</p>
+              </div>
             
             <div className="wh-cost-card">
               <div className="wh-cost-icon">✈️</div>
@@ -288,9 +292,26 @@ export default function AboutWorkingHoliday() {
           </div>
         </section>
 
-        <div className="wh-footer-note">
-          ※ 詳細は各国大使館・公式サイト等でご確認ください
-        </div>
+          {/* よくある質問 */}
+          <section id="faq" className="article-section">
+            <h2 className="section-title">❓ よくある質問</h2>
+            <div className="faq-list">
+              {faqData.map((faq, index) => (
+                <div key={index} className="faq-item">
+                  <h3 className="faq-question">{faq.question}</h3>
+                  <p className="faq-answer">{faq.answer}</p>
+                </div>
+              ))}
+            </div>
+          </section>
+
+          {/* 記事の終了 */}
+          <div className="article-footer">
+            <p className="disclaimer">
+              ※ 詳細は各国大使館・公式サイト等でご確認ください。情報は2025年1月時点のものです。
+            </p>
+          </div>
+        </main>
 
         {/* スキーマ（構造化データ） */}
         <script

@@ -14,19 +14,19 @@ export default function AustraliaDetailPage() {
     {
       title: "ビーチライフ",
       description: "美しいビーチでサーフィンや日光浴",
-      imageUrl: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1920&auto=format&fit=crop&q=80",
+      imageUrl: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1920&auto=format&fit=crop&q=60",
       imageAlt: "オーストラリアのビーチ"
     },
     {
       title: "カフェ文化",
       description: "メルボルンのカフェでコーヒーを楽しむ",
-      imageUrl: "https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?w=1920&auto=format&fit=crop&q=80",
+      imageUrl: "https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?w=1920&auto=format&fit=crop&q=60",
       imageAlt: "オーストラリアのカフェ"
     },
     {
       title: "アウトドア",
       description: "自然の中でハイキングやキャンプ",
-      imageUrl: "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=1920&auto=format&fit=crop&q=80",
+      imageUrl: "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=1920&auto=format&fit=crop&q=60",
       imageAlt: "オーストラリアのアウトドア"
     }
   ];
@@ -66,6 +66,12 @@ export default function AustraliaDetailPage() {
       icon: "🔄"
     }
   ];
+
+  const englishProficiency = {
+    level: "ネイティブ",
+    score: 100,
+    description: "英語が母語で、生活や仕事、教育などすべて英語が基本。"
+  };
 
   const countryHighlights = [
     {
@@ -143,6 +149,7 @@ export default function AustraliaDetailPage() {
       countryFeatures={countryFeatures}
       countryAtmosphere={countryAtmosphere}
       ageRequirements={ageRequirements}
+      englishProficiency={englishProficiency}
       countryHighlights={countryHighlights}
       jobInfo={jobInfo}
       testimonials={testimonials}

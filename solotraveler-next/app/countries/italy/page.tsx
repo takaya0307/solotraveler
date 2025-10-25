@@ -16,19 +16,19 @@ export default function ItalyDetailPage() {
     {
       title: "芸術と文化",
       description: "ルネサンス芸術と世界遺産",
-      imageUrl: "https://images.unsplash.com/photo-1529154166925-574a0236a4f4?w=1920&auto=format&fit=crop&q=80",
+      imageUrl: "https://images.unsplash.com/photo-1529154166925-574a0236a4f4?w=1920&auto=format&fit=crop&q=60",
       imageAlt: "イタリアの芸術と文化"
     },
     {
       title: "美食の国",
       description: "世界最高峰のイタリア料理",
-      imageUrl: "https://images.unsplash.com/photo-1447279506476-3faec8071eee?w=1920&auto=format&fit=crop&q=80",
+      imageUrl: "https://images.unsplash.com/photo-1447279506476-3faec8071eee?w=1920&auto=format&fit=crop&q=60",
       imageAlt: "イタリアの美食"
     },
     {
       title: "歴史的建造物",
       description: "古代ローマ遺跡と中世の街並み",
-      imageUrl: "https://images.unsplash.com/photo-1476362174823-3a23f4aa6d76?w=1920&auto=format&fit=crop&q=80",
+      imageUrl: "https://images.unsplash.com/photo-1476362174823-3a23f4aa6d76?w=1920&auto=format&fit=crop&q=60",
       imageAlt: "歴史的建造物"
     }
   ];
@@ -50,6 +50,12 @@ export default function ItalyDetailPage() {
       icon: "😊"
     }
   ];
+
+  const englishProficiency = {
+    level: "中程度",
+    score: 50,
+    description: "イタリアでは都市部や若い世代を中心に英語が通じますが、全体的には英語力はそれほど高くありません。\n\n観光地では英語でやり取りできますが、日常生活ではイタリア語が基本です。\n\nワーホリで滞在する場合は、簡単なイタリア語を覚えておくと生活がぐっと楽になります。"
+  };
 
   const countryHighlights = [
     {
@@ -84,6 +90,7 @@ export default function ItalyDetailPage() {
       countryDescription={countryDescription}
       countryFeatures={countryFeatures}
       countryAtmosphere={countryAtmosphere}
+      englishProficiency={englishProficiency}
       countryHighlights={countryHighlights}
       specialNote={specialNote}
       consultationLink="https://px.a8.net/svt/ejp?a8mat=45C1IF+AMTQR6+5S4I+BW8O2&a8ejpredirect=https%3A%2F%2Fwww.iss-ryugakulife.com%2Fcounseling"

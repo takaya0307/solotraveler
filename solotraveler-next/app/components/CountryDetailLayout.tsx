@@ -153,6 +153,11 @@ interface CountryDetailLayoutProps {
     description: string;
     icon: string;
   }>;
+  englishProficiency?: {
+    level: string;
+    score: number;
+    description: string;
+  };
   countryHighlights?: Array<{
     title: string;
     description: string;
@@ -204,6 +209,7 @@ export default function CountryDetailLayout({
   countryFeatures,
   countryAtmosphere,
   ageRequirements,
+  englishProficiency,
   countryHighlights,
   workingHolidayReasons,
   englishLearningEnvironment,
@@ -380,6 +386,33 @@ export default function CountryDetailLayout({
             <p>{country.quota}</p>
           </div>
         </div>
+
+        {/* 英語通用度セクション */}
+        {englishProficiency && (
+          <section className={`${styles.section} ${styles["section-english-proficiency"]}`}>
+            <h2 className={styles["section-title"]}>
+              <span className={styles["section-title-icon"]}>🌍</span> 英語通用度
+            </h2>
+            
+            <div className={styles["section-content"]}>
+              <div className={styles["english-proficiency-overview"]}>
+                <div className={styles["score-circle"]}>
+                  <span className={styles["score-number"]}>{englishProficiency.score}</span>
+                  <span className={styles["score-percent"]}>%</span>
+                </div>
+                <div className={styles["score-level"]}>{englishProficiency.level}</div>
+                <p className={styles["english-proficiency-description"]}>
+                  {englishProficiency.description.split('\n\n').map((paragraph, index) => (
+                    <React.Fragment key={index}>
+                      {paragraph}
+                      {index < englishProficiency.description.split('\n\n').length - 1 && <br />}
+                    </React.Fragment>
+                  ))}
+                </p>
+              </div>
+            </div>
+          </section>
+        )}
 
         {/* 記事コンテンツ */}
         <article className={styles["article-content"]}>

@@ -50,6 +50,12 @@ export default function HongKongDetailPage() {
     }
   ];
 
+  const englishProficiency = {
+    level: "中程度",
+    score: 50,
+    description: "香港では都市部や若い世代を中心に英語が通じますが、全体的には英語力はそれほど高くありません。\n\n観光地では英語でやり取りできますが、日常生活では中国語（広東語）が基本です。\n\nワーホリで滞在する場合は、簡単な中国語を覚えておくと生活がぐっと楽になります。"
+  };
+
   const countryHighlights = [
     {
       title: "英語と中国語のバイリンガル環境",
@@ -81,6 +87,7 @@ export default function HongKongDetailPage() {
       countryDescription={countryDescription}
       countryFeatures={countryFeatures}
       countryAtmosphere={countryAtmosphere}
+      englishProficiency={englishProficiency}
       countryHighlights={countryHighlights}
       consultationLink="https://px.a8.net/svt/ejp?a8mat=45C1IF+AMTQR6+5S4I+BW8O2&a8ejpredirect=https%3A%2F%2Fwww.iss-ryugakulife.com%2Fcounseling"
     />

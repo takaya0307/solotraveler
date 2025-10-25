@@ -6,6 +6,7 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import RequestButton from "./RequestButton";
 import Header from "./Header";
+import BackgroundImage from "./BackgroundImage";
 
 // GA4イベント計測用のヘルパー関数
 const trackEvent = (action: string, category: string, label?: string, value?: string | number) => {
@@ -105,7 +106,6 @@ interface HomePageClientProps {
 export default function HomePageClient({ countries, countryId }: HomePageClientProps) {
   const router = useRouter();
   const [selectedCountry, setSelectedCountry] = useState<WorkingHolidayCountry | null>(null);
-
   // メインページにhome-pageクラスを追加
   useEffect(() => {
     document.body.classList.add('home-page');
@@ -115,11 +115,9 @@ export default function HomePageClient({ countries, countryId }: HomePageClientP
       document.body.classList.remove('home-page');
     };
   }, []);
-
   const [openAccordionCountryIds, setOpenAccordionCountryIds] = useState<string[]>([]);
   const [openDropdown, setOpenDropdown] = useState<boolean>(false);
   const [selectedCategory, setSelectedCategory] = useState<string>('');
-
   // ドロップダウン選択時のハンドラー
   const handleDropdownSelect = (category: string) => {
     setOpenDropdown(false);
@@ -127,7 +125,6 @@ export default function HomePageClient({ countries, countryId }: HomePageClientP
     // カテゴリに応じた処理をここに追加
     console.log('Selected category:', category);
   };
-
   // ドロップダウンの外をクリックした時に閉じる
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
@@ -136,16 +133,13 @@ export default function HomePageClient({ countries, countryId }: HomePageClientP
         setOpenDropdown(false);
       }
     };
-
     if (openDropdown) {
       document.addEventListener('mousedown', handleClickOutside);
     }
-
     return () => {
       document.removeEventListener('mousedown', handleClickOutside);
     };
   }, [openDropdown]);
-
   // countryIdがあれば自動選択
   useEffect(() => {
     if (countryId) {
@@ -153,44 +147,66 @@ export default function HomePageClient({ countries, countryId }: HomePageClientP
       if (found) setSelectedCountry(found);
     }
   }, [countryId, countries]);
-
-  // スクロール位置の復元
+  // スクロール位置の復元（最適化版）
   useEffect(() => {
     const savedScrollPosition = sessionStorage.getItem('mainPageScrollPosition');
     if (savedScrollPosition) {
-      // 少し遅延を入れてスクロール位置を復元（DOMの描画完了後）
-      setTimeout(() => {
+      // requestAnimationFrameを使用してDOMの描画完了後にスクロール位置を復元
+      requestAnimationFrame(() => {
         window.scrollTo(0, parseInt(savedScrollPosition));
         // 復元後は保存された位置を削除
         sessionStorage.removeItem('mainPageScrollPosition');
-      }, 100);
+      });
     }
   }, [countries]); // countriesの状態が変わった後に実行
-
-  // スクロール深度計測
+  // スクロール深度計測（最適化版）
   useEffect(() => {
+    let ticking = false;
+    let lastScrollPercentage = -1;
+    // ドキュメントの高さをキャッシュ（リサイズ時のみ更新）
+    let cachedDocumentHeight = 0;
+    let cachedWindowHeight = 0;
+    const updateCachedDimensions = () => {
+      cachedDocumentHeight = document.documentElement.scrollHeight;
+      cachedWindowHeight = window.innerHeight;
+    };
+    // 初期化時にキャッシュを設定
+    updateCachedDimensions();
     const handleScroll = () => {
-      const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-      const windowHeight = window.innerHeight;
-      const documentHeight = document.documentElement.scrollHeight;
-      const scrollPercentage = Math.round((scrollTop / (documentHeight - windowHeight)) * 100);
-      
-      // 25%, 50%, 75%, 100%のスクロールポイントでイベント送信
-      if (scrollPercentage >= 25 && scrollPercentage < 50) {
-        trackEvent('scroll', 'エンゲージメント', 'スクロール25%', scrollPercentage);
-      } else if (scrollPercentage >= 50 && scrollPercentage < 75) {
-        trackEvent('scroll', 'エンゲージメント', 'スクロール50%', scrollPercentage);
-      } else if (scrollPercentage >= 75 && scrollPercentage < 100) {
-        trackEvent('scroll', 'エンゲージメント', 'スクロール75%', scrollPercentage);
-      } else if (scrollPercentage >= 100) {
-        trackEvent('scroll', 'エンゲージメント', 'スクロール100%', scrollPercentage);
+      if (!ticking) {
+        requestAnimationFrame(() => {
+          const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+          const scrollPercentage = Math.round((scrollTop / (cachedDocumentHeight - cachedWindowHeight)) * 100);
+          // 同じパーセンテージの重複送信を防ぐ
+          if (scrollPercentage !== lastScrollPercentage) {
+            lastScrollPercentage = scrollPercentage;
+            // 25%, 50%, 75%, 100%のスクロールポイントでイベント送信
+            if (scrollPercentage >= 25 && scrollPercentage < 50) {
+              trackEvent('scroll', 'エンゲージメント', 'スクロール25%', scrollPercentage);
+            } else if (scrollPercentage >= 50 && scrollPercentage < 75) {
+              trackEvent('scroll', 'エンゲージメント', 'スクロール50%', scrollPercentage);
+            } else if (scrollPercentage >= 75 && scrollPercentage < 100) {
+              trackEvent('scroll', 'エンゲージメント', 'スクロール75%', scrollPercentage);
+            } else if (scrollPercentage >= 100) {
+              trackEvent('scroll', 'エンゲージメント', 'スクロール100%', scrollPercentage);
+            }
+          }
+          ticking = false;
+        });
+        ticking = true;
       }
     };
-
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    // リサイズ時にキャッシュを更新
+    const handleResize = () => {
+      updateCachedDimensions();
+    };
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    window.addEventListener('resize', handleResize, { passive: true });
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener('resize', handleResize);
+    };
   }, []);
-
   // 選択された国に応じてGA4イベントのみ送信（メタデータはサーバーサイドで管理）
   useEffect(() => {
     if (selectedCountry) {
@@ -201,13 +217,11 @@ export default function HomePageClient({ countries, countryId }: HomePageClientP
       trackEvent('view', 'ページ', 'ホームページ', 1);
     }
   }, [selectedCountry]);
-
   // 都市一覧表示
   if (selectedCountry) {
     return (
       <div className="App">
         <Header />
-
         <div 
           className="city-header-section"
           style={{
@@ -247,7 +261,19 @@ export default function HomePageClient({ countries, countryId }: HomePageClientP
             ) : (
               selectedCountry.cities.map((city: WorkingHolidayCity) => (
                 <div className="city-card" key={city.id}>
-                  <div className="city-card-image" style={{backgroundImage: `url('${city.imageUrl}')`}}>
+                  <div className="city-card-image">
+                    <img
+                      src={city.imageUrl}
+                      alt={`${city.nameJa}の風景`}
+                      className="city-card-image-bg"
+                      loading="lazy"
+                      style={{
+                        width: '100%',
+                        height: '100%',
+                        objectFit: 'cover',
+                        objectPosition: 'center'
+                      }}
+                    />
                     <div className="city-card-title-overlay">
                       <h2 className="city-card-title">{city.nameJa}</h2>
                     </div>
@@ -270,19 +296,16 @@ export default function HomePageClient({ countries, countryId }: HomePageClientP
                       }}
                     >
                       {city.description}
-                    </div>
-
                   </div>
+                </div>
                 </div>
               ))
             )}
           </div>
-
         </main>
       </div>
     );
   }
-
   // 国一覧表示
   return (
     <div className="App">
@@ -290,65 +313,62 @@ export default function HomePageClient({ countries, countryId }: HomePageClientP
       <main className="home-page">
         <section aria-label="ワーキングホリデー協定国一覧">
           <h1 className="main-heading">2025年最新ワーホリ対応国一覧</h1>
-            
-            <div className="dropdown-section">
-              <div className="dropdown-container">
-                <button 
-                  className="dropdown-button"
-                  onClick={() => setOpenDropdown(!openDropdown)}
-                  aria-expanded={openDropdown}
-                  aria-haspopup="true"
-                >
-                  <span>
-                    {selectedCategory === 'beginner' && '🌱 初めての人におすすめ'}
-                    {selectedCategory === 'english' && '📚 英語力を伸ばす'}
-                    {selectedCategory === 'no-quota' && '♾️ 定員上限なし'}
-                    {selectedCategory === 'spanish' && '🇪🇸 スペイン語を学ぶ'}
-                    {!selectedCategory && '条件で絞る'}
-                  </span>
-                  <span className={`dropdown-arrow ${openDropdown ? 'open' : ''}`}>▼</span>
-                </button>
-                
-                {openDropdown && (
-                  <div className="dropdown-menu">
-                    <button 
-                      className="dropdown-item"
-                      onClick={() => handleDropdownSelect('')}
-                    >
-                      📋 条件をリセット
-                    </button>
-                    <button 
-                      className="dropdown-item"
-                      onClick={() => handleDropdownSelect('beginner')}
-                    >
-                      🌱 初めての人におすすめ
-                    </button>
-                    <button 
-                      className="dropdown-item"
-                      onClick={() => handleDropdownSelect('english')}
-                    >
-                      📚 英語力を伸ばす
-                    </button>
-                    <button 
-                      className="dropdown-item"
-                      onClick={() => handleDropdownSelect('no-quota')}
-                    >
-                      ♾️ 定員上限なし
-                    </button>
-                    <button 
-                      className="dropdown-item"
-                      onClick={() => handleDropdownSelect('spanish')}
-                    >
-                      🇪🇸 スペイン語を学ぶ
-                    </button>
-                  </div>
-                )}
-              </div>
+          <div className="dropdown-section">
+            <div className="dropdown-container">
+              <button 
+                className="dropdown-button"
+                onClick={() => setOpenDropdown(!openDropdown)}
+                aria-expanded={openDropdown}
+                aria-haspopup="true"
+              >
+                <span>
+                  {selectedCategory === 'beginner' ? '🌱 初めての人におすすめ' :
+                   selectedCategory === 'english' ? '📚 英語力を伸ばす' :
+                   selectedCategory === 'no-quota' ? '♾️ 定員上限なし' :
+                   selectedCategory === 'spanish' ? '🇪🇸 スペイン語を学ぶ' :
+                   '条件で絞る'}
+                </span>
+                <span className={`dropdown-arrow ${openDropdown ? 'open' : ''}`}>▼</span>
+              </button>
+              {openDropdown ? (
+                <div className="dropdown-menu">
+                  <button 
+                    className="dropdown-item"
+                    onClick={() => handleDropdownSelect('')}
+                  >
+                    📋 条件をリセット
+                  </button>
+                  <button 
+                    className="dropdown-item"
+                    onClick={() => handleDropdownSelect('beginner')}
+                  >
+                    🌱 初めての人におすすめ
+                  </button>
+                  <button 
+                    className="dropdown-item"
+                    onClick={() => handleDropdownSelect('english')}
+                  >
+                    📚 英語力を伸ばす
+                  </button>
+                  <button 
+                    className="dropdown-item"
+                    onClick={() => handleDropdownSelect('no-quota')}
+                  >
+                    ♾️ 定員上限なし
+                  </button>
+                  <button 
+                    className="dropdown-item"
+                    onClick={() => handleDropdownSelect('spanish')}
+                  >
+                    🇪🇸 スペイン語を学ぶ
+                  </button>
+                </div>
+              ) : null}
             </div>
-            
-            <h2 className="sr-only">ワーキングホリデー協定国一覧・条件・人気都市まとめ</h2>
+          </div>
+          <h2 className="sr-only">ワーキングホリデー協定国一覧・条件・人気都市まとめ</h2>
           <div className="card-grid">
-            {Array.isArray(countries) && countries
+            {Array.isArray(countries) ? countries
               .filter(country => {
                 if (selectedCategory === 'beginner') {
                   return ['australia', 'canada', 'newzealand'].includes(country.id);
@@ -370,10 +390,23 @@ export default function HomePageClient({ countries, countryId }: HomePageClientP
               key={`${country.id}-${openAccordionCountryIds.includes(country.id)}`} 
               style={{cursor: 'default'}}
             >
-                <div className="card-image" style={{backgroundImage: `url('${country.imageUrl}')`}}>
+                <div className="card-image">
+                  <img
+                    src={country.imageUrl}
+                    alt={`${country.nameJa}の風景`}
+                    className="card-image-bg"
+                    fetchPriority={country.id === 'australia' ? 'high' : 'auto'}
+                    loading={country.id === 'australia' ? 'eager' : 'lazy'}
+                    style={{
+                      width: '100%',
+                      height: '100%',
+                      objectFit: 'cover',
+                      objectPosition: 'center'
+                    }}
+                  />
                   <div className="card-title-overlay">
                     <div style={{ display: 'flex', alignItems: 'center', gap: '0.5em' }}>
-                      {country.countryCode && (
+                      {country.countryCode ? (
                         <Image
                           src={`https://flagcdn.com/w20/${country.countryCode.toLowerCase()}.png`}
                           alt={`${country.nameJa}の国旗`}
@@ -382,18 +415,18 @@ export default function HomePageClient({ countries, countryId }: HomePageClientP
                           loading="lazy"
                           style={{ borderRadius: '2px', objectFit: 'cover', boxShadow: '0 1px 4px rgba(0,0,0,0.08)' }}
                         />
-                      )}
+                      ) : null}
                       <h2 className="card-title">{country.nameJa}</h2>
                     </div>
                   </div>
                 </div>
               <div className="card-content">
                 {/* キャッチコピー */}
-                {country.catchphrase && (
+                {country.catchphrase ? (
                   <div className="catchphrase">
                     {country.catchphrase}
                   </div>
-                )}
+                ) : null}
                 {/* 主要数値情報をアイコン付きで表示 */}
                 <div className="country-info-grid">
                   <div className="info-item">
@@ -453,7 +486,6 @@ export default function HomePageClient({ countries, countryId }: HomePageClientP
                         'france', 'germany', 'spain', 'italy', 'portugal', 
                         'austria', 'norway', 'denmark', 'poland', 'czech', 'hungary', 'slovakia', 'iceland', 'southkorea', 'taiwan', 'hongkong', 'argentina', 'chile', 'estonia', 'lithuania', 'netherlands', 'finland', 'latvia', 'uruguay', 'luxembourg', 'sweden'
                       ];
-                      
                       if (externalPageCountries.includes(country.id)) {
                         trackEvent('click', 'CTA', `詳細情報_${country.nameJa}_外部ページ`, 1);
                         // 現在のスクロール位置を保存
@@ -500,10 +532,9 @@ export default function HomePageClient({ countries, countryId }: HomePageClientP
                   >
                     もっと詳しく知る 🔍
                   </button>
-
                 </div>
                 {/* 詳細情報アコーディオン展開部分 */}
-                {openAccordionCountryIds.includes(country.id) && (
+                {openAccordionCountryIds.includes(country.id) ? (
                   <div style={{
                     marginTop: '1.2em',
                     background: 'var(--neutral)',
@@ -536,19 +567,20 @@ export default function HomePageClient({ countries, countryId }: HomePageClientP
                       <span style={{color: '#222'}}>{country.quota}</span>
                     </div>
                   </div>
-                )}
+                ) : null}
               </div>
             </div>
-                      ))}
+                      )) : null}
           </div>
         </section>
         </main>
-      <RequestButton />      <footer className="App-footer">
-        <div className="footer-content">
-          <span>© 2025 ワーホリパス</span>
-          <span style={{fontSize: '0.95em', color: '#aaa', marginLeft: '1.2em'}}>Powered by SoloTraveler</span>
-        </div>
-      </footer>
-    </div>
+        <RequestButton />
+        <footer className="App-footer">
+          <div className="footer-content">
+            <span>© 2025 ワーホリパス</span>
+            <span style={{fontSize: '0.95em', color: '#aaa', marginLeft: '1.2em'}}>Powered by SoloTraveler</span>
+          </div>
+        </footer>
+      </div>
   );
 }

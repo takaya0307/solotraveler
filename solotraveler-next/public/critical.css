@@ -1,0 +1,142 @@
+/* クリティカルCSS - ファーストビューに必要なスタイルのみ */
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+  --main-blue: #1E4E8C;
+  --sub-blue: #3A7DFF;
+  --accent-green: #2BBFA0;
+  --neutral: #F5F7FA;
+}
+
+html, body {
+  height: 100%;
+  background: var(--background);
+  color: var(--foreground);
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-inter), -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  overflow-x: hidden;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* ヘッダー基本スタイル */
+.App-header, .stylish-header {
+  background: var(--main-blue);
+  color: #fff;
+  border-bottom: none;
+  padding: 0.2rem 0 0.2rem 0;
+  min-height: 120px;
+  text-align: center;
+  border-radius: 0 0 16px 16px;
+  box-shadow: 0 2px 8px 0 rgba(30,78,140,0.15);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.header-title, .refined-header-title {
+  font-size: 2.7rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  margin: 0 0 0.5em 0;
+  font-family: var(--font-kiwi-maru), 'Noto Sans JP', 'Helvetica Neue', Arial, sans-serif;
+}
+
+.refined-header-subtitle, .App-header .subtitle {
+  color: var(--neutral);
+  font-size: 1.13rem;
+  font-weight: 500;
+  text-align: center;
+  margin: 0.7em auto 0.2em auto;
+  letter-spacing: 0.03em;
+  background: none;
+  opacity: 0.97;
+  font-style: normal;
+  text-shadow: 0 1px 4px rgba(30,78,140,0.1);
+  padding-bottom: 0;
+}
+
+/* メインコンテンツ基本スタイル */
+main {
+  padding: 2rem 4rem;
+  max-width: 1400px;
+  margin: 0 auto;
+  background: transparent;
+  min-height: 100vh;
+}
+
+/* カードグリッド基本スタイル */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 1.5rem;
+  margin: 2rem 0;
+  max-width: 1400px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.country-card {
+  background: white;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08), 0 2px 4px rgba(0, 0, 0, 0.06);
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  min-height: 360px;
+  border: 1px solid #e5eaf3;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+/* レスポンシブ基本設定 */
+@media (max-width: 768px) {
+  .App-header {
+    padding: 1.2rem 0.7rem;
+    min-height: auto;
+  }
+  
+  .header-title, .refined-header-title {
+    font-size: 2.4rem;
+  }
+  
+  main {
+    padding: 1rem 2rem;
+  }
+  
+  .card-grid {
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1.2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .App-header {
+    padding: 0.8rem 0.4rem;
+  }
+  
+  .header-title, .refined-header-title {
+    font-size: 2rem;
+  }
+  
+  main {
+    padding: 0.5rem 1rem;
+  }
+  
+  .card-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+}

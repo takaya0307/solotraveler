@@ -1,5 +1,6 @@
 import React from "react";
 import CountryDetailLayout from "../../components/CountryDetailLayout";
+import OptimizedImage from "../../components/OptimizedImage";
 import germanyData from "../../../db.json";
 
 export default function GermanyDetailPage() {
@@ -14,19 +15,19 @@ export default function GermanyDetailPage() {
     {
       title: "技術力",
       description: "世界最高峰の自動車産業と製造業",
-      imageUrl: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=1920&auto=format&fit=crop&q=60",
+      imageUrl: "/images/germany-tech.jpg",
       imageAlt: "ドイツの技術力"
     },
     {
       title: "文化と芸術",
       description: "豊かな音楽文化と美術館",
-      imageUrl: "https://images.unsplash.com/photo-1560929585-ba3c24ec6c44?w=1920&auto=format&fit=crop&q=60",
+      imageUrl: "/images/germany-culture.jpg",
       imageAlt: "ドイツの文化と芸術"
     },
     {
       title: "歴史的建造物",
       description: "中世の街並みと城",
-      imageUrl: "https://images.unsplash.com/photo-1485465053475-dd55ed3894b9?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MzN8fGdlcm1hbnl8ZW58MHx8MHx8fDA%3D",
+      imageUrl: "/images/germany-history.jpg",
       imageAlt: "歴史的建造物"
     }
   ];
@@ -48,12 +49,6 @@ export default function GermanyDetailPage() {
       icon: "😊"
     }
   ];
-
-  const englishProficiency = {
-    level: "高い",
-    score: 70,
-    description: "若い世代や都市部では英語を話せる人が多く、生活でも困ることはほとんどありません。\n\nただし、地方や年配の人との会話ではドイツ語が必要になる場面もあります。"
-  };
 
   const countryHighlights = [
     {
@@ -131,7 +126,6 @@ export default function GermanyDetailPage() {
       countryDescription={countryDescription}
       countryFeatures={countryFeatures}
       countryAtmosphere={countryAtmosphere}
-      englishProficiency={englishProficiency}
       countryHighlights={countryHighlights}
       jobInfo={jobInfo}
       testimonials={testimonials}

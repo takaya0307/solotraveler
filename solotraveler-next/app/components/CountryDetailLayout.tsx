@@ -5,6 +5,8 @@ import Link from "next/link";
 import Header from "./Header";
 import CityDetailModal from "./CityDetailModal";
 import RequestButton from "./RequestButton";
+import BackgroundImage from "./BackgroundImage";
+import OptimizedImage from "./OptimizedImage";
 import styles from "./CountryDetailLayout.module.css";
 
 // 国旗を取得する関数
@@ -280,16 +282,20 @@ export default function CountryDetailLayout({
         </nav>
         
         {/* ヒーローセクション（画像のみ） */}
-        <div 
-          className={styles["country-hero"]}
-          style={{
-            background: `url('${country.imageUrl}')`,
-            backgroundSize: 'cover',
-            backgroundPosition: 'center',
-            backgroundRepeat: 'no-repeat'
-          }}
-          title={`背景画像: ${country.imageUrl}`}
-        >
+        <div className={styles["country-hero"]}>
+          <img
+            src={country.imageUrl}
+            alt={`${country.nameJa}の風景`}
+            className={styles["country-hero-image"]}
+            fetchPriority="high"
+            loading="eager"
+            style={{
+              width: '100%',
+              height: '100%',
+              objectFit: 'cover',
+              objectPosition: 'center'
+            }}
+          />
         </div>
 
         {/* タイトルと説明文セクション */}
@@ -427,12 +433,20 @@ export default function CountryDetailLayout({
               {/* 国の特徴写真 */}
               <div className={styles["features-grid"]}>
                 {countryFeatures.map((feature, index) => (
-                  <div key={index} className={styles["feature-card"]} style={{
-                    background: `url("${feature.imageUrl}")`,
-                    backgroundSize: 'cover',
-                    backgroundPosition: 'center',
-                    backgroundRepeat: 'no-repeat'
-                  }}>
+                  <div key={index} className={styles["feature-card"]}>
+                    <img
+                      src={feature.imageUrl}
+                      alt={feature.imageAlt}
+                      className={styles["feature-image"]}
+                      loading={index === 0 ? "eager" : "lazy"}
+                      fetchPriority={index === 0 ? "high" : "auto"}
+                      style={{
+                        width: '100%',
+                        height: '100%',
+                        objectFit: 'cover',
+                        objectPosition: 'center'
+                      }}
+                    />
                     <div className={styles["feature-overlay"]}>
                       <h4 className={styles["feature-title"]}>{feature.title}</h4>
                       <p className={styles["feature-description"]}>{feature.description}</p>
@@ -529,12 +543,19 @@ export default function CountryDetailLayout({
                     onClick={() => handleCityClick(city)}
                     style={{ cursor: 'pointer' }}
                   >
-                    <div className={styles["city-image"]} style={{
-                      background: `url('${city.imageUrl}')`,
-                      backgroundSize: 'cover',
-                      backgroundPosition: 'center',
-                      backgroundRepeat: 'no-repeat'
-                    }}>
+                    <div className={styles["city-image"]}>
+                      <img
+                        src={city.imageUrl}
+                        alt={`${city.nameJa}の風景`}
+                        className={styles["city-image-bg"]}
+                        loading="lazy"
+                        style={{
+                          width: '100%',
+                          height: '100%',
+                          objectFit: 'cover',
+                          objectPosition: 'center'
+                        }}
+                      />
                       <div className={styles["city-overlay"]} />
                       <div className={styles["city-info"]}>
                         <h3 className={styles["city-name"]}>

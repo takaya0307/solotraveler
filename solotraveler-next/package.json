@@ -9,7 +9,8 @@
     "lint": "next lint",
     "analyze": "ANALYZE=true next build",
     "sitemap": "next build && node scripts/generate-sitemap.js",
-    "seo-check": "npm run build && npm run sitemap"
+    "seo-check": "npm run build && npm run sitemap",
+    "optimize-images": "node scripts/optimize-images.js"
   },
   "dependencies": {
     "react": "^18",
@@ -24,5 +25,11 @@
     "@tailwindcss/postcss": "^4",
     "tailwindcss": "^4",
     "@next/bundle-analyzer": "^14.2.3"
-  }
+  },
+  "browserslist": [
+    "> 0.5%",
+    "last 2 versions",
+    "not dead",
+    "not ie 11"
+  ]
 }

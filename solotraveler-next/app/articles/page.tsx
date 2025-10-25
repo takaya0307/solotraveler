@@ -2,6 +2,7 @@ import React from "react";
 import { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
+import OptimizedImage from "../components/OptimizedImage";
 import Header from "../components/Header";
 
 export const metadata: Metadata = {
@@ -63,8 +64,8 @@ export default function ArticlesPage() {
                 className="group bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden border border-gray-100"
               >
                 <div className="relative h-48 overflow-hidden">
-                  <Image
-                    src="https://images.unsplash.com/photo-1517400508447-f8dd518b86db?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8QWlycG9ydHxlbnwwfHwwfHx8MA%3D%3D"
+                  <OptimizedImage
+                    src="/images/airport.jpg"
                     alt="空港の様子"
                     fill
                     className="object-cover"

@@ -5,7 +5,7 @@
       "name": "Australia",
       "nameJa": "オーストラリア",
       "countryCode": "AU",
-      "imageUrl": "https://images.unsplash.com/photo-1506973035872-a4ec16b8e8d9?w=1920&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8QXVzdHJhbGlhfGVufDB8fDB8fHww",
+      "imageUrl": "/images/australia-main.jpg",
       "catchphrase": "温暖な気候とビーチライフが楽しめる国",
       "ageRange": "18〜30歳",
       "stayPeriod": "3年（条件あり）",
@@ -18,7 +18,7 @@
           "name": "Sydney",
           "nameJa": "シドニー",
           "description": "オーストラリア最大の都市。シドニー・ハーバーブリッジとオペラハウスが象徴的な美しい港町。ビーチと都市生活が両立し、多文化が融合する活気ある街。観光・仕事・留学すべてにおいて人気の高い都市です。",
-          "imageUrl": "https://images.unsplash.com/photo-1551352912-484163ad5be9?w=1920&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTZ8fHN5ZG5leXxlbnwwfHwwfHx8MA%3D%3D",
+          "imageUrl": "/images/australia-beach.jpg",
           "tips": ["オペラハウス見学", "ボンダイビーチ", "多国籍な仕事が探しやすい"]
         },
         {

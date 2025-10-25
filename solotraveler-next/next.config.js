@@ -30,6 +30,10 @@ const nextConfig = {
     // 画像の遅延読み込みを有効化
     dangerouslyAllowSVG: true,
     contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",
+    // 画像のキャッシュ設定を最適化
+    minimumCacheTTL: 31536000, // 1年
+    // 画像の最適化を有効化
+    unoptimized: false,
   },
   
   // 圧縮
@@ -40,16 +44,38 @@ const nextConfig = {
     optimizePackageImports: ['@next/font'],
   },
   
+  // CSS最適化
+  compiler: {
+    removeConsole: process.env.NODE_ENV === 'production',
+  },
+  
   // バンドル分析
-  webpack: (config, { isServer }) => {
+  webpack: (config, { isServer, dev }) => {
     if (!isServer) {
       config.resolve.fallback = {
         ...config.resolve.fallback,
         fs: false,
       };
     }
+    
+    // CSS最適化
+    if (!dev) {
+      config.optimization.splitChunks.cacheGroups = {
+        ...config.optimization.splitChunks.cacheGroups,
+        styles: {
+          name: 'styles',
+          test: /\.(css|scss)$/,
+          chunks: 'all',
+          enforce: true,
+        },
+      };
+    }
+    
     return config;
   },
+
+  // 現代的なブラウザターゲットを設定（ポリフィルを削減）
+  swcMinify: true,
   
   // 静的エクスポートを完全に無効化
   generateBuildId: async () => {
@@ -77,6 +103,66 @@ const nextConfig = {
           {
             key: 'Referrer-Policy',
             value: 'strict-origin-when-cross-origin',
+          },
+        ],
+      },
+      // 静的リソースのキャッシュ設定
+      {
+        source: '/_next/static/(.*)',
+        headers: [
+          {
+            key: 'Cache-Control',
+            value: 'public, max-age=31536000, immutable',
+          },
+        ],
+      },
+      // 画像ファイルのキャッシュ設定
+      {
+        source: '/:path*\\.(png|jpg|jpeg|gif|webp|avif|svg|ico)',
+        headers: [
+          {
+            key: 'Cache-Control',
+            value: 'public, max-age=31536000, immutable',
+          },
+        ],
+      },
+      // CSS/JSファイルのキャッシュ設定
+      {
+        source: '/:path*\\.(css|js)',
+        headers: [
+          {
+            key: 'Cache-Control',
+            value: 'public, max-age=31536000, immutable',
+          },
+        ],
+      },
+      // フォントファイルのキャッシュ設定
+      {
+        source: '/:path*\\.(woff|woff2|eot|ttf|otf)',
+        headers: [
+          {
+            key: 'Cache-Control',
+            value: 'public, max-age=31536000, immutable',
+          },
+        ],
+      },
+      // HTMLファイルのキャッシュ設定（短め）
+      {
+        source: '/:path*\\.html',
+        headers: [
+          {
+            key: 'Cache-Control',
+            value: 'public, max-age=3600, s-maxage=86400',
+          },
+        ],
+      },
+      // APIルートのキャッシュ設定
+      {
+        source: '/api/(.*)',
+        headers: [
+          {
+            key: 'Cache-Control',
+            value: 'public, max-age=300, s-maxage=600',
           },
         ],
       },

@@ -1,18 +1,31 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import { Dancing_Script } from "next/font/google";
+import { Kiwi_Maru } from "next/font/google";
 import "./globals.css";
 import Script from "next/script";
 
 const inter = Inter({
   subsets: ["latin"],
   variable: "--font-inter",
+  display: 'swap',
+  preload: true,
 });
 
 const dancingScript = Dancing_Script({
   variable: "--font-dancing-script",
   subsets: ["latin"],
   weight: ["400", "700"],
+  display: 'swap',
+  preload: true,
+});
+
+const kiwiMaru = Kiwi_Maru({
+  variable: "--font-kiwi-maru",
+  subsets: ["latin"],
+  weight: ["400", "500"],
+  display: 'swap',
+  preload: true,
 });
 
 export const metadata: Metadata = {
@@ -93,10 +106,10 @@ export default function RootLayout({
         <meta name="apple-mobile-web-app-status-bar-style" content="default" />
         <meta name="format-detection" content="telephone=no" />
         
-        {/* Google Analytics - ビルドエラー修正のため一時的に無効化 */}
+        {/* Google Analytics - パフォーマンス最適化済み */}
         {process.env.NODE_ENV === 'production' && (
           <>
-            <Script id="gtm" strategy="afterInteractive">
+            <Script id="gtm" strategy="lazyOnload">
               {`
                 (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
                 new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -107,9 +120,9 @@ export default function RootLayout({
             </Script>
             <Script
               src="https://www.googletagmanager.com/gtag/js?id=G-4K2MGYJY8L"
-              strategy="afterInteractive"
+              strategy="lazyOnload"
             />
-            <Script id="ga-init" strategy="afterInteractive">
+            <Script id="ga-init" strategy="lazyOnload">
               {`
                 window.dataLayer = window.dataLayer || [];
                 function gtag(){dataLayer.push(arguments);}
@@ -127,7 +140,24 @@ export default function RootLayout({
         <link rel="preload" href="https://flagcdn.com/w20/ca.png" as="image" type="image/png" />
         <link rel="preload" href="https://flagcdn.com/w20/nz.png" as="image" type="image/png" />
         
-        {/* DNS プリフェッチ */}
+        {/* LCP候補の画像をプリロード（fetchpriority="high"相当） */}
+        <link 
+          rel="preload" 
+          href="https://images.unsplash.com/photo-1506973035872-a4ec16b8e8d9?w=1920&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8QXVzdHJhbGlhfGVufDB8fDB8fHww" 
+          as="image" 
+          type="image/jpeg"
+          fetchPriority="high"
+        />
+        
+        {/* 通常のCSS読み込みに戻す */}
+        <link rel="stylesheet" href="/_next/static/css/app/globals.css" />
+        
+        {/* 重要なドメインの事前接続 */}
+        <link rel="preconnect" href="https://flagcdn.com" />
+        <link rel="preconnect" href="https://images.unsplash.com" />
+        <link rel="preconnect" href="https://www.googletagmanager.com" />
+        
+        {/* DNS プリフェッチ（フォールバック） */}
         <link rel="dns-prefetch" href="//flagcdn.com" />
         <link rel="dns-prefetch" href="//images.unsplash.com" />
         <link rel="dns-prefetch" href="//www.googletagmanager.com" />
@@ -138,7 +168,7 @@ export default function RootLayout({
         <link rel="alternate" hrefLang="x-default" href="https://workingholidaypass.jp" />
       </head>
       <body
-        className={`${inter.variable} ${dancingScript.variable} antialiased`}
+        className={`${inter.variable} ${dancingScript.variable} ${kiwiMaru.variable} antialiased`}
       >
         {/* Google Tag Manager (noscript) */}
         <noscript>

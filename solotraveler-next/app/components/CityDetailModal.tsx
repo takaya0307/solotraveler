@@ -161,40 +161,56 @@ const getCityFeature = (city: City): string => {
 };
 
 export default function CityDetailModal({ city, isOpen, onClose }: CityDetailModalProps) {
-  // モーダルが開いている時に背景のスクロールを防ぐ
+  // モーダルが開いている時に背景のスクロールを防ぐ（最適化版）
   useEffect(() => {
     if (isOpen) {
-      // 現在のスクロール位置を保存
-      const scrollY = window.scrollY;
-      
-      // bodyを固定位置にしてスクロールを防ぐ
-      document.body.style.position = 'fixed';
-      document.body.style.top = `-${scrollY}px`;
-      document.body.style.left = '0';
-      document.body.style.right = '0';
-      document.body.style.overflow = 'hidden';
+      // 現在のスクロール位置を保存（requestAnimationFrameで最適化）
+      requestAnimationFrame(() => {
+        const scrollY = window.scrollY;
+        
+        // bodyを固定位置にしてスクロールを防ぐ
+        document.body.style.position = 'fixed';
+        document.body.style.top = `-${scrollY}px`;
+        document.body.style.left = '0';
+        document.body.style.right = '0';
+        document.body.style.overflow = 'hidden';
+        document.body.style.width = '100%';
+        
+        // スクロール位置をデータ属性に保存
+        document.body.setAttribute('data-scroll-y', scrollY.toString());
+      });
     } else {
-      // スクロール位置を復元
-      const scrollY = document.body.style.top;
-      document.body.style.position = '';
-      document.body.style.top = '';
-      document.body.style.left = '';
-      document.body.style.right = '';
-      document.body.style.overflow = '';
-      
-      // 保存されたスクロール位置に戻す
-      if (scrollY) {
-        window.scrollTo(0, parseInt(scrollY.replace('-', ''), 10));
-      }
+      // スクロール位置を復元（requestAnimationFrameで最適化）
+      requestAnimationFrame(() => {
+        const savedScrollY = document.body.getAttribute('data-scroll-y');
+        
+        // スタイルをリセット
+        document.body.style.position = '';
+        document.body.style.top = '';
+        document.body.style.left = '';
+        document.body.style.right = '';
+        document.body.style.overflow = '';
+        document.body.style.width = '';
+        
+        // 保存されたスクロール位置に戻す
+        if (savedScrollY) {
+          window.scrollTo(0, parseInt(savedScrollY, 10));
+          document.body.removeAttribute('data-scroll-y');
+        }
+      });
     }
 
     // クリーンアップ
     return () => {
-      document.body.style.position = '';
-      document.body.style.top = '';
-      document.body.style.left = '';
-      document.body.style.right = '';
-      document.body.style.overflow = '';
+      requestAnimationFrame(() => {
+        document.body.style.position = '';
+        document.body.style.top = '';
+        document.body.style.left = '';
+        document.body.style.right = '';
+        document.body.style.overflow = '';
+        document.body.style.width = '';
+        document.body.removeAttribute('data-scroll-y');
+      });
     };
   }, [isOpen]);
 
